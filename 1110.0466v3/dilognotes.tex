@@ -1,9 +1,18 @@
 %\pdfoutput=1
-%\documentclass[12pt,reqno]{article}
-
+\documentclass[12pt,reqno]{article}
+\usepackage{jheppub}
+\hypersetup{
+  bookmarks=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  colorlinks=true,
+%  linkcolor=blue,
+%  citecolor=blue,
+%  urlcolor=blue
+}
 %\documentclass[12pt,doublespace]{../common/JHEP3}
-\documentclass[12pt,doublespace]{JHEP3}
-\JHEPspecialurl{http://jhep.sissa.it/JOURNAL/JHEP3.tar.gz}
+%\documentclass[12pt,doublespace]{JHEP3}
+%\JHEPspecialurl{http://jhep.sissa.it/JOURNAL/JHEP3.tar.gz}
 
 \usepackage{mathrsfs}
 \usepackage{amsmath,amssymb,amsfonts,xspace}
@@ -15,18 +24,17 @@
 % For Keller's figure:
 \usepackage[all]{xy}
 
-
 %\usepackage{showkeys}
 %\newcommand{\color}[6]{}  % to solve color pbs in figures
 
 %%%%%%%%%%%%%%%%%%%% Sizes %%%%%%%%%%%%%%%%%
-\hoffset=-1in
-\voffset=-1in
-\textwidth=16.9cm
-\oddsidemargin=2.2cm
-\evensidemargin=2.2cm
-\topmargin=0.5cm
-\textheight=24.2cm
+%\hoffset=-1in
+%\voffset=-1in
+%\textwidth=16.9cm
+%\oddsidemargin=2.2cm
+%\evensidemargin=2.2cm
+%\topmargin=0.5cm
+%\textheight=24.2cm
 
 
 \allowdisplaybreaks
@@ -454,41 +462,36 @@
 
 \title{Wall-crossing,  Rogers dilogarithm,  \\ and the QK/HK correspondence}
 
-\preprint{CERN-PH-TH/2011-239\\L2C:11-165\\arXiv:1110.0466v3}
+\arxivnumber{1110.0466v3}
+% \preprint{
+%     CERN-PH-TH/2011-239\\
+%     L2C:11-165
+% }
+\preprint{
+  \makebox[0pt][r]{
+    % \fbox{
+    \begin{tabular}{r}
+      CERN-PH-TH/2011-239 \\
+      L2C:11-165
+    \end{tabular}}
+  % }
+}
 
+\author[1,2]{Sergei Alexandrov}
+\author[3,4]{Daniel Persson}
+\author[5,6]{Boris Pioline}
 
-\author{Sergei Alexandrov$^{1,2}$, Daniel Persson$^{3,4}$,
-Boris Pioline$^{5,6}$\\
+\affiliation[1]{Universit\'e Montpellier 2, Laboratoire Charles Coulomb UMR 5221, F-34095, Montpellier, France}
+\affiliation[2]{CNRS, Laboratoire Charles Coulomb UMR 5221, F-34095, Montpellier, France}
+\affiliation[3]{Institut f\"ur Theoretische Physik, ETH Z\"urich, CH-8093 Z\"urich, Switzerland}
+\affiliation[4]{Fundamental Physics, Chalmers University of Technology, 412 96 Gothenburg, Sweden}
+\affiliation[5]{PH-TH Division, CERN, Geneva 23, Switzerland}
+\affiliation[6]{Laboratoire de Physique Th\'eorique et Hautes Energies, CNRS UMR 7589, \\
+Universit\'e Pierre et Marie Curie - Paris 6, 4 place Jussieu, 75252 Paris Cedex 05, France}
 
-\vspace{2mm}
-$^1$ {\it Universit\'e Montpellier 2, Laboratoire Charles Coulomb UMR 5221, F-34095,
-Montpellier, France}
-
-\vspace{2mm}
-$^2$ {\it CNRS, Laboratoire Charles Coulomb UMR 5221, F-34095,
-Montpellier, France}
-
-\vspace{2mm}
-$^3$  {\it Institut f\"ur Theoretische Physik, ETH Z\"urich, CH-8093 Z\"urich, Switzerland}
-
-\vspace{2mm}
-$^4$ {\it Fundamental Physics, Chalmers University of Technology, 412 96 Gothenburg, Sweden}
-
-\vspace{2mm}
-$^5$ {\it PH-TH Division, CERN, Geneva 23, Switzerland}
-
-\vspace{2mm}
-$^6$ {\it Laboratoire de Physique Th\'eorique et Hautes
-Energies, CNRS UMR 7589, \\
-Universit\'e Pierre et Marie Curie - Paris 6,
-4 place Jussieu, 75252 Paris Cedex 05, France
-} \\
-
-\vspace*{-2mm} {\tt e-mail: \email{sergey.alexandrov@univ-montp2.fr},
-\email{daniel.persson@itp.phys.ethz.ch},
-\email{pioline@lpthe.jussieu.fr}
-}}
-
+\emailAdd{sergey.alexandrov@univ-montp2.fr}
+\emailAdd{daniel.persson@itp.phys.ethz.ch}
+\emailAdd{pioline@lpthe.jussieu.fr}
 
 
 \abstract{When formulated in twistor space, the D-instanton corrected hypermultiplet
@@ -510,7 +513,7 @@ discussion on the general relation between wall-crossing and cluster algebras.}
 
 
 \begin{document}
-
+\maketitle
 \tableofcontents
 \setcounter{page}{2}
 \newpage
@@ -2915,7 +2918,7 @@ The construction of the twistor space $\cZ$ obtained in
 is given by the same construction as in $\cN=2$ field theory, with
 the appropriate central charge function \eqref{Zsugra} and BPS invariants
 $\Omega(\gamma, z)$. In other words,
-$\pcZ$ is described by complex symplectomorphisms $U_\gamma$Ê \eqref{ugamma}
+$\pcZ$ is described by complex symplectomorphisms $U_\gamma$ \eqref{ugamma}
 relating the Darboux coordinates $\Xi'$
 across the BPS rays \eqref{lgam}.
 \item[ii)] The holomorphic line bundle $\lb_{{\pcZ}}$ over $\pcZ$
@@ -3317,7 +3320,7 @@ U^{(\Omega)}_{p,q}: \quad [x,y]\mapsto
 \ee
 preserving  the symplectic form
 \be
-\de \xi \wedge \de\txi  =  \frac{1}{4\pi^2} \frac{\de x}{x} \wedge \frac{\de y}{y}  Ê\, .
+\de \xi \wedge \de\txi  =  \frac{1}{4\pi^2} \frac{\de x}{x} \wedge \frac{\de y}{y}  \, .
 \ee
 When $\Omega=1$, we omit the superscript and denote $U_{p,q}=U^{(1)}_{p,q}$.
 The inverse of $U^{(\Omega)}_{p,q}$ is $U^{(-\Omega)}_{p,q}$. The contact transformation
@@ -3590,7 +3593,7 @@ gives a way to bypass the non-trivial topology of the twistor space $\cZ$,
 at least for QK spaces with a quaternionic circle action.
 
 In the second part of the paper, we have applied this correspondence to the hypermultiplet moduli space
-$\cM$Ê in type II string theory on a Calabi-Yau threefold. In the absence of NS5-brane or
+$\cM$ in type II string theory on a Calabi-Yau threefold. In the absence of NS5-brane or
 Kaluza-Klein monopole corrections (i.e. for weak coupling, or large radius), the latter
 has a quaternionic circle action corresponding to shifts of the NS-axion (respectively, NUT
 scalar). We have shown that the twistorial construction of the D-instanton corrected metric on $\cM$
@@ -3643,7 +3646,7 @@ hyperholomorphic bundles on $\pcM$ (which would be
 Morita-equivalent to the rank 1 bundle constructed
 in this work). Indeed, on the cluster algebra side, the
 limit $\hbar\to s/k\in\IQ$  produces a holomorphic vector bundle
-$\mathscr{V}_{\hbar}\to\cA$ of rank $k^{\hf{\rm rk}\cB}$, where $\cB$ Êis the exchange matrix
+$\mathscr{V}_{\hbar}\to\cA$ of rank $k^{\hf{\rm rk}\cB}$, where $\cB$ is the exchange matrix
 of $\cA$ (see \S\ref{clustervarieties}), and first Chern class proportional
 to $s$. Specializing for simplicity to $s=1$ and ${\rm rk}\cB=2$,
 holomorphic sections of $\mathscr{V}_{\hbar}$  have a `non-Abelian' Fourier expansion with
@@ -3665,7 +3668,7 @@ from $k$ NS5-branes consistently with wall-crossing, at least  perturbatively aw
 
 
 
-Finally, we note that our construction of the hyperholomorphic line bundle $\lb$Ê
+Finally, we note that our construction of the hyperholomorphic line bundle $\lb$
 makes sense also in the context of the Hitchin moduli space of Higgs bundles,
 and more generally in the context of
 $\cN=2$ gauge theories in 3 dimensions.
@@ -4016,7 +4019,7 @@ For any initial seed $(I,I_0,\exm_{ij}, d_i,\cX,\cA;x_i,a_i)$ and any choice of
 $k\in I\backslash I_0$, one may construct a new seed $(I,I_0,\exm'_{ij},d_i,\cX',\cA';x'_i,a'_i)$
 with the same set of nodes and multipliers, but with a new exchange matrix given by the explicit formula
 \be
- \exm'_{ij} =  \left\{Ê\begin{array}{cc}
+ \exm'_{ij} =  \left\{\begin{array}{cc}
 - \exm_{ij}  &\ i=k \,\,  \text{or}\,\,   j=k
 \\
  \exm_{ij}  & \ \exm_{ik}  \exm_{kj} < 0
@@ -4298,7 +4301,7 @@ by $\mu^T_{{\bfk}_\ind}$, acts on any monomial $\cY_{\gamma'}$ according to
 \ee
 where $\epsilon_\ind=\epsilon(x_{k_\ind}(\ind))$ and
 $\cY_{\gamma_\ind}=(x_{k_\ind}(\ind))^{\epsilon_\ind}$.
-If we now identify $\cY_\gamma \equiv \sigma(\gamma)^{-1} \cX_\gamma$ Êas in \S\ref{secmot},
+If we now identify $\cY_\gamma \equiv \sigma(\gamma)^{-1} \cX_\gamma$ as in \S\ref{secmot},
 this agrees precisely with the KS symplectomorphism $U_{\gamma_\ind}$
 defined in \eqref{ugamma} when $\epsilon_s=1$, or with its inverse $(U_{\gamma_\ind})^{-1}$
 when $\epsilon_\ind=-1$, in the special case where the BPS index  and quadratic refinement
@@ -4370,7 +4373,7 @@ for the exchange matrix $\pm \exm_{ij}$. Moreover, for convenience we define
 \be
 \mu^{\pm\sharp}_i=\mu^{\pm}_{i,+},
 \quad
-\mu^{\pm\flat}_i=\mu^{\pm}_{i,-},Ê
+\mu^{\pm\flat}_i=\mu^{\pm}_{i,-},
 \quad
 \mu'^{\pm }_i=\tau_{i,+},
 \quad
@@ -5003,8 +5006,7 @@ A.~Neitzke, ``{On a hyperholomorphic line bundle over the Coulomb branch},''
 \bibitem{Lindstrom:2008gs}
 U.~Lindstr{\"o}m and M.~Ro\v{c}ek, ``{Properties of hyperkahler manifolds and
   their twistor spaces},''
-\href{http://www.arXiv.org/abs/arXiv:0807.1366 {\tt [hep-th]}}{{\tt
-  arXiv:0807.1366 {\tt [hep-th]}}}.
+\href{http://www.arXiv.org/abs/0807.1366}{{\tt arXiv:0807.1366 {[hep-th]}}}.
 %%CITATION = 0807.1366;%%.
 
 \bibitem{MR1096180}
