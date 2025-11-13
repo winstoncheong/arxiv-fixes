@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{amsmath,amsfonts,amssymb,mathtools,amsthm}
+
+
+\setlength{\parskip}{1em} % Sets 1em space between paragraphs
+
+%%%%%% macros from TeX
+
+\def\fig#1#2#3{
+\par\begingroup\parindent=0pt\leftskip=1cm\rightskip=1cm\parindent=0pt
+\baselineskip=11pt
+\global\advance\figno by 1
+\midinsert
+\epsfxsize=#3
+\centerline{\epsfbox{#2}}
+\vskip 12pt
+{\bf Fig. \the\figno:} #1\par
+\endinsert\endgroup\par
+}
+\def\figlabel#1{\xdef#1{\the\figno}}
+\def\encadremath#1{\vbox{\hrule\hbox{\vrule\kern8pt\vbox{\kern8pt
+\hbox{$\displaystyle #1$}\kern8pt}
+\kern8pt\vrule}\hrule}}
+
+
+\def\tilde{\widetilde}
+\def\bar{\overline}
+\def\np#1#2#3{Nucl. Phys. {\bf B#1} (#2) #3}
+\def\pl#1#2#3{Phys. Lett. {\bf #1B} (#2) #3}
+\def\prl#1#2#3{Phys. Rev. Lett.{\bf #1} (#2) #3}
+\def\physrev#1#2#3{Phys. Rev. {\bf D#1} (#2) #3}
+\def\ap#1#2#3{Ann. Phys. {\bf #1} (#2) #3}
+\def\prep#1#2#3{Phys. Rep. {\bf #1} (#2) #3}
+\def\rmp#1#2#3{Rev. Mod. Phys. {\bf #1} (#2) #3}
+\def\cmp#1#2#3{Comm. Math. Phys. {\bf #1} (#2) #3}
+\def\mpl#1#2#3{Mod. Phys. Lett. {\bf #1} (#2) #3}
+%
+\def\Lam#1{\Lambda_{#1}}
+\def\pf{{\rm Pf ~}}
+\font\zfont = cmss10 %scaled \magstep1
+\font\litfont = cmr6
+\font\fvfont=cmr5
+\def\bigone{\hbox{1\kern -.23em {\rm l}}}
+\def\ZZ{\hbox{\zfont Z\kern-.4emZ}}
+\def\half{{\litfont {1 \over 2}}}
+\def\mx#1{m_{\hbox{\fvfont #1}}}
+\def\gx#1{g_{\hbox{\fvfont #1}}}
+\def\gG{{\cal G}}
+\def\lamlam#1{\langle S_{#1}\rangle}
+\def\CM{{\cal M}}
+\def\Re{{\rm Re ~}}
+\def\Im{{\rm Im ~}}
+\def\lfm#1{\medskip\noindent\item{#1}}
+
+
+%%%%%%% end macros from TeX
+
+% \title{
+
+% }
+
+% \hfill {
+%   \makebox[0pt][r]{
+%     \begin{tabular}{r}
+% hep-th/9408074 \\
+% HUTP-94/A017  \\
+% IASSNS-HEP-94-54
+%     \end{tabular}}
+% }
+
+% \author[1,2]{Cumrun Vafa}
+% \author[2]{Edward Witten}
+% \affil[1]{
+% Lyman Laboratory of Physics, Harvard University
+% Cambridge, MA 02138 USA
+% }
+% \affil[2]{
+% \centerline{\it School of Natural Sciences, Institute for Advanced Study}
+% \centerline{\it Olden Lane, Princeton, NJ 08540, USA}
+% }
+% \date{August, 1994}
+
+% Things from harvmac.tex
+% \def\Title#1#2{\nopagenumbers\abstractfont\hsize=\hstitle\rightline{#1}%
+% \vskip 1in\centerline{\titlefont #2}\abstractfont\vskip .5in\pageno=0}
+
+% \def\Date#1{\vfill\leftline{#1}\tenpoint\supereject\global\hsize=\hsbody%
+% \footline={\hss\tenrm\folio\hss}}% 	restores pagenumbers
+
+
+%%%%% Macros I'm adding
+
+\DeclareMathOperator{\Tr}{Tr}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+
+% \Title{hep-th/9408074, HUTP-94/A017, IASSNS-HEP-94-54}
+% {\vbox{\centerline{A STRONG COUPLING TEST OF $S$-DUALITY}}}
+
+\hfill 
+\makebox[0pt][r]{
+    % \fbox{
+    \begin{tabular}{r}
+      hep-th/9408074, \\
+      HUTP-94/A017, \\
+      IASSNS-HEP-94-54
+    \end{tabular}}
+  % }
+
+\vskip1in
+
+\vbox{\LARGE\centerline{A STRONG COUPLING TEST OF $S$-DUALITY}}
+\bigskip
+\bigskip
+\bigskip
+
+\smallskip
+\centerline{Cumrun Vafa}
+\smallskip
+\centerline{\it Lyman Laboratory of Physics, Harvard University}
+\centerline{\it Cambridge, MA 02138 USA}
+\smallskip
+\centerline{and}
+\smallskip
+\centerline{\it School of Natural Sciences, Institute for Advanced Study}
+\centerline{\it Olden Lane, Princeton, NJ 08540, USA}
+\smallskip
+\centerline{and}
+\smallskip
+\centerline{Edward Witten}
+\smallskip
+\centerline{\it School of Natural Sciences, Institute for Advanced Study}
+\centerline{\it Olden Lane, Princeton, NJ 08540, USA}\bigskip
+\baselineskip 18pt
+
+
+\vskip1in
+\noindent
+By studying the partition function of $N=4$ topologically twisted
+supersymmetric Yang-Mills on four-manifolds, we make an exact strong
+coupling test of the Montonen-Olive strong-weak duality conjecture.
+Unexpected and exciting links are found with two-dimensional rational
+conformal field theory.
+\vfill
+{August, 1994}
+\end{titlepage}
+
+\input{converted.tex}
+
+
+\end{document}
