@@ -4,7 +4,7 @@ so that the source compiles and the resulting document is something I consider u
 
 # 1110.0466v3 - Wall-crossing, Rogers dilogarithm, and the QK/HK correspondence - Sergei Alexandrov, Daniel Persson, Boris Pioline
 
-[PDF](./1110.0466v3/)
+[PDF](./1110.0466v3/dilognotes.pdf)
 
 This used the document class `JHEP3`. Crucially, the pdf did not have bookmarks.
 It appears that this document class is outdated, and incompatible with `hyperref`.
