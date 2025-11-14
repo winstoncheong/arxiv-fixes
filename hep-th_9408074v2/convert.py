@@ -598,7 +598,7 @@ if __name__ == "__main__":
             bibliography[key ] = content.replace("\\semi", ";\\\\")
 
 
-    write_unordered_bib(bibliography)
+    # write_unordered_bib(bibliography)
 
     # write the output to a file
     write_output(lines, bibliography, "converted.tex")
