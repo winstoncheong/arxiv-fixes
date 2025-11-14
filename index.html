@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>arxiv-fixes</title>
+            <title>arxiv-fixes index</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -18,7 +18,8 @@
 }
 
 </style>
-            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
 <style>
@@ -138,9 +139,7 @@
         
         </head>
         <body class="vscode-body vscode-light">
-            <h1 id="arxiv-fixes">arxiv-fixes</h1>
-<p>This repo is meant for keeping my nontrivial changes to arXiv submissions,
-so that the source compiles and the resulting document is something I consider usable.</p>
+            <h1 id="arxiv-fixes-index">arxiv-fixes index</h1>
 <h1 id="11100466v3---wall-crossing-rogers-dilogarithm-and-the-qkhk-correspondence---sergei-alexandrov-daniel-persson-boris-pioline">1110.0466v3 - Wall-crossing, Rogers dilogarithm, and the QK/HK correspondence - Sergei Alexandrov, Daniel Persson, Boris Pioline</h1>
 <p><a href="./1110.0466v3/dilognotes.pdf">PDF</a></p>
 <p>This used the document class <code>JHEP3</code>. Crucially, the pdf did not have bookmarks.
@@ -150,8 +149,13 @@ It appears that this document class is outdated, and incompatible with <code>hyp
 <p>File had special characters (<code>&lt;CA&gt;</code>) that prevented compilation. Had to remove them.
 Had a messed up href in the bib.</p>
 <p>Needed to add things to <code>\preprint{}</code> to support multiple identifiers.</p>
+<h1 id="hep-th9408074v2---a-strong-coupling-test-of-s-duality---cumrun-vafa-and-edward-witten">hep-th/9408074v2 - A strong coupling test of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>-duality - Cumrun Vafa and Edward Witten</h1>
+<p><a href="./hep-th_9408074v2/main.pdf">PDF</a></p>
+<p>Original file uses TeX and harvmac.</p>
+<p>Wrote a script to aid conversion from TeX to LaTeX.</p>
+<p>More info on conversion <a href="./hep-th_9408074v2/readme.html">here</a></p>
 
-            
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             
         </body>
         </html>
