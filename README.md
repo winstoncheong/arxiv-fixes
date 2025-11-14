@@ -19,4 +19,12 @@ Had a messed up href in the bib.
 
 Needed to add things to `\preprint{}` to support multiple identifiers.
 
+# hep-th/9408074v2 - A strong coupling test of $S$-duality - Cumrun Vafa and Edward Witten
 
+[PDF](./hep-th_9408074v2/main.pdf)
+
+Original file uses TeX and harvmac. 
+
+Wrote a script to aid conversion from TeX to LaTeX.
+
+More info on conversion [here](./hep-th_9408074v2/readme.md)
