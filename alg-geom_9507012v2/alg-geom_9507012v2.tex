@@ -6,7 +6,16 @@
 %&amslplain
 %\documentstyle[amssymb,amscd,showkeys]{amsart}
 %\documentstyle[12pt,amssymb,amscd,showkeys]{amsart}
-\documentstyle[12pt,amssymb,amscd]{amsart}
+% \documentstyle[12pt,amssymb,amscd]{amsart}
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amsfonts,amssymb,amscd}
+\usepackage{geometry}
+\usepackage[colorlinks,allcolors=blue,unicode,psdextra,pagebackref]{hyperref}
+
+% Filling in commands that were probably defined in AMS-LaTeX
+\newcommand{\cal}{\mathcal}
+\newcommand{\rom}{\text}
+\renewcommand{\frak}{\mathfrak}
 %
 \chardef\bslash=`\\ % p. 424, TeXbook
 % Normalized (nonbold, nonitalic) \tt font, to avoid font substitution
@@ -73,12 +82,12 @@
 \newcommand{\defeq}{\overset{\operatorname{\scriptstyle def.}}{=}}
 \newcommand{\interior}{\rule{6pt}{.4pt}\rule{.4pt}{6pt}} % interior
                                                          % product
-\newcommand{\C}{{\Bbb C}}
-\newcommand{\Z}{{\Bbb Z}}
-\newcommand{\Q}{{\Bbb Q}}
-\newcommand{\R}{{\Bbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
 % Projective spaces
-\newcommand{\proj}{{\Bbb P}}
+\newcommand{\proj}{{\mathbb P}}
 \newcommand{\CP}{\operatorname{\C P}}
 \newcommand{\RP}{\operatorname{\R P}}
 % Lie Groups
@@ -126,7 +135,7 @@
 \newcommand{\idl}{\cal J} % ideal sheaf
 \newcommand{\Supp}{\operatorname{Supp}} % support (of a sheaf)
 \newcommand{\codim}{\operatorname{codim}}
-\newcommand{\bM}{{\bold M}} % the vector space
+\newcommand{\bM}{{\mathbf M}} % the vector space
 \newcommand{\M}{{\frak M}} % the moduli space
 
 \begin{document}
@@ -340,7 +349,7 @@ by
   (c_1\otimes c_2) \ast (c'_2\otimes c_3) \defeq
   c_2\cap c'_2\; c_1\otimes c_3,
 \end{equation*}
-where $c_2\cap c'_2\in\Bbb Z$ is the natural pairing between
+where $c_2\cap c'_2\in\mathbb Z$ is the natural pairing between
 $H_{i_2}(M^2)$ and $\Hlf_{d_2 - i_2}(M^2)\cong H^{i_2}(M^2)$.
 
 Suppose $Z$ is a submanifold in $M^1\times M^2$ such that
@@ -372,7 +381,7 @@ Hilbert scheme of $X$ parameterizing the ideals of $\shfO_X$ of
 colength $n$. It is smooth and irreducible \cite{Fogarty}.
 Let $S^n X$ denotes the $n$-th symmetric product of $X$.
 It parameterizes formal linear combinations $\sum n_i [x_i]$ of points
-$x_i$ in $X$ with coefficients $n_i\in\Bbb Z_{> 0}$ with $\sum n_i = n$.
+$x_i$ in $X$ with coefficients $n_i\in\mathbb Z_{> 0}$ with $\sum n_i = n$.
 There is a canonical morphism
 \begin{equation*}
   \pi\colon \Hilbn{X}\to S^n X; \quad
@@ -573,7 +582,7 @@ the following:
 \begin{Theorem}
   The direct sum $\bigoplus_{k,n} \Hlf_k(\HilbX{n})$ of homology groups
   of $\HilbX{n}$ is the highest weight module where the highest weight
-  vector $v_0$ is the generator of $\Hlf_0(\HilbX{0})\cong\Bbb Q$.
+  vector $v_0$ is the generator of $\Hlf_0(\HilbX{0})\cong\mathbb Q$.
 \end{Theorem}
 
 \begin{Remark}
@@ -788,8 +797,11 @@ Consider the following complex ADHM equation:
 Let $[z_0 : z_1 : z_2]$ be the homogeneous coordinates of $\CP^2$.
 We consider the following homomorphisms of sheaves over $\CP^2$
 \begin{equation*}
-  V\otimes\shfO(-1) @>\sigma>> (V\oplus V \oplus W)\otimes\shfO
- @>\tau>> V\otimes\shfO(1),
+  V\otimes\shfO(-1) 
+  \xrightarrow{\sigma} 
+  (V\oplus V \oplus W)\otimes\shfO
+  \xrightarrow{\tau}
+  V\otimes\shfO(1),
 \end{equation*}
 where
 \begin{equation*}
@@ -833,8 +845,8 @@ $V$. We define $i$ and $j$ as natural homomorphisms
 \end{split}\end{equation*}
 which are induced from the short exact sequences of sheaves
 \begin{gather*}
-    0 @>>> \shfO(-1) @>z_0>> \shfO @>>> \shfO_l @>>>0, \\
-    0 @>>> \shfO(-3) @>z_0>> \shfO(-2) @>>> \shfO_l(-2) @>>>0.
+  0 \to \shfO(-1) \xrightarrow{z_0} \shfO \to \shfO_l \to 0, \\
+  0 \to \shfO(-3) \xrightarrow{z_0} \shfO(-2) \to \shfO_l(-2) \to 0.
 \end{gather*}
 
 Then we have the following \cite{Vect}:
@@ -892,7 +904,7 @@ Hence the moduli space can be identified with
 \end{equation*}
 The map $\mu = (\mu_\R, \mu_\C)$ is a hyper-K\"ahler moment map in the
 sense of \cite{HKLR},
-where the vector space $\bM$ has a structure of a $\Bbb H$-module by
+where the vector space $\bM$ has a structure of a $\mathbb H$-module by
 \begin{equation*}
   J (B_1, B_2, i, j) \defeq
   (-B_2^\dagger, B_1^\dagger, -j^\dagger, i^\dagger).
@@ -1244,7 +1256,7 @@ ALE spaces~I},
  J. Differential Geom. {\bf 40} (1994), 105--127.
 
 \bibitem[Na3]{Na-resol} \bysame,
- {\it Resolutions of moduli spaces of ideal instantons on $\Bbb R^4$},
+ {\it Resolutions of moduli spaces of ideal instantons on $\mathbb R^4$},
 in ``Topology, Geometry and Field Theory'', World Scienetific, 1994,
 129--136.
 

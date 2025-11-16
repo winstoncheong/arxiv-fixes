@@ -26,3 +26,9 @@ Original file uses TeX and harvmac.
 Wrote a script to aid conversion from TeX to LaTeX.
 
 More info on conversion [here](./hep-th_9408074v2/readme.md)
+
+# alg-geom/9507012v2 - Heisenberg Algebra and Hilbert Schemes on Projective Surfaces - Hiraku Nakajima
+
+[PDF](./alg-geom_9507012v2/alg-geom_9507012v2.pdf)
+
+Original file was in AMS-LaTeX.
