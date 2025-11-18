@@ -1,6 +1,14 @@
 # arxiv-fixes index
 
 
+# math/9912158v1 - Quiver varieties and finite dimensional representations of quantum affine algebra - Hiraku Nakajima
+
+[PDF](./math_9912158v1/math_9912158v1.pdf)
+
+**Abstract:** We study finite dimensional representations of the quantum affine algebra, using geometry of quiver varieties introduced by the author. As an application, we obtain character formulas expressed in terms of intersection cohomologies of quiver varieties.
+
+Changes: Added `hyperref` so that the pdf has bookmarks. Color links also.
+
 # 1110.0466v3 - Wall-crossing, Rogers dilogarithm, and the QK/HK correspondence - Sergei Alexandrov, Daniel Persson, Boris Pioline
 
 [PDF](./1110.0466v3/dilognotes.pdf)
