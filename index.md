@@ -1,5 +1,16 @@
 # arxiv-fixes index
 
+# math/0701269v2 - The number of smooth 4-manifolds with a fixed complexity - Dave Auckly
+
+[PDF](./math_0701269v2/6-1-07cmplx4.pdf)
+
+**Abstract:** One can define the complexity of a smooth 4-manifold as the minimal sum of the number of disks, strands and crossings in a Kirby diagram. Martelli proved that the number of homeomorphism classes of complexity less than n grows as $n^2$. In this paper we prove that the number of diffeomorphism classes grows at least as fast as $n^{c\sqrt[3]{n}}$. Along the way we construct complete kirby diagrams for a large family of knot surgery manifolds.
+
+Changes: 
+* Fix missing bibliography (previous version has a `.bbl` file). One entry 'fm' was missing. I supplied what I think is the correct reference.
+* add `hyperref` with colorlinks, pagebackref.
+* Make some equations more readable (better indentation, `\left\{ ... \middle| ... \right}`), 
+* fix spacing, prevent some bad line-breaks (`\nobreakdash-`, `~`)
 
 # math/9912158v1 - Quiver varieties and finite dimensional representations of quantum affine algebra - Hiraku Nakajima
 

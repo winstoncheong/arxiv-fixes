@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{ak}
+Selman Akbulut.
+\newblock A fake cusp and a fishtail.
+\newblock In {\em Proceedings of 6th G\"okova Geometry-Topology Conference},
+  volume~23, pages 19--31, 1999.
+
+\bibitem{au}
+David Auckly.
+\newblock Families of four-dimensional manifolds that become mutually
+  diffeomorphic after one stabilization.
+\newblock In {\em Proceedings of the Pacific Institute for the Mathematical
+  Sciences Workshop ``Invariants of Three-Manifolds'' (Calgary, AB, 1999)},
+  volume 127, pages 277--298, 2003.
+
+\bibitem{BK}
+Scott Baldridge and Paul Kirk.
+\newblock Symplectic 4-manifolds with arbitrary fundamental group near the Bogomolov-Miyaoka-Yau line
+\newblock {\em http://www.arxiv.org/abs/math.GT/0507564}.
+
+\bibitem{don}
+S.~K. Donaldson.
+\newblock An application of gauge theory to four-dimensional topology.
+\newblock {\em J. Differential Geom.}, 18(2):279--315, 1983.
+
+\bibitem{don2}
+Simon~K. Donaldson.
+\newblock La topologie diff\'erentielle des surfaces complexes.
+\newblock {\em C. R. Acad. Sci. Paris S\'er. I Math.}, 301(6):317--320, 1985.
+
+\bibitem{DT}
+Nathan~M. Dunfield and William~P. Thurston.
+\newblock The virtual {H}aken conjecture: experiments and examples.
+\newblock {\em Geom. Topol.}, 7:399--441 (electronic), 2003.
+
+\bibitem{fm}
+\textcolor{red}{WC: Some reference abbreviated ``fm''. Best guess: \\ 
+Michael H. Freedman.
+\newblock The topology of four-dimensional manifolds,
+\newblock {\em J. of Differential Geom.} {\bf 17} (1982), 357--453.
+}
+
+
+\bibitem{FS}
+Ronald Fintushel and Ronald~J. Stern.
+\newblock Knots, links, and {$4$}-manifolds.
+\newblock {\em Invent. Math.}, 134(2):363--400, 1998.
+
+\bibitem{GS}
+Robert~E. Gompf and Andr{\'a}s~I. Stipsicz.
+\newblock {\em {$4$}-manifolds and {K}irby calculus}, volume~20 of {\em
+  Graduate Studies in Mathematics}.
+\newblock American Mathematical Society, Providence, RI, 1999.
+
+\bibitem{le}
+J.~Levine.
+\newblock A characterization of knot polynomials.
+\newblock {\em Topology}, 4:135--141, 1965.
+
+\bibitem{mar}
+Bruno Martelli.
+\newblock Links, two-handles, and four-manifolds.
+\newblock {\em Int. Math. Res. Not.}, (58):3595--3623, 2005.
+
+\bibitem{mat}
+Sergei Matveev.
+\newblock {\em Algorithmic topology and classification of 3-manifolds},
+  volume~9 of {\em Algorithms and Computation in Mathematics}.
+\newblock Springer-Verlag, Berlin, 2003.
+
+\bibitem{ok}
+C.~Okonek and A.~Van~de Ven.
+\newblock Stable bundles and differentiable structures on certain elliptic
+  surfaces.
+\newblock {\em Invent. Math.}, 86(2):357--370, 1986.
+
+\bibitem{ro}
+Dale Rolfsen.
+\newblock {\em Knots and links}, volume~7 of {\em Mathematics Lecture Series}.
+\newblock Publish or Perish Inc., Houston, TX, 1990.
+\newblock Corrected reprint of the 1976 original.
+
+\end{thebibliography}
