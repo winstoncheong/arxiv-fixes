@@ -1,5 +1,15 @@
 # arxiv-fixes index
 
+# 0910.4460v2 - Lectures on canonical and crystal bases of Hall algebras - Olivier Schiffmann
+
+[PDF](./0910.4460v2/0910.4460v2.pdf)
+
+**Abstract:** These are the notes for a series of lectures given on the theory of canonical and crystal bases for Hall algebras (for a summer school in Grenoble in 2008). It may be viewed as a follow-up to arXiv:math/0611617. It covers the construction, due to Lusztig, of the canonical bases for the Hall algebra of a quiver Q in terms of a certain category of perverse sheaves over the moduli space of representations of Q. It also contains an exposition of Kashiwara and Saito's geometric construction of the crystal graph in terms of irreducible components of Lusztig's lagrangian in the cotangent bundle to the above moduli spaces. The last section deals with the Hall algebras of curves. It contains a few new results and conjectures. Apart from these, the text is purely expositional. 
+
+Changes:
+* Changed fake sections into real ones.
+* Hyperlinks, bookmarks, pagebackref
+
 # math/0611617v2 - Lectures on Hall Algebras - Olivier Schiffmann
 
 [PDF](./math_0611617v2/math_0611617v2.pdf)
