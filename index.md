@@ -1,5 +1,16 @@
 # arxiv-fixes index
 
+# math/0611617v2 - Lectures on Hall Algebras - Olivier Schiffmann
+
+[PDF](./math_0611617v2/math_0611617v2.pdf)
+
+**Abstract:** These are notes for a minicourse on Hall algebras given at the ICTP in Trieste in January 2006. After giving the definition and first properties of Hall algebras, we study in some details the classical Hall algebra, the Hall algebra of quivers, and the Hall algebra of coherent sheaves on smooth projective curves. The last section deals with the Hall algebras in the context of derived categories. (The figures only seem to come out nicely in the .ps file)
+
+Changes:
+* Changed fake sections into real ones.
+* Hyperlinks, bookmarks, pagebackref
+
+
 # math/0701269v2 - The number of smooth 4-manifolds with a fixed complexity - Dave Auckly
 
 [PDF](./math_0701269v2/6-1-07cmplx4.pdf)
