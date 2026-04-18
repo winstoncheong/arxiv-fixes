@@ -19,6 +19,9 @@ Changes:
 Changes:
 * Changed fake sections into real ones.
 * Hyperlinks, bookmarks, pagebackref
+* Fix spelling, typos, picture env overlap with header
+* Fix poor spacing before table on page 73
+* Fix obscured equation label 4.18
 
 
 # math/0701269v2 - The number of smooth 4-manifolds with a fixed complexity - Dave Auckly

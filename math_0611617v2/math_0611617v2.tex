@@ -1,7 +1,9 @@
 \documentclass[a4paper,10pt]{amsart}
 \usepackage{amsmath,amsfonts,amssymb, amsthm}
+\usepackage{mathtools}
 \usepackage{epsfig,psfrag}
 \usepackage[all]{xy}
+\usepackage{float}
 \usepackage[colorlinks,allcolors=blue,pagebackref]{hyperref}
 
 \def\dim{\mathrm{dim}}
@@ -108,7 +110,7 @@ Thus, whether one likes to think about it in more algebraic or more geometric te
 
 \vspace{.1in}
 
-As the reader can well imagine, the above formalism was invented only after some motivating examples were discovered. In fact, the above construction appears in various (dis)guises in domains such as modular or $p$-adic representation theory (in the form of the functors of parabolic induction/restriction), number theory and automorphic forms (Eisenstein series for function fields), and in the theory of symmetric functions. The first occurrence of the concept of a Hall algebra can probably be traced back to the early days of the twentieth century in the work of E. Steinitz (a few years before P. Hall was born) which, in modern language, deals with the case of the category $\mathcal{A}$ of abelian $p$-groups for $p$ a fixed prime number. This last example, the so-called \textit{classical} Hall algebra is of particular interest due to its close relation to several fundamental objects in mathematics such as symmetric functions (see \cite{Mac}), flag varieties and nilpotent cones. After studying in some details Steintiz's classical Hall algebra we briefly state some of the other occurences of (examples of) Hall algebras in Lecture~2.
+As the reader can well imagine, the above formalism was invented only after some motivating examples were discovered. In fact, the above construction appears in various (dis)guises in domains such as modular or $p$-adic representation theory (in the form of the functors of parabolic induction/restriction), number theory and automorphic forms (Eisenstein series for function fields), and in the theory of symmetric functions. The first occurrence of the concept of a Hall algebra can probably be traced back to the early days of the twentieth century in the work of E. Steinitz (a few years before P. Hall was born) which, in modern language, deals with the case of the category $\mathcal{A}$ of abelian $p$-groups for $p$ a fixed prime number. This last example, the so-called \textit{classical} Hall algebra is of particular interest due to its close relation to several fundamental objects in mathematics such as symmetric functions (see \cite{Mac}), flag varieties and nilpotent cones. After studying in some details Steintiz's classical Hall algebra we briefly state some of the other occurrences of (examples of) Hall algebras in Lecture~2.
 
 \vspace{.1in}
 
@@ -154,7 +156,7 @@ The first four Lectures follow each other in a logical order, but a reader aller
 
 \vspace{.2in}
 
-The aim of this first Lecture is to introduce in as much generality as possible the notion of the Hall algebra of a finitray abelian category, and to describe in details all the extra structures (coproduct, antipode,...) which have been discovered over the time and which one can put on such an algebra. A final paragraph briefly discusses some functoriality properties of this construction. Examples of Hall algebras abound in Lectures~2,~3 and~4, and the reader is invited to have a look at them as he proceeds through this first Lecture.
+The aim of this first Lecture is to introduce in as much generality as possible the notion of the Hall algebra of a finitary abelian category, and to describe in details all the extra structures (coproduct, antipode,...) which have been discovered over the time and which one can put on such an algebra. A final paragraph briefly discusses some functoriality properties of this construction. Examples of Hall algebras abound in Lectures~2,~3 and~4, and the reader is invited to have a look at them as he proceeds through this first Lecture.
 
 \vspace{.15in}
 
@@ -442,7 +444,7 @@ As we have seen, any finitary category $\A$ gives rise to a $\C$-vector space $\
 
 \vspace{.1in}
 
-First of all, it is necessary to slightly twist the mutiplication in $\H_{\A} \otimes \H_{\A}$~: if $x, y, z, w$ are homogeneous elements in $\H_{\A}$ of respective weight $wt(x), wt(y), wt(z),$ $wt(w) \in K(\A)$, we define a new multiplication by
+First of all, it is necessary to slightly twist the multiplication in $\H_{\A} \otimes \H_{\A}$~: if $x, y, z, w$ are homogeneous elements in $\H_{\A}$ of respective weight $wt(x), wt(y), wt(z),$ $wt(w) \in K(\A)$, we define a new multiplication by
 $$(x \otimes y) \cdot (z \otimes w)=( wt(y), wt(z))_m (xz \otimes yw)$$
 (i.e. we introduce an extra factor $(wt(y), wt(z))_m$ of the symmetric Euler form when
 $y$ ``jumps over'' $z$).
@@ -549,7 +551,7 @@ We will show that (\ref{E:Greenproof4}) and (\ref{E:Greenproof5}) are equal by u
 $$L_1={Ker}\; b'a \simeq {Ker}\; ba', \qquad L_2={Im}\;ba', $$
 $$ K_1={Im}\;b'a, \qquad K_2={Coker}\; ba' \simeq {Coker}\;b'a.$$
 The maps $u,v,u',v',x,y,x',y'$ are all tautological, and it is an easy exercise to check that the resulting square $S=\Phi(C)$, obtained by deleting the central object $J$, does indeed belong to
-${D}_{(K_1,K_2,L_1,L_2)}$. For instance, when $\mathcal{A}$ is the category of modules over some ring, we have $L_1 \simeq L\cap N, \;L_2 \simeq L/(L\cap N), \;K_1\simeq N/(L \cap N)$ and $K_2 \simeq J/(L \oplus N)$. The map $\Phi$ defined above descends to the desired map $\widetilde{\Phi}$ between equivalence classe of crosses and squares.
+${D}_{(K_1,K_2,L_1,L_2)}$. For instance, when $\mathcal{A}$ is the category of modules over some ring, we have $L_1 \simeq L\cap N, \;L_2 \simeq L/(L\cap N), \;K_1\simeq N/(L \cap N)$ and $K_2 \simeq J/(L \oplus N)$. The map $\Phi$ defined above descends to the desired map $\widetilde{\Phi}$ between equivalence classes of crosses and squares.
 
 Combining (\ref{E:Greenproof4}) and (\ref{E:Greenproof5}), we see that the proof of Green's theorem boils down to the following fact~:
 
@@ -861,7 +863,7 @@ Let us start with $f^*$. By definition, if $g$ and $h$ belong to $\H_{\mathcal{B
 $$f^* (g \cdot h) (R)=g \cdot h (F(R))=\sum_{S \subset F(R)} \langle F(R)/S, S \rangle_m g(F(R)/S) h(S)$$
 while
 $$f^*g \cdot f^* h (R)= \sum_{T \subset R} \langle R/T, T \rangle_m g(F(R/T)) h(F(T)).$$
-A sufficient condition for these two quantitites to be equal, and hence for $f^*$ to be a morphism of algebras, is that~: $F$ preserves Euler forms (i.e. $\langle M, N \rangle_m = \langle F(M), F(N) \rangle_m$ for any $M,N \in \mathcal{X}_{\A}$) and that for any $R \in \mathcal{X}_{\A}$, the functor $F$ sets up a bijection between the subobjects of $R$ and $F(R)$.
+A sufficient condition for these two quantities to be equal, and hence for $f^*$ to be a morphism of algebras, is that~: $F$ preserves Euler forms (i.e. $\langle M, N \rangle_m = \langle F(M), F(N) \rangle_m$ for any $M,N \in \mathcal{X}_{\A}$) and that for any $R \in \mathcal{X}_{\A}$, the functor $F$ sets up a bijection between the subobjects of $R$ and $F(R)$.
 
 Suppose now that $\A$ and $\mathcal{B}$ are hereditary and let us consider the compatibility of $f^*$ with the coproduct. We have for any function $g \in \H_{\mathcal{B}}$ and objects $M,N \in \mathcal{X}_{\A}$ (see Proposition~\ref{P:coprophage}),
 $$\Delta (f^* g) (M,N)=\frac{1}{| {Ext}^1(M,N)|}  \sum_{\xi \in {Ext}^1(M,N)} g(F(R_{\xi}))$$
@@ -881,7 +883,7 @@ All in all, we see that the conditions to impose on a functor $F$ for it to indu
 
 \vspace{.2in}
 
-Though we have not explained the definition of the Hall algebra of an exact category, let us give a last (essentialy obvious) functoriality property of Hall algebras.
+Though we have not explained the definition of the Hall algebra of an exact category, let us give a last (essentially obvious) functoriality property of Hall algebras.
 
 \begin{cor}\label{C:catexacthall} Let $\mathcal{B}$ be a finitary category and let $\mathcal{A} \subset \mathcal{B}$ be an exact full subcategory stable under extensions. Let $f: \mathcal{A} \to \mathcal{B}$ be the embedding. Then $f_*: \H_{\A} \to \H_{\mathcal{B}}$ is an embedding of algebras.
 \end{cor}
@@ -918,7 +920,7 @@ Incidentally, we will take the above principle as an excuse for not answering th
 
 \vspace{.2in}
 
-The aim of the present lecture is to provide the first and perhaps most fundamental example of a Hall algebra --the so-called \textit{classical} Hall algebra, introduced by Steinitz at the turn of the twentieth century. This will allow the reader to see all the notions appearing in Lecture~1 in action. We will finish by briefly describing other occurences of Hall algebras in various mathematical contexts.
+The aim of the present lecture is to provide the first and perhaps most fundamental example of a Hall algebra --the so-called \textit{classical} Hall algebra, introduced by Steinitz at the turn of the twentieth century. This will allow the reader to see all the notions appearing in Lecture~1 in action. We will finish by briefly describing other occurrences of Hall algebras in various mathematical contexts.
 
 \vspace{.2in}
 
@@ -967,7 +969,7 @@ $$x=\begin{pmatrix} 0 & 1 & 0 & \cdots & 0\\ 0 & 0 & 1 & \cdots & 0\\ 0 & 0 & 0 
 
 \vspace{.15in}
 
-From i) it follows that $K(Rep^{nil}_k\vec{Q}_0) \simeq \Z$ and from ii) we deduce that the Euler form $\langle\;,\;\rangle_a$ vanishes. In addition, from iii) and the Krull-Schmidt theorem we see that any object $(V,x)$ in $Rep^{nil}_k\vec{Q}_0$ is isomorphic to a direct sum $I_1^{\oplus l_1} \oplus \cdots \oplus I_r^{\oplus l_r}$ for certain integers $r, l_1, \ldots, l_r$. Thus $\mathcal{X}_{Rep^{nil}_k\vec{Q}_0}$ is canonically isomorphic to the set $\Pi$ of all partitions, via the assignement
+From i) it follows that $K(Rep^{nil}_k\vec{Q}_0) \simeq \Z$ and from ii) we deduce that the Euler form $\langle\;,\;\rangle_a$ vanishes. In addition, from iii) and the Krull-Schmidt theorem we see that any object $(V,x)$ in $Rep^{nil}_k\vec{Q}_0$ is isomorphic to a direct sum $I_1^{\oplus l_1} \oplus \cdots \oplus I_r^{\oplus l_r}$ for certain integers $r, l_1, \ldots, l_r$. Thus $\mathcal{X}_{Rep^{nil}_k\vec{Q}_0}$ is canonically isomorphic to the set $\Pi$ of all partitions, via the assignment
 $${\lambda}=(\lambda_1, \lambda_2, \ldots, \lambda_r) \mapsto I_{\lambda}=I_{\lambda_1} \oplus \cdots \oplus I_{\lambda_r}.$$
 
 \vspace{.2in}
@@ -996,7 +998,7 @@ $\bullet$ $P^{(2,1)}_{(1),(2)}$ counts the number of submodules of $R \subset M 
 \addtocounter{theo}{1}
 \paragraph{\textbf{Example \thetheo.}} The above very simple examples already afford some interesting generalisations~:\\
 $\bullet$ $P^{(1^t)}_{(1^{t-r}),(1^r)}$ counts the number of $r$-dimensional submodules $R$ of the trivial module $M=S^{\oplus t}$ which are trivial and such that $M/R$ is trivial. We may pick any $r$-dimensional submodule, hence
-$P^{(1^t)}_{(1^{t-r}),(1^r)}$ is equal to the number of points over $\mathbb{F}_q$ of the Grassmanian $Gr(r,t)$ of $r$-planes in $t$-space. This number is equal to a $q$-binomial coefficient
+$P^{(1^t)}_{(1^{t-r}),(1^r)}$ is equal to the number of points over $\mathbb{F}_q$ of the Grassmannian $Gr(r,t)$ of $r$-planes in $t$-space. This number is equal to a $q$-binomial coefficient
 $$|Gr(r,t)|=\begin{bmatrix} t\\ r \end{bmatrix}_+=\frac{[t]_+ \cdot [t-1]_+ \cdots [t-r+1]_+}{[2]_+ \cdots [r-1]_+[r]_+} $$
 where for any integer $n$ we set $[n]_+=1+q+ \cdots + q^{n-1}$. It is known that this $q$-binomial coefficient in fact belongs to $\N[q]$.\\
 $\bullet$ $P^{(t)}_{(t-r),(r)}$ counts the number of indecomposable submodules $R$ of dimension $r$ of $I_t$  for which $I_t/R$ is again indecomposable. There is a unique $r$-dimensional submodule of $I_t$ and it satisfies the required conditions. Hence $P^{(t)}_{(t-r),(r)}=1$.
@@ -1039,9 +1041,9 @@ t=&(r_{n-2}-r_{n-1})(l_n-r_{n-1}) + (r_{n-3}-r_{n-2})(l_{n-1}+l_n-r_{n-2}) + \cd
 &+ (r_0-r_1)(l_2+ \cdots +l_n-r_1)
 \end{split}
 \end{equation}
-To see why this is true, let us pick arbitrary subspaces $S_{n-1}, \ldots, S_1, S_0$ in the above product of Grassmanians and look at the fiber of $\pi$ at that point. For $R$ to belong to it, we need to have in particular $R \cap K_{n-1}=S_{n-1}$ and $(R \cap K_{n-2})/(R \cap K_{n-1})=S_{n-2} \in K_{n-2}/K_{n-1}$. Fixing a basis of $S_{n-1}$ and $S_{n-2}$ we see that $R \cap K_{n-2}$ is determined up to a choice of a linear map from $S_{n-2}$ to $K_{n-1}/(R \cap K_{n-1})$. But then once $(R \cap K_{n-2})$ and $S_{n-3}$ are fixed, $(R \cap K_{n-3})$ is determined up to a linear map from $S_{n-3}$ to $K_{n-2} / (R \cap K_{n-2})$, and so on. Continuing in this manner, we arrived at the desired result.
+To see why this is true, let us pick arbitrary subspaces $S_{n-1}, \ldots, S_1, S_0$ in the above product of Grassmannians and look at the fiber of $\pi$ at that point. For $R$ to belong to it, we need to have in particular $R \cap K_{n-1}=S_{n-1}$ and $(R \cap K_{n-2})/(R \cap K_{n-1})=S_{n-2} \in K_{n-2}/K_{n-1}$. Fixing a basis of $S_{n-1}$ and $S_{n-2}$ we see that $R \cap K_{n-2}$ is determined up to a choice of a linear map from $S_{n-2}$ to $K_{n-1}/(R \cap K_{n-1})$. But then once $(R \cap K_{n-2})$ and $S_{n-3}$ are fixed, $(R \cap K_{n-3})$ is determined up to a linear map from $S_{n-3}$ to $K_{n-2} / (R \cap K_{n-2})$, and so on. Continuing in this manner, we arrived at the desired result.
 
-Finally, since the number of points over $\mathbb{F}_q$ of the Grassmaninan $Gr(r,t)$ is $\begin{bmatrix} t \\ r \end{bmatrix}_+$, we obtain \textit{in fine}
+Finally, since the number of points over $\mathbb{F}_q$ of the Grassmannian $Gr(r,t)$ is $\begin{bmatrix} t \\ r \end{bmatrix}_+$, we obtain \textit{in fine}
 $$P^{\nu}_{\mu, (1^r)}=\begin{bmatrix} l_n \\ r_{n-1} \end{bmatrix}_+ \cdot \begin{bmatrix} l_{n-1} \\ r_{n-2}-r_{n-1} \end{bmatrix}_+ \cdots \begin{bmatrix} l_1 \\ r_0-r_1 \end{bmatrix}_+ q^t$$
 where $\nu=(1^{l_1}, \ldots, n^{l_n})$, the integers $r_i$ are determined by (\ref{E:hallpolform}) and $t$ is given by (\ref{E:rankpi}).
 \endexample
@@ -1089,7 +1091,7 @@ $$S([I_{(2)}])=-[I_{(2)}] + \frac{(q-1)^2}{(q^2-q)} [I_{(1)}]^2=-q^{-1} [I_{(2)}
 
 \vspace{.15in}
 
-Despite these seemingly complicated formulas, the (abstract) structure of $\H_{cl}$ is startingly simple~:
+Despite these seemingly complicated formulas, the (abstract) structure of $\H_{cl}$ is startlingly simple~:
 
 \begin{theo}[Steinitz, Hall, Macdonald]\label{T:Steinitz} The following hold~:
 \begin{enumerate}
@@ -1255,7 +1257,7 @@ where $p_r=\sum_i x_i^r$ stands for the power sum symmetric function. Therefore 
 
 \vspace{.2in}
 
-\subsection{Other occurences of Hall algebras.}
+\subsection{Other occurrences of Hall algebras.}
 % \centerline{\textbf{2.5. Other occurences of Hall algebras.}}
 % \addcontentsline{toc}{subsection}{\tocsubsection {}{}{\; 2.5. Other occurences of Hall algebras.}}
 
@@ -1541,8 +1543,9 @@ and
 
 \vspace{.5in}
 
-\centerline{
-\begin{picture}(200, 10)
+\begin{figure}[H]
+  \centering
+\begin{picture}(200, 50)
 \put(10,0){$I_{12^234}=$}
 \put(60,-15){\circle*{2}}
 \put(100,-15){\circle*{2}}
@@ -1555,7 +1558,9 @@ and
 \put(100,20){\vector(0,-1){20}}
 \put(70,-8){\vector(1,0){20}}
 \put(130,-8){\vector(-1,0){20}}
-\end{picture}}
+\end{picture}
+\end{figure}
+
 
 \vspace{.35in}
 
@@ -1748,7 +1753,7 @@ landing in at least three different lines in $k^2$. Each such line corresponds t
 \noindent
 \textit{Case b).} Two among $\lambda_1,\lambda_3,\lambda_4$ are equal; then, up to the action of $Aut(\mathbb{P}^1(k))$ we may reduce $(\lambda_0,\lambda_1,\lambda_3,\lambda_4)$ to exactly one of~:
 $$(0,1,1,\infty), \qquad (0,1,\infty,\infty), \qquad (0,1,\infty,1).$$
-Hence, geometrically, the set of indecomposables ressembles a projective line with three points being ``doubled''~:
+Hence, geometrically, the set of indecomposables resembles a projective line with three points being ``doubled''~:
 
 \vspace{.15in}
 
@@ -1893,7 +1898,7 @@ S(K_i)=K_i^{-1}, \qquad S(E_i)=-K_i^{-1}E_i.
 
 \vspace{.1in}
 
-\begin{theo}[Ringel, Green]\label{T:RingelHall} The assignement $E_i \mapsto [S_i],\; K_i \mapsto \mathbf{k}_{S_i}$ for $i \in I$ extends to an embedding of Hopf algebras
+\begin{theo}[Ringel, Green]\label{T:RingelHall} The assignment $E_i \mapsto [S_i],\; K_i \mapsto \mathbf{k}_{S_i}$ for $i \in I$ extends to an embedding of Hopf algebras
 $$\Psi: \U_{\nu}(\bo'_+) \to \widetilde{\mathbf{H}}_{\vec{Q}}.$$
 The map $\Psi$ is an isomorphism if and only if $\vec{Q}$ is of finite type, (i.e. if and only if $\g$ is a simple Lie algebra).
 \end{theo}
@@ -1975,8 +1980,8 @@ $$dim\;\U_{\v}(\n_+)[\beta]=|\{ (n_\a) \in \N^{\Delta^+}\;|\; \sum n_{\a} \a=\be
 On the other hand, by construction
 \begin{equation*}
 \begin{split}
-dim\;\H_{\vec{Q}}[\beta]=&|\{M \in \mathcal{X}_{\vec{Q}}\;|\; \underline{dim}\;M=\beta\}|\\
-=&|\{(m_\a) \in \N^{Indec\;\vec{Q}}\;|\; \sum m_I \underline{dim}\;I=\beta\}|
+dim\;\H_{\vec{Q}}[\beta]&=|\{M \in \mathcal{X}_{\vec{Q}}\;|\; \underline{dim}\;M=\beta\}|\\
+&=|\{(m_\a) \in \N^{Indec\;\vec{Q}}\;|\; \sum m_I \underline{dim}\;I=\beta\}|
 \end{split}
 \end{equation*}
 where $Indec\;\vec{Q}$ stands for the set of all indecomposable representations of $\vec{Q}$. These two expressions for graded dimensions are equal if and only if there is
@@ -2269,7 +2274,7 @@ By the classification of nilpotent endomorphisms of $k$-vector spaces (see Theor
 
 \vspace{.15in}
 
-Using the above Proposition, we see that the set of objects of $Rep^{nil}_k\vec{Q}$ is in canonical bijection with the set $\Pi^n$ of $n$-tuples of partitions $(\underline{\lambda}_1, \ldots, \underline{\lambda}_n)$, via the assignement
+Using the above Proposition, we see that the set of objects of $Rep^{nil}_k\vec{Q}$ is in canonical bijection with the set $\Pi^n$ of $n$-tuples of partitions $(\underline{\lambda}_1, \ldots, \underline{\lambda}_n)$, via the assignment
 $$(\underline{\lambda}_1, \ldots, \underline{\lambda}_n) \mapsto \bigoplus_{i \in I} \bigoplus_{j} I_{[i;\lambda_i^j]}.$$
 This set is indeed independent of $k$. The indivisible imaginary root is $\delta=\a_0+ \a_1 \cdots +\a_{n-1}$.
 
@@ -2330,7 +2335,7 @@ $$\{x,yz\}=\{\Delta'(x) ,y\otimes z\},$$
 
 \vspace{.15in}
 
-To finish, let us indicate a second decomposition of $\H_{\vec{Q}}$, as a noncommutative product this time. Let $\mathcal{C}$ be the full subcategory of $Rep_k\vec{Q}$ consisting of those representatiions $(V,\underline{x})$ for which $x_i: V_i \to V_{i-1}$ is an isomorphism for all $i \neq 1$. In other words, objects of $\mathcal{C}$ are all direct sums ofindecomposables of the form $I_{[0;nl]}$ for some $l \geq 1$. It is clear that $\mathcal{C}$ is an abelian subcategory closed under extensions, and which is equivalent to $Rep_k\vec{Q}_0$ where $\vec{Q}_0$ is the Jordan quiver. Thus by Corollary~\ref{C:cathall} there is an embedding of algebras
+To finish, let us indicate a second decomposition of $\H_{\vec{Q}}$, as a noncommutative product this time. Let $\mathcal{C}$ be the full subcategory of $Rep_k\vec{Q}$ consisting of those representations $(V,\underline{x})$ for which $x_i: V_i \to V_{i-1}$ is an isomorphism for all $i \neq 1$. In other words, objects of $\mathcal{C}$ are all direct sums of indecomposables of the form $I_{[0;nl]}$ for some $l \geq 1$. It is clear that $\mathcal{C}$ is an abelian subcategory closed under extensions, and which is equivalent to $Rep_k\vec{Q}_0$ where $\vec{Q}_0$ is the Jordan quiver. Thus by Corollary~\ref{C:cathall} there is an embedding of algebras
 \begin{align*}
 \Theta_n: \H=\H_{\vec{Q}_0} &\to \H_{\vec{Q}}\\
 [I_{\underline{\lambda}}] &\mapsto [\bigoplus_j I_{[0;n\lambda_j]}]
@@ -2770,7 +2775,7 @@ The hard part is now to determine $\mathbf{C}_{\mathbb{P}}, \mathbf{C}_{\mathbb{
 To complete the description of $\mathbf{C}_{\mathbb{R}}$, we need to introduce a few more notations.
 Recall from Theorem~\ref{T:Ringelstructure} that $\mathbb{R}$ decomposes as a direct sum of categories $\mathcal{C}_x \simeq Rep_{k_x}\vec{Q}_0$ and $\mathcal{C}_{\mathcal{O}_i} \simeq Rep_k A_{p_i-1}^{(1)}$, where $x$ ranges over all closed points of $\mathbb{P}^1\backslash D$, $\vec{Q}_0$ is the Jordan quiver, and $i=1, \ldots, d$. As a consequence,
 $$\H_{\mathbb{R}}\simeq \bigotimes_{x \in \mathbb{P}^1 \backslash D} \H_{\mathcal{C}_x} \otimes \bigotimes_i \H_{\mathcal{C}_{\mathcal{O}_i}}.$$
-For $x \in \mathbb{P}^1 \backslash D$ let $\Phi_x^{-1}: \LLambda \stackrel{\sim}{\to} \H_{\mathcal{C}_x}$ be the isomorphism constructed in Section~2.4. (with ground field equal to $k_x$), and for $i=1, \ldots, d$ let $\Phi_i^{-1}$ be the composition $\LLambda \stackrel{\sim}{\to}\H \stackrel{\sim}{\to} \mathbb{K}$ where $\mathbf{K} \subset \H_{\mathcal{C}_{\mathcal{O}_i}}$ is defined in Section~3.5 (strictly speaking, the definition of $\mathbf{K}$ presupposes the choice of a distinguished simple object in $\mathcal{C}_{\mathcal{O}_i}$, corresponding to the vertex labelled $1$; the results here do not depend on such a choice).
+For $x \in \mathbb{P}^1 \backslash D$ let $\Phi_x^{-1}: \LLambda \stackrel{\sim}{\to} \H_{\mathcal{C}_x}$ be the isomorphism constructed in Section~2.4. (with ground field equal to $k_x$), and for $i=1, \ldots, d$ let $\Phi_i^{-1}$ be the composition $\LLambda \stackrel{\sim}{\to}\H \stackrel{\sim}{\to} \mathbb{K}$ where $\mathbf{K} \subset \H_{\mathcal{C}_{\mathcal{O}_i}}$ is defined in Section~3.5 (strictly speaking, the definition of $\mathbf{K}$ presupposes the choice of a distinguished simple object in $\mathcal{C}_{\mathcal{O}_i}$, corresponding to the vertex labeled $1$; the results here do not depend on such a choice).
 
 Now, for $r \geq 1$, put
 $$T_{r,x}=\begin{cases} \frac{[r]}{r}deg(x) \phi_x^{-1}(p_{\frac{r}{deg(x)}})& \text{if}\; deg(x) | r,\\
@@ -3097,7 +3102,7 @@ For clarity, only the subcategories $Tor_x$ with $deg(x)=1$ have been drawn.
 
 \vspace{.15in}
 
-The ressemblance between Corollary~\ref{C:KacP1} and Kac's Theorem~\ref{T:Kac} will certainly not have escaped the reader's sagacity. At this point it seems natural to expect that the Hall algebra $\H_{\mathbb{P}^1}$ is closely related to the quantum group $\U_v(\widehat{\mathfrak{sl}}_2)$. This is the content of Kapranov's Theorem, which we will soon state. Before this, let us work as usual through some sample computations of Hall numbers. Set $k=\mathbb{F}_q$ and put $\nu=q^{\frac{1}{2}}$. The Hall algebra of $Coh(\mathbb{P}^1)$ over $k$ will simply be denoted $\H_{\mathbb{P}^1}$.
+The resemblance between Corollary~\ref{C:KacP1} and Kac's Theorem~\ref{T:Kac} will certainly not have escaped the reader's sagacity. At this point it seems natural to expect that the Hall algebra $\H_{\mathbb{P}^1}$ is closely related to the quantum group $\U_v(\widehat{\mathfrak{sl}}_2)$. This is the content of Kapranov's Theorem, which we will soon state. Before this, let us work as usual through some sample computations of Hall numbers. Set $k=\mathbb{F}_q$ and put $\nu=q^{\frac{1}{2}}$. The Hall algebra of $Coh(\mathbb{P}^1)$ over $k$ will simply be denoted $\H_{\mathbb{P}^1}$.
 
 \vspace{.15in}
 
@@ -3206,7 +3211,7 @@ algebra $\widetilde{\H}_{\mathbb{P}^1}$ by adding a square root $\mathbf{k}_{\de
 
 \vspace{.1in}
 
-\begin{theo}[Kapranov, \cite{Kap1}]\label{T:Kap} The assignement $E_l \mapsto [\O(l)]$ for $l \in \Z$, $H_r \mapsto T_r\mathbf{k}_{\delta}^{-|r|/2}$ for $r \geq 1$, $K \mapsto \mathbf{k}_{\O}$ and $C^{1/2} \mapsto \mathbf{k}_{\delta}^{1/2}$ extends to an embedding of algebras $$\Psi:\U_{\nu}(\mathcal{L}\bo_+) \to \widetilde{\H}'_{\mathbb{P}^1}.$$
+\begin{theo}[Kapranov, \cite{Kap1}]\label{T:Kap} The assignment $E_l \mapsto [\O(l)]$ for $l \in \Z$, $H_r \mapsto T_r\mathbf{k}_{\delta}^{-|r|/2}$ for $r \geq 1$, $K \mapsto \mathbf{k}_{\O}$ and $C^{1/2} \mapsto \mathbf{k}_{\delta}^{1/2}$ extends to an embedding of algebras $$\Psi:\U_{\nu}(\mathcal{L}\bo_+) \to \widetilde{\H}'_{\mathbb{P}^1}.$$
 \end{theo}
 \noindent
 \textit{Proof.} Relation~(\ref{E:Eee1}) is obvious since $\delta$ is an isotropic root (i.e. $(\delta,\a)_a=0$ for any weight $\a$). Relation~{(\ref{E:Eee2}) comes from the fact that $H_n$ is of weight $n\delta$, that the classical Hall algebra is commutative and that of course the Hall algebras $\H_{Tor_x}$ and $\H_{Tor_y}$ associated to distinct points $x$ and $y$ commute. Relation~(\ref{E:Eee3}) follows from the definitions. Thus (\ref{E:Eee4}) and (\ref{E:Eee5}) are the only relations for which one has to work. We begin with the following Lemma~:
@@ -3226,7 +3231,7 @@ where $h_r$ is the complete symmetric function.\qed
 
 \vspace{.1in}
 
-With a little algebraic manipulation, we may rewite the formula (\ref{E:product1rdo}) as
+With a little algebraic manipulation, we may rewrite the formula (\ref{E:product1rdo}) as
 \begin{equation}\label{E:arg1}
 \mathbf{1}(s)\mathbf{O}(t)=\mathbf{O}(t)\mathbf{1}(s)\frac{1}{(1-\frac{s}{t\nu})(1-\frac{s\nu}{t})}
 \end{equation}
@@ -3245,10 +3250,10 @@ $$\Psi:\U_{\nu}(\mathcal{L}\bo_+) \to \widetilde{\H}'_{\mathbb{P}^1}.$$
 To show that this map is injective, we will use a graded dimension argument.
 Let $\U_{\nu}(\mathfrak{c})$ be the subalgebra of $\U_{\nu}(\mathcal{L}\bo_+)$ generated by $E_l, l \geq 0$ and $H_n, n \geq 1$. Thus $\U_{\nu}(\mathfrak{c})$ is a deformation of the enveloping algebra $\U(\mathfrak{c})$ of the subalgebra $\mathfrak{c}:=(\mathfrak{n} \otimes \C[t]) \oplus (\h \otimes t \C[t]) \subset \mathcal{L}\bo_+$. Note that $\U(\mathfrak{c})$ has finite-dimensional weight spaces. By the PBW Theorem, we have
 \begin{equation}\label{E:dimu}
-\begin{split}
-{dim}&\;\U(\mathfrak{c})[k\a+l\delta]\\
-&=\#\left\{(n_0, n_1, \ldots ), (m_1, m_2, \ldots)\;|\; n_i, m_i \in \N, \; \sum n_i=k,\; \sum (i n_i +im_i)=l\right\}.
-\end{split}
+\begin{multlined}
+{dim}\U(\mathfrak{c})[k\a+l\delta]\\
+=\#\left\{(n_0, n_1, \ldots ), (m_1, m_2, \ldots)\;|\; n_i, m_i \in \N, \; \sum n_i=k,\; \sum (i n_i +im_i)=l\right\}.
+\end{multlined}
 \end{equation}
 The same holds for $\U_{\nu}(\mathfrak{c})$. By construction, $\Psi(\U_{\nu}(\mathfrak{c}))$ contains the elements $[\O(l)]$ for $l \geq 0$ and the elements $\mathbf{1}_{\n\delta}$ for $n \geq 1$. Hence it also contains all the (finite) products
 $$[\O(0)]^{n_0} \cdot [\O(1)]^{n_1} \cdots \cdot \mathbf{1}_{\delta}^{m_1} \cdot \mathbf{1}_{2\delta}^{m_2} \cdots.$$
@@ -3319,16 +3324,17 @@ $\Delta(\chi_{n})=\sum_{k=0}^n\chi_k \otimes \chi_{n-k}$. This implies that
 \end{equation*}
 Hence, setting $\theta_l=\sum_{k=0}^l \nu^{l-2k} \mathbf{1}_{(0,l-k)}\chi_k$ we obtain
 $$\Delta([\O]) =[\O] \otimes 1 + \sum_{l \geq 0} \theta_l\mathbf{k}_{\O(-l)} \otimes [\O(-l)].$$
-The above definition of $\theta_l$ is not very plesant or useful.
+The above definition of $\theta_l$ is not very pleasant or useful.
 We claim that these can also be characterized through
 the relation $\sum_l \theta_l s^l=
 exp((\nu-\nu^{-1})\sum_{r \geq 1} T_{(0,r)}s^r)$. To see this, note that by Lemma~\ref{L:relation4} it holds
 $1+\sum_{l \geq 1} \mathbf{1}_{l\delta}s^l =exp(\sum_{r \geq 1} \frac{T_{(0,r)}}{[r]} s^r)$, hence
 $1+\sum_{l \geq 1} \chi_ls^l=exp(-\sum_{r \geq 1} \frac{T_{(0,r)}}{[r]} s^r)$. But then
-\begin{equation*}\begin{split}
-\sum_{l \geq 0}  \theta_l s^l=&\mathbf{1}(\nu s)\chi(\nu^{-1}s) = exp(\sum_{r \geq 1}
+\begin{equation*}
+  \begin{split}
+\sum_{l \geq 0}  \theta_l s^l&=\mathbf{1}(\nu s)\chi(\nu^{-1}s) = exp(\sum_{r \geq 1}
 \nu^{r} \frac{T_{(0,r)}}{[r]} s^r -\sum_{r \geq 1} \nu^{-r} \frac{T_{(0,r)}}{[r]} s^r)\\
-= & exp((\nu-\nu^{-1})\sum_{r \geq 1} T_{(0,r)}s^r)
+&= exp((\nu-\nu^{-1})\sum_{r \geq 1} T_{(0,r)}s^r)
 \end{split}
 \end{equation*}
 as desired. Of course, as a corollary, we obtain that $\theta_l=\nu^{l}u_l$ is given by the formula (\ref{E:formulathetal}).
@@ -3383,7 +3389,7 @@ where $\lambda_1, \ldots, \lambda_N$ are distinct points of $\mathbb{P}^1$, norm
 
 Following Serre's Theorem~\ref{T:Serre} we now \textit{define} the category of coherent sheaves on $\xpl$ to be
 $$Coh(\xpl)=S(\p,\llambda)\mathrm{-}Modgr/S(\p,\llambda)\mathrm{-}Fin,$$
-where $S(\p,\llambda)\mathrm{-}Fin$ is the Serre subcategory of $S(\p,\llambda)\mathrm{-}Modgr$ consisiting of finite-dimensional graded $S(\p,\llambda)$-modules. In plain terms, this means that, just as for $Coh(\mathbb{P}^1)$, to any finitely-generated graded $S(\p,\llambda)$-module $M=\bigoplus_{\vec{x} \in L(\p)} M_{\vec{x}}$ is associated a sheaf $M\;\widetilde{}$, and two such modules $M,N$ correspond to the same sheaf if $M_{\geq n}:=\bigoplus_{\vec{x} \geq n\vec{c}} M_{\vec{x}} \simeq N_{\geq n}:=\bigoplus_{\vec{x} \geq n\vec{c}} N_{\vec{x}}$. Moreover, the spaces of homomorphisms are computed as follows~:
+where $S(\p,\llambda)\mathrm{-}Fin$ is the Serre subcategory of $S(\p,\llambda)\mathrm{-}Modgr$ consisting of finite-dimensional graded $S(\p,\llambda)$-modules. In plain terms, this means that, just as for $Coh(\mathbb{P}^1)$, to any finitely-generated graded $S(\p,\llambda)$-module $M=\bigoplus_{\vec{x} \in L(\p)} M_{\vec{x}}$ is associated a sheaf $M\;\widetilde{}$, and two such modules $M,N$ correspond to the same sheaf if $M_{\geq n}:=\bigoplus_{\vec{x} \geq n\vec{c}} M_{\vec{x}} \simeq N_{\geq n}:=\bigoplus_{\vec{x} \geq n\vec{c}} N_{\vec{x}}$. Moreover, the spaces of homomorphisms are computed as follows~:
 \begin{equation}\label{E:defhomquotient2}
 {Hom}_{Coh(\mathbb{P}^1)}(M\;\widetilde{}, N\;\widetilde{})=\underset{\longrightarrow} {{Lim}}\;{Hom}_{\mathbf{S}}(M_{\geq n},N).
 \end{equation}
@@ -3641,7 +3647,7 @@ Under this functor, the line bundle $\O(n)$ is mapped to the line bundle $\O(n\v
 \vspace{.15in}
 
 \addtocounter{theo}{1}
-\paragraph{\textbf{Remark \thetheo.}} As mentionned at the beginning of this Section, there are other ways of defining the weighted projective lines~:\\
+\paragraph{\textbf{Remark \thetheo.}} As mentioned at the beginning of this Section, there are other ways of defining the weighted projective lines~:\\
 i) \textit{Parabolic coherent sheaves on} $\mathbb{P}^1$. Let $X$ be any curve, let $\lambda$ be a point of $X$ of degree one, and let $p$ be a positive integer. A $(p,\lambda)$-parabolic coherent sheaf on $X$ is a sequence of coherent sheaves $(\mathcal{F}_l)_{l \in \Z}$ on $X$ equipped with maps $\phi: \mathcal{F}_i \to \mathcal{F}_{i+1}$ and isomorphisms $\epsilon_i: \mathcal{F}_{i+l} \simeq \mathcal{F}_i \otimes \O(\lambda)$ such that the composition $\epsilon_i \circ \phi_{i+p-1} \circ \cdots \circ \phi_i : \mathcal{F}_i \to \mathcal{F}_i \otimes \O(\lambda)$ coincides with the canonical embedding. Starting from $\mathbb{P}^1$, we may iterate this procedure for each of the points $\lambda_1, \ldots, \lambda_n$ and the integers $p_1, \ldots, p_N$. The resulting category of parabolic coherent sheaves in equivalent to $Coh(\xpl)$ (see \cite{Lenzing1}).\\
 ii) \textit{Equivariant coherent sheaves.} Let $X$ be a smooth projective curve and let $G \subset {Aut}(X)$ be a (finite) group of automorphisms such that $X/G \simeq \mathbb{P}^1$. When $char({k})$ and the order of $G$ are relatively prime, the category $Coh_G(X)$ of $G$-equivariant coherent sheaves on $X$ is equivalent to the category $Coh(\xpl)$ where $\llambda=\{\lambda_1, \ldots, \lambda_N\}$ are the ramification points of the quotient map $X \twoheadrightarrow \mathbb{P}^1$ and $\p=\{p_1, \ldots, p_N\}$ are the corresponding ramification indices. Then $\xpl$ is parabolic, elliptic or hyperbolic according to whether $X$ is of genus zero, one, or higher. In fact, even though $Coh(\xpl)$ has some important features of $Coh(\mathbb{P}^1)$ (like a Picard group $L(\p)$ of rank one), it behaves much more like $Coh(X)$ than like $Coh(\mathbb{P}^1)$.
 
@@ -3835,7 +3841,7 @@ To get a grasp of the structure of $\H_{\xpl}$ it remains to understand how the 
 
 \vspace{.1in}
 
-\begin{theo}[S. ,\cite{SDuke}]\label{T:SDuke} The assignement
+\begin{theo}[S., \cite{SDuke}]\label{T:SDuke} The assignment
 $E_{\star,n}  \mapsto [\O(n\vec{c})]$ for $n \in \Z$,
 $H_{\star,r} \mapsto T_r\mathbf{k}_{\delta}^{-|r|/2}$ for $r \geq 1$,
 $E_{(i,l)} \mapsto [S_{i;l}]$ for $i=1, \ldots, N; 1 \leq l \leq p_i-1$,
@@ -3875,20 +3881,20 @@ where if $\vec{x}=l\vec{c} + \sum_i l_i \vec{x}_i$ with $0 \leq l_i <p_i$ then
 \times &[\bigoplus_j\O_{x_j}^{(n_j)} \oplus \bigoplus_{i=1}^N \O_{\lambda_i}^{(m_i,l_i)}]\bigg\}
 \end{split}
 \end{equation*}
-where $\O_{\lambda_i}^{(m)i,l_i)}$ is the unique indecomposable  torsion sheaf supported at $\lambda_i$ of length $m_ip_i+l_i$ and socle $S_{i;0}$; and where the first sum ranges over all tuples of distinct ordinary points $x_j$ and multplicities $n_j, m_i$ for which $\sum_j n_jdeg(x_j)+\sum_i m_i=l$.
+where $\O_{\lambda_i}^{(m_i,l_i)}$ is the unique indecomposable  torsion sheaf supported at $\lambda_i$ of length $m_ip_i+l_i$ and socle $S_{i;0}$; and where the first sum ranges over all tuples of distinct ordinary points $x_j$ and multiplicities $n_j, m_i$ for which $\sum_j n_jdeg(x_j)+\sum_i m_i=l$.
 \end{lem}
 \noindent
 \textit{Proof.} It is in all points identical to the computation conducted in Example~4.12.\qed
 
-\vspace{.15in}
+%\vspace{.15in}
 
 Since the spherical Hall algebra $\widetilde{\mathbf{C}}_{\xpl}$ is generated by torsion sheaves and the classes of line bundles, the above is enough to completely determine the restriction of $\Delta$ and $\widetilde{\Delta}$ on $\widetilde{\mathbf{C}}_{\xpl}$. We have $\widetilde{\Delta}(\widetilde{\mathbf{C}}_{\xpl})\subset \widetilde{\mathbf{C}}_{\xpl} \widehat{\otimes} \widetilde{\mathbf{C}}_{\xpl}$. Concerning the antipode, we are in the same situation as for $\mathbb{P}^1$~: we cannot define directly the map $S$, but we may define $S^{-1}$.
 
-\vspace{.15in}
+%\vspace{.15in}
 
 The correspondence between the category $Coh(\xpl)$ and the quantum loop algebras may be summarized in the following table~:
 
-\vspace{.15in}
+%\vspace{.15in}
 
 $$
 \begin{tabular}{|c|c|}
@@ -3955,7 +3961,7 @@ $$
 
 \vspace{.15in}
 
-The purpose of this section is to introduce an important technical notion for studying the categories of coherent sheaves on smooth projective curves. Throuhgout this section, $X$ will denote either a smooth projective curve or an (arbitrary) weighted projective line. A good reference here is \cite{Seshadri}.
+The purpose of this section is to introduce an important technical notion for studying the categories of coherent sheaves on smooth projective curves. Throughout this section, $X$ will denote either a smooth projective curve or an (arbitrary) weighted projective line. A good reference here is \cite{Seshadri}.
 
 \vspace{.1in}
 
@@ -3980,7 +3986,7 @@ $$0 \subset \mathcal{F}_1 \subset \cdots \subset \mathcal{F}_l=\mathcal{F}$$
 for which $\mathcal{F}_i/\mathcal{F}_{i-1}$ is semistable and $\mu(\mathcal{F}_1) > \mu(\mathcal{F}_2/\mathcal{F}_1) > \cdots > \mu(\mathcal{F}/\mathcal{F}_{l-1})$.
 \end{lem}
 \noindent
-\textit{Proof.} Since any torsion sheaf is semistable of slope $\infty$, a semistable sheaf of slope $\eta <\infty$ is automatically a vector bundle. Hence if $\mathcal{F}=\mathcal{V} \oplus \mathcal{T}$ is a decomposition of $\mathcal{F}$ as a direct sume of a vector bundle and a torsion sheaf then we put $\mathcal{F}_1=\mathcal{T}$ and we are reduced to proving the Lemma for $\mathcal{V}$. Thus we might as well assume from the beggining that $\mathcal{F}$ is a vector bundle.
+\textit{Proof.} Since any torsion sheaf is semistable of slope $\infty$, a semistable sheaf of slope $\eta <\infty$ is automatically a vector bundle. Hence if $\mathcal{F}=\mathcal{V} \oplus \mathcal{T}$ is a decomposition of $\mathcal{F}$ as a direct sum of a vector bundle and a torsion sheaf then we put $\mathcal{F}_1=\mathcal{T}$ and we are reduced to proving the Lemma for $\mathcal{V}$. Thus we might as well assume from the beginning that $\mathcal{F}$ is a vector bundle.
 
 Arguing by induction on the rank, we see that it is enough to prove the following assertion~:
 
@@ -4030,7 +4036,7 @@ This has the following important corollary
 
 \vspace{.1in}
 
-\begin{cor}\label{C:crucial} Assume that $X$ is either a smooth projectiv curve of genus at most one, or that $X$ is a weighted projective line of parabolic or elliptic type. Then
+\begin{cor}\label{C:crucial} Assume that $X$ is either a smooth projective curve of genus at most one, or that $X$ is a weighted projective line of parabolic or elliptic type. Then
 \begin{enumerate}
 \item[i)] We have $Ext^1(\mathcal{C}_{\eta'},\mathcal{C}_{\eta})=\{0\}$ if $\eta > \eta'$,
 \item[ii)] The Harder-Narasimhan filtration splits,
@@ -4224,7 +4230,7 @@ As for $\CC_{\mathbb{V}}$, things turn to be as nice as one could hope~:
 
 \begin{prop}[S., \cite{SDuke}] We have $\CC_{\mathbb{V}}=\H_{Vec(\xpl)}$.\end{prop}
 \noindent
-\textit{Proof.} The proof ressembles that of the surjectivity of Ringel's map $\Psi: \U_{\nu}(\n_+) \to \H_{\vec{Q}}$ for finite type quivers (see Section~3.4.). First of all, it is easy to see that for $0 \leq l_i <p_i$, we have
+\textit{Proof.} The proof resembles that of the surjectivity of Ringel's map $\Psi: \U_{\nu}(\n_+) \to \H_{\vec{Q}}$ for finite type quivers (see Section~3.4.). First of all, it is easy to see that for $0 \leq l_i <p_i$, we have
 $${Ext}^1(S_{i;l_i+1},\O(n\vec{c}+\sum_i l_i \vec{x}_i))=k$$
 and the unique nonsplit extension is given by the sequence
 \begin{equation*}
@@ -4250,7 +4256,7 @@ Next, we will show that $[\mathcal{V}] \in \CC_{\mathbb{V}}$ for any indecomposa
 $${Ext}^1(\mathcal{V}, \mathcal{V}')={Hom}(\mathcal{V}',\mathcal{V})=\{0\}.$$
 \end{lem}
 \noindent
-\textit{Proof.} By Corrolary~\ref{C:crucial} and the remark following it, it suffices to to choose any total ordering refining the partial ordering according to slope.\qed
+\textit{Proof.} By Corollary~\ref{C:crucial} and the remark following it, it suffices to to choose any total ordering refining the partial ordering according to slope.\qed
 
 \vspace{.1in}
 So let $\mathcal{V}$ be an indecomposable vector bundle, and let us assume that $[\mathcal{V}']$ belongs to $\CC_{\mathbb{V}}$ for any indecomposable $\mathcal{V}'$ of smaller rank. Since $\mathcal{V}$ admits a composition series whose factors are line bundles, say $\mathcal{L}_1, \ldots, \mathcal{L}_r$, we have
@@ -4309,7 +4315,7 @@ The structure of $Coh(\xpl)$ is well-understood thanks to the following Theorem~
 
 As a consequence, for each $\eta \in \Q$ the category $\mathcal{C}_{\eta}$ has a block decomposition
 $$\mathcal{C}_{\eta} \simeq \prod_{x \in \mathbb{P}^1 \backslash \{\lambda_1, \ldots, \lambda_N\}} \hspace{-.3in}\mathcal{C}_{\eta,x} \times \prod_{i=1}^N \mathcal{C}_{\eta,\lambda_i},$$
-where $\mathcal{C}_{\eta,x} \simeq Rep^{nil}_{k_x}\vec{Q}_0$ and $\mathcal{C}_{\eta,\lambda_i} \simeq Rep^{nil}_kA_{p_i-1}^{(1)}$ are respectively equivalent to the categories of nilpotent representations of the Jordan quiver ot the cyclic quiver of length $p_i$. As a corollary of the splitting of the Harder-Narasimhan filtration (see Corrolary~\ref{C:crucial}) there is an isomorphism of vector spaces
+where $\mathcal{C}_{\eta,x} \simeq Rep^{nil}_{k_x}\vec{Q}_0$ and $\mathcal{C}_{\eta,\lambda_i} \simeq Rep^{nil}_kA_{p_i-1}^{(1)}$ are respectively equivalent to the categories of nilpotent representations of the Jordan quiver ot the cyclic quiver of length $p_i$. As a corollary of the splitting of the Harder-Narasimhan filtration (see Corollary~\ref{C:crucial}) there is an isomorphism of vector spaces
 $$\mathop{\vec{\bigotimes}}_{{\eta \in \Q \cup \{\infty\}}} \hspace{-.12in}\H_{\mathcal{C}_{\eta}} \stackrel{\sim}{\to} \H_{\xpl}$$
 which is simply given by the multiplication map. Of course, the equivalence $\epsilon_{\eta',\eta}$ induces an isomorphism of algebras $\phi_{\eta',\eta}~:\H_{\mathcal{C}_{\eta}} \stackrel{\sim}{\to} \H_{\mathcal{C}_{\eta'}}$.
 
@@ -4469,7 +4475,7 @@ We now return to the question of determining the Hall algebras of smooth project
 
 \vspace{.15in}
 
-Let as usual $k=\mathbb{F}_q$ be a finite field and set $\nu=q^{\frac{1}{2}}$. In defining the extended Hall algebra we run into a new phenomenon: the Grohendieck group $K(Coh(X))$ is infinite-dimensional. This is not a serious issue~: by the Riemann-Roch theorem, the Euler form is
+Let as usual $k=\mathbb{F}_q$ be a finite field and set $\nu=q^{\frac{1}{2}}$. In defining the extended Hall algebra we run into a new phenomenon: the Grothendieck group $K(Coh(X))$ is infinite-dimensional. This is not a serious issue~: by the Riemann-Roch theorem, the Euler form is
 $$\langle \mathcal{F},\mathcal{G}\rangle_a=rank(\mathcal{F}) deg(\mathcal{G})-rank(\mathcal{G})deg(\mathcal{F})$$
 and it makes sense to only keep track of the rank and the degree of a sheaf.
 Thus we consider a ``partially extended Hall algebra'' $\widetilde{\H}_X:=\H_X \otimes
@@ -4512,7 +4518,7 @@ It will be convenient to set $T_{(p,q)}=T_{\eta,r}$ where $\eta=q/p$ and $r=g.c.
 
 \vspace{.1in}
 
-\begin{theo}[Burban-S.]\label{T:BS}  The assignement $T_{(p,q)} \mapsto {t}_{p,q}$ for $(p,q) \in (\Z^2)^+$ induces an isomorphism between $\CC_X$ and the algebra $\U^+_X$ generated by the elements $\{{t}_{(p,q)}\;|\; (p,q) \in (\Z^2)^+\}$ subject to the following set of relations
+\begin{theo}[Burban-S.]\label{T:BS}  The assignment $T_{(p,q)} \mapsto {t}_{p,q}$ for $(p,q) \in (\Z^2)^+$ induces an isomorphism between $\CC_X$ and the algebra $\U^+_X$ generated by the elements $\{{t}_{(p,q)}\;|\; (p,q) \in (\Z^2)^+\}$ subject to the following set of relations
 \begin{enumerate}
 \item[i)] If $\x,\x'$ belong to the same line in $(\Z^2)^+$ then
 $[{t}_\x,{t}_{\x'}]=0$,
@@ -4960,7 +4966,7 @@ $E(t)$) seems to be an important open problem.
 \paragraph{\textbf{Remarks \thetheo.}} i) As we mentioned earlier, the values of the scalar products
 (\ref{E:scalargenus}) are all expressed as rational functions of the Weil numbers $\a_1, \ldots, \a_g$.
 From the universal construction given in Theorem~\ref{T:Kappo2} we see that $\CC_X$ and $\widetilde{\CC}_X$ depend rationally on these $\g$ parameters as well, in addition to the parameter $q$. Hence, whatever the algebra ${\U}_X={\U}_X'/I'$ is, it should depend on $g+1$ deformation parameters. Indeed, we have seen that when $X$ is $\mathbb{P}^1$, or when $X$ is a weighted projective line then there is a single deformation parameter whereas when $X$ is an elliptic curve there are two such deformation parameters.\\
-ii)It is also possible to define the quantum enveloping algebras $\U_v(\bo_+)$ of Kac-Moody algebras as quotients of some (essentially) free algebra equipped with a particular coproduct and a Hopf pairing, by the radical of that Hopf pairing (this is the approach taken by Lusztig \cite{Lu1}). It would be interesting to single out and study in a unified manner a class of quantum algebras obtained in this fashion, encompassing all examples appearing in these lectures.\\
+ii) It is also possible to define the quantum enveloping algebras $\U_v(\bo_+)$ of Kac-Moody algebras as quotients of some (essentially) free algebra equipped with a particular coproduct and a Hopf pairing, by the radical of that Hopf pairing (this is the approach taken by Lusztig \cite{Lu1}). It would be interesting to single out and study in a unified manner a class of quantum algebras obtained in this fashion, encompassing all examples appearing in these lectures.\\
 iii) There is a dual construction of the spherical Hall algebra $\CC_X$ as a \textit{subalgebra} of a certain `shuffle' algebra, whose structure constants again depend rationally on the Weil numbers $\a_1, \ldots, \a_g$. We refer the interested reader to \cite{SV3} for this.\\
 iv) The definition of the spherical Hall algebra given here is inspired by the interpretation of the (whole) Hall algebra of a curve $X$ as an algebra of automorphic forms for the general linear groups $GL(n, \mathbb{A}_X)$ over the adele ring of $X$. We refer the reader to \cite[Lecture~5]{SLectures2} for more.
 
@@ -4989,7 +4995,7 @@ This line of thought naturally leads one to the more general problem of associat
 
 \vspace{.1in}
 
-After giving some motivating examples, we recall in this Lecture the definition of the Drinfeld double of a Hopf algebra and state various conjectures relating the Drinfeld double $\mathbf{D}\H_{\mathcal{A}}$ of a hereditary category $\mathcal{A}$ and the 2-periodic category $D^b(\mathcal{A})/T^2$. We then (succintly) give the definition of Xiao and Peng's  Hall Lie algebra of $D^b(\mathcal{A})/T^2$ and describe (even more succintly) the constructions of Kapranov and To\"en. A vey last Section contains a few open problems and directions for further investigations. The article \cite{Keller} can serve as a good reference for all the notions of homological algebra which will be used here.
+After giving some motivating examples, we recall in this Lecture the definition of the Drinfeld double of a Hopf algebra and state various conjectures relating the Drinfeld double $\mathbf{D}\H_{\mathcal{A}}$ of a hereditary category $\mathcal{A}$ and the 2-periodic category $D^b(\mathcal{A})/T^2$. We then (succinctly) give the definition of Xiao and Peng's  Hall Lie algebra of $D^b(\mathcal{A})/T^2$ and describe (even more succintly) the constructions of Kapranov and To\"en. A vey last Section contains a few open problems and directions for further investigations. The article \cite{Keller} can serve as a good reference for all the notions of homological algebra which will be used here.
 
 \vspace{.2in}
 
@@ -4999,7 +5005,7 @@ After giving some motivating examples, we recall in this Lecture the definition 
 
 \vspace{.15in}
 
- Although the categories of representations of quivers (discussed in Lecture~3) and the categories of coherent sheaves on smooth projective curves (which form the content of Lecture~4) are of very different origin there are, as the reader has beyond doubt already noticed, some strinking similarities.
+ Although the categories of representations of quivers (discussed in Lecture~3) and the categories of coherent sheaves on smooth projective curves (which form the content of Lecture~4) are of very different origin there are, as the reader has beyond doubt already noticed, some striking similarities.
 
  The simplest example is that of the categories of representations of the Kronecker quiver $\vec{Q}$ (Examples~3.11 and 3.34.) and of coherent sheaves on the projective line $\mathbb{P}^1$ (see Section~4.2.)~: the picture (\ref{E:picturekronecker}) of the category $Rep_k\vec{Q}$ may be obtained from the picture (\ref{E:picturecohp1}) of $Coh(\mathbb{P}^1)$ by slicing in the middle and moving the rightmost piece to the left. This is in fact a consequence of the existence of an equivalence of \textit{derived categories} $F~:D^b(Coh(\mathbb{P}^1)) \stackrel{\sim}{\to}D^b(Rep_k\vec{Q})$. The equivalence $F$ sends the subcategory $Tor(\mathbb{P}^1)$ of torsion sheaves to the subcategory $\mathbb{R}$ of regular modules, sends the line bundles $\O,\O(1), \O(2),\ldots$ to the preprojective indecomposables $P(1),P(0),\tau^-P(1),\ldots$ and sends the line bundles $\O(-1),\O(-2),\O(-3), \ldots$ to the preinjective indecomposables $I(0),I(1), \tau I(0),\ldots$. Equivalently, we may view $Rep_k\vec{Q}$ and $Coh(\mathbb{P}^1)$ as the hearts of two distinct t-structures on the same triangulated category. This is best understood by drawing a picture ~:
 
@@ -5348,7 +5354,7 @@ $T=\bigoplus_{0 \leq \vec{x} \leq \vec{c}} \O(\vec{x})$ instead. Pictorially, th
 
 \vspace{.4in}
 
-This explains the occurence of affine Lie algebras $\widehat{\g}$ in both contexts, and matches the picture of regular indecomposables for tame quivers and the picture for torsion sheaves in weighted projective lines. It also provides a conceptual explanation for the existence of a total order on the set of indecomposables of a quiver of finite type satisfying the conditions stated in Lemma~\ref{L:orderfinite} (it suffices to choose any order refining the order given by the slope function).
+This explains the occurrence of affine Lie algebras $\widehat{\g}$ in both contexts, and matches the picture of regular indecomposables for tame quivers and the picture for torsion sheaves in weighted projective lines. It also provides a conceptual explanation for the existence of a total order on the set of indecomposables of a quiver of finite type satisfying the conditions stated in Lemma~\ref{L:orderfinite} (it suffices to choose any order refining the order given by the slope function).
 Other examples are given in Section~5.4.
 
 \vspace{.2in}
@@ -5415,7 +5421,7 @@ $\U_v(\bo'_+)$ to the whole quantum group $\U_v(\g)$. It is important to note th
 
 \vspace{.1in}
 
-Extended Hall algebra $\widetilde{\H}_{\A}$ of some hereditary finitary category $\A$ form another wide class of Hopf algebras which we may force through Corollary~\ref{C:Dridri}. Given the similarility between quantum groups and Hall algebras, we define, following Xiao \cite{Xiao1} the \textit{reduced} Drinfeld double $\widetilde{\mathbf{D}}{\H}_{\A}$ to be the quotient of $\mathbf{D}\widetilde{\H}_{\A}$ by the ideal generated by the elements $(\mathbf{k}_{\mathcal{F}} \otimes \mathbf{k}_{\mathcal{F}}^{-1}-1) \in \widetilde{\H}_\A \otimes \widetilde{\H}_{\A}$ for all $\mathcal{F} \in \A$. It is easy to check that $\widetilde{\mathbf{D}}\H_{\A}$ admits a triangular decomposition
+Extended Hall algebra $\widetilde{\H}_{\A}$ of some hereditary finitary category $\A$ form another wide class of Hopf algebras which we may force through Corollary~\ref{C:Dridri}. Given the similarity between quantum groups and Hall algebras, we define, following Xiao \cite{Xiao1} the \textit{reduced} Drinfeld double $\widetilde{\mathbf{D}}{\H}_{\A}$ to be the quotient of $\mathbf{D}\widetilde{\H}_{\A}$ by the ideal generated by the elements $(\mathbf{k}_{\mathcal{F}} \otimes \mathbf{k}_{\mathcal{F}}^{-1}-1) \in \widetilde{\H}_\A \otimes \widetilde{\H}_{\A}$ for all $\mathcal{F} \in \A$. It is easy to check that $\widetilde{\mathbf{D}}\H_{\A}$ admits a triangular decomposition
 $$\widetilde{\mathbf{D}}\H_{\A}=\H_{\A} \otimes \mathbf{K}  \otimes \H_{\A}$$
 where $\mathbf{K}=\C[K(\A)]$.
 
@@ -5444,7 +5450,7 @@ $$[L]^+=[L] \otimes 1 \in \widetilde{\mathbf{D}}\H_{\A}, \qquad [L]^-=1 \otimes 
 
 \vspace{.1in}
 
-\begin{conj}\label{Conj:2} Let $F: D^b(\mathcal{C}_1) \to D^b(\mathcal{C}_2)$ be an exact, fully faithful and friendly functor. For any object $M$ of $\mathcal{C}_1$, define $n \in \Z$ and objects $N, N'$ of $\mathcal{C}_2$ such that $F(M) \simeq N[-n] \oplus N'[-1-n]$. Then, setting $\epsilon(n)=-(1)^n$, the assignement
+\begin{conj}\label{Conj:2} Let $F: D^b(\mathcal{C}_1) \to D^b(\mathcal{C}_2)$ be an exact, fully faithful and friendly functor. For any object $M$ of $\mathcal{C}_1$, define $n \in \Z$ and objects $N, N'$ of $\mathcal{C}_2$ such that $F(M) \simeq N[-n] \oplus N'[-1-n]$. Then, setting $\epsilon(n)=-(1)^n$, the assignment
 \begin{equation}\label{E:juki1}
 \mathbf{k}_{\mathcal{F}} \mapsto \mathbf{k}_{N}^{\epsilon(n)}\mathbf{k}_{N'}^{-\epsilon(n)},
 \end{equation}
@@ -5504,7 +5510,7 @@ Observe that in $Rep_k\vec{Q}$ we have $Ext^1(S_i,I)=\{0\}$ for any indecomposab
 \vspace{.3in}
 
 \centerline{
-\begin{picture}(300,40)
+\begin{picture}(300,50)
 \put(0,32){\line(0,1){5}}
 \put(0,37){\line(1,0){90}}
 \put(90,37){\line(0,-1){5}}
@@ -5844,7 +5850,7 @@ $Coh(X)$, as depicted below~:
 \vspace{.65in}
 
 The derived category $D^b(Coh(X))$ and its $2$-periodic version posses many interesting autoequivalences, as was discovered by Mukai \cite{Mukai}. Let $\mathcal{E}$ be a \emph{spherical sheaf} in  $Coh(X)$, i.e.~an object satisfying ${Hom}(\mathcal{E}, \mathcal{E}) = {Ext}^1(\mathcal{E}, \mathcal{E}) = k$, for example the structure sheaf the curve $\O$ or
-the structure sheaf of a closed point $\O_{x_0}$ of degre one. Consider the functor
+the structure sheaf of a closed point $\O_{x_0}$ of degree one. Consider the functor
 $$
 T_\mathcal{E}~: D^b(Coh(X)) \lto D^b(Coh(X))
 $$
@@ -5929,7 +5935,7 @@ $\Z/2\Z \times \Z/4\Z$ if $\p=(2,4,4)$ and to $\Z/2\Z \times \Z/3\Z$ if $\p=(2,3
 $$
 \xymatrix{
 1 \ar[r] & L^0(\p) \triangleleft {Aut}(\xpl)  \ar[r]
-& {Aut}(D^b(Coh(\xpl))
+& {Aut}(D^b(Coh(\xpl)))
 \ar[r]  & B_3 \ar[r] &  1. }
 $$
 \end{prop}
@@ -5937,7 +5943,7 @@ $$
 \vspace{.1in}
 
 \begin{prop}[Burban-S., \cite{BS2}] Formulas (\ref{E:juki1}) and (\ref{E:juki2}) define an action of
-$Aut(D^b(Coh(\xpl))$ on the reduced Drinfeld double $\widetilde{\mathbf{D}}\H_{\xpl}$ of the Hall algebra of $\xpl$. This action preserves the Drinfeld double $\widetilde{\mathbf{D}}\CC_{\xpl}$ of the spherical subalgebra of $\H_{\xpl}$.
+$Aut(D^b(Coh(\xpl)))$ on the reduced Drinfeld double $\widetilde{\mathbf{D}}\H_{\xpl}$ of the Hall algebra of $\xpl$. This action preserves the Drinfeld double $\widetilde{\mathbf{D}}\CC_{\xpl}$ of the spherical subalgebra of $\H_{\xpl}$.
 \end{prop}
 
 \vspace{.15in}
@@ -5945,7 +5951,7 @@ $Aut(D^b(Coh(\xpl))$ on the reduced Drinfeld double $\widetilde{\mathbf{D}}\H_{\
 \addtocounter{theo}{1}
 \paragraph{\textbf{Remarks \thetheo.}} i) As far as smooth projective curves are concerned, the above example of the elliptic curve in fact exhausts all possible applications of the conjectures in Section~5.3. Indeed, by a theorem of Bondal and Orlov \cite{BO}, the group of autoequivalences of $D^b(Coh(X))$ for $X$ of genus $g >1$ is essentially trivial~: it is generated by the group $Pic^0(X)$ of line bundles of degree zero, by the group of automorphisms of the curve $X$ itself, and by the suspension functor $T$. All of these clearly act on $\widetilde{\mathbf{D}}\H_{X}$, and preserve $\widetilde{\mathbf{D}}\CC_X$. Completely similar results hold for hyperbolic weighted projective lines (see \cite{LM2}).\\
 ii) The case of the derived equivalence between $Coh(\mathbb{P}^1)$ and $Rep\vec{Q}$ for $\vec{Q}$ the Kronecker quiver is dealt with in many details in \cite{BS3}.\\
-iii) There is one important point which we would like to stress. Although the Drinfeld double of a Hopf algebra is again a Hopf algebra, the Drinfeld doubles of the Hall algebras of two derived equivalent hereditary categories are in general \textit{not} isomorphic as Hopf algebras (i.e. the coproduct is not invariant under derived equivalence). For instance, $D^b(Coh(\mathbb{P}^1)) \simeq D^b(Rep_k\vec{Q})$ where $\vec{Q}$ is the Kronecker quiver and $\widetilde{\mathbf{D}}\CC_{\mathbb{P}^1} \simeq \widetilde{\mathbf{D}}\CC_{\vec{Q}}\;\; (\simeq \U_\nu(\widehat{\mathfrak{sl}}_2))$ as algebras but not as colagebras~: Drinfeld's coproduct is not equal to the standard coproduct (see Appendix~A.6.).
+iii) There is one important point which we would like to stress. Although the Drinfeld double of a Hopf algebra is again a Hopf algebra, the Drinfeld doubles of the Hall algebras of two derived equivalent hereditary categories are in general \textit{not} isomorphic as Hopf algebras (i.e. the coproduct is not invariant under derived equivalence). For instance, $D^b(Coh(\mathbb{P}^1)) \simeq D^b(Rep_k\vec{Q})$ where $\vec{Q}$ is the Kronecker quiver and $\widetilde{\mathbf{D}}\CC_{\mathbb{P}^1} \simeq \widetilde{\mathbf{D}}\CC_{\vec{Q}}\;\; (\simeq \U_\nu(\widehat{\mathfrak{sl}}_2))$ as algebras but not as coalgebras~: Drinfeld's coproduct is not equal to the standard coproduct (see Appendix~A.6.).
 
 Another way of saying this is that a given quantum group (say, coming from a Hall algebra) may have several \textit{distinct} coproduct structures, all compatible with the \textit{same} multiplication --one for each polarization
 $\U_{\nu} \simeq \U_{\nu}^+ \otimes \U_{\nu}^0 \otimes \U_{\nu}^-$.
@@ -5975,7 +5981,7 @@ with basis indexed by elements of $\mathcal{I}_{\A}$, and put $\mathbf{g}=\mathb
 
 For any three elements $X,Y,L$ of $\mathcal{I}_{\A}$, let $W(X,Y;L)$ stand for the (finite) set of all distinguished triangles
 $$(f,g,h)~: \xymatrix{ X \ar[r]^{f} & L \ar[r]^{g} & Y \ar[r]^h & TX},$$
-and let $F_{X,Y}^L$ be the cardinality of the set of orbits in $W(X,Y;L)$ under the natural action of $Aut(X) \times Aut(Y)$. Of course, the definition of $F_{X,Y}^L$ strongly ressembles that of Hall numbers of abelian categories. Unfortunately, contrary to what one might hope at first, the numbers $F_{X,Y}^L$ are \textit{not} the structure constants for an associative algebra. Nevertheless, the differences $\gamma_{X,Y}^L=F_{X,Y}^L-F_{Y,X}^L$ are, ``at $q=1$'', the structure constants for a \textit{Lie} algebra as the following first main theorem of \cite{PX} states~:
+and let $F_{X,Y}^L$ be the cardinality of the set of orbits in $W(X,Y;L)$ under the natural action of $Aut(X) \times Aut(Y)$. Of course, the definition of $F_{X,Y}^L$ strongly resembles that of Hall numbers of abelian categories. Unfortunately, contrary to what one might hope at first, the numbers $F_{X,Y}^L$ are \textit{not} the structure constants for an associative algebra. Nevertheless, the differences $\gamma_{X,Y}^L=F_{X,Y}^L-F_{Y,X}^L$ are, ``at $q=1$'', the structure constants for a \textit{Lie} algebra as the following first main theorem of \cite{PX} states~:
 
 \vspace{.1in}
 
@@ -6033,7 +6039,7 @@ $$[M]^{(i)}[N]^{(i)}=\langle M,N\rangle \sum_{R \in \text{Ob}(\A)} F_{M,N}^R [R]
 $$[M]^{(i)}[N]^{(i+1)}=\sum_{P,Q} \langle M-P,N-Q\rangle F_{M[1],N}^{P[1]\oplus Q} \mathbf{k}_{M-P}^{(-1)^i}[Q]^{(i+1)}[P]^{(i)},$$
 $$[M]^{(i)}[N]^{(j)}=(M,N)^{(-1)^{i-j}(i-j+1)}[N]^{(j)}[M]^{(i)}\qquad \text{if}\; |i-j| \geq 2.$$
 
-From the definitions, it is clear that the assignement $[M]^{(i)} \mapsto [M]^{(i+1)}, \mathbf{k}_{\a} \mapsto \mathbf{k}_{\a}^{-1}$ gives rise to an automorphism $\Sigma~: L(\A) \stackrel{\sim}{\to} L(\A)$.
+From the definitions, it is clear that the assignment $[M]^{(i)} \mapsto [M]^{(i+1)}, \mathbf{k}_{\a} \mapsto \mathbf{k}_{\a}^{-1}$ gives rise to an automorphism $\Sigma~: L(\A) \stackrel{\sim}{\to} L(\A)$.
 
 \vspace{.1in}
 
@@ -6174,7 +6180,7 @@ If one believes the various conjectures made in Section~5.3. then the same could
 \vspace{.2in}
 
 \noindent
-\textit{The $\chi$-Hall algebra.} Lusztig introduced in \cite{Luseuler} a variant of the Hall algebra, in which one replaces the {number} $\mathcal{P}_{M,N}^R$ of subojects of an object $R$ of type $N$ and cotype $M$ by the \textit{Euler characteristic} $\chi(\mathcal{V}_{M,N}^R)$ of the (constructible) space of all such subobjects. Of course, one needs to prove the existence of a well-behaved space $\chi(\mathcal{V}_{M,N}^R)$ parametrizing such subojects (this is easy to do for categories of modules over a finite-dimensional algebra, or for categories of coherent sheaves on a projective curve). When applied to the category $Rep_k\vec{Q}$ for some quiver $\vec{Q}$ one obtains in this way the \textit{classical} (i.e. non quantum) enveloping algebra $\U(\bo'_+)$. The case of the categories $Coh(X)$ for $X$ a weighted projective line hasn't been treated but it is highly likely that one obtains $\U(\mathcal{L}\bo_+)$. Recently, Xiao, Xu and Zhang have given the definition of the $\chi$-Hall Lie algebra of a triangulated category of arbitrary finite global dimension (see \cite{XXZ}). For higher dimensional varieties such as $\A=Coh(\mathbb{P}^2)$ or for singular curves this Lie algebra might be easier to study than Peng and Xiao's Hall Lie algebra (Section~5.4.). The $\chi$-Hall algebra appears in recent work of Joyce \cite{Joyce} and Bridgeland-Toledano-Laredo \cite{BTL}.
+\textit{The $\chi$-Hall algebra.} Lusztig introduced in \cite{Luseuler} a variant of the Hall algebra, in which one replaces the {number} $\mathcal{P}_{M,N}^R$ of subobjects of an object $R$ of type $N$ and cotype $M$ by the \textit{Euler characteristic} $\chi(\mathcal{V}_{M,N}^R)$ of the (constructible) space of all such subobjects. Of course, one needs to prove the existence of a well-behaved space $\chi(\mathcal{V}_{M,N}^R)$ parametrizing such subojects (this is easy to do for categories of modules over a finite-dimensional algebra, or for categories of coherent sheaves on a projective curve). When applied to the category $Rep_k\vec{Q}$ for some quiver $\vec{Q}$ one obtains in this way the \textit{classical} (i.e. non quantum) enveloping algebra $\U(\bo'_+)$. The case of the categories $Coh(X)$ for $X$ a weighted projective line hasn't been treated but it is highly likely that one obtains $\U(\mathcal{L}\bo_+)$. Recently, Xiao, Xu and Zhang have given the definition of the $\chi$-Hall Lie algebra of a triangulated category of arbitrary finite global dimension (see \cite{XXZ}). For higher dimensional varieties such as $\A=Coh(\mathbb{P}^2)$ or for singular curves this Lie algebra might be easier to study than Peng and Xiao's Hall Lie algebra (Section~5.4.). The $\chi$-Hall algebra appears in recent work of Joyce \cite{Joyce} and Bridgeland-Toledano-Laredo \cite{BTL}.
 
 \vspace{.2in}
 
@@ -6186,7 +6192,7 @@ $Ind_{P(n,m)}^{GL(m+n)}(V \otimes W)$, where $P(n,m)$ is the maximal parabolic s
 
 This definition is clearly a ``categorification'' of the notion of a Hall algebra~: the space of functions
 $Obj(\mathcal{A}) \to \N$ is replaced by the space of functors $\A \to Vec_{\mathbb{F}_q}$, addition is replaced by $\oplus$ and multiplication is replaced by $\otimes$.
-Note that for general categories, just as the Hall algebra is not commutative, so are $F \odot G$ and $G \odot F$ not isomorphic. Even when they are, i.e. when there exist  functorial natural transformations $\beta_{F,G}~: F \odot G \stackrel{\sim}{\to} G \odot F$ endowing $\mathcal{H}_\A$ with the structure of a \textit{braided} monoidal category, we may have $\beta_{F,G} \circ \beta_{G,F} \neq Id$. This is for instance the case for $\A=Vec_{\mathbb{F}_q}$. Describing the Hall categories of quivers or curves seems an intersesting and challenging problem which is, up to my knowledge, still untouched.
+Note that for general categories, just as the Hall algebra is not commutative, so are $F \odot G$ and $G \odot F$ not isomorphic. Even when they are, i.e. when there exist  functorial natural transformations $\beta_{F,G}~: F \odot G \stackrel{\sim}{\to} G \odot F$ endowing $\mathcal{H}_\A$ with the structure of a \textit{braided} monoidal category, we may have $\beta_{F,G} \circ \beta_{G,F} \neq Id$. This is for instance the case for $\A=Vec_{\mathbb{F}_q}$. Describing the Hall categories of quivers or curves seems an interesting and challenging problem which is, up to my knowledge, still untouched.
 
 \vspace{.2in}
 
@@ -6471,7 +6477,7 @@ ad^{1-a_{ij}}(f_i)(f_j)=0 &
 
 \vspace{.1in}
 
-These new relations are called the \textit{Serre relations.} The ony question that now remains is~: which are the possible values for the Cartan matrix $A$ ? This
+These new relations are called the \textit{Serre relations.} The only question that now remains is~: which are the possible values for the Cartan matrix $A$ ? This
 is answered by the following Theorem~:
 
 \vspace{.1in}
@@ -6663,7 +6669,7 @@ By irreducible matrix, we mean a matrix which cannot be decomposed as a block di
 
 \vspace{.3in}
 
-The index $r$ in the diagram $X_r$ indicates the number of vertices, (the \textit{rank}  of the corresponding Lie algebra).  The above Dynkin diagrams are sometimes refered to as \textit{finite type Dynkin diagram}. The examples $\mathfrak{sl}_n(\C)$ and $\mathfrak{so}_{2n}(\C)$ are of type $A_{n-1}$ and $D_n$ respectively. The Dynkin diagrams corresponding to symmetric Cartan matrices (i.e. those without any number on top of vertices) are called \textit{simply laced}. They are the types $A_r, D_r, E_6, E_7$ and $E_8$.
+The index $r$ in the diagram $X_r$ indicates the number of vertices, (the \textit{rank}  of the corresponding Lie algebra).  The above Dynkin diagrams are sometimes referred to as \textit{finite type Dynkin diagram}. The examples $\mathfrak{sl}_n(\C)$ and $\mathfrak{so}_{2n}(\C)$ are of type $A_{n-1}$ and $D_n$ respectively. The Dynkin diagrams corresponding to symmetric Cartan matrices (i.e. those without any number on top of vertices) are called \textit{simply laced}. They are the types $A_r, D_r, E_6, E_7$ and $E_8$.
 
 \vspace{.3in}
 
@@ -6740,7 +6746,7 @@ The Weyl group preserves the set $\Delta$ and is, by construction, orthogonal wi
 
 \vspace{.25in}
 
-Although, as we have said, Kac-Moody algebras ressemble their finite-dimensional cousins in more than one way, there are still several important differences which we would like to insist upon. Let $\g$ be a Kac-Moody algebra which is not a finite-dimensional simple Lie algebra (i.e. $A$ is not positive definite). Then~:
+Although, as we have said, Kac-Moody algebras resemble their finite-dimensional cousins in more than one way, there are still several important differences which we would like to insist upon. Let $\g$ be a Kac-Moody algebra which is not a finite-dimensional simple Lie algebra (i.e. $A$ is not positive definite). Then~:
 \begin{enumerate}
 \item[i)]  ${dim}\;\g=\infty$ and $W$ is an infinite group,
 \item[ii)]  Not every root $\a \in \Delta$ is $W$-conjugate to one of the simple roots $\a_1, \ldots , \a_r$,
@@ -7005,7 +7011,7 @@ and the ``nonstandard'' positive roots system $\Phi_+$ lying at the right of the
 \noindent
 which corresponds to a nonstandard Borel subalgebra
 $$\widehat{\bo}=(e_{\a} \otimes \C[t,t^{-1}]) \oplus (\h \otimes t \C[t]) \oplus \widehat{\h}.$$
-It is clear that $\widehat{\bo}$ is not conugate to $\widehat{\bo}_{\pm}$ under the affine Weyl group $\widehat{W}$ since $\widehat{\bo}_{\pm}$ is finitely generated whereas (by weight considerations) $\widehat{\bo}$ is not.
+It is clear that $\widehat{\bo}$ is not conjugate to $\widehat{\bo}_{\pm}$ under the affine Weyl group $\widehat{W}$ since $\widehat{\bo}_{\pm}$ is finitely generated whereas (by weight considerations) $\widehat{\bo}$ is not.
 
 \vspace{.2in}
 
@@ -7054,7 +7060,7 @@ for $x \in \g$.
 
 \vspace{.2in}
 
-Let us now assume that $\g$ is the Kac-Moody algebra associated to a symmetric generalized Cartan matrix $A=(a_{ij})_{i,j=1}^r$, and let $(\h,\h^*,\Pi,\Pi^{\vee}\}$ be a realization of $A$ as in Section~A.2.
+Let us now assume that $\g$ is the Kac-Moody algebra associated to a symmetric generalized Cartan matrix $A=(a_{ij})_{i,j=1}^r$, and let $(\h,\h^*,\Pi,\Pi^{\vee})$ be a realization of $A$ as in Section~A.2.
 By the Gabber-Kac theorem, $\g$ admits a presentation by generators $\{e_i, f_i, h\;|\; i=1, \ldots, r, h \in \h\}$ and relations (\ref{E:SerrerelGK}). Then the \textit{same} generators and relations give a presentation of $\U(\g)$, this time viewed as an associative algebra.
 
 \vspace{.1in}
@@ -7199,7 +7205,7 @@ The second possible generalization is actually the one that will be relevant to 
 
 \vspace{.1in}
 
-\paragraph{\textbf{Proposition~A.19.}}(Garland, \cite{Garland}). \textit{Let $\g$ be a simple Lie algebra. The affine Lie algebra $\widehat{\g}$ is isomorphic to the Lia algebra generated by $\{e_{i,k},f_{i,k},h_{i,k}\}$ for $i \in I$ and $k \in \Z$, and $c$ subject to the following relations~:
+\paragraph{\textbf{Proposition~A.19.}}(Garland, \cite{Garland}). \textit{Let $\g$ be a simple Lie algebra. The affine Lie algebra $\widehat{\g}$ is isomorphic to the Lie algebra generated by $\{e_{i,k},f_{i,k},h_{i,k}\}$ for $i \in I$ and $k \in \Z$, and $c$ subject to the following relations~:
 \begin{equation}\label{E:defaffinelie}
 \begin{split}
 &[h_{i,k}, h_{j,l}]=k \delta_{k,-l}a_{ij}{c},\\
@@ -7217,12 +7223,12 @@ The second possible generalization is actually the one that will be relevant to 
 
 \vspace{.1in}
 
-The isomorphism with $\widehat{\g}$ is induced by the assignement $e_{i,k} \mapsto e_i \otimes t^k, f_{i,k} \mapsto f_i \otimes t^k, h_{i,k} \mapsto h_i\otimes t^k, c \mapsto c$.
+The isomorphism with $\widehat{\g}$ is induced by the assignment $e_{i,k} \mapsto e_i \otimes t^k, f_{i,k} \mapsto f_i \otimes t^k, h_{i,k} \mapsto h_i\otimes t^k, c \mapsto c$.
 
 \vspace{.1in}
 
 We now \textit{define} the loop algebra $\mathcal{L}\g$ of a \textit{Kac-Moody} algebra $\g$ to be the Lie algebra generated by $\{e_{i,k},f_{i,k},h_{i,k}\}$ for $i \in I$ and $k \in \Z$, and $c$ subject to relations (\ref{E:defaffinelie}). Of course, $\{a_{ij}\}$ are now the coefficients of the generalized Cartan matrix $A$ of $\g$.
-The assignement $e_{i,k} \mapsto e_i \otimes t^k, f_{i,k} \mapsto f_i \otimes t^k, h_{i,k} \mapsto h_i\otimes t^k, c \mapsto c$ gives a surjective morphism of Lie algebras
+The assignment $e_{i,k} \mapsto e_i \otimes t^k, f_{i,k} \mapsto f_i \otimes t^k, h_{i,k} \mapsto h_i\otimes t^k, c \mapsto c$ gives a surjective morphism of Lie algebras
 $\phi:\mathcal{L}\g \to \g \otimes \C[t,t^{-1}] \oplus \C c$, but this is usually not injective anymore.
 
 \vspace{.1in}
@@ -7437,9 +7443,9 @@ F_{i,k_{t+1}} \cdots F_{i,k_n}=0
 where $\mathrm{Sym}_{k_1, \ldots, k_n}$ denotes symmetrization with respect
 to the indices $k_1, \ldots , k_n$, and where $\psi_{i,k}$ and $\varphi_{i,k}$
 are defined by the following equations :
-$$\sum_{k \geq 0} \psi_{i,k}u^k=K_i \mathrm{exp}\bigg( (v-v^{-1})
+$$\sum_{k \geq 0} \psi_{i,k}u^k=K_i \exp\bigg( (v-v^{-1})
 \sum_{k=1}^\infty H_{i,k}u^k\bigg),$$
-$$\sum_{k \geq 0} \varphi_{i,k}u^k=K_i^{-1} \mathrm{exp}\bigg( -(v-v^{-1})
+$$\sum_{k \geq 0} \varphi_{i,k}u^k=K_i^{-1} \exp\bigg( -(v-v^{-1})
 \sum_{k=1}^\infty H_{i,-k}u^{-k}\bigg).$$}
 
 \vspace{.15in}
@@ -7466,7 +7472,7 @@ Now let $\g$ be an arbitrary (simply laced) Kac-Moody algebra. We define the qua
 \vspace{.2in}
 
 Finally, let us assume that the Dynkin diagram of $\g$ is star-shaped as in the end of Appendix~A.5.
-We will be interested in certain subalgebras $\U_{v}(\mathcal{L}\bo_+)$ and $\U_{v}(\mathcal{L}\n_+)$ of $\U_{v}(\mathcal{L}\g)$, which are deformations of the subalgebras $\U(\mathcal{L}\bo_+)$ and $\U(\mathcal{L}\n_+)$ which we defined previously.  For any $i=1, \ldots, N$, the elements $\{E_{(i,l),r}, F_{(i,l),s}, H_{(i,l),t}, K^{\pm 1}_{i}\;|\; l=1, \ldots, p_{i-1} \}$ corresponding to the $i$th branch generate a subalgebra isomorphic to $\U_{v}(\widehat{\mathfrak{sl}}_{p_i})$. Let $\U_{v}(\widehat{\mathfrak{b}}^+_{i})$ (resp. $\U_{v}(\widehat{\mathfrak{n}}^+_{i})$ denote the standard positive Borel subalgebra (resp. the standard positive nilpotent subalgebra) of $\U_{v}(\widehat{\mathfrak{sl}}_{p_i})$. We define $\U_{v}(\mathcal{L}\bo_+)$ to be the subalgebra generated by $E_{\star, n}$ for $n \in \Z$, $H_{\star,r}$ for $r \geq 1$, and by $\U_{v}(\widehat{\mathfrak{n}}^+_{p_i})$ for $i=1, \ldots N$. Similarly, $\U_v(\mathcal{L}\n_+)$ is the subalgebra generated by $E_{\star, n}$ for $n \in \Z$, $H_{\star,r}$ for $r \geq 1$, and by $\U_{v}(\widehat{\mathfrak{n}}^+_{p_i})$ for $i=1, \ldots N$. We do \textit{not} claim that
+We will be interested in certain subalgebras $\U_{v}(\mathcal{L}\bo_+)$ and $\U_{v}(\mathcal{L}\n_+)$ of $\U_{v}(\mathcal{L}\g)$, which are deformations of the subalgebras $\U(\mathcal{L}\bo_+)$ and $\U(\mathcal{L}\n_+)$ which we defined previously.  For any $i=1, \ldots, N$, the elements $\{E_{(i,l),r}, F_{(i,l),s}, H_{(i,l),t}, K^{\pm 1}_{i}\;|\; l=1, \ldots, p_{i-1} \}$ corresponding to the $i$th branch generate a subalgebra isomorphic to $\U_{v}(\widehat{\mathfrak{sl}}_{p_i})$. Let $\U_{v}(\widehat{\mathfrak{b}}^+_{i})$ (resp.\ $\U_{v}(\widehat{\mathfrak{n}}^+_{i})$) denote the standard positive Borel subalgebra (resp.\ the standard positive nilpotent subalgebra) of $\U_{v}(\widehat{\mathfrak{sl}}_{p_i})$. We define $\U_{v}(\mathcal{L}\bo_+)$ to be the subalgebra generated by $E_{\star, n}$ for $n \in \Z$, $H_{\star,r}$ for $r \geq 1$, and by $\U_{v}(\widehat{\mathfrak{n}}^+_{p_i})$ for $i=1, \ldots N$. Similarly, $\U_v(\mathcal{L}\n_+)$ is the subalgebra generated by $E_{\star, n}$ for $n \in \Z$, $H_{\star,r}$ for $r \geq 1$, and by $\U_{v}(\widehat{\mathfrak{n}}^+_{p_i})$ for $i=1, \ldots N$. We do \textit{not} claim that
 $\U_{v}(\mathcal{L}\bo_+)$ is stable under the coproduct $\Delta$.
 
 \vspace{.15in}
@@ -7691,7 +7697,7 @@ H. Lenzing, \emph{Curve singularities arising from the representation theory of 
 Lecture Notes in Math., \textbf{1177} (1986).
 
 \bibitem[L3]{Lenzingnotes}
-H. Lenzing, \emph{Hereditary categories}, lecture notes, avaliable at \url{people.math.jussieu.fr/~keller/ictp2006/schedule.html}
+H. Lenzing, \emph{Hereditary categories}, lecture notes, available at \url{people.math.jussieu.fr/~keller/ictp2006/schedule.html}
 
 \bibitem[L4]{Lenzingoral}
 H. Lenzing, \emph{private communication}.
@@ -7811,7 +7817,7 @@ O. Schiffmann, \emph{Canonical bases via moduli spaces of sheaves on curves}, In
 O. Schiffmann, \emph{Lectures on crystal and canonical bases of Hall algebras}, these proceedings.
 
 \bibitem[SV1]{SV}
-O. Schiffmann, E. Vasserot, \emph{The elliptic Hall algebra, Cherednick Hecke algebras and Macdonald polynomials}, preprint  arXiv:0802.4001 (2008).
+O. Schiffmann, E. Vasserot, \emph{The elliptic Hall algebra, Cherednik Hecke algebras and Macdonald polynomials}, preprint  arXiv:0802.4001 (2008).
 
 \bibitem[SV2]{SV3}
 O. Schiffmann, E. Vasserot, \emph{Hall algebras of curves and quiver varieties}, preprint (2009).
@@ -7847,7 +7853,7 @@ J. Xiao, F. Xu, \emph{Hall algebra associated to triangulated categories}, Duke 
 J. Xiao, F. Xu, G. Zhang, \emph{Derived categories and Lie algebras}, preprint (2006).
 
 \bibitem[XY]{XiaoBGP}
-J. Xiao, S. Yang, \emph{BGP-reflection functors and Lusztig's symmetries: A Ringel-Hall approach to quntum groups}, J. Algebra \textbf{241}, 204--246, (2001).
+J. Xiao, S. Yang, \emph{BGP-reflection functors and Lusztig's symmetries: A Ringel-Hall approach to quantum groups}, J. Algebra \textbf{241}, 204--246, (2001).
 
 \bibitem[Z1]{Zelevinsky}
 A. Zelevinsky, \emph{Representations of finite classical groups. A Hopf algebra approach}, LNM, \textbf{869}, Springer-Verlag (1981).
