@@ -1,5 +1,21 @@
 # arxiv-fixes index
 
+# alg-geom/9601011v1 - Gromov-Witten invariants in algebraic geometry - K. Behrend
+
+**Abstract:** Gromov-Witten invariants for arbitrary projective varieties and
+arbitrary genus are constructed using the techniques from K. Behrend, B.
+Fantechi: The intrinsic normal cone.
+
+Changes:
+* documentstyle -> documentclass
+* resection for bookmarks and toc to work
+* convert some diagrams to use tikzcd
+* some eqnarray* -> align*
+* pf env -> proof
+
+Warning: In the original paper, the sections were unnumbered. This is also the
+case with the published version.
+
 # 0910.4460v2 - Lectures on canonical and crystal bases of Hall algebras - Olivier Schiffmann
 
 [PDF](./0910.4460v2/0910.4460v2.pdf)
