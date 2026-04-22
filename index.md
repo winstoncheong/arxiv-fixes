@@ -1,6 +1,16 @@
 # arxiv-fixes index
 
-# hep-th/9402147 Gromov-Witten classes, quantum cohomology, and enumerative geometry - M. Kontsevich, Yu. Manin
+# hep-th/9402147v2 Gromov-Witten classes, quantum cohomology, and enumerative geometry - M. Kontsevich, Yu. Manin
+
+**Abstract**: The paper is devoted to the mathematical aspects of topological
+quantum field theory and its applications to enumerative problems of algebraic
+geometry. In particular, it contains an axiomatic treatment of Gromov-Witten
+classes, and a discussion of their properties for Fano varieties. Cohomological
+Field Theories are defined, and it is proved that tree level theories are
+determined by their correlation functions. Applications to counting rational
+curves on del Pezzo surfaces and projective spaces are given.
+
+
 
 # alg-geom/9405035v2 - Enumeration of rational curves via torus actions - M. Kontsevich
 
