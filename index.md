@@ -1,5 +1,17 @@
 # arxiv-fixes index
 
+# hep-th/9402147 Gromov-Witten classes, quantum cohomology, and enumerative geometry - M. Kontsevich, Yu. Manin
+
+# alg-geom/9405035v2 - Enumeration of rational curves via torus actions - M. Kontsevich
+
+**Abstract:** This paper contains an attempt to formulate rigorously and to check predictions in enumerative geometry of curves following from Mirror Symmetry. The main tool is a new notion of stable map. We give an outline of a construction of Gromov-Witten invariants for all algebraic projective or closed symplectic manifolds. Mirror Symmetry in the basic example of rational curves on a quintic 3-folds is reduced to certain complicated but explicit identity. The strategy of computations can be described as follows: 1) we reduce counting problems to questions concerning Chern classes on spaces of curves on the ambient projective space, 2) using Bott's residue formula we pass to the space of (degenerate) curves invariant under the action of the group of diagonal matrices, 3) we get a sum over trees and evaluate it using the technique of Feynman diagrams. Our computation scheme gives ``closed'' formulas for generating functions in topological sigma-model for a wide class of manifolds, covering many Calabi-Yau and Fano varieties.
+
+Changes:
+* documentstyle -> documentclass
+* resectioning
+
+
+
 # alg-geom/9601011v1 - Gromov-Witten invariants in algebraic geometry - K. Behrend
 
 **Abstract:** Gromov-Witten invariants for arbitrary projective varieties and
