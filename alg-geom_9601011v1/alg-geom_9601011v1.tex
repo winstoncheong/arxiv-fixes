@@ -917,10 +917,12 @@ Let $$F=\pi\upst\pi\lst(E\otimes L^{\otimes N})\otimes L^{\otimes
 short exact sequence
 \[\ses{H}{}{F}{}{E}\] of vector bundles on $C$. Note that for every
 $t\in T$ we have
-\begin{eqnarray*}
-H^0(C_t,F) & = & H^0(C_t,\pi\lst(E\otimes L^{\otimes N})_t\otimes L_t^{\otimes
--N})  \\    & = & H^0(C_t,L_t^{\otimes -N})\otimes\pi\lst(E\otimes
-L^{\otimes N})_t \\ & = & 0 \end{eqnarray*} and hence $H^0(C_t,H)=0$,
+\begin{align*}
+  H^0(C_t,F) &= H^0(C_t,\pi\lst(E\otimes L^{\otimes N})_t\otimes L_t^{\otimes -N}) \\
+             &= H^0(C_t,L_t^{\otimes -N})\otimes\pi\lst(E\otimes L^{\otimes N})_t  \\
+             &= 0
+\end{align*}
+and hence $H^0(C_t,H)=0$,
 also. Therefore, $\pi\lst H$ and $\pi\lst F$ are zero and $R^1\pi\lst
 H$ and $R^1\pi\lst F$ are locally free. This implies that $$R\pi\lst
 E\cong [R^1\pi\lst H\rightarrow R^1\pi\lst F].$$
@@ -1010,9 +1012,14 @@ Use notation as in \cite{BM}, Section~7, modified as necessary to
 avoid confusion. Let $\beta$ denote the $H_2(V)^+$-structure on both
 $\sigma$ and $\tau$. Write $\MM=\MM(\tau)=\MM(\sigma)$. Consider the
 cartesian diagram
-\[\comdia{\ol{M}(V,\sigma,\beta)}{\ol{M}(
-\Phi)}{\ol{M}(V,\tau,\beta)}{ g}{}{ }{\MM\times V}{ \Delta}{ \MM\times
-V\times V}\]
+% \[\comdia{\ol{M}(V,\sigma,\beta)}{\ol{M}(
+% \Phi)}{\ol{M}(V,\tau,\beta)}{ g}{}{ }{\MM\times V}{ \Delta}{ \MM\times
+% V\times V}\]
+\[\begin{tikzcd}
+\ol{M}(V,\sigma,\beta) \rar["\ol{M}(\Phi)"] \dar["g"']
+& \ol{M}(V,\tau,\beta) \dar \\ 
+\MM\times V \rar["\Delta"] & \MM\times V\times V
+\end{tikzcd}\]
 of stacks over $\MM$. Let us show that the obstruction theories
 $E\com(V,\tau,\beta)$ and $E\com(V,\sigma,\beta)$ are compatible over
 $\Delta$ (see \cite{BF}).
@@ -1028,9 +1035,17 @@ from $\cC'$ by identifying the two sections $x_1$ and $x_2$ of $\cC'$,
 corresponding to the edge $\{i_1,i_2\}$ of $\sigma$ which is cut by
 $\Phi$. Thus there is a structure morphism $p:\cC'\to\cC$ fitting into
 the commutative diagram
-\[\comtri{\cC'}{p}{\cC}{\pi'}{\pi}{\ol{M}(V,\sigma,\beta).}\]
+% \[\comtri{\cC'}{p}{\cC}{\pi'}{\pi}{\ol{M}(V,\sigma,\beta).}\]
+\[\begin{tikzcd}
+\cC' \rar["p"] \drar["\pi"'] & \cC \dar["\pi"] \\
+& \ol{M}(V,\sigma,\beta).
+\end{tikzcd}\]
 We shall also use the diagram
-\[\comtri{\cC'}{p}{\cC}{f'}{f}{V,}\]
+% \[\comtri{\cC'}{p}{\cC}{f'}{f}{V,}\]
+\[\begin{tikzcd}
+\cC' \rar["p"] \drar["f'"'] & \cC \dar["f"] \\
+& V,
+\end{tikzcd}\]
 where $f:\cC\to V$ is the universal map. Let $x=p\comp x_1=p\comp
 x_2$.
 
@@ -1217,12 +1232,12 @@ such that the diagram
 \EE(V,\sigma,\beta) & \longiso  & \ol{M}(\Phi)\upst
 \EE(V,\tau,\beta)\end{array}\]
 commutes. So finally, we have
-\begin{eqnarray*}
-\ol{M}(\Phi)\upst J(V,\tau,\beta) & = & [\ol{M}(V,\sigma,\beta),
+\begin{align*}
+\ol{M}(\Phi)\upst J(V,\tau,\beta) &= [\ol{M}(V,\sigma,\beta),
 \ol{M}(\Phi)\upst E\com(V,\tau,\beta)]\\
-& = & [\ol{M}(V,\sigma,\beta),E\com(V,\sigma,\beta)]\\
-& = & J(V,\sigma,\beta),
-\end{eqnarray*}
+&= [\ol{M}(V,\sigma,\beta),E\com(V,\sigma,\beta)]\\
+&= J(V,\sigma,\beta),
+\end{align*}
 which is Axiom~IV.
 
 \subsection{{\sc Axiom V.} Isogenies}
