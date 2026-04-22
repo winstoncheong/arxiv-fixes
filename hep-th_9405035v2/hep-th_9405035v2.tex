@@ -4,46 +4,95 @@
 %Date (revised): Thu, 5 May 1994 17:44:12 --100
 %Date (revised): Tue, 27 Jun 1995 15:47:02 +0200
 
-\voffset-1cm
-\input amstex
-\documentstyle{amsppt}
+\documentclass{amsart}
+% \usepackage{authblk}
+\title{Enumeration of rational curves via torus actions}
+\author{Maxim Kontsevich}
+\address{Max-Planck-Institut f\"ur Mathematik, Bonn \\
+and University of California, Berkeley\\
+Dept. of Mathematics, University of California, Berkeley, CA 94720, USA}
+\email{maxim@math.berkeley.edu}
 
-\topmatter
-\title Enumeration of rational curves via torus actions
-\endtitle
-\author Maxim Kontsevich
-\endauthor
-\affil Max-Planck-Institut f\"ur Mathematik, Bonn
-\\
-and University of California, Berkeley
-\endaffil
-\address Dept. of Mathematics, University of California, Berkeley, CA 94720,
-USA
-\endaddress
-\email maxim\@math.berkeley.edu
-\endemail
-\endtopmatter
+% \voffset-1cm
+% \input amstex
+% \documentstyle{amsppt}
 
-\document
+% \topmatter
+% \title Enumeration of rational curves via torus actions
+% \endtitle
+% \author Maxim Kontsevich
+% \endauthor
+% \affil Max-Planck-Institut f\"ur Mathematik, Bonn
+% \\
+% and University of California, Berkeley
+% \endaffil
+% \address Dept. of Mathematics, University of California, Berkeley, CA 94720,
+% USA
+% \endaddress
+% \email maxim\@math.berkeley.edu
+% \endemail
+% \endtopmatter
 
-\NoBlackBoxes
-\magnification=1200
-\define\Q{\bold Q}
-\define\C{\bold C}
-\redefine\P{\bold P}
-\redefine\O{\Cal O}
-\define\E{\Cal E}
-\define\F{\Cal F}
-\define\T{\bold T}
-\define\M{\overline{\Cal M}}
-\define\eps{\epsilon}
-\redefine\l{\lambda}
-\define\Z{\bold Z}
+% make subsection numbering bold.
+% \renewcommand{\thesubsection}{\textbf{\thesection.\arabic{subsection}}}
+% make subsubsections bold
+% \renewcommand{\thesubsubsection}{\textbf{\thesubsection.\arabic{subsubsection}}}
+% \makeatletter
+% \def\subsubsection{\@startsection{subsubsection}{3}%
+%   \z@{.5\linespacing\@plus.7\linespacing}{.3\linespacing}%
+%   {\normalfont\bfseries}}
+% \makeatother
+
+\usepackage{amsthm}
+\newtheorem*{dfn}{Definition}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{notation}{Notation}
+\newtheorem*{formula}{Formula}
+
+
+\usepackage[colorlinks,allcolors=blue,pagebackref]{hyperref}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newcommand{\Cal}{\mathcal}
+
+\newcommand{\Q}{\mathbf Q}
+\newcommand{\C}{\mathbf C}
+\renewcommand{\P}{\mathbf P}
+\renewcommand{\O}{\mathcal O}
+\newcommand{\E}{\mathcal Q}
+\newcommand{\F}{\mathcal F}
+\newcommand{\T}{\mathbf T}
+\newcommand{\M}{\overline{\mathcal{M}}}
+\newcommand{\eps}{\epsilon}
+\renewcommand{\l}{\lambda}
+\newcommand{\Z}{\mathbf Z}
+
+\newcommand{\dsize}{\displaystyle}
+
+% \NoBlackBoxes
+% \magnification=1200
+% \define\Q{\bold Q}
+% \define\C{\bold C}
+% \redefine\P{\bold P}
+% \redefine\O{\Cal O}
+% \define\E{\Cal E}
+% \define\F{\Cal F}
+% \define\T{\bold T}
+% \define\M{\overline{\Cal M}}
+% \define\eps{\epsilon}
+% \redefine\l{\lambda}
+% \define\Z{\bold Z}
 
 
 
- \head Introduction
-\endhead
+%  \head Introduction
+% \endhead
+\section*{Introduction}
 
 This paper contains an attempt to formulate rigorously and to check
 predictions in enumerative geometry of curves following from Mirror Symmetry.
@@ -65,7 +114,7 @@ paper. We establish several basic properties of  moduli spaces of stable maps.
  Also, we give an outline of a  construction of Gromov-Witten invariants
  for all algebraic projective or closed symplectic manifolds.
  For the reader who is interested mainly in computations it is enough to look
-through 1.1 and to the statements of theorems occuring in 1.3.1-1.3.2.
+through 1.1 and to the statements of theorems occurring in 1.3.1-1.3.2.
 
 
 In section 2 we describe a few examples of counting problems in the enumerative
@@ -98,21 +147,25 @@ arbitrary dimension) in projective spaces, toric varieties and generalized flag
 varieties.
 
 
-\head 1. Stable maps.
-\endhead
+% \head 1. Stable maps.
+% \endhead
+% \subheading{1.1. Definition}
 
-\subheading{1.1. Definition}
+
+\section{Stable maps}
+
+\subsection{Definition}
 
 Let $V$ be a scheme of finite type over a field (or a smooth scheme, or a
 complex manifold, or an almost complex manifold).
 
-\proclaim{Definition}
+\begin{dfn}
 A stable map is a structure $(C;x_1,\dots,x_k;f)$ consisting of a
  connected compact reduced curve $C$ with $k\ge 0$ pairwise distinct marked
 non-singular points $x_i$ and at most ordinary double singular points, and a
-map $f:C@>>> V$ having no non-trivial first order infinitesimal automorphisms,
+map $f:C\to V$ having no non-trivial first order infinitesimal automorphisms,
 identical on $V$ and $x_1,\dots,x_k$ (stability).
-\endproclaim
+\end{dfn}
 
 The condition of stability means that every irreducible component
 of $C$ of genus $0$ (resp. $1$) which maps to a point must have at least $3$
@@ -129,16 +182,15 @@ situation $\beta$ should be an element of the group of $1$-dimensional cycles
 modulo homological equivalence).
 
 
-
-\proclaim{Notation} $\M_{g,k}(V,\beta)$ denotes the moduli stack
+\begin{notation} $\M_{g,k}(V,\beta)$ denotes the moduli stack
 of stable maps to $V$ of curves of arithmetic genus $g\ge 0$ with $k\ge 0$
 marked points such that $f_*[C]=\beta$.
-\endproclaim
+\end{notation}
 
 More precisely, in the algebro-geometric setting one can define a family of
-stable maps to $V$ as a flat proper morphism $\Cal C@>>>S$
+stable maps to $V$ as a flat proper morphism $\Cal C\to S$
  to a scheme $S$ of finite type over the ground field and a map
-$f:\Cal C@>>> V$ such that its restriction to each geometric fiber of $\Cal C$
+$f:\Cal C\to V$ such that its restriction to each geometric fiber of $\Cal C$
 over $S$ is a stable map.
 
 In the setting of almost complex manifolds we consider $\M_{g,k}(V,\beta)$ as a
@@ -156,30 +208,31 @@ well.
 
 
 
-\subheading{1.2. Orbispaces}
+% \subheading{1.2. Orbispaces}
+\subsection{Orbispaces}
 
 The notion of orbispace introduced here is  a topological counterpart
 of
-\roster
+\begin{enumerate}
 \item algebraic stacks (from algebraic geometry), and
 \item orbifolds, or V-manifolds (from differential topology).
-\endroster
+\end{enumerate}
 
 We define an orbispace as a small topological category $C$ (i.e. a category for
-which $\text{ Ob}\,C$ and $\text{ Mor}\,C$ carry topological structures)
+which $\text{Ob}\,C$ and $\text{Mor}\,C$ carry topological structures)
 satisfying the following axioms.
 
 A.1. $C$ is a groupoid (every morphism is invertible).
 
-A.2. For each $X,Y\in \text{ Ob}\,C$ the set of morphisms
+A.2. For each $X,Y\in \text{Ob}\,C$ the set of morphisms
   $Mor_C(X,Y)$ is finite.
 
-A.3. The two maps from $\text{ Mor}\,C$ to $\text{ Ob}\,C$, assigning to a
+A.3. The two maps from $\text{Mor}\,C$ to $\text{Ob}\,C$, assigning to a
 morphism its source and its target respectively,
  are locally homeomorphisms (\'etale maps).
 
 
-Functors between orbispaces which are continous, locally homeomorphisms and
+Functors between orbispaces which are continuous, locally homeomorphisms and
 induce an equivalence of categories we call equivalences between orbispaces.
 
 
@@ -188,7 +241,8 @@ topology. We can associate with each element $[X]\in |S|$ an equivalence class
 (modulo interior automorphisms) of finite groups, $Aut(X)$.
 
 
-\subheading{1.3. Properties of moduli spaces of stable maps}
+% \subheading{1.3. Properties of moduli spaces of stable maps}
+\subsection{Properties of moduli spaces of stable maps}
 
 The notion of a stable map is a mixture of the notion of a \it stable curve \rm
 from algebraic geometry and of the notion of a  \it cusp-curve \rm
@@ -200,7 +254,7 @@ non-intersecting $2$-element subsets of $\widetilde C$ such that, for each
 $S\in \Cal S$,
  its image $\widetilde f(S)$ is a $1$-element set.
  By glueing points from pairs $S\in \Cal S$, we obtain a curve $C$ with at most
-ordinary double singular points and a map $f:C@>>>V$. P.~Pansu claimed in [P]
+ordinary double singular points and a map $f:C\to V$. P.~Pansu claimed in [P]
 that if $V$ is compact and endowed with a riemannian metric, then the space of
 equivalence classes
  of cusp-curves of bounded genus and area is compact and Hausdorff.
@@ -226,14 +280,15 @@ In 1.3.2, we describe a situation in which the moduli space of stable maps is
 smooth (as a stack).
 
 
-\subheading{1.3.1. Algebraicity and properness}
+% \subheading{1.3.1. Algebraicity and properness}
+\subsubsection{Algebraicity and properness}
 
 
 
-\proclaim{Theorem} Let $V$ be a projective scheme of finite type over a field.
+\begin{thm} Let $V$ be a projective scheme of finite type over a field.
 Then
  $\M_{g,k}(V,\beta)$ is an algebraic proper stack of finite type.
-\endproclaim
+\end{thm}
 
 The proof uses results from [DM]. We refer to [DM] for definitions  concerning
 properties of stacks, and for other technical details as well.
@@ -269,7 +324,7 @@ Separatedness and properness of moduli of stable maps follow from
 corresponding properties of $V$. Recall that the property of properness implies
 separatedness by definition.
 
- If we have a family of stable maps  $\Cal C/K,\,\,f:\Cal C@>>>V$ over a
+ If we have a family of stable maps  $\Cal C/K,\,\,f:\Cal C\to V$ over a
 discrete valuation field $K$ with the ring of integers $\Cal O_K$, then there
 exists a finite extension $L/K$ and a family of stable curves over $\Cal O_L$
 extending the pull-back of $\Cal C/K$. First of all, we can construct a proper
@@ -293,13 +348,14 @@ the uniqueness part of the valuative criterion of properness. \qed
 
 
 
-\subheading{1.3.2. Smoothness}
+% \subheading{1.3.2. Smoothness}
+\subsubsection{Smoothness}
 
-\proclaim{Theorem} Let $V$ be a smooth proper scheme of finite type over a
+\begin{thm} Let $V$ be a smooth proper scheme of finite type over a
 field which is convex in the sense of [KM]. Then the stack
 $\M_{0,k}(V,\beta)$ is smooth, and the complement of the open subset
 $\M_{0,k}^0(V,\beta)$ consisting of smooth curves is a divisor with normal
-crossings.\endproclaim
+crossings.\end{thm}
 
 Recall that convex manifolds $V$ (definition 2.4.2 in [KM])
  are defined as projective manifolds with vanishing $H^1(C,f^*\Cal T_V)$ for
@@ -310,10 +366,10 @@ spaces.
 
 
 Stable maps have the following important property.
-  Let us consider  a flat proper morphism $\Cal C@>>>S$
+  Let us consider  a flat proper morphism $\Cal C\to S$
  , of relative dimension $1$ to a scheme $S$ of finite type over the ground
 field, sections $x_i,\,\,\,i=1,\dots, k$ of $\Cal C$ over $S$, and a map
-$f:\Cal C@>>> V$. We claim that the set of points $p$ of $S$ such that the
+$f:\Cal C\to  V$. We claim that the set of points $p$ of $S$ such that the
 restriction of $f$ to the geometric fiber of $\Cal C$ over $p$ is a stable map,
 is an open subset of $S$. Hence, the deformation theory of a given stable map
 is equivalent to the deformation theory   of it as  a map from a compact
@@ -322,7 +378,7 @@ is equivalent to the deformation theory   of it as  a map from a compact
 First of all, the deformations of $1$-st order of a stable map
  $(C;x_1,\dots,x_k;f)$ which do not change the structure of the singularities
 of $C$ are given by
-  $$\bold H^1(C,\Cal T'_{C}@>>>f^*\Cal T_V)\,,$$
+  $$\bold H^1(C,\Cal T'_{C}\to f^*\Cal T_V)\,,$$
 where $\Cal T'_{C}$ denotes the sheaf of vector fields on $C$
  vanishing at the points $x_i,\,\,i=1,\dots,k$. We put $\Cal T'_{C}$ in  degree
 $0$ and $ f^*\Cal T_V$ in  degree $1$. The hyper-cohomology group in degree $0$
@@ -331,14 +387,14 @@ vanishes by the stability condition.
 Denote by $T$  the tangent space to  $\M_{g,k}(V,\beta)$ at the point
 $(C;x_1,\dots,x_k;f)$.
  One can show that we have the following exact sequence:
-$$0@>>>\bold H^1(C,\Cal F^{\bullet})@>>>T@>>>\bigoplus_
-{y\in C^{sing}} T_y^1C\otimes T_y^2C@>>>\bold H^2(C,\Cal F^{\bullet})\,\,\,,$$
+$$0\to \mathbf H^1(C,\Cal F^{\bullet})\to T\to \bigoplus_
+{y\in C^{sing}} T_y^1C\otimes T_y^2C\to \mathbf H^2(C,\Cal F^{\bullet})\,\,\,,$$
  where the fourth term comes from the deformations of $C$ resolving double
 points $y$. The tangent spaces  to the two branches of $C$ at $y$ are denoted
 by $T_y^1C$ and $T_y^2C$ (in arbitrary order); $\Cal F^{\bullet}$ denotes the
 complex of sheaves of length $2$ used above.
 
-We are ready now for the proof of the smoothness criterium.
+We are ready now for the proof of the smoothness criterion.
  For an arbitrary map $f$ from a curve $C$ of arithmetic genus zero to a convex
 $V$ we have
  $H^1(C,f^*\Cal T_V)=0$.
@@ -355,7 +411,8 @@ crossings.
 tree level system of Gromov-Witten invariants on convex varieties (see [KM]).
 
 
-\subheading{1.4. The structure of an intersection of manifolds}
+% \subheading{1.4. The structure of an intersection of manifolds}
+\subsection{The structure of an intersection of manifolds}
 
 The last theorem shows that the moduli space of stable maps to $V$ inherits
  the property of smoothness of $V$ in some cases. Here we are trying to define
@@ -407,7 +464,7 @@ If $Z$ is an intersection of several submanifolds $Y_i,\,1\le i\le n$ in $X$,
 then one can represent $Z$ as an intersection of two submanifolds:
  $$Z\simeq (Y_1\times \dots \times Y_n)\cap \text{ diagonal in }X^n\,\,.$$
 Also, if we have two maps of manifolds
- $Y_i@>f_i>>X,\,\,i=1,2$ then the fiber product $Z:=Y_1\times_X Y_2$ carries a
+ $Y_i \xrightarrow{f_i} X,\,\,i=1,2$ then the fiber product $Z:=Y_1\times_X Y_2$ carries a
 structure of an intersection of two manifolds. It follows from the
 identification of $Z$ with the intersection in $Y_1\times Y_2\times X$ of the
 graphs of $f_i$ multiplied by $Y_{3-i}$.
@@ -463,7 +520,7 @@ case of two submanifolds, as we already explained.
 
 Thus, we will get germs of Frechet manifolds $X$ and $Y_i$. The natural map of
 tangent spaces
-$$T_zY_1\oplus T_zY_2@>>>T_zX\,,\,\,\,z\in Z\,\,,$$
+$$T_zY_1\oplus T_zY_2\to T_zX\,,\,\,\,z\in Z\,\,,$$
 is Fredholm.
 In the next subsection we develop a technique producing in such a situation
 finite-dimensional models.
@@ -490,7 +547,8 @@ virtual fundamental class of $Z$.
 
 
 
-\subheading{1.4.1. Reduction to finite dimensional manifolds}
+% \subheading{1.4.1. Reduction to finite dimensional manifolds}
+\subsubsection{Reduction to finite dimensional manifolds}
 
 Suppose that we have Frechet manifolds $X$ and $Y_i$ with the  Fredholm
 property as above and with $Z:=Y_1\cap Y_2$  compact.
@@ -500,7 +558,7 @@ T_X)_{|Z},\,i=1,2\,\,$ such that
  $$\Cal E_i\cap (\Cal T_{Y_i})_{|Z}=0\,,\,\,\,\,
  (\Cal T_X)_{|Z}=\Cal E_1+\Cal E_2+(\Cal T_{Y_1})_{|Z}+(\Cal
 T_{Y_2})_{|Z}\,\,\,.$$
-We can prolong $\Cal E_i$ to  neigborhoods of $Z$ in $Y_i$.
+We can prolong $\Cal E_i$ to  neighborhoods of $Z$ in $Y_i$.
 Then we can choose  submanifolds $\widetilde Y_i$ in $X$ containing $Y_i$ such
 that
 $$(\Cal T_{\widetilde Y_i})_{|Y_i}=\Cal T_{Y_i}\oplus \Cal E_i\,\,.$$
@@ -533,7 +591,8 @@ can check that
 
 
 
-\subheading{1.4.2. Intersections of manifolds in algebraic geometry}
+% \subheading{1.4.2. Intersections of manifolds in algebraic geometry}
+\subsubsection{Intersections of manifolds in algebraic geometry}
 
 
  If $Y_1,Y_2$ are submanifolds of an algebraic manifold $X$ then on $Z:=Y_1\cap
@@ -565,7 +624,7 @@ equivalent  to the first obstruction sheaf. We are planning to write later more
 about the definitions of higher structure sheaves and virtual tangent bundles,
 arising ubiquitously in algebraic geometry. For example, various moduli spaces
 and Hilbert schemes should carry canonical structures of quasi-manifolds.
-  The idea of introducing higher structure sheaves on moduli spaces occured
+  The idea of introducing higher structure sheaves on moduli spaces occurred
 implicitly quite a long time ago. It was recently spelled  out clearly in a
 letter of P.~Deligne to H.~Esnault, together with a proposal to apply it  to
 the algebro-geometric formulation of Mirror Symmetry.
@@ -600,22 +659,23 @@ in $CH_*\otimes \Q[c_1,c_2,\dots]$ arising from the action of
 as an algebraic version of the fundamental class with values in complex
 cobordism groups.
 
-\subheading{1.5. Gromov-Witten invariants}
+% \subheading{1.5. Gromov-Witten invariants}
+\subsection{Gromov-Witten invariants}
 
 We have a compact moduli orbi-space of stable curves and a virtual fundamental
 class of it in two situations:
-\roster
+\begin{enumerate}
 \item $V$ is a smooth projective algebraic manifold over a field, or
 \item $V$ is a compact real-analytic symplectic manifold endowed with a
 compatible real-analytic almost-complex structure.
-\endroster
+\end{enumerate}
 
 The virtual fundamental class takes values in $CH_*\otimes \Q[c_1,c_2,\dots]$
 and in $\Omega_*\otimes\Q$ respectively.
 
 Suppose that $2-2g-k<0$ so that $\M_{g,k}$ exists.
  We have an evident map:
-$$\Phi:\M_{g,k}(V,\beta)@>>>V^k\times\M_{g,k}\,,$$
+$$\Phi:\M_{g,k}(V,\beta)\to V^k\times\M_{g,k}\,,$$
 $$(C;x_1,\dots,x_k;f)\mapsto \left(f(x_1),\dots,f(x_k);(\widetilde C,\tilde
 x_1,\dots,\tilde x_k)\right)\,\,.$$
 Here $(\widetilde C,\tilde x_1,\dots,\tilde x_k)$ is the stable curve with
@@ -641,7 +701,8 @@ $T_{x_i}C$
  instead of $T_{\tilde x_i}\widetilde C$.
 
 
-\subheading{1.6. Comparison with other definitions}
+% \subheading{1.6. Comparison with other definitions}
+\subsection{Comparison with other definitions}
 
 
 It was proposed earlier several times that for the definition of the
@@ -688,22 +749,24 @@ space, has trivial cohomology in degrees greater than or equal to $3$. The main
 
 
 
-\head 2. Three examples.
-\endhead
+% \head 2. Three examples.
+% \endhead
+\section{Three examples}
 
 In this section and in the next one we
  will use  simplified notations:
 $\M_{g,k}(\P^n,d[\P^1])$ will be denoted by
  $\M_{g,k}(\P^n,d)$, or simply by $\M(\P^n,d)$ if $g=k=0$.
 
-\subheading{2.1. Rational curves on $\P^2$}
+% \subheading{2.1. Rational curves on $\P^2$}
+\subsection{Rational curves on $\P^2$}
 
 The dimension of the space $\M_{0,k}(\P^2,d)$ is equal to $3d-1+k$.
  For $k=3d-1$ it coincides with the dimension of $(\P^2)^k$.
  Hence
 the number $P_d$ of rational curves on $\P^2$ of degree
 $d\ge 1$ passing through generic $k=3d-1$ points is finite and equal to the
-degree of the map $$\phi:\M_{0,k}(\P^2,d)@>>>(\P^2)^k,\qquad
+degree of the map $$\phi:\M_{0,k}(\P^2,d)\to (P^2)^k,\qquad
  \phi(C; {x_1,\dots,x_k};f)=(f(x_1),\dots,f(x_k))\,.$$
 
  We can rewrite it as the integral:
@@ -717,10 +780,10 @@ factor $\P^2$ of $(\P^2)^{3d-1}$.
 These numbers are known from the recursion relations following from
 the associativity equations (see [KM]).
  The first few values of $P_d$ are:
-$$\matrix
+$$\begin{matrix}
 d & 1 & 2 & 3 & 4 &5\\
 P_d& 1 & 1& 12& 620&87304
-\endmatrix$$
+\end{matrix}$$
 
 
 
@@ -729,7 +792,8 @@ Our proof of the associativity relations is based (following Witten [W]) on a
 study of the boundary divisors of the moduli spaces of stable maps.
  Here we want to compute this number of curves directly.
 
-\subheading{2.2. Rational curves on quintics}
+% \subheading{2.2. Rational curves on quintics}
+\subsection{Rational curves on quintics}
 
  Let a smooth quintic 3-fold $V$ be given by an equation
 $Q(x_1,\dots,x_5)=0$ in homogeneous coordinates in $\P^4$.
@@ -739,10 +803,10 @@ $Q(x_1,\dots,x_5)=0$ in homogeneous coordinates in $\P^4$.
 The orbispace $\M_{0,0}(V,d[\P^1])$ is a subspace of $\M(\P^4,d)$.
   Let $\E_d$ be a coherent sheaf on $\M(\P^4,d)$
  equal to the direct image under the forgetful map
- $\M_{0,1}(\P^4,d)@>>>\M_{0,0}(\P^4,d)=\M(\P^4,d)$ of $\phi^*(\O(5))$.
+ $\M_{0,1}(\P^4,d)\to\M_{0,0}(\P^4,d)=\M(\P^4,d)$ of $\phi^*(\O(5))$.
   Here again $\phi(C;x_1;f)=f(x_1)\in \P^4$.
  The sheaf $\Cal E_d$ is actually a vector bundle:
-  for any stable map $f:C@>>>\P^4$ from a curve of arithmetic genus zero
+  for any stable map $f:C\to\P^4$ from a curve of arithmetic genus zero
 $H^1(C,f^*(\O(5)))=0$, because the line bundle $\O(5)$ is generated by its
 global sections.
 
@@ -763,11 +827,12 @@ The numbers $N_d$ are not integers, because we use orbifolds.
 The table of the first few $N_d$ is the following:
 
 
-$$\matrix d& 1 &2 &3 &4\\
+$$\begin{matrix}
+d& 1 &2 &3 &4\\
 N_d &
 %% FOLLOWING LINE CANNOT BE BROKEN BEFORE 80 CHAR
 %% FOLLOWING LINE CANNOT BE BROKEN BEFORE 80 CHAR
-\frac{2875}{1}&\frac{4876875}{8}&\frac{8564575000}{27}&\frac{15517926796875}{64}\endmatrix$$
+\frac{2875}{1}&\frac{4876875}{8}&\frac{8564575000}{27}&\frac{15517926796875}{64}\end{matrix}$$
 
 The numbers $N_d$ are related with integer numbers $N_d^0$
  by the following formula:
@@ -787,7 +852,7 @@ $$F(t):=\frac{5}{6}t^3+\sum_{d\ge 1} N_d e^{dt}\,\,.$$
  We denote by $G(q_1,q_2)$ the corresponding function of homogeneity
  degree $2$ in a domain of the vector space $\C^2$:
  $$G(q_1,q_2)=F(q_1/q_2)\,q_2^2\,\,.$$
-  The function $G$ generates a Lagrangean cone $\Cal L$ in the symplectic
+  The function $G$ generates a Lagrangian cone $\Cal L$ in the symplectic
 vector space $\C^4$:
 $$\Cal L\,:=\{(p_1,p_2,q_1,q_2):\,p_i=\partial G/\partial q_i\}\,\,.$$
 
@@ -800,7 +865,7 @@ $\Cal H_z $ with Hodge numbers $h^{0,3}=h^{1,2}=h^{2,1}=h^{3,0}=1$
 $4$-dimensional vector bundle $\Cal H$ with a flat  Gauss-Manin connection.  We
 can trivialize the flat bundle $\Cal H$
  in the domain $\{z: |z|\ll 1,\,\,|Arg(z)|< \pi\}$. The union $\Cal U$ of the
-$1$-dimensional terms of the Hodge filtration $F^3_z$ forms a Lagrangean cone
+$1$-dimensional terms of the Hodge filtration $F^3_z$ forms a Lagrangian cone
 in $\C^4$.
 
 Mirror Symmetry predicts that $\Cal L=\Cal U$.
@@ -813,16 +878,17 @@ Mirror Symmetry predicts that $\Cal L=\Cal U$.
 
 
 
-\subheading{2.3. Multiple coverings of rational curves on Calabi-Yau 3-folds}
+% \subheading{2.3. Multiple coverings of rational curves on Calabi-Yau 3-folds}
+\subsection{Multiple coverings of rational curves on Calabi-Yau 3-folds}
 
 Let $C_0\simeq\P^1$ be a  smooth rational curve in a complex 3-fold $V$ with
 the normal bundle $\Cal T_V/\Cal T_{C_0}$ equivalent to $\O(-1)\oplus\O(-1)$.
 In such a situation  $\M_{0,0}(V,d[C_0])$ has a connected component
 $\M_{0,0}(C_0,d[C_0])$ consisting of  stable maps
- $C@>>>C_0$ of degree $d$. This component is isomorphic to $\M(\P^1,d)$ and has
+ $C\to C_0$ of degree $d$. This component is isomorphic to $\M(\P^1,d)$ and has
 dimension $2d-2$. The virtual dimension
  of this component is zero. The obstruction sheaf $\F_d$ is a vector bundle of
-rank $2d-2$ with the fiber at each point $f:C@>>>C_0$
+rank $2d-2$ with the fiber at each point $f:C\to C_0$
  equal to
 $$H^1(C,f^*(\Cal T_V/\Cal T_{C_0}))\simeq\C^2\otimes H^1(C,f^*(\O(-1)))\,.$$
 Our definition
@@ -841,7 +907,7 @@ Actually, it is not clear why the computations from [AM]
 marked
  points on it into $\P^1$ and compactify it by means of the Hilbert scheme of
 1-dimensional subschemes in $\P^1\times \P^1$
- (they associate with a map $f:\P^1@>>>\P^1$ its graph).
+ (they associate with a map $f:\P^1\to \P^1$ its graph).
 Then they use the Euler class of a natural candidate for the obstruction bundle
 and intersect it with a class of codimension $3$.
 The answer which they get is $1$.
@@ -852,10 +918,12 @@ One can see easily that the result will be $d^3 M_d$.
 and the moduli spaces of stable maps.
 
 
-\head 3. Fixed points formulas.
-\endhead
+% \head 3. Fixed points formulas.
+% \endhead
+\section{Fixed points formulas}
 
-\subheading{3.1. The Bott fixed points formula}
+% \subheading{3.1. The Bott fixed points formula}
+\subsection{The Bott fixed points formula}
 
  Let $X$ be a smooth compact complex projective manifold, and let $\Cal E$  be
 a
@@ -874,7 +942,7 @@ $X^{\T}$ by $X^{\gamma}$.
 
 On each component $X^{\gamma}$ the vector bundle $\Cal E$
   splits into the direct sum of bundles $E^{\gamma,\l}$ over  characters
-$\l:\T@>>>\C^{\times},\,\,\l\in\T^{\vee}\simeq\Z\oplus\dots\oplus\Z$. Also, the
+$\l:\T\to \C^{\times},\,\,\l\in\T^{\vee}\simeq\Z\oplus\dots\oplus\Z$. Also, the
 normal bundle
  $\Cal N^{\gamma}=\Cal T_X/\Cal T_{X^{\gamma}}$ splits into the direct sum of
 bundles $\Cal N^{\gamma,\l}, \,\,\l\in\T^{\vee}\setminus\{0\}$.
@@ -882,7 +950,7 @@ bundles $\Cal N^{\gamma,\l}, \,\,\l\in\T^{\vee}\setminus\{0\}$.
 
 We add to $H^{even}(X,\Q)$ extra generators $e_i,\,\,i=1,\dots ,rk(\Cal E)$ of
 degree $2$  obeying the relations
- $$\dsize\sum_{k\ge 0}c_k(\Cal E)=\prod_{i}(1+e_i)\,\,.$$ Analogously, we add
+ $$\sum_{k\ge 0}c_k(\Cal E)=\prod_{i}(1+e_i)\,\,.$$ Analogously, we add
 generators $e^{\gamma,\l}_i$
  and $n^{\gamma,\l}_i$ to $H^{ev}(X^{\gamma},\Q)$.
 
@@ -904,7 +972,8 @@ This formula is valid for orbifolds too, because the original proof
  in [B] uses only the language of differential forms and
  transfers immediately to the more general setting of orbifolds.
 
-\subheading{3.2. Fixed points on moduli spaces of stable maps}
+% \subheading{3.2. Fixed points on moduli spaces of stable maps}
+\subsection{Fixed points on moduli spaces of stable maps}
 
 The action of the group $\T\simeq(\C^{\times})^{n+1}$ of diagonal matrices on
 $\P^n$ induces
@@ -918,7 +987,7 @@ $\C^{n+1}$. Also, denote by $l_{ij}=l_{ji},\,\,i\ne j$
 
 
 Let a stable map
- $f:C@>>>\P^n$ represent a point of $\M_{g,k}(\P^n,d)^{\T}$. First of all, the
+ $f:C\to \P^n$ represent a point of $\M_{g,k}(\P^n,d)^{\T}$. First of all, the
 geometric image of $f$ should be invariant under the $\T$-action.
  One can see easily that this means that $f(C)$ is a union of lines $l_{ij}$.
 Secondly, the images of all marked and singular points, as well as of
@@ -927,9 +996,6 @@ components of $C$ contracted by $f$,
   each irreducible component $C^{\alpha}$ of $C$ which does not map to a point
 has genus zero and maps onto one of the lines $l_{ij}$. In some homogeneous
 coordinates it is given by
-
-%% FOLLOWING LINE CANNOT BE BROKEN BEFORE 80 CHAR
-%% FOLLOWING LINE CANNOT BE BROKEN BEFORE 80 CHAR
 $$f(z_1:z_2)=(0:\,\,\dots\,\,:0:z_1^{d_{\alpha}}:0:\,\,\dots\,\,:0:z_2^{d_{\alpha}}:0:\,\,\dots\,\,:0)\,,\,\,\,{d_{\alpha}}\ge1\,\,.$$
 
 We will associate  with each point
@@ -954,13 +1020,13 @@ Our claim is that connected components of $ \M_{g,k}(\P^n,d)^{\T}$ are
 naturally labeled by equivalence classes of connected graphs $\Gamma$ with
 specifications
  obeying the following conditions:
-\roster
+\begin{enumerate}
 \item if  $\alpha\in Edge (\Gamma)$ connects vertices $v,u\in Vert(\Gamma)$
 then $f_v\ne f_u\,\,$,
 \item $1-\chi(\Gamma)+\dsize\sum_{v\in Vert(\Gamma)}g_v=g\,\,$,
 \item $\dsize\sum_{\alpha\in Edge(\Gamma)}d_{\alpha}=d\,\,$,
 \item $\{1,\dots,k\}=\dsize\coprod_{v\in Vert(\Gamma)} S_v\,\,$.
-\endroster
+\end{enumerate}
 Notice that from  condition (1) it follows that $\Gamma$ has no simple loops.
 
  Each component $\M_{g,k}(\P^n,d)^{\Gamma}$ is isomorphic to the quotient space
@@ -971,7 +1037,9 @@ forget about $Aut(\Gamma)$ till 3.4.
 
 
 
-\subheading{3.3. Contributions of connected components}
+% \subheading{3.3. Contributions of connected components}
+\subsection{Contributions of connected components}
+
 
 {}From now on we assume that our curves have arithmetic genus zero.
  The graphs $\Gamma$ in our description will be  trees and the interior genera
@@ -1006,7 +1074,8 @@ bundles'' putting  corresponding symbols. One can check that the final result
 after all cancellations is the  class of a virtual equivariant vector bundle,
 and our formal computations give the correct answer.
 
-\subheading{3.3.1. The normal bundle}
+% \subheading{3.3.1. The normal bundle}
+\subsubsection{The normal bundle}
 
 
 The class of the normal bundle to $\M^{\Gamma}$ is
@@ -1034,7 +1103,7 @@ C^{\beta}:\alpha\ne\beta;\alpha, \beta\notin Edge(\Gamma)}
 [T_y (C^{\alpha})\otimes T_y(C^{\beta})]\,\,+$$
 $$+
 \sum_{y\in C^{\alpha}\cap C^{\beta}:\alpha\ne\beta,\alpha\notin
-Edge(\Gamma)}([T_y(C^{\alpha})]
+Edge(\Gamma)}[T_y(C^{\alpha})]
 \,\,-\sum_{\alpha:\alpha\notin Edge(\Gamma)}[H^0(C^{\alpha}, \Cal
 T_{C^{\alpha}})]\,\,.$$
 
@@ -1089,9 +1158,9 @@ use it, because all graphs in our computations will be trees.
 We denote natural coordinates on $Lie(\T)\simeq\C^{n+1}$ by
 $\lambda_1,\dots,\lambda_{n+1}$.
 
-\proclaim{Notation} For a flag $F=(v,\alpha)$ of $\Gamma$ we denote by $w_F$
+\begin{notation} For a flag $F=(v,\alpha)$ of $\Gamma$ we denote by $w_F$
 the expression $(\lambda_{f_v}-\lambda_{f_u})/d_{\alpha}$ where $u\in
-Vert(\Gamma),u\ne v$  is the second vertex of the edge $\alpha$.\endproclaim
+Vert(\Gamma),u\ne v$  is the second vertex of the edge $\alpha$.\end{notation}
    We consider $w_F$ as a linear function on $Lie(\T)$.
  The geometric meaning of $w_F$ is the following: it is the character of the
 action of $\T$ on the tangent space to $C^{\alpha}$ at  the point $C_v\cap
@@ -1102,7 +1171,8 @@ $w_{\overline{F}}=-w_F$.
 Our next goal is the computation of the contribution of $[\Cal
 N^{abs}_{\M^{\Gamma}}]$ in terms of $w_F$.
 
- \subheading{3.3.2. Intersection theory on $\M_{0,k}$}
+%  \subheading{3.3.2. Intersection theory on $\M_{0,k}$}
+\subsubsection{Intersection theory on $\M_{0,k}$}
 
 
 In this subsection
@@ -1133,14 +1203,14 @@ formulas for intersection numbers are very simple. Physicists knew this formula
  already for a long time.
 
 
-\proclaim{Lemma} $\langle\tau_{d_1}\dots\tau_{d_k}\rangle_0=\frac
+\begin{lem} $\langle\tau_{d_1}\dots\tau_{d_k}\rangle_0=\frac
 {(k-3)!}{d_1!\dots d_k!}\,\,.$
-\endproclaim
+\end{lem}
 
 
 \bf{Proof:} \rm The intersection numbers for $\M_{0,k}$ are uniquely
  defined by the following properties (see [W]):
-\roster
+\begin{enumerate}
 \item $\langle \tau_0\tau_0\tau_0\rangle_0=1$,
 \item $\langle\tau_{d_1}\dots\tau_{d_k}\rangle_0$ is invariant under
 permutations of the indices $d_*$,
@@ -1148,18 +1218,19 @@ permutations of the indices $d_*$,
 $$\langle\tau_{d_1}\dots\tau_{d_k}\rangle_0=
  \dsize\sum_{j\ge 2:d_j\ge
 1}\langle\tau_{d_2}\dots\tau_{d_j-1}\dots\tau_{d_k}\rangle_0\,.$$
-\endroster
+\end{enumerate}
 
 One can check easily that $\frac
 {(k-3)!}{d_1!\dots d_k!}$ satisfies all the conditions above. \qed
 
-\proclaim{Corollary} $I(w_1,\dots,w_k)=\dsize\prod_{i=1}^k w_i^{-1}
+\begin{cor} $I(w_1,\dots,w_k)=\dsize\prod_{i=1}^k w_i^{-1}
 \,\,\times\,\,\,\left(\sum_{i=1}^k w_i^{-1}\right)^{k-3}$ .
-\endproclaim
+\end{cor}
 
 
 
-\subheading{3.3.3. The contribution of $\Cal N^{abs}_{\M^{\Gamma}}$}
+% \subheading{3.3.3. The contribution of $\Cal N^{abs}_{\M^{\Gamma}}$}
+\subsubsection{The contribution of $\Cal N^{abs}_{\M^{\Gamma}}$}
 
 The space $\M^{\Gamma}$ is isomorphic to the product of $\M_{0,val(v)}$ over
 vertices $v\in Vert (\Gamma)$
@@ -1234,7 +1305,8 @@ $$\dsize\prod_{v\in Vert(\Gamma)}\left(\left(\sum_
 w_F^{-1}\right)\,\,.$$
 
 
-\subheading{3.3.4. The contribution of $[H^0(C,f^*(\Cal T_{\P^n}))]$}
+% \subheading{3.3.4. The contribution of $[H^0(C,f^*(\Cal T_{\P^n}))]$}
+\subsubsection{The contribution of $[H^0(C,f^*(\Cal T_{\P^n}))]$}
 
   The space of global sections of the vector bundle $f^*(\Cal T_{\P^n})$ is
 equal to the subspace of
@@ -1243,22 +1315,22 @@ given by the condition that the values of sections at each vertex $v$  will be
 the same for all edges $\alpha$ adjacent to $v$. More precisely,
  we have the following short exact sequence of equivariant vector bundles on
 $\M^{\Gamma}$:
-$$0@>>>H^0(C,f^*(\Cal T_{\P^n}))@>>>\dsize\bigoplus_{\alpha\in
-Edge(\Gamma)}H^0(C^{\alpha},f^*(\Cal T_{\P^n}))@>>>
+$$0\to H^0(C,f^*(\Cal T_{\P^n}))\to\dsize\bigoplus_{\alpha\in
+Edge(\Gamma)}H^0(C^{\alpha},f^*(\Cal T_{\P^n}))\to
 $$
-$$@>>>\bigoplus_{v\in Vert (\Gamma)}
-\left(T_{p_{f_v}}\P^n\otimes\C^{val(v)-1}\right)@>>>0$$
+$$\to\bigoplus_{v\in Vert (\Gamma)}
+\left(T_{p_{f_v}}\P^n\otimes\C^{val(v)-1}\right)\to0$$
 
-First, we study the contributions of  $[H^0(C^{\alpha},f^*(\Cal T_{\P^n})]$.
+First, we study the contributions of  $[H^0(C^{\alpha},f^*(\Cal T_{\P^n}))]$.
   The edge $\alpha$ passes through two points $p_i,p_j\in (\P^n)^{\T}$.
 In some coordinate $z=(z_1:z_2)$ on $\P^1\simeq C^{\alpha}$, the map $f$
  is given by
-$$ X_i(f(z))=z_1^d,\,X_j(f(z))=z_2^d,\,\,\,X_k(f(z))=0\,\text{ for }
+$$ X_i(f(z))=z_1^d,\quad X_j(f(z))=z_2^d, \quad X_k(f(z))=0 \quad \text{ for }
 k\ne i,j\,.$$
 
 Here $X_k, \,k=1,n+1$ are homogeneous coordinates on $\P^n$.
  We have a short exact sequence of vector bundles on $l_{ij}$
-$$0@>>>\Cal T_{l_{ij}}@>>>\Cal T_{\P^n}@>>>\Cal N_{l_{ij}}@>>>0$$
+$$0\to\Cal T_{l_{ij}}\to\Cal T_{\P^n}\to\Cal N_{l_{ij}}\to0$$
  inducing a corresponding exact sequence of vector bundles on $\M^{\Gamma}$.
 
 
@@ -1266,11 +1338,11 @@ $$0@>>>\Cal T_{l_{ij}}@>>>\Cal T_{\P^n}@>>>\Cal N_{l_{ij}}@>>>0$$
 One can check using this exact sequence that the following elements form a
 basis of
   $H^0(C^{\alpha},f^*(\Cal T_{\P^n}))$:
-\roster
+\begin{enumerate}
 \item $ z^a X_i\partial/\partial X_i,\,\,\,-d_{\alpha}\le a\le d_{\alpha}$,
 \item $ z_1^a z_2^b \partial/\partial X_k,\,\,\,a+b=d_{\alpha},\,0\le
 a,b,\,\,k\ne i,j$.
-\endroster
+\end{enumerate}
 
 Note that there is exactly one basis element ($a=0$ in the first group) on
 which $T$ acts trivially. Thus, in all we have $\#Edge(\Gamma)$ terms $[0]$,
@@ -1290,10 +1362,11 @@ $T_{p_i}\P^n$.
 Putting all terms together we get the formula for the contribution of\linebreak
  $[H^0(C,f^*(\Cal T_{\P^n}))]-
 \# Edge(\Gamma)[0]\,\,\,\,$ in the multiplicative form:
-$$\prod \Sb
+$$\prod_{
+\substack{
 \alpha\in Edge(\Gamma):\\
 (v_1,v_2)\text{ -  vertices of }\alpha
-\endSb
+}}
 \left(
 \frac{
 (-1)^{d_{\alpha}}\left(
@@ -1307,7 +1380,8 @@ $$\times\,\,
 \prod_{v\in Vert(\Gamma)} \left(\prod_{j:j\ne
 f_v}(\lambda_{f_v}-\lambda_j)\right)^{val(v)-1}\,.$$
 
-\subheading{3.3.5. Marked points}
+% \subheading{3.3.5. Marked points}
+\subsubsection{Marked points}
 
 The only result of the introduction  of marked points is that one has to
 replace the exponent $\,(val(v)-3)\,$ in the last  formula in 3.3.3
@@ -1333,7 +1407,8 @@ In the sequel we will denote $\M^{\Gamma}$ by $\M^{\widehat\Gamma}$.
 
 
 
-\subheading{3.3.6. The contributions of the vector bundles in the examples}
+% \subheading{3.3.6. The contributions of the vector bundles in the examples}
+\subsubsection{The contributions of the vector bundles in the examples}
 
 As we already mentioned in 3.3.1, in all three examples from  section 2 the
 vector bundles arising on $\M_{0,*}(\P^n,d)^{\Gamma}$
@@ -1356,9 +1431,9 @@ a+b=5d_{\alpha}}\frac{a\lambda_{f_{v_1}}+b\lambda_{f_{v_2}}}{d_{\alpha}}\right)\
 \prod_{v\in Vert(\Gamma)}(5\lambda_{f_v})^{1-val(v)}\,\,.$$
 Here we use the short exact sequence (omitting zeroes from the left and the
 right):
-$$H^0(C,f^*(\Cal O (5)))@>>>\dsize\bigoplus_{\alpha\in Edge(\Gamma)}
-H^0(C^{\alpha},f^*(\Cal O (5)))@>>>\bigoplus_{v\in Vert (\Gamma)}
-\left(\Cal O(5)_{p_{f_v}})\otimes \C^{val(v)-1}\right)\,\,\,.$$
+$$H^0(C,f^*(\Cal O (5)))\to\dsize\bigoplus_{\alpha\in Edge(\Gamma)}
+H^0(C^{\alpha},f^*(\Cal O (5)))\to\bigoplus_{v\in Vert (\Gamma)}
+\left(\Cal O(5)_{p_{f_v}}\otimes \C^{val(v)-1}\right)\,\,\,.$$
 
 In  example 2.3 the contribution of $\Cal F_d$ is
 $$\left[\prod_{\alpha\in Edge (\Gamma): (v1,v2)\text{ - vertices of
@@ -1370,12 +1445,13 @@ $$\left[\prod_{\alpha\in Edge (\Gamma): (v1,v2)\text{ - vertices of
 (-\lambda_{f_v})^{val(v)-1}\right]^2\,.$$
  It follows from the short exact sequence
 $$\bigoplus_{v\in Vert (\Gamma)}
-\left(\Cal O(-1)_{p_{f_v}})\otimes \C^{val(v)-1}\right)@>>>H^1(C,f^*(\Cal O
-(-1)))@>>>\dsize\bigoplus_{\alpha\in Edge(\Gamma)}
+\left(\Cal O(-1)_{p_{f_v}}\otimes \C^{val(v)-1}\right)\to H^1(C,f^*(\Cal O
+(-1)))\to\dsize\bigoplus_{\alpha\in Edge(\Gamma)}
 H^1(C^{\alpha},f^*(\Cal O (-1)))
 \,\,\,.$$
 
-\subheading{3.4. The final sum}
+% \subheading{3.4. The final sum}
+\subsection{The final sum}
 
 
 In each example the integral over the corresponding moduli space of stable maps
@@ -1390,9 +1466,11 @@ The last formula from 3.3.3 is corrected in the first example according to
 
 
 
-\head 4. Critical values.\endhead
+% \head 4. Critical values.\endhead
+\section{Critical values}
 
-\subheading{4.1. Feynman rules and summation over trees}
+% \subheading{4.1. Feynman rules and summation over trees}
+\subsection{Feynman rules and summation over trees}
 
 
 Here we will describe a general formula, well known in physics and
@@ -1414,14 +1492,16 @@ These data define a function on the set of equivalence classes of finite
 graphs.
  Let $\Gamma$ be a graph and $Flags(\Gamma)$ be the set of its flags. The
 weight of the graph is defined as
-$$w(\Gamma):=\sum\Sb\text{maps }\\f:Flags(\Gamma)@>>>A\endSb\left(
-\prod \Sb
+$$w(\Gamma):=\sum_{\substack{\text{maps }\\f:Flags(\Gamma)\to A}}
+\left(
+\prod_{\substack{
 \alpha\in Edge(\Gamma)\\
 F_1,F_2\text{ - flags}\\\text{containing }\alpha
-\endSb
+}}
 g^{f(F_1)f(F_2)}
-\prod\Sb v\in Vert(\Gamma)\\F_1,\dots,F_k\text{
- - flags}\\\text{ containing }v\endSb
+\prod_{\substack{
+v\in Vert(\Gamma)\\F_1,\dots,F_k\text{ - flags}\\\text{ containing }v
+}}
 C_{f(F_1)\dots f(F_k)}\right)\,\,.$$
 
 Note that in all our examples one can choose an appropriate set of indices and
@@ -1435,9 +1515,10 @@ in all our examples.
 
 Define  the ``tree-level partition function'' (just an element of the ground
 field) by the formula
-$$Z^{tree}:=\sum \Sb \Gamma:\text{ equivalence classes of}
-\\ \text{finite nonempty trees }\Gamma\endSb \frac{1}{\#
-Aut(\Gamma)}\,w(\Gamma)\,\,.$$
+$$Z^{tree}:=\sum_{\substack{
+\Gamma:\text{ equivalence classes of}
+\\ \text{finite nonempty trees }\Gamma
+}} \frac{1}{\# Aut(\Gamma)}\,w(\Gamma)\,\,.$$
 
 Let us introduce auxiliary formal variables $\phi_a, \,a\in A$ and a series
 $$S(\phi_*):=-\sum_{a,b\in A} \frac{g_{ab}\phi_a\phi_b}{2}
@@ -1452,19 +1533,21 @@ $S$ as to the ``kinetic'' part and to the second summand
  as to the ``potential'' part of the ``action'' functional $S$, in analogy with
  classical mechanics.
 
-\proclaim{Formula} We have $Z^{tree}=Crit\,S(\phi_*)$, where the r.h.s. denotes
+\begin{formula} We have $Z^{tree}=Crit\,S(\phi_*)$, where the r.h.s. denotes
 the critical value of
  the function $S$.
-\endproclaim
+\end{formula}
 
 This formula follows from a more general formula
 $$ log\left((det(2\pi \hbar g))^{-1/2}\int
-e^{\frac{S(\phi_*)}{\hbar}}\prod_{a\in A}d\phi_a\right)=\sum\Sb \Gamma:\text{
-equivalence classes of}
-\\ \text{connected nonempty graphs }\Gamma\endSb
+e^{\frac{S(\phi_*)}{\hbar}}\prod_{a\in A}d\phi_a\right)=
+\sum_{\substack{
+\Gamma:\text{ equivalence classes of}
+\\ \text{connected nonempty graphs }\Gamma
+}} 
 \frac{\hbar^{-\chi(\Gamma)}}{\# Aut(\Gamma)}\,w(\Gamma)\,\,,$$
  where both sides of the formula are considered as formal power series
-expansions at $\hbar@>>>0$.
+expansions at $\hbar\to 0$.
 
 The last formula is the usual expansion of integrals over Feynman diagrams.
 
@@ -1478,7 +1561,8 @@ A direct proof of the formula $Z^{tree}=Crit\,S(\phi_*)$ can be obtained by a
 formal inversion of the map $(\phi_*)\mapsto dS_{|(\phi_*)}$ and evaluating $S$
 at the critical point.
 
-\subheading{4.1.1. The action functionals in the three examples}
+% \subheading{4.1.1. The action functionals in the three examples}
+\subsubsection{The action functionals in the three examples}
 
 Let us first describe the situation without marked points on the curves (and
 without tails on the graphs).
@@ -1495,9 +1579,10 @@ usual, $u$ denotes the second vertex of $\alpha$).
 
 The potential part of the action is standard:
 $$S^{pot}(\phi_*)=\sum_{i:1\le i\le n+1}\mu_i c_i\sum_{k\ge 1}
-\frac{1}{k!}\sum\Sb j_1,\dots,j_k:j_*\ne i
+\frac{1}{k!}\sum_{\substack{
+j_1,\dots,j_k:j_*\ne i
 \\ d_1,\dots ,d_k: d_*\ge 1
-\endSb
+}} 
 (v_{i j_1,d_1}+\dots+v_{i j_k d_k})^{k-3}
 \phi_{i j_1,d_1}\dots \phi_{i j_k d_k}\,\,,$$
 where $v_{ij,d}:=d/(\lambda_i-\lambda_j)$ is equal to $w_F^{-1}$
@@ -1548,14 +1633,15 @@ Here $\delta_{ij}$ is the Kronecker symbol.
  The potential part is equal to
 $$S^{pot}(\phi_*,\tilde\phi_*)=\sum_{i:1\le i\le n+1}\mu_i \sum_{k\ge 1}
 \frac{1}{k!}\sum_{l\ge 0}\frac{1}{l!}$$
-$$\left(\sum\Sb j_1,\dots,j_k:j_*\ne i
+$$\left(\sum_{\substack{
+j_1,\dots,j_k:j_*\ne i
 \\ d_1,\dots ,d_k: d_*\ge 1
-\endSb
+}}
 \,\,\sum_{\tilde j_1,\dots,\tilde j_l}
 (v_{i j_1,d_1}+\dots+v_{i j_k d_k})^{k+l-3}\,
 (\phi_{i j_1,d_1}\dots \phi_{i j_k d_k})
 (\tilde\phi_{\tilde j_1}\dots\tilde\phi_{\tilde j_l})\right)\,\,.$$
- As before, we multiply the matrix coeficients of $g$ by extra variables:
+ As before, we multiply the matrix coefficients of $g$ by extra variables:
  $$g^{ij,d}\,\mapsto \, z_1^d\,g^{ij,d},\,\,\,g^{i;i}\,\mapsto\,
 z_2\,g^{i,i}\,\,.$$
 The exponents of the variables $z_1,z_2$ count the total degree of the curves
@@ -1568,7 +1654,8 @@ form $z_1^d z_2^{3d-1}$. It can be done by a contour integration.
 
 
 
-\subheading{4.2. The potential part of the action functional}
+% \subheading{4.2. The potential part of the action functional}
+\subsection{The potential part of the action functional}
 
 $S^{pot}(\phi_*)$ comes essentially  from  the intersection numbers of
 $\M_{0,k}$.
@@ -1584,12 +1671,12 @@ $$S(v_*,\phi_*):=\sum_{k\ge 1}\frac{1}{k!}\sum_{i_1,\dots,i_k \in I}
  (v_{i_1}+\dots+v_{i_k})^{k-3}
 \phi_{i_1}\dots \phi_{i_k}\,\,.$$
 
-\proclaim{Theorem} We have $S(v_*,\phi_*)=Crit\,B(\xi)$, where
+\begin{thm} We have $S(v_*,\phi_*)=Crit\,B(\xi)$, where
 $$B(\xi)=\frac{\xi^3}{6}+\frac{1}{2}\sum_{i,j\in I}
 \phi_i \phi_j\,\frac{ exp\,(\xi v_i+\xi v_j)}{v_i+v_j}+
 \sum_{i\in I} \phi_i\, \frac{exp\,(\xi v_i)}{v_i^2}-
 \sum_{i\in I}\phi_i \,\frac{ \xi \,\,exp\,(\xi v_i)}{v_i}\,\,.$$
-\endproclaim
+\end{thm}
 
 
 Note that in the final form we will have $n+1$ distinct variables
@@ -1671,7 +1758,9 @@ v_i)}{v_i}\,.$$
 
 After adding to the formula above two terms $S_1(v_*,\phi_*)$ and
  $S_2(v_*,\phi_*)$ which do not depend on $\xi$, we obtain $B(\xi )$. \qed
-\subheading{4.2.1. The effect of marked points}
+
+% \subheading{4.2.1. The effect of marked points}
+\subsubsection{The effect of marked points}
 
 We need a generalization
   of the  previous computations to the case when some $v_i$ are equal to zero
@@ -1696,7 +1785,8 @@ Thus, we can use the previous formulas from 4.2 with $\phi_i$ replaced
  by $\phi_i\,exp\,(\widetilde\Phi\,v_i)$.
 
 
-\subheading{4.3. The structure of the resulting functional}
+% \subheading{4.3. The structure of the resulting functional}
+\subsection{The structure of the resulting functional}
 
 Note that we have the following general scheme in all examples:
   the sum over trees is equal to the extremal values of a function in
@@ -1719,12 +1809,13 @@ is not easy to solve it. At the moment we do not know how to proceed.
 % on matrices $X=(X_{ab})$:
 %$$-\frac{1}{2}Tr\,(D_{v_*} X^2)+Tr\,(X D_{\phi_*})\,\,.$$
 %Here $D$ with the subscript being a vector denotes the diagonal
-%$A\times A$-matrix with corresponing elements on the diagonal.
+%$A\times A$-matrix with corresponding elements on the diagonal.
 %  It is strange that the same kind of transformation was used in
 %[K] in a very different situation.
 
 
-\subheading{4.4. Examples}
+% \subheading{4.4. Examples}
+\subsection{Examples}
 
 We will not write the formula for the example 2.1.
 
@@ -1734,12 +1825,18 @@ $$
 
 
 For 2.2 (curves on quintics) the functional is
-$$\frac{1}{2}\sum\Sb i,j;d\\i\ne j\endSb \frac
+$$\frac{1}{2}\sum_{\substack{
+i,j;d\\i\ne j
+}} 
+\frac
 {d^3 (\l_i-\l_j)^2\dsize\prod_{a+b=d:a,b\ge 1}\dsize\prod_{k=1}^5
 (a\l_i+b\l_j-d\l_k)}
 {\dsize\prod_{a+b=5d:a,b\ge 1}(a\l_i+b\l_j)}
 \,exp\left(-td-\frac{\xi_i-\xi_j}{\l_i-\l_j}\right)\phi_{ij,d}\phi_{ji,d}\,+$$
-$$+\frac{1}{2}\sum\Sb i,j,d,j',d'\\ j,j'\ne i\endSb \nu_i
+$$+\frac{1}{2}\sum_{\substack{
+i,j,d,j',d'\\ j,j'\ne i
+}}
+\nu_i
 \frac
 {
 \phi_{ij,d}\phi_{ij',d'}
@@ -1748,11 +1845,13 @@ $$+\frac{1}{2}\sum\Sb i,j,d,j',d'\\ j,j'\ne i\endSb \nu_i
 \frac{d}{\l_i-\l_j}+\frac{d'}
 {\l_i-\l_{j'}}
 }\,\,-$$
-$$-\sum\Sb i,j,d\\i\ne j\endSb\nu_i\frac{\l_i-\l_j}{d}\xi_i\phi_{ij,d}+
-\sum\Sb i,j,d\\i\ne
-%% FOLLOWING LINE CANNOT BE BROKEN BEFORE 80 CHAR
-%% FOLLOWING LINE CANNOT BE BROKEN BEFORE 80 CHAR
-j\endSb\nu_i\frac{(\l_i-\l_j)^2}{d^2}\phi_{ij,d}+\sum_{i=1}^5\nu_i\frac{\xi_i^3}{6}\,\,.$$
+$$-\sum_{\substack{
+i,j,d\\i\ne j
+}}\nu_i\frac{\l_i-\l_j}{d}\xi_i\phi_{ij,d}+
+\sum_{\substack{
+i,j,d\\i\ne j
+}}
+\nu_i\frac{(\l_i-\l_j)^2}{d^2}\phi_{ij,d}+\sum_{i=1}^5\nu_i\frac{\xi_i^3}{6}\,\,.$$
 Here $\nu_i$ denotes $\frac{5\l_i}{\prod_{j:j\ne i} (\l_i-\l_j)}$.
 The extremum is taken over the variables $\phi_*$ and $\xi_*$. The result does
 not depend on $\l_*$ and is equal (conjecturally) to the function $F(t)$ from
@@ -1773,7 +1872,7 @@ In general we expect that the cubic term from the main formula of 4.2
 
  For 2.3 (multiple coverings), we will write  only a formula for the functional
  with fixed $\l$-s: $\lambda_1=-\lambda_2=1$. After some simplifications and
-changings of notations we get the following formula:
+changes of notation we get the following formula:
 $$\sum_{k,l}\frac{\phi_k\phi_l}{k+l}-\sum_k\frac{2^{4k}}{k}{\binom {2k} k
 }^{-2}
 \,exp\,\left(-k(t+X)\right)\,\phi_k^2-\frac{X}{2}\sum_k \frac{\phi_k}{k}
@@ -1781,13 +1880,15 @@ $$\sum_{k,l}\frac{\phi_k\phi_l}{k+l}-\sum_k\frac{2^{4k}}{k}{\binom {2k} k
  The indices $k,l$ take values in the set $\{1,3,5,\dots\}$.  Recently Yu.
 Manin (see [M]) noticed that if one of the variables $\l_*$ vanishes then the
 sum over trees simplifies drastically because the contribution of the most part
-of trees dissapear. The result of the compuation   is equal to $Li_3(e^t)$.
+of trees disappear. The result of the computation   is equal to $Li_3(e^t)$.
 
 
-\head 5. Generalizations.
-\endhead
+% \head 5. Generalizations.
+% \endhead
+\section{Generalizations}
 
-\subheading{5.1. Higher genera}
+% \subheading{5.1. Higher genera}
+\subsection{Higher genera}
 
 We do not know at the moment how to treat higher genus curves
 in the same way as we treat rational curves. One basic problem is that the
@@ -1815,7 +1916,8 @@ Z.~Ran in [R].
  At least Yu.~Manin and the author were not able to get the number $12$ of
  plane cubics passing through generic $8$ points using Ran's formulas.
 
-\subheading{5.2.   Flag spaces and toric varieties}
+% \subheading{5.2.   Flag spaces and toric varieties}
+\subsection{Flag spaces and toric varieties}
 
 All of our computational scheme works well for any generalized flag space
 $G/P$, where $G$ is a semi-simple algebraic group and $P$ is a parabolic
@@ -1840,7 +1942,8 @@ can be modified and applied again.
 
 
 
-\subheading{5.3. Complete intersections}
+% \subheading{5.3. Complete intersections}
+\subsection{Complete intersections}
 
 We can treat any smooth complete intersection of hypersurfaces in projective
 space in the same manner as quintic $3$-folds.
@@ -1849,7 +1952,8 @@ consider equivariant vector bundles generated by global sections. If we have
 realized $V$ as the zero set of a section of such a vector bundle transversal
 to the zero section, then all the machinery applies.
 
-\subheading{5.4. Families}
+% \subheading{5.4. Families}
+\subsection{Families}
 
 Let us consider counting problems of genus zero curves on $K3$-surfaces. The
 first impression is that it should be trivial, because there are no non-trivial
@@ -1894,64 +1998,134 @@ $$I(z)=\sum_{n\ge 0} \frac{(4n)!}{(n!)^4}z^n\,\,.$$
 for useful comments, and to the Max-Planck-Institut
  f\"ur Mathematik in Bonn for the hospitality and stimulating atmosphere.
 
-\Refs
+% \Refs
+\begin{thebibliography}{GMM}
+  
 
-\widestnumber\key{GMM}
-
-
-\ref \key AM\by P. S. Aspinwall, D. R. Morrison \paper
- Topological field theory and rational curves \jour Commun. Math. Phys. \pages
-245--262\yr 1993 \vol 151\endref
+% \widestnumber\key{GMM}
 
 
-\ref \key BFM\by P. Baum, W. Fulton, R. MacPherson\paper
- Riemann-Roch for singular varieties\pages 101--145\yr 1975\jour Publ. Math. I.
-H. E. S. \vol 45\endref
+% \ref \key AM\by P. S. Aspinwall, D. R. Morrison \paper
+%  Topological field theory and rational curves \jour Commun. Math. Phys. \pages
+% 245--262\yr 1993 \vol 151\endref
+
+\bibitem[AM]{AM}
+P. S. Aspinwall, D. R. Morrison ,
+\textit{Topological field theory and rational curves},
+\textit{Commun. Math. Phys.} \textbf{151} (1993), 245--262.
 
 
-\ref \key B\by R. Bott\paper A residue formula for holomorphic vector
-fields\jour Jour. Diff. Geom.\yr 1967 \vol 1 \pages 311-330\endref
+% \ref \key BFM\by P. Baum, W. Fulton, R. MacPherson\paper
+%  Riemann-Roch for singular varieties\pages 101--145\yr 1975\jour Publ. Math. I.
+% H. E. S. \vol 45\endref
+
+\bibitem[BFM]{BFM}
+P. Baum, W. Fulton, R. MacPherson,
+\textit{Riemann-Roch for singular varieties},
+{Publ. Math. I. H. E. S.} \textbf{45} (1975), 101--145.
 
 
-\ref \key DM\by P. Deligne, D. Mumford\paper The irreducibility of the space of
-curves of given genus\pages 75-110\yr 1969\jour Publ. Math. I. H. E. S. \vol
-36\endref
+% \ref \key B\by R. Bott\paper A residue formula for holomorphic vector
+% fields\jour Jour. Diff. Geom.\yr 1967 \vol 1 \pages 311-330\endref
 
-\ref \key GK\by A. Givental, B. Kim \paper Quantum cohomology of flag manifolds
-and Toda lattices\yr 1993 \jour preprint\endref
-
-\ref \key ID\by  C. Itzykson, J.-M. Drouffe\book Statistical field theory \yr
-1989\publ Cambridge University Press\endref
+\bibitem[B]{B}
+R. Bott,
+\textit{A residue formula for holomorphic vector fields},
+{Jour. Diff. Geom.} \textbf{1} (1967), 311--330.
 
 
-\ref \key K\by M. Kontsevich\paper Intersection theory on the moduli space of
-curves and the matrix Airy function \pages 1--23\vol 147 \yr 1992 \jour Commun.
-Math. Phys.\endref
+% \ref \key DM\by P. Deligne, D. Mumford\paper The irreducibility of the space of
+% curves of given genus\pages 75-110\yr 1969\jour Publ. Math. I. H. E. S. \vol
+% 36\endref
 
-\ref \key KM\by M. Kontsevich, Yu. Manin\paper Gromov-Witten classes, quantum
-cohomology and enumerative geometry\yr 1994\jour MPI preprint and
-hep-th/9402147\endref
+\bibitem[DM]{DM}
+P. Deligne, D. Mumford,
+\textit{The irreducibility of the space of curves of given genus},
+{Publ. Math. I. H. E. S.} \textbf{36} (1969), 75--110.
+
+% \ref \key GK\by A. Givental, B. Kim \paper Quantum cohomology of flag manifolds
+% and Toda lattices\yr 1993 \jour preprint\endref
+
+\bibitem[GK]{GK}
+A. Givental, B. Kim,
+\textit{Quantum cohomology of flag manifolds and Toda lattices},
+preprint (1993).
+
+% \ref \key ID\by  C. Itzykson, J.-M. Drouffe\book Statistical field theory \yr
+% 1989\publ Cambridge University Press\endref
+
+\bibitem[ID]{ID}
+C. Itzykson, J.-M. Drouffe,
+\textit{Statistical field theory},
+Cambridge University Press (1989).
 
 
-\ref \key P\by P. Pansu \paper Chapter VIII, Compactness\inbook Holomorphic
-curves in symplectic geometry, eds. M. Audin, J. Lafontaine, Progress in
-Mathematics\vol 117\publ Birkh\"auser\yr 1994\endref
+% \ref \key K\by M. Kontsevich\paper Intersection theory on the moduli space of
+% curves and the matrix Airy function \pages 1--23\vol 147 \yr 1992 \jour Commun.
+% Math. Phys.\endref
 
-\ref\key R\by Z. Ran\paper Enumerative geometry of singular plane curves
-\jour Invent. Math. \yr 1989 \pages 447--465\vol 97\endref
+\bibitem[K]{K}
+M. Kontsevich,
+\textit{Intersection theory on the moduli space of curves and the matrix Airy function},
+{Commun. Math. Phys.} \textbf{147} (1992), 1--23.
 
-\ref \key RT\by Y. Ruan, G. Tian\paper Mathematical theory of quantum
-cohomology \jour preprint \yr 1993\endref
+% \ref \key KM\by M. Kontsevich, Yu. Manin\paper Gromov-Witten classes, quantum
+% cohomology and enumerative geometry\yr 1994\jour MPI preprint and
+% hep-th/9402147\endref
+
+\bibitem[KM]{KM}
+M. Kontsevich, Yu. Manin,
+\textit{Gromov-Witten classes, quantum cohomology and enumerative geometry},
+MPI preprint and hep-th/9402147 (1994).
 
 
-\ref \key W\by E. Witten \paper Two-dimensional gravity and intersection theory
-on moduli space \yr 1991\vol 1 \pages 243--310 \jour Surveys in Diff.
-Geom.\endref
+% \ref \key P\by P. Pansu \paper Chapter VIII, Compactness\inbook Holomorphic
+% curves in symplectic geometry, eds. M. Audin, J. Lafontaine, Progress in
+% Mathematics\vol 117\publ Birkh\"auser\yr 1994\endref
 
-\ref \key Y\by S. T. Yau, ed. \book Essays on Mirror Manifolds\yr 1992  \publ
-International  Press Co. , Hong Kong\endref
+\bibitem[P]{P}
+P. Pansu,
+\textit{Chapter VIII, Compactness},
+Holomorphic curves in symplectic geometry,
+eds. M. Audin, J. Lafontaine, Progress in Mathematics, vol. 117,
+{Birkh\"auser} (1994).
 
-\endRefs
+% \ref\key R\by Z. Ran\paper Enumerative geometry of singular plane curves
+% \jour Invent. Math. \yr 1989 \pages 447--465\vol 97\endref
 
-\enddocument
+\bibitem[R]{R}
+Z. Ran,
+\textit{Enumerative geometry of singular plane curves},
+{Invent. Math.} \textbf{97} (1989), 447--465.
+
+% \ref \key RT\by Y. Ruan, G. Tian\paper Mathematical theory of quantum
+% cohomology \jour preprint \yr 1993\endref
+
+\bibitem[RT]{RT}
+Y. Ruan, G. Tian,
+\textit{Mathematical theory of quantum cohomology},
+preprint (1993).
+
+
+% \ref \key W\by E. Witten \paper Two-dimensional gravity and intersection theory
+% on moduli space \yr 1991\vol 1 \pages 243--310 \jour Surveys in Diff.
+% Geom.\endref
+
+\bibitem[W]{W}
+E. Witten,
+\textit{Two-dimensional gravity and intersection theory on moduli space},
+{Surveys in Diff. Geom.} \textbf{1} (1991), 243--310.
+
+% \ref \key Y\by S. T. Yau, ed. \book Essays on Mirror Manifolds\yr 1992  \publ
+% International  Press Co. , Hong Kong\endref
+
+\bibitem[Y]{Y}
+S. T. Yau, ed.,
+\textit{Essays on Mirror Manifolds},
+International  Press Co., Hong Kong, 1992.
+
+% \endRefs
+\end{thebibliography}
+
+\end{document}
 
