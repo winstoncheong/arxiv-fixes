@@ -1,9 +1,24 @@
+# Sources are tracked; build products are not (see plan.html, section 4).
+# The PDFs readers download are produced by CI (section 5).
+
+# LaTeX intermediates
 *.aux
-*.fdb_latexmk
-*.fls
 *.log
-*.brf
 *.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.brf
+*.blg
+*.bcf
+*.run.xml
 *.synctex.*
 *.tmp
-*.toc
+
+# Build products: no figure PDFs exist today, so no negation is needed yet
+*.pdf
+
+# Python bytecode
+__pycache__/

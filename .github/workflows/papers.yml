@@ -1,0 +1,178 @@
+# Builds per-paper PDFs with TeX Live and deploys them to GitHub Pages.
+# See plan.html, section 5 (CI design).
+#
+# - push to master: build only changed paper directories
+# - workflow_dispatch: build all paper directories
+# - deploy merges fresh artifacts with previously deployed PDFs, assembles
+#   public/ with the index pages, and publishes that directory (never the
+#   whole repo, so intermediates never ship)
+name: Build papers and deploy to Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  SITE_URL: https://winstoncheong.github.io/arxiv-fixes
+
+jobs:
+  # Map changed files to paper directories; emit a JSON matrix.
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.dirs.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect changed paper directories
+        id: dirs
+        run: |
+          python3 - <<'EOF'
+          import json, os, subprocess
+          root = os.getcwd()
+          all_dirs = sorted(
+              d for d in os.listdir(root)
+              if os.path.isfile(os.path.join(root, d, "paper.json"))
+          )
+          if os.environ["GITHUB_EVENT_NAME"] == "workflow_dispatch":
+              matrix = all_dirs
+          else:
+              before = os.environ["BEFORE"]
+              sha = os.environ["SHA"]
+              try:
+                  subprocess.run(
+                      ["git", "cat-file", "-e", f"{before}^{{commit}}"],
+                      check=True, capture_output=True,
+                  )
+                  names = subprocess.run(
+                      ["git", "diff", "--name-only", before, sha],
+                      check=True, capture_output=True, text=True,
+                  ).stdout.splitlines()
+              except subprocess.CalledProcessError:
+                  # Shallow/rebased history: fall back to building everything.
+                  names = []
+                  matrix = all_dirs
+              else:
+                  dirs = set()
+                  for n in names:
+                      top = n.split("/", 1)[0]
+                      if top in all_dirs:
+                          dirs.add(top)
+                  matrix = sorted(dirs)
+          print(f"matrix={json.dumps(matrix)}")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"matrix={json.dumps(matrix)}\n")
+          EOF
+        env:
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+
+  # Verify the generated index pages are current (plan.html, section 6).
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check generated index files
+        run: python3 scripts/generate_index.py --check
+
+  # One job per changed directory; a broken paper fails without blocking
+  # the rest (fail-fast: false).
+  build:
+    needs: changes
+    if: needs.changes.outputs.matrix != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: ${{ fromJson(needs.changes.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-fonts-recommended texlive-science \
+            texlive-pictures latexmk
+      - name: Build PDFs with latexmk
+        working-directory: ${{ matrix.dir }}
+        run: |
+          python3 - <<'EOF'
+          import json, subprocess
+          meta = json.load(open("paper.json"))
+          for e in meta["entries"]:
+              if e.get("engine", "pdflatex") == "pdftex":
+                  # Plain-TeX source (e.g. harvmac): harvmac prompts
+                  # "big or little" via \read from the terminal, which is
+                  # fatal in nonstop mode. Answer "big" (reproduces the
+                  # committed 100-page letter-size PDF) by shadowing \read;
+                  # -jobname keeps the output name (command-line \input
+                  # would otherwise default to texput). Two passes for
+                  # references.
+                  stem = e["tex"][: -len(".tex")]
+                  cmd = r"\def\read#1to#2{\def#2{b }}\input " + e["tex"]
+                  for _ in range(2):
+                      subprocess.run(
+                          ["pdftex", "-interaction=nonstopmode",
+                           "-jobname", stem, cmd],
+                          check=True,
+                      )
+              else:
+                  subprocess.run(
+                      ["latexmk", "-pdf", "-interaction=nonstopmode", e["tex"]],
+                      check=True,
+                  )
+          EOF
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-${{ matrix.dir }}
+          path: ${{ matrix.dir }}/*.pdf
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    needs: [changes, check, build]
+    if: >-
+      always() &&
+      needs.changes.result == 'success' &&
+      needs.check.result == 'success' &&
+      (needs.build.result == 'success' || needs.build.result == 'skipped')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download fresh PDFs
+        if: needs.build.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: pdf-*
+          path: _fresh
+      - name: Assemble public directory
+        run: python3 scripts/assemble_site.py --fresh _fresh --out public --site-url "$SITE_URL"
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
