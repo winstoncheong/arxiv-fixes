@@ -99,7 +99,9 @@ jobs:
         run: python3 scripts/generate_index.py --check
 
   # One job per changed directory; a broken paper fails without blocking
-  # the rest (fail-fast: false).
+  # the rest (fail-fast: false). Builds run in a full-TeX-Live container
+  # (ghostscript, latexmk, python3 included), so no apt installs: stock
+  # runner apt proved too flaky for the TeX Live package split.
   build:
     needs: changes
     if: needs.changes.outputs.matrix != '[]'
@@ -108,25 +110,11 @@ jobs:
       matrix:
         dir: ${{ fromJson(needs.changes.outputs.matrix) }}
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-debian:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Install TeX Live
-        timeout-minutes: 12
-        run: |
-          sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
-            --no-install-recommends texlive-latex-base \
-            texlive-latex-recommended \
-            texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra \
-            texlive-science texlive-pictures texlive-bibtex-extra ghostscript \
-            texlive-font-utils latexmk
-          # texlive-fonts-extra: bbm.sty (0910.4460v2)
-          # texlive-bibtex-extra: harvmac.tex (hep-th_9408074v2)
-          # ghostscript + texlive-font-utils (repstopdf): on-the-fly
-          # EPS->PDF conversion (math_0701269v2)
-          # jheppub.sty is not in TeX Live; it lives in common/ and is
-          # copied into paper directories that declare it (see below)
       - name: Build PDFs with latexmk
         timeout-minutes: 25
         working-directory: ${{ matrix.dir }}
