@@ -117,10 +117,11 @@ jobs:
           sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended \
             texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra \
             texlive-science texlive-pictures texlive-bibtex-extra ghostscript \
-            latexmk
+            texlive-font-utils latexmk
           # texlive-fonts-extra: bbm.sty (0910.4460v2)
           # texlive-bibtex-extra: harvmac.tex (hep-th_9408074v2)
-          # ghostscript: on-the-fly EPS->PDF conversion (math_0701269v2)
+          # ghostscript + texlive-font-utils (repstopdf): on-the-fly
+          # EPS->PDF conversion (math_0701269v2)
           # jheppub.sty is not in TeX Live; it lives in common/ and is
           # copied into paper directories that declare it (see below)
       - name: Build PDFs with latexmk
