@@ -173,10 +173,26 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    # Job-level permissions replace the workflow block: restate all four.
+    # actions:write is needed to delete stale github-pages artifacts so a
+    # re-run never leaves deploy-pages facing duplicates.
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      actions: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+      - name: Delete stale github-pages artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for id in $(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --paginate -q '.artifacts[] | select(.name=="github-pages") | .id'); do
+            gh api -X DELETE "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/$id" && echo "deleted stale artifact $id"
+          done
+          echo "no stale github-pages artifacts remaining"
       - name: Download fresh PDFs
         if: needs.build.result == 'success' || needs.build.result == 'failure'
         uses: actions/download-artifact@v8
@@ -191,6 +207,20 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: 'public'
+      - name: Wait for github-pages artifact
+        # The artifact list API can lag the upload; deploy-pages requires
+        # exactly one visible github-pages artifact, so poll for it.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 24); do
+            n=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" -q '[.artifacts[] | select(.name=="github-pages")] | length')
+            echo "visible github-pages artifacts: $n"
+            if [ "$n" = "1" ]; then exit 0; fi
+            sleep 5
+          done
+          echo "github-pages artifact never became visible" >&2
+          exit 1
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
