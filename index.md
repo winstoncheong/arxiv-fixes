@@ -6,7 +6,7 @@
 
 Authors: Olivier Schiffmann
 
-[PDF](./0910.4460v2/0910.4460v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/0910.4460v2/0910.4460v2.pdf)
 
 arXiv: [0910.4460v2](https://arxiv.org/abs/0910.4460v2)
 
@@ -23,7 +23,7 @@ Changes:
 
 Authors: Sergei Alexandrov, Daniel Persson, Boris Pioline
 
-[PDF](./1110.0466v3/dilognotes.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/1110.0466v3/dilognotes.pdf)
 
 arXiv: [1110.0466v3](https://arxiv.org/abs/1110.0466v3)
 
@@ -41,7 +41,7 @@ Changes:
 
 Authors: Hiraku Nakajima
 
-[PDF](./alg-geom_9507012v2/alg-geom_9507012v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/alg-geom_9507012v2/alg-geom_9507012v2.pdf)
 
 arXiv: [alg-geom/9507012v2](https://arxiv.org/abs/alg-geom/9507012v2)
 
@@ -53,7 +53,7 @@ Status: done
 
 Authors: K. Behrend
 
-[PDF](./alg-geom_9601011v1/alg-geom_9601011v1.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/alg-geom_9601011v1/alg-geom_9601011v1.pdf)
 
 arXiv: [alg-geom/9601011v1](https://arxiv.org/abs/alg-geom/9601011v1)
 
@@ -75,7 +75,7 @@ Warning: In the original paper, the sections were unnumbered. This is also the c
 
 Authors: M. Kontsevich, Yu. Manin
 
-[PDF](./hep-th_9402147v2/hep-th_9402147v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9402147v2/hep-th_9402147v2.pdf)
 
 arXiv: [hep-th/9402147v2](https://arxiv.org/abs/hep-th/9402147v2)
 
@@ -87,7 +87,7 @@ Status: builds locally; first CI candidate
 
 Authors: M. Kontsevich
 
-[PDF](./hep-th_9405035v2/hep-th_9405035v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9405035v2/hep-th_9405035v2.pdf)
 
 arXiv: [hep-th/9405035v2](https://arxiv.org/abs/hep-th/9405035v2)
 
@@ -104,7 +104,7 @@ Changes:
 
 Authors: Cumrun Vafa and Edward Witten
 
-[PDF](./hep-th_9408074v2/main.pdf) [PDF](./hep-th_9408074v2/hep-th_9408074v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/main.pdf) [PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/hep-th_9408074v2.pdf)
 
 arXiv: [hep-th/9408074v2](https://arxiv.org/abs/hep-th/9408074v2)
 
@@ -124,7 +124,7 @@ More info on conversion [here](./hep-th_9408074v2/readme.md)
 
 Authors: Olivier Schiffmann
 
-[PDF](./math_0611617v2/math_0611617v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/math_0611617v2/math_0611617v2.pdf)
 
 arXiv: [math/0611617v2](https://arxiv.org/abs/math/0611617v2)
 
@@ -144,7 +144,7 @@ Changes:
 
 Authors: Dave Auckly
 
-[PDF](./math_0701269v2/6-1-07cmplx4.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/math_0701269v2/6-1-07cmplx4.pdf)
 
 arXiv: [math/0701269v2](https://arxiv.org/abs/math/0701269v2)
 
@@ -163,7 +163,7 @@ Changes:
 
 Authors: Hiraku Nakajima
 
-[PDF](./math_9912158v1/math_9912158v1.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/math_9912158v1/math_9912158v1.pdf)
 
 arXiv: [math/9912158v1](https://arxiv.org/abs/math/9912158v1)
 

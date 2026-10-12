@@ -19,6 +19,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# Canonical public location of the built site. PDF links in the generated
+# index files use absolute URLs so they resolve from anywhere: the repo
+# file view, raw reads, a local disk copy, and the site itself. (Relative
+# links 404 in the repo view now that PDFs are build products, not tracked
+# files.) Keep in sync with SITE_URL in .github/workflows/papers.yml.
+SITE_URL = "https://winstoncheong.github.io/arxiv-fixes"
+
 
 def load_papers():
     papers = []
@@ -56,7 +63,9 @@ def render_md(papers):
         if p.get("authors"):
             out.append(f"Authors: {p['authors']}")
             out.append("")
-        pdfs = " ".join(f"[PDF](./{d}/{e['pdf']})" for e in p["entries"])
+        pdfs = " ".join(
+            f"[PDF]({SITE_URL}/{d}/{e['pdf']})" for e in p["entries"]
+        )
         out.append(pdfs)
         out.append("")
         out.append(f"arXiv: [{p['arxiv']}]({arxiv_url(p['arxiv'])})")
@@ -110,7 +119,9 @@ def render_html(papers):
         if p.get("authors"):
             parts.append(f"<p class=\"meta\">{escape(p['authors'])}</p>\n")
         for e in p["entries"]:
-            parts.append(f"<p><a href=\"./{d}/{escape(e['pdf'])}\">PDF</a></p>\n")
+            parts.append(
+                f"<p><a href=\"{SITE_URL}/{d}/{escape(e['pdf'])}\">PDF</a></p>\n"
+            )
         parts.append(
             f"<p class=\"meta\">arXiv: <a href=\"{arxiv_url(escape(p['arxiv']))}\">"
             f"{escape(p['arxiv'])}</a>"
