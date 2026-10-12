@@ -17,8 +17,12 @@
 *.synctex.*
 *.tmp
 
-# Build products: no figure PDFs exist today, so no negation is needed yet
+# Build products: PDFs are built by CI, not stored in git -- except figure
+# inputs such as the one below. (plan.html section 4 assumed no figure PDFs
+# existed; 1110.0466v3/dilognotes.tex includes QKHKcorrespondence3 as a
+# figure, so it stays tracked.)
 *.pdf
+!1110.0466v3/QKHKcorrespondence3.pdf
 
 # Python bytecode
 __pycache__/
