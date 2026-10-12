@@ -17,12 +17,11 @@
 *.synctex.*
 *.tmp
 
-# Build products: PDFs are built by CI, not stored in git -- except figure
-# inputs such as the one below. (plan.html section 4 assumed no figure PDFs
-# existed; 1110.0466v3/dilognotes.tex includes QKHKcorrespondence3 as a
-# figure, so it stays tracked.)
+# Build products: PDFs are built by CI, not stored in git. A paper that
+# uses a PDF as a figure input re-tracks it with a negation in its own
+# directory .gitignore (see 1110.0466v3/.gitignore), keeping the exception
+# scoped to that paper.
 *.pdf
-!1110.0466v3/QKHKcorrespondence3.pdf
 
 # Python bytecode
 __pycache__/
