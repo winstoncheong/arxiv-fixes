@@ -67,10 +67,19 @@ jobs:
                   matrix = all_dirs
               else:
                   dirs = set()
+                  common_changed = set()
                   for n in names:
                       top = n.split("/", 1)[0]
                       if top in all_dirs:
                           dirs.add(top)
+                      elif top == "common" and "/" in n:
+                          common_changed.add(n.split("/", 1)[1])
+                  if common_changed:
+                      for d in all_dirs:
+                          with open(os.path.join(root, d, "paper.json")) as f:
+                              declared = set(json.load(f).get("common", []))
+                          if common_changed & declared:
+                              dirs.add(d)
                   matrix = sorted(dirs)
           print(f"matrix={json.dumps(matrix)}")
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -112,13 +121,19 @@ jobs:
           # texlive-fonts-extra: bbm.sty (0910.4460v2)
           # texlive-bibtex-extra: harvmac.tex (hep-th_9408074v2)
           # ghostscript: on-the-fly EPS->PDF conversion (math_0701269v2)
-          # jheppub.sty is not in TeX Live; it is vendored in 1110.0466v3/
+          # jheppub.sty is not in TeX Live; it lives in common/ and is
+          # copied into paper directories that declare it (see below)
       - name: Build PDFs with latexmk
         working-directory: ${{ matrix.dir }}
         run: |
           python3 - <<'EOF'
-          import json, subprocess
+          import json, shutil, os, subprocess
           meta = json.load(open("paper.json"))
+          # Shared build inputs live in common/ at the repo root and are
+          # copied in per the paper's "common" declaration, so paper
+          # directories stay free of duplicated style files.
+          for f in meta.get("common", []):
+              shutil.copy(os.path.join("..", "common", f), f)
           for e in meta["entries"]:
               if e.get("engine", "pdflatex") == "pdftex":
                   # Plain-TeX source (e.g. harvmac): harvmac prompts

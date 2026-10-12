@@ -9,3 +9,9 @@ For info index of entries, see [here](./index.md)
 from the per-paper `paper.json` metadata files; do not hand-edit them.
 PDFs are build products: CI builds them with `latexmk` and deploys them
 to GitHub Pages (see `plan.html`, sections 4-6).
+
+Shared TeX inputs (style files such as `jheppub.sty` that TeX Live does
+not ship) live in `common/`. A paper declares what it needs via the
+`"common"` list in its `paper.json`; CI copies those files into the
+paper directory before building. For a local build, copy them in by
+hand, e.g. `cp common/jheppub.sty 1110.0466v3/`.
