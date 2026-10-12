@@ -106,8 +106,13 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended \
-            texlive-latex-extra texlive-fonts-recommended texlive-science \
-            texlive-pictures latexmk
+            texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra \
+            texlive-science texlive-pictures texlive-bibtex-extra ghostscript \
+            latexmk
+          # texlive-fonts-extra: bbm.sty (0910.4460v2)
+          # texlive-bibtex-extra: harvmac.tex (hep-th_9408074v2)
+          # ghostscript: on-the-fly EPS->PDF conversion (math_0701269v2)
+          # jheppub.sty is not in TeX Live; it is vendored in 1110.0466v3/
       - name: Build PDFs with latexmk
         working-directory: ${{ matrix.dir }}
         run: |
@@ -147,11 +152,16 @@ jobs:
 
   deploy:
     needs: [changes, check, build]
+    # A broken paper must not block the rest: deploy proceeds on partial
+    # build failure, merging fresh artifacts with previously deployed PDFs.
+    # assemble_site.py still fails loudly if some PDF ends up unavailable
+    # from either source.
     if: >-
       always() &&
       needs.changes.result == 'success' &&
       needs.check.result == 'success' &&
-      (needs.build.result == 'success' || needs.build.result == 'skipped')
+      (needs.build.result == 'success' || needs.build.result == 'failure' ||
+       needs.build.result == 'skipped')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -160,7 +170,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Download fresh PDFs
-        if: needs.build.result == 'success'
+        if: needs.build.result == 'success' || needs.build.result == 'failure'
         uses: actions/download-artifact@v4
         with:
           pattern: pdf-*
