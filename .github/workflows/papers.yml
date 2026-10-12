@@ -112,9 +112,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Install TeX Live
+        timeout-minutes: 12
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended \
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
+            --no-install-recommends texlive-latex-base \
+            texlive-latex-recommended \
             texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra \
             texlive-science texlive-pictures texlive-bibtex-extra ghostscript \
             texlive-font-utils latexmk
@@ -125,6 +128,7 @@ jobs:
           # jheppub.sty is not in TeX Live; it lives in common/ and is
           # copied into paper directories that declare it (see below)
       - name: Build PDFs with latexmk
+        timeout-minutes: 25
         working-directory: ${{ matrix.dir }}
         run: |
           python3 - <<'EOF'
