@@ -20,7 +20,7 @@ Changes:
 * Converted six `eqnarray*` blocks to `align*`.
 * Fixed five MacRoman-encoded bytes in the bibliography (fi ligature, en-dashes) that fail under current TeX Live UTF-8 handling.
 * Added the missing `\author{Jacob Lurie}`, set `\date{May 8, 2009}` (the v2 arXiv date) instead of `\today`, and added a TOC/bookmark entry for the unnumbered Introduction (section numbering unchanged).
-* Removed ~390 lines of dead book skeleton left over after `\end{document}` (no effect on output).
+* Left the author's draft book skeleton after `\end{document}` in place (unrendered, kept for reference).
 * Renamed the entry point `DAG-rootfile.tex` to the canonical `0905.0462v2.tex`; committed the six companion-volume `.aux` snapshots the `\externaldocument` references resolve against.
 * Wrapped math in section titles with `\texorpdfstring` so PDF bookmarks are clean (silences 70 hyperref warnings).
 

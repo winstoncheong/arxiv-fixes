@@ -573,3 +573,393 @@ theory. Part II: nerves of complicial Gray-categories.}
 \end{thebibliography}
 
 \end{document}
+
+
+
+
+\bibitem{andre} Andr\'{e}, M. {\it Homologie des alg\`{e}bres
+commutatives.} Springer-Verlag, 1974.
+
+\bibitem{artin} Artin, M. {\it Versal deformations and
+algebraic stacks.} Inventiones Mathematicae 27 (1974), 165-189.
+
+
+\bibitem{kapranov} Ciocan-Fontanine, I. and M. Kapranov. {\it
+Derived Hilbert schemes.} Journal of the American Mathematical
+Society 15 (2002) no.4, 787-815.
+
+\bibitem{conrad} Conrad, B. and A.J. de Jong. {\it Approximation
+of Versal Deformations.} Journal of Algebra 225 (2002) no.2,
+489-515.
+
+
+\bibitem{flatdescent} Grothendieck, A. {\it \'{E}l\'{e}ments de
+g\'{e}om\'{e}trie alg\'{e}brique IV}. Publications Mathematiques
+IHES No. 28 (1966).
+
+\bibitem{tohoku} Grothendieck, A. {\it Sur Quelques points
+d'algebra homologique.} Tohoku Math Journal 9, 1957, 119-221.
+
+\bibitem{hakim} Hakim, M. {\it Topoes annel\'{e}s et
+sch\'{e}mas relatifs.} Springer-Verlag, 1972.
+
+\bibitem{hartshorne} Hartshorne, R. {\it Residues and duality.}
+Lecture Notes in Mathematics 20, Springer-Verlag, 1966.
+
+
+
+
+\bibitem{elliptic} Lurie, Jacob. {\it Elliptic Cohomology and
+Derived Algebraic Geometry.} In preparation.
+
+\bibitem{matsumura} Matsumura, H. {\it Commutative algebra.}
+Mathematics Lecture Note Series 56, Benjamin/Cummings Publishing
+Company, 1980.
+
+\bibitem{may} May, J.P. {\it The geometry of iterated loop
+spaces.} Lecture Notes in Mathematics 271, Springer-Verlag, 1972.
+
+\bibitem{deformation} Schlessinger, M. {\it Functors of Artin
+rings.} Transactions of the American Mathematical Society 130,
+208-222 (1968).
+
+
+\bibitem{spaltenstein} Spaltenstein, N. {\it Resolutions of
+unbounded complexes.} Compositio Math. 65 (1988) no.2, 121-154.
+
+\bibitem{popescuthm} Spivakovsky, M. {\it A new proof of D.
+Popescu's theorem on smoothing of ring homomorphisms.} Journal of
+the American Mathematical Society 12 (1999), no.2 381-444.
+
+\bibitem{stasheff} Stasheff, J. ``Homotopy associativity of
+H-spaces I,II." Transactions of the American Mathematical Society
+108, 1963, 275-312.
+
+
+\chapter{Ring Theory}\label{BACKGROUND}
+
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+In this chapter, we will give an overview the algebra that we will use in our
+study of derived algebraic geometry. In particular, we will present the theory of {\em structured ring spectra}, from the $\infty$-categorical point of view. Much of this material is already treated in the literature, in the framework of model categories; see for example \cite{EKMM}.
+
+We will begin in \S \ref{DAG1.1} by introducing the theory of {\em stable $\infty$-categories}. We can view this theory either as the $\infty$-categorical analogue of the theory of abelian categories, or as an abstraction of stable homotopy theory. Stable homotopy theory itself furnishes one of the basic examples: the $\infty$-category of spectra.
+
+In \S \ref{DAG1.2} we will introduce the study of $A_{\infty}$-rings. Here there are two possible perspectives. One can view an $A_{\infty}$-ring as a monoid $R$ in the $\infty$-category of spectra. One can then define a (stable) $\infty$-category $\Mod_{R}$ of $R$-modules. This leads to a second point of view: from the $\infty$-category $\Mod_{R}$, one can recover
+$R$ as the endomorphisms of a free $R$-module of rank $1$. After establishing the equivalence of these points of view, we will go on to study the basic properties of $A_{\infty}$ rings and their modules.
+
+To obtain a theory of algebraic geometry, we really need a notion of {\em commutative ring}. In this case, there are two natural candidates, both of which will be studied in \S \ref{DAG1.3}. First, we can consider the {\em commutative} monoids in the $\infty$-category of spectra: this leads to the notion of an {\it $E_{\infty}$-ring}. The theory of $E_{\infty}$-rings is of central importance in stable homotopy theory, but is quite distant from classical algebraic geometry. We will therefore introduce the theory of {\em simplicial commutative rings}, which we will show to be closely related (though inequivalent) to the theory of $E_{\infty}$-rings.
+
+In this book, we will be most concerned with ring spectra $R$ which are {\em connective}, in the sense that $\pi_{i} R = 0$ for $i < 0$. In this case, $R$ can be viewed as obtained from the discrete ring $\pi_0 R$ by successively ``attaching'' each of the higher homotopy groups of $R$. The process which governs these attachments can be understood using the language of deformation theory. In \S \ref{DAG1.4}, we will introduce a general language for deformation theory, which applies to each of the algebraic theories mentioned above. This theory leads to the definition of a {\it cotangent complex} which will play a central role throughout the rest of this book.
+
+%\include{DAG1.2-Associative}
+%\include{DAG1.3-Commutative}
+%\include{DAG1.4-Deformation}
+	
+\chapter{Derived Schemes}\label{SCHEMES}
+
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+General theory of structured spaces. Examples: derived smooth manifolds, derived complex analytic spaces, derived schemes (several possible topologies), $E_{\infty}$-versions.
+
+In this section, we explain how to use the ``derived commutative
+algebra'' developed in \S \ref{AFFINE} to define derived schemes.
+We will begin in \S \ref{sheaves} with a discussion of sheaves on
+$\infty$-topoi with values in an $\infty$-category $\calC$, and
+discuss an appropriate theory of classifying $\infty$-topoi. In \S
+\ref{topologies}, we will specialize to the case where $\calC =
+\DerRing$ and consider various topologies on commutative rings
+along with their generalizations to the case of simplicial
+commutative rings.
+
+In \S \ref{spectra} we will discuss the construction of
+``spectra'' (in the sense of commutative algebra) based on these
+topologies. Our approach to this question is somewhat less direct
+than is usual: we first define the spectrum of a ring (or, more
+generally, a $\DerRing$-valued sheaf) by a certain universal
+property. We then prove the existence of an object having this
+universal property by a somewhat familiar-looking explicit
+construction. Our setup is very general, and the ideas could
+conceivably be useful for studying algebraic structures other than
+commutative rings. It is also well-adapted to relative situations
+(in the case of Zariski spectra of commutative rings, it recovers
+the relative spectrum construction discussed in \cite{hakim}).
+
+The essentially combinatorial origin of the spectrum construction
+implies that the underlying ($\infty$)-topoi of derived schemes
+have good finiteness properties, which we spell out in \S
+\ref{finiteness}. Finally, in \S \ref{derivedscheme} we give the
+definition of a derived scheme, and compare derived schemes with
+classical algebro-geometric notions such as schemes, algebraic
+spaces, and Deligne-Mumford stacks.
+
+The purpose of this section is to give a definition of derived
+schemes which is analogous to the original definition of a scheme:
+it is something like a space, equipped with a sheaf of rings,
+which locally takes a particularly simple form. In some more
+abstract approaches to the theory, one views a scheme as a certain
+kind of set-valued functor on the category of commutative rings.
+In \S \ref{schemesfunctors} we show that a derived scheme $X$ is
+determined by the $\SSet$-valued functor $A \mapsto \Hom(\Spec A,
+X)$ on $\DerRing$, so that it is also possible to give a purely
+functorial approach to derived algebraic geometry. This paves the
+way for our discussion of derived stacks in \S \ref{STACKS}. In
+fact, our development of the theory of derived stacks is for the
+most part independent of the material of the present section, so
+the reader can skip ahead to \S \ref{STACKS} with little loss of
+continuity.
+
+%\include{DAG2.1-Classifying}
+%\include{DAG2.2-Topologies}
+%\include{DAG2.3-Schemes}
+%\include{DAG2.4-Quasicoherent}
+
+\chapter{Derived Stacks}\label{STACKS}
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+Work in setting of simplicial commutative rings. Define higher stacks, talk about gluing, etcetera.
+
+
+The purpose of this section is to develop the ``derived analogue''
+of the theory of Artin stacks. We recall that an Artin stack is
+defined to be a groupoid-valued functor on the category of
+commutative rings which is a sheaf for the {\et}ale topology and
+which is in some sense ``locally'' representable by a scheme with
+respect to the smooth topology. In the derived context the
+definition is similar, except that we replace the ordinary
+category of commutative rings by the $\infty$-category $\DerRing$.
+In this setting the notion of a ``groupoid-valued functor'' is too
+restrictive: even for an affine derived scheme $X$, the space
+$\Hom( \Spec A, X)$ may have homotopy groups in arbitrarily high
+dimensions. Consequently, we must deal with $\SSet$-valued
+functors everywhere. Granting this, it is natural for our theory
+to encompass also ``higher Artin stacks'', which represent
+higher-groupoid-valued functors even on ordinary commutative
+rings. These higher Artin stacks arise naturally in a number of
+situations. For example, one may consider the ``$n$-fold
+classifying stack of the additive group'' $Y=K(\G_a,n)$, which has
+the property that $\pi_0 \Hom(X, Y) \simeq \HH^n(X, \calO_X)$.
+
+We begin in \S \ref{stackdef} with a definition of derived stacks.
+The next section, \S \ref{quasicoherent}, contains a quick
+discussion of quasi-coherent complexes on derived stacks. In \S
+\ref{descent2} we introduce a few of the more important conditions
+which may be imposed on derived stacks and their morphisms.
+
+In order to compare derived stacks with their classical analogues,
+we shall develop in \S \ref{TRUNCATED} a mechanism for analyzing
+an arbitrary derived stack $X$ as the direct limit of its
+``$n$-truncations'' $\tau_{\leq n} X$ (which, for $n=0$, is
+determined by functor that $X$ represents on ordinary commutative
+rings).
+
+In \S \ref{COHERENCE}, we prove two different analogues of the
+Grothendieck-Serre theorem on the coherence of proper higher
+direct image of coherent sheaves.
+
+Finally, in \S \ref{GLUING}, we study the operation of ``gluing''
+two derived schemes together along a common closed subscheme.
+
+%\include{DAG3.1-Stacks}
+%\include{DAG3.2-Quasicoherent}
+%\include{DAG3.3-Properties}
+
+\chapter{Formal Geometry}\label{FORMAL}
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+Formal completions, GAGA theorems, etcetera. For completeness, should include a proof of a fancy version of Hinich's theorem.
+
+
+The purpose of this section is to sketch the development of formal
+geometry in the derived context, going so far as a version of
+Grothendieck's formal GAGA theorem. Strictly speaking, the results
+of this section are not needed in the proof of our
+representability theorem or to verify its hypotheses. Given a
+problem in ``formal'' derived algebraic geometry, we will
+generally be able to decouple the ``formal'' aspects from the
+``derived'' aspects and treat them separately. However, one can
+just as easily treat them simultaneously using the ideas described
+in this section.
+
+We begin in \S \ref{standardcompletion} with the requisite
+commutative algebra: $\mathfrak{p}$-adic topologies on simplicial
+commutative rings and the corresponding completion constructions.
+In \S \ref{proartin} we consider a related, but slightly
+different, discussion of ``pro-Artinian'' completions. In
+particular, we prove a derived version of Schlessinger's criterion
+for the existence of formal versal deformation rings.
+
+In \S \ref{formalstacks} we give a proof of Grothendieck's formal
+GAGA theorem in the derived context. This is one instance in which
+the derived perspective offers a useful point of view: the fact
+that the ``formal analytification'' functor is fully faithful on
+coherent sheaves is deduced formally from the coherence theorem
+for proper direct images. The essential surjectivity does not seem
+to follow formally; however, it is easily reduced to the classical
+formal GAGA theorem.
+
+In the last part of this section, \S \ref{grub}, we prove that if
+$X$ is a derived stack and $A$ is complete, local, and Noetherian,
+then the space of $A$-valued points of $X$ may be described as an
+inverse limit of spaces of $A_{\alpha}$-valued points of $X$,
+where $A_{\alpha}$ ranges over a family of Artinian ``quotients''
+of $A$. The significance of this result is that, according to
+Theorem \ref{mainevent}, it is one of the defining characteristics
+of derived stacks.
+
+%\include{DAG4.1-Completions}
+%\include{DAG4.2-Infinitesimal}
+%\include{DAG4.3-GAGA}
+
+\chapter{Artin's Theorems}\label{REPRESENTABILITY}
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+Prove the representability theorem, in both $E_{\infty}$ and simplicial contexts.
+Also his other theorem, on descent for flat groupoids.
+
+%\include{DAG5.1-Representability}
+%\include{DAG5.2-Cotangent}
+%\include{DAG5.3-Examples}
+%\include{DAG5.4-FPPF}
+
+\chapter{Tannaka Duality}\label{GEOMETRIC}
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+Geometric stacks, characterization in terms of unbounded DGAs (characteristic zero), 
+maybe some kind of derived Dieudonne theory? We'll see.
+
+%\include{DAG6.1-Affine}
+%\include{DAG6.2-Geometric}
+%\include{DAG6.3-Tannaka}
+
+\chapter{Virtual Fundamental Classes}\label{VIRTUAL}
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+%\include{DAG7.1-Contexts}
+%\include{DAG7.2-Coherent}
+%\include{DAG7.3-Adic}
+%\include{DAG7.4-Crystalline}
+%\include{DAG7.5-Motivic}
+
+\appendix
+
+\chapter{Appendix}
+\setcounter{theorem}{0}
+\setcounter{subsection}{0}
+
+Categorical preliminaries. Barr-Beck theorem. Monoidal $\infty$-categories. Etcetera etcetera.
+
+% \include{DAGA.1-Monoidal}
+% \include{DAGA.2-Enriched}
+% \include{DAGA.3-BarrBeck}
+
+Grand plan:
+
+Volume 1: Higher Topos Theory
+Volume 2:
+DAG I - V (completed)
+DAG VI - Spectral Schemes
+   A) Sheaves of E-infty ring spectra
+         spectral sequence for computing global sections - justify some remarks of DAG V
+          locality conditions (geometry and pregeometry versions, Zariski and etale)
+          connective vs. nonconnective versions
+          truncation in connective case: comparison with ordinary schemes
+          characterization of spectral schemes in terms of ordinary schemes
+
+    B) pregeometries with an underlying sheaf of rings: define closed immersions
+    tools for computing with fiber products
+    apply this to characterize derived complex analytic spaces
+    study behavior under change of ground ring
+    
+    C) sheaves of modules; t-structure in the connective case
+    definition using geometries; connective definition using pregeometries
+    quasi-coherence: definition via schemes in a geometry, characterization, etcetera
+    descent for flat hypercoverings (use spectral sequence above?), flat descent
+    
+    D) the cotangent complex: local construction
+    cotangent complex of a functor
+    prove the existence of the cotangent complex
+    Artin representability theorem
+    cotangent complex for moduli spaces: compare with classical obstruction theory, steal parts of introduction to thesis. 
+
+Interwoven: Material on E_n-algebras
+    A) infty multicategories (and assorted variations on the theme)
+       tensor product operation on infty-multicategories and its universal property
+       the E_n operads
+       comparison: E_1 vs. Segal monoidal vs. just monoidal
+       multiplicativity property of the E_n operads; include case n= infinity
+     B) Things that can be generalized:
+        discussion of endomorphism objects (generalized centers)
+        symmetric monoidal structure on modules over a commutative algebra -> X-monoidal structure
+            on modules over an X (x) E_1 algebra.
+        structure of free algebras: not just commutative and associative cases
+        notion of module; use to calculate stabilization of algebra category in the stable case.
+     C) relationship with geometry
+         modified singular complex of a stratified space
+         comparison theorem in case of a triangulation
+         universal property: constructible sheaves vs functors from modified singular complex
+         define factorizable objects
+         comparison: factorizable objects vs. E_n objects
+	definition of the Ran integral/chiral homology
+	
+      D) Theory of infty-bicategories (mostly written)
+          complete Segal space definition + comparison theorem
+          construction: symmetric sequence bicategories
+          construction: monoid/bimodule bicategories
+          generalized Schwede-Shipley theorem; bimodules vs. colimit preserving functors
+       E) Goodwillie calculus constructions
+          fibration in categories -> fibration in coCartesian monoidal categories
+          fibration in lax monoidal categories -> fibration in lax monoidal categories w/r/to smash
+          fibration in lax monoidal smash categories -> fibration in stable categories, exact functors
+          chain rule for first derivatives (replace what we already have)
+          fibration in lax monoidal stable categories -> extract symmetric sequences
+          formulation of the chain rule
+        F) Proof of the chain rule: 
+           define n-excisive functors; proof that they form a localization and that localizations compose well
+           define n-polynomial categories. construction of the n-polynomial approximation to a category
+           proof of the chain rule in the stable case
+           tricks to reduce general case to a particular calculation
+           reduce to the n-polynomial case, use good convergence properties to complete proof
+
+Volume III: Elliptic Cohomology
+
+Ell 1 - Derived Abelian Varieties and Serre-Tate theory
+Ell 2 - Oriented Group Schemes and Equivariant Cohomology theories
+Ell 3 - Hopkins-Miller theorem for p-divisible groups/ construction of tmf
+Ell 4 - Higher Equivariance (2 equivariance for elliptic cohomology)
+Ell 5 - Toric Varieties, Elliptic Cohomology at Infinity, and Loop group representations
+(develop rigid analyic geometry here)
+Ell 6 - Topological Witten genus (also do 2-variable genus)
+
+Volume IV: Cobordism Program:
+
+Cobordism Program:
+Duals1: enriched category theory. n-categories with adjoints, with duals;
+formulas for adjoining duals. The open-closed trick
+Duals2: n-categories made out of bordisms. Analysis via morse theory, Cerf theory part of the proof
+Duals3: Obstruction theory for infty-categories, the obstruction theory part of the proof.
+Duals4: Correspondences. The O(n)-action. Reformulation and proof for G-manifolds.
+Duals5: Manifolds with singularities
+Duals6: Use Cobordism hypothesis to prove tangle hypothesis
+
+Volume V: Derived Geometry + Applications
+
+Post 1 - Artin's theorems (simplicial context)
+(discussion of Nisnevich topology and its topological properties)
+Post 2 - Formal Geometry
+(include Koszul duality for E_n algebras)
+Post 3 - Tannaka Duality
+Post 4 - Virtual Fundamental Classes
+Post 5 - Recognition of elliptic cohomology
+Post 6 - multiplicative structures/elliptic lambda rings
+
+
+
+

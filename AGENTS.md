@@ -130,7 +130,8 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
 
 1. `curl -sL https://arxiv.org/src/<id> -o <id>.tar.gz`, extract, inspect.
    Keep real inputs only; drop author-side junk (`.log`, stray `.toc`,
-   unused `.cls`, dead text after `\end{document}`).
+   unused `.cls`). Keep any material trailing `\end{document}`: it is
+   unrendered but still source, and worth keeping for reference.
 2. Directory `<id with / → _>/`, entry point renamed to `<dirname>.tex`
    (adjust `\include`/`\input` stems, not content). Pin the version in the name.
 3. Modernize per the checklist above; minimal diff, mathematics untouched.
