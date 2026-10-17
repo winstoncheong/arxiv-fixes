@@ -1,0 +1,25 @@
+{
+  "arxiv": "0905.0462v2",
+  "title": "(Infinity,2)-Categories and the Goodwillie Calculus I",
+  "authors": "Jacob Lurie",
+  "abstract": "The bulk of this paper is devoted to the comparison of several models for the theory of (infinity,2)-categories: that is, higher categories in which all k-morphisms are invertible for k > 2 (the case of (infinity,n)-categories is also considered). Our ultimate goal is to lay the foundations for a study of Tom Goodwillie's calculus of functors. To this end, we have included some simple applications to the theory of first derivatives.",
+  "entries": [
+    {
+      "tex": "0905.0462v2.tex",
+      "pdf": "0905.0462v2.pdf"
+    }
+  ],
+  "status": "done",
+  "changes": [
+    "Added `hyperref` with color links, bookmarks, and pagebackref (via `xr-hyper` so the `\\externaldocument` cross-references to companion volumes keep working).",
+    "Converted six `eqnarray*` blocks to `align*`.",
+    "Fixed five MacRoman-encoded bytes in the bibliography (fi ligature, en-dashes) that fail under current TeX Live UTF-8 handling.",
+    "Added the missing `\\author{Jacob Lurie}` and a TOC/bookmark entry for the unnumbered Introduction (section numbering unchanged).",
+    "Removed ~390 lines of dead book skeleton left over after `\\end{document}` (no effect on output).",
+    "Renamed the entry point `DAG-rootfile.tex` to the canonical `0905.0462v2.tex`; committed the six companion-volume `.aux` snapshots the `\\externaldocument` references resolve against.",
+    "Wrapped math in section titles with `\\texorpdfstring` so PDF bookmarks are clean (silences 70 hyperref warnings)."
+  ],
+  "warnings": [
+    "External cross-references (\\toposref and friends) resolve against committed `.aux` snapshots of the companion volumes, which may be stale relative to their final versions."
+  ]
+}

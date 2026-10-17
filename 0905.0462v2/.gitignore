@@ -1,0 +1,9 @@
+# xr companions: committed snapshots of the companion-volume .aux files that
+# \externaldocument in 0905.0462v2.tex reads. They are source inputs here,
+# not build products, so keep them tracked despite the root *.aux ignore.
+!highertopoi.aux
+!DAG-I-stable.aux
+!DAG-II-monoid.aux
+!DAG-III-commutative.aux
+!DAG-IV-deformation.aux
+!DAG-V-structured.aux

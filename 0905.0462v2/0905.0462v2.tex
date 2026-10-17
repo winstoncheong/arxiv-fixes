@@ -1,0 +1,574 @@
+\documentclass{article}
+\usepackage{latexsym, amscd, amsfonts, eucal, mathrsfs, amsmath, amssymb, amsthm, xypic, xr-hyper, makeidx, stmaryrd}
+\usepackage[colorlinks,allcolors=blue,pagebackref]{hyperref}
+\externaldocument[HTT-]{highertopoi}
+\externaldocument[STA-]{DAG-I-stable}
+\externaldocument[MON-]{DAG-II-monoid}
+\externaldocument[SYM-]{DAG-III-commutative}
+\externaldocument[DEF-]{DAG-IV-deformation}
+\externaldocument[STR-]{DAG-V-structured}
+\externaldocument[BIC-]{bicategories}
+
+\def\Z{\mathbf{Z}}
+\def\C{\mathbf{C}}
+\def\F{\mathbf{F}}
+
+\DeclareMathOperator{\acti}{ac}
+\DeclareMathOperator{\CatP}{{\mathfrak P}}
+\DeclareMathOperator{\Mul}{Mul}
+\DeclareMathOperator{\exc}{exc}
+\DeclareMathOperator{\Lin}{{\mathcal L}in}
+\DeclareMathOperator{\Bimodd}{PBimod}
+\DeclareMathOperator{\Bimod}{{\mathcal B}{imod}}
+\DeclareMathOperator{\Spectra}{Sp}
+\DeclareMathOperator{\PreSpectra}{PSp}
+\newcommand{\ICAT}{{\bf Cat}_{\infty}}
+\newcommand{\dICAT}{{\bf Cat}^{\Delta}_{\infty}}
+\DeclareMathOperator{\wellp}{wp}
+\DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\PreMod}{PMod}
+\DeclareMathOperator{\sNerve}{N}
+\DeclareMathOperator{\sCat}{\mathcal{C}at_{\Delta}}
+\DeclareMathOperator{\sMap}{M}
+\DeclareMathOperator{\MMod}{\overline{{\calM}od}}
+\DeclareMathOperator{\PrAlg}{ \overline{\Alg}}
+\DeclareMathOperator{\tildePAlg}{ \widetilde{ \Alg}}
+\DeclareMathOperator{\tildeMod}{ \widetilde{{\calM}od}}
+\DeclareMathOperator{\famm}{fam}
+\DeclareMathOperator{\tNerve}{N}
+\DeclareMathOperator{\desc}{desc}
+\newcommand{\LCone}[1]{C(#1)}
+\newcommand{\Biod}[3]{_{#1}{{\mathcal B}imod}_{#2}(#3)}
+\newcommand{\LCones}[2]{C_{#1}(#2)}
+\DeclareMathOperator{\scUn}{Un^{sc}}
+\DeclareMathOperator{\an}{an}
+\DeclareMathOperator{\mCat}{{{\mathcal C}at}_{\Delta}^{+}}
+\DeclareMathOperator{\smooth}{sm}
+\newcommand{\Toen}{To\"{e}n}
+\DeclareMathOperator{\scSt}{St^{sc}}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\alg}{alg}
+\DeclareMathOperator{\der}{der}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\scSet}{{\mathcal S}et_{\Delta}^{sc}} %scaled simplicial set
+\newcommand{\PreSeg}[1]{Seg_{#1}}
+\DeclareMathOperator{\rscSet}{{\mathcal S}et_{\Delta}^{rsc}}
+\DeclareMathOperator{\scNerve}{N^{sc}} %scaled nerve
+\DeclareMathOperator{\scCoNerve}{{\mathfrak C}^{sc}} %scaled conerve
+\newcommand{\mset}[1]{{(\mathcal S}et^{+}_{\Delta})_{/#1}} %marked simplicial sets over a scale
+\newcommand{\ldiamond}[3]{ #2 \diamond_{#1}^{sc} #3} % scaled diamond???
+\DeclareMathOperator{\sFun}{Fun^{sc}}
+\DeclareMathOperator{\Stein}{Stein}
+\DeclareMathOperator{\Rigid}{Rigid}
+\DeclareMathOperator{\Comm}{CRing}
+\DeclareMathOperator{\CommOp}{Comm}
+\DeclareMathOperator{\Top}{Top}
+\DeclareMathOperator{\sob}{sob}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\UnPre}{UnPre}
+\newcommand{\CSS}[1]{{CSS_{#1}}}
+\newcommand{\SegS}[1]{SS_{#1}}
+\newcommand{\sdd}{sd}
+\DeclareMathOperator{\RGeom}{\mathcal{R}{\mathcal T}op}
+\DeclareMathOperator{\RingSpace}{RingSpace}
+\DeclareMathOperator{\LRingSpace}{RingSpace^{loc}}
+\DeclareMathOperator{\proadm}{pro-adm}
+\DeclareMathOperator{\rep}{rep}
+\DeclareMathOperator{\USpec}{Spec}
+\DeclareMathOperator{\Af}{Aff}
+\DeclareMathOperator{\SSpec}{Spec} % change this to make it look a little different
+\DeclareMathOperator{\Open}{Open}
+\DeclareMathOperator{\Poly}{Poly}
+\DeclareMathOperator{\SCR}{SCR}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\CDer}{{\mathcal D}er}
+\DeclareMathOperator{\Pres}{\mathcal{P}r}
+\DeclareMathOperator{\LPrest}{L\mathcal{P}r}
+\DeclareMathOperator{\RPrest}{R\mathcal{P}r}
+\DeclareMathOperator{\LPress}{\widehat{\Cat}_{\infty}^{\LPrest}}
+\DeclareMathOperator{\RPress}{\widehat{\Cat}_{\infty}^{\RPrest}}
+\DeclareMathOperator{\Spectralheart}{\SSet_{\infty}^{\heartsuit}}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\lex}{lex}
+\DeclareMathOperator{\nounit}{nu}
+\DeclareMathOperator{\Ring}{Ring}
+\DeclareMathOperator{\MRing}{Ring^{+}}
+\DeclareMathOperator{\Stabb}{\sigma}
+\DeclareMathOperator{\qunit}{qu}
+\DeclareMathOperator{\unit}{u}
+\DeclareMathOperator{\NUAdj}{Adj^{\nounit}}
+\DeclareMathOperator{\UAdj}{Adj}
+\DeclareMathOperator{\CatMod}{CatMod}
+\DeclareMathOperator{\lax}{lax}
+\DeclareMathOperator{\Act}{Act}
+\DeclareMathOperator{\LinSeg}{{{\mathcal L}in}_{\ast}}
+\DeclareMathOperator{\FinSeg}{\Gamma}
+\DeclareMathOperator{\InjSeg}{\Gamma^{si}}
+\DeclareMathOperator{\PFinSeg}{\Gamma^{\ast}}
+\DeclareMathOperator{\FinSeq}{{{\mathcal F}in}_{\ast}^{c}}
+\DeclareMathOperator{\Envv}{Env}
+\DeclareMathOperator{\PreOp}{{\mathcal P}Op_{\infty}}
+\DeclareMathOperator{\FinSeqq}{\Gamma^{\sim} }
+\DeclareMathOperator{\Fintimes}{\Gamma^{\times}}
+\DeclareMathOperator{\aug}{aug}
+\DeclareMathOperator{\Post}{Post}
+\DeclareMathOperator{\CompAn}{{\mathcal A}n_{\C}}
+
+\DeclareMathOperator{\PModSeg}{{{ \mathcal F}in^{+}_{\star}}}
+\newcommand{\Andre}{Andr\'{e}}
+\DeclareMathOperator{\coll}{coll}
+\DeclareMathOperator{\free}{free}
+\DeclareMathOperator{\finite}{fp}
+\DeclareMathOperator{\afinite}{afp}
+\DeclareMathOperator{\LPressStab}{\widehat{\Cat}_{\infty}^{\LPrest, \Stabb}}
+\DeclareMathOperator{\RPressStab}{\widehat{\Cat}_{\infty}^{\RPrest, \Stabb}}
+\DeclareMathOperator{\SegMon}{Mon^{s}}
+\DeclareMathOperator{\SegAlg}{Alg^{s}}
+\DeclareMathOperator{\Sec}{Sect}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\aperf}{aperf}
+\DeclareMathOperator{\Barr}{Sqr}
+\DeclareMathOperator{\Sch}{Sch}
+\DeclareMathOperator{\SpSch}{Sch^{sp}}
+\DeclareMathOperator{\Spread}{\mathcal E}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Gap}{Gap}
+\DeclareMathOperator{\Barrr}{BObj}
+\newcommand{\AInfty}{ {\mathfrak A}_{\infty}}
+\newcommand{\EInfty}{ {\mathfrak E}_{\infty}}
+\DeclareMathOperator{\LGeom}{{\mathcal L}{\mathcal T}op}
+\DeclareMathOperator{\LGeo}{\LGeom}
+\DeclareMathOperator{\Struct}{Str}
+\newcommand{\Kahler}{K\"{a}hler\,}
+\DeclareMathOperator{\Der}{Der}
+\newcommand{\EInftyflat}{ \mathcal{E}^{\flat}_{\infty}} 
+\DeclareMathOperator{\adm}{ad}
+\newcommand{\bbox}{\boxempty}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\Baar}{Bar}
+\DeclareMathOperator{\perf}{perf}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\mSet}{{\mathcal{S}et}_{\Delta}^{+}}
+\DeclareMathOperator{\conn}{conn}
+\DeclareMathOperator{\wMon}{Lax}
+\DeclareMathOperator{\sMon}{sMon}
+\DeclareMathOperator{\MonCat}{MonCat}
+\DeclareMathOperator{\AdjDiag}{ADat}
+\newcommand{\LLPres}[1]{\mathcal{P}{\text r}^{\text L}_{#1}}
+\newcommand{\OpE}[1]{{\mathcal E}_{#1}}
+\newcommand{\OpEnat}[1]{{\mathcal E}_{#1}^{\natural}}
+\newcommand{\RRPres}[1]{\mathcal{P}{\text r}^{\text R}_{#1}}
+\newcommand{\dplus}{-}
+\newcommand{\dminus}{+}
+\DeclareMathOperator{\Exc}{Exc}
+\DeclareMathOperator{\EM}{\mathcal{E}\mathcal{M}}
+\newcommand{\Rex}[1]{{\roman Rex}(#1)}
+\newcommand{\seg}[1]{{\langle #1 \rangle}}
+\newcommand{\Colp}[1]{\rho^{#1}}
+\newcommand{\Colll}[2]{ \rho^{#1}_{#2}}
+\newcommand{\nostar}[1]{{{\langle #1 \rangle}^{\circ}}}
+\DeclareMathOperator{\Rexx}{Rex}
+\DeclareMathOperator{\Sing}{Sing}
+\newcommand{\Un}{Un}
+\DeclareMathOperator{\connSpectra}{\Spectra^{conn}}
+\DeclareMathOperator{\RPres}{\mathcal{P}r^{R}}
+\DeclareMathOperator{\Group}{\mathcal{G}rp}
+\DeclareMathOperator{\aHom}{Fun_{\mathcal{A}}}
+\DeclareMathOperator{\calH}{\mathcal{H}}
+\DeclareMathOperator{\Mon}{Mon}
+\DeclareMathOperator{\PreCart}{PreCart}
+\DeclareMathOperator{\Cart}{Cart}
+\DeclareMathOperator{\Alg}{Alg}
+\DeclareMathOperator{\CAlg}{CAlg}
+\DeclareMathOperator{\Env}{\mathcal{U}}
+\DeclareMathOperator{\LFun}{\Fun^{L}}
+\DeclareMathOperator{\holim}{holim}
+\DeclareMathOperator{\RFun}{\Fun^{R}}
+\DeclareMathOperator{\rght}{R}
+\DeclareMathOperator{\lft}{L}
+\DeclareMathOperator{\Mult}{{\mathcal M}}
+\DeclareMathOperator{\Multi}{{\mathcal M}}
+\newcommand{\MonLPres}{\widehat{\Cat}_{\infty}^{\pres,\otimes}}
+\newcommand{\toposref}[1]{T.\ref{HTT-#1}}
+\newcommand{\stableref}[1]{S.\ref{STA-#1}}
+\newcommand{\monoidref}[1]{M.\ref{MON-#1}}
+\newcommand{\symmetricref}[1]{C.\ref{SYM-#1}}
+\newcommand{\deformationref}[1]{D.\ref{DEF-#1}}
+\newcommand{\structuredref}[1]{V.\ref{STR-#1}}
+\newcommand{\bicatref}[1]{B.\ref{BIC-#1}}
+\DeclareMathOperator{\pres}{Pr}
+\newcommand{\MonStab}{\widehat{\Cat}_{\infty}^{\Stabb, \otimes}}
+\newcommand{\degree}{\text{o}}
+\newcommand{\bfA}{{\mathbf A}}
+\newcommand{\bfB}{{\mathbf B}}
+\newcommand{\bfC}{{\mathbf C}}
+\DeclareMathOperator{\Kan}{\mathcal{K}an}
+\DeclareMathOperator{\Gp}{Gp} % functor which assigns the underlying groupoid
+\DeclareMathOperator{\cDelta}{{\bf \Delta}}
+\DeclareMathOperator{\inv}{\sim}
+\DeclareMathOperator{\Grp}{\mathcal{G}pd}
+\DeclareMathOperator{\Set}{\mathcal{S}et}
+\DeclareMathOperator{\sSet}{\mathcal{S}et_{\Delta}}
+\DeclareMathOperator{\sCoNerve}{\mathfrak{C}}
+\DeclareMathOperator{\Nerve}{N}
+\DeclareMathOperator{\Cat}{\mathcal{C}at}
+\newcommand{\h}[1]{\rm{h} \! #1}
+\newcommand{\heart}[1]{{#1}^{\heartsuit}}
+\newcommand{\Adjoint}[4]{\xymatrix@1{#2 \ar@<.4ex>[r]^-{#1} & #3 \ar@<.4ex>[l]^-{#4}}}
+\newcommand{\squigarrow}{\mapsto}
+\DeclareMathOperator{\limm}{lim}
+\newcommand{\Sm}{Sm}
+\newcommand{\StableH}{\mathcal{H}_{\infty}}
+\newcommand{\boundary}{\bd}
+\newcommand{\stacks}{\Delta}
+\newcommand{\toposX}{\mathfrak X}
+\newcommand{\toposY}{\mathfrak Y}
+\newcommand{\PA}{\mathcal PA}
+\renewcommand{\boxtimes}{\odot}
+\newcommand{\Curve}{\mathfrak{M}}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Chain}{Ch} \DeclareMathOperator{\inj}{inj}
+\newcommand{\etale}{{\'{e}tale}\,\,}
+\newcommand{\etalenospace}{{\'{e}tale}}
+\newcommand{\et}{\'{e}t}
+\newcommand{\mathet}{\text{\et}}
+\newcommand{\Etale}{\'{E}tale\,}
+\newcommand{\bigdot}{\bullet}
+
+\DeclareMathOperator{\Stab}{Stab}
+\newcommand{\Spectraprime}{\Spectra'}
+\newcommand{\coproduct}{\coprod}
+\newcommand{\Ab}{ \mathcal{A}b}
+\newcommand{\fin}{\text{fin}}
+\DeclareMathOperator{\bHom}{Map}
+\DeclareMathOperator{\Sh}{\mathcal{S}hv}
+\DeclareMathOperator{\Fin}{\mathcal{F}in}
+\DeclareMathOperator{\Shv}{\Sh} \DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\dga}{\mathcal{DGA}}
+\DeclareMathOperator{\SL}{SL}
+\newcommand{\Cech}{\v{C}ech\,}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Sym}{Sym} 
+\DeclareMathOperator{\PreSym}{PSym}
+\DeclareMathOperator{\pos}{--}
+\DeclareMathOperator{\negg}{+} \DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Spf}{Spf} \DeclareMathOperator{\cosk}{cosk}
+\DeclareMathOperator{\Mod}{\mathcal{M}od}
+\DeclareMathOperator{\CMod}{c\mathcal{M}od}
+\DeclareMathOperator{\m}{\mathfrak{m}}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Pro}{Pro}
+\DeclareMathOperator{\p}{\mathfrak{p}}
+\DeclareMathOperator{\calM}{\mathcal{M}}
+\DeclareMathOperator{\Hilb}{Hilb} \DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\calL}{\mathcal{L}}
+\DeclareMathOperator{\GL}{GL} \DeclareMathOperator{\G}{\mathbf{G}}
+\DeclareMathOperator{\calZ}{\mathcal{Z}}
+\DeclareMathOperator{\Sol}{\mathcal{S}ol}
+\DeclareMathOperator{\Ext}{Ext} \DeclareMathOperator{\Nis}{Nis}
+\DeclareMathOperator{\Zar}{Zar} \DeclareMathOperator{\triv}{triv}
+\DeclareMathOperator{\DerRing}{\mathcal{SCR}}
+\DeclareMathOperator{\EI}{\mathcal{EI}}
+\DeclareMathOperator{\Ex}{Ex}
+\DeclareMathOperator{\Q}{\mathbf{Q}}
+\DeclareMathOperator{\Tor}{Tor} \DeclareMathOperator{\QC}{QC}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\A}{\mathbf A}
+\DeclareMathOperator{\calA}{\mathcal{A}}
+\DeclareMathOperator{\bd}{\partial}
+\DeclareMathOperator{\U}{\mathcal{U}}
+\newcommand{\Sphere}{S}
+\DeclareMathOperator{\LPres}{\mathcal{P}r^{L}}
+\DeclareMathOperator{\calU}{\mathcal{U}}
+\DeclareMathOperator{\calW}{\mathcal{W}}
+\DeclareMathOperator{\calV}{\mathcal{V}}
+\DeclareMathOperator{\calE}{\mathcal{E}}
+\DeclareMathOperator{\R}{\mathbf{R}}
+\DeclareMathOperator{\calO}{\mathcal{O}}
+\DeclareMathOperator{\calT}{\mathcal{T}}
+\DeclareMathOperator{\shift}{\eta}
+\DeclareMathOperator{\FinSpace}{\mathcal{S}_{\ast}^{fin}}
+\DeclareMathOperator{\FinnSpace}{\mathcal{S}^{fin}}
+\DeclareMathOperator{\MCat}{MCat}
+\DeclareMathOperator{\FinSpectra}{\mathcal{S}_{\infty}^{fin}}
+\DeclareMathOperator{\calB}{\mathcal{B}}
+\DeclareMathOperator{\calK}{\mathcal{K}}
+\DeclareMathOperator{\Spec}{{\bf Spec}}
+\DeclareMathOperator{\CatTriv}{{\bf Triv}}
+\DeclareMathOperator{\Triv}{{\mathcal T}riv}
+\DeclareMathOperator{\Ass}{{\mathcal A}ssoc}
+\DeclareMathOperator{\CatAss}{{\bf Assoc}}
+\DeclareMathOperator{\calF}{\mathcal{F}}
+\DeclareMathOperator{\calG}{\mathcal{G}}
+\DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\bP}{\beta P}
+\DeclareMathOperator{\HH}{H} \DeclareMathOperator{\BU}{BU}
+\DeclareMathOperator{\id}{id} \DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\calC}{\mathcal{C}}
+\DeclareMathOperator{\calI}{\mathcal{I}}
+\DeclareMathOperator{\calN}{\mathcal{N}}
+\DeclareMathOperator{\calJ}{\mathcal{J}}
+\DeclareMathOperator{\calJJ}{\mathcal{J}}
+\DeclareMathOperator{\calR}{\mathcal{R}}
+\DeclareMathOperator{\SSet}{\mathcal{S}}
+\DeclareMathOperator{\SCop}{{\mathcal M}Cat_{\Delta}}
+\newcommand{\St}{St}
+
+\newcommand{\lNerve}{{\mathfrak F}}
+\DeclareMathOperator{\calS}{\mathfrak{S}}
+\DeclareMathOperator{\calX}{\mathcal{X}}
+\DeclareMathOperator{\Idem}{Idem}
+\DeclareMathOperator{\hocolim}{hocolim}
+\DeclareMathOperator{\calY}{\mathcal{Y}}
+\DeclareMathOperator{\rex}{rex}
+\DeclareMathOperator{\sk}{sk}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator{\calD}{\mathcal{D}}
+\DeclareMathOperator{\Ind}{Ind} \DeclareMathOperator{\Acc}{Acc}
+\DeclareMathOperator{\calP}{\mathcal{P}} \topmargin=0in
+
+\oddsidemargin=0in \evensidemargin=0in \textwidth=6.5in
+\textheight=8.5in
+
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{fact}[theorem]{Fact}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{postulate}[theorem]{Postulate}
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{variant}[theorem]{Variant}
+
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%\newtheorem{variant}[theorem]{Variant}
+
+\makeindex
+
+\begin{document}
+
+%\title{Derived Algebraic Geometry I: Stable $\infty$-Categories}
+%\title{Derived Algebraic Geometry II: Noncommutative Algebra}
+%\title{Derived Algebraic Geometry III: Commutative Algebra}
+%\title{Derived Algebraic Geometry IV: Deformation Theory}
+%\title{Derived Algebraic Geometry V: Structured Spaces}
+%\title{Derived Algebraic Geometry VI: Spectral Schemes}
+\title{$(\infty,2)$-Categories and the Goodwillie Calculus I}
+%\title{Derived Algebraic Geometry ?: Multilinear Algebra}
+\author{Jacob Lurie}
+
+\maketitle
+\tableofcontents
+
+%\include{DAG-I-stable}
+%\include{DAG-II-monoid}
+%\include{DAG-III-commutative}
+%\include{DAG-IV-deformation}
+%\include{DAG-V-structured}
+%\include{DAG-VI-spectral}
+\include{bicategories}
+%\printindex
+
+\begin{thebibliography}{99}
+
+\bibitem{chingarone} Arone, G. and M. Ching. {\it Operads and Chain Rules for the Calculus
+of Functors.} Preprint.
+
+\bibitem{giraud} Artin, M. {\it Th\'{e}orie des topos et cohomologie
+\'{e}tale des sch\'{e}mas.} SGA 4. Lecture Notes in Mathematics
+269, Springer-Verlag, Berlin and New York, 1972.
+
+\bibitem{artinmazur} Artin, M. and B. Mazur. {\it \'{E}tale Homotopy.} Lecture Notes in Mathematics 100, Springer-Verlag, Berlin and New York, 1969.
+
+\bibitem{basterra} Basterra, M. {\it \Andre-Quillen cohomology of commutative $S$-algebras.} Journal of Pure and Applied Algebra 144 (1999) no. 2, 111-143.
+
+\bibitem{virtual} Behrend, K. and B. Fantechi. {\it The intrinsic
+normal cone.} Inventiones Mathematicae 128 (1997) no. 1, 45-88.
+
+\bibitem{BBD} Beilinson, A. , Bernstein, J. and P. Deligne.
+{\it Faisceaux pervers.} Asterisuqe 100, Volume 1, 1982.
+
+\bibitem{bergner} Bergner, J.E. {\it A Model Category Structure on the Category of Simplicial Categories.} Transactions of the American Mathematical Society 359 (2007), 2043-2058.
+
+\bibitem{bergner2} Bergner, J.E. {\it A survey of $(\infty,1)$-categories.} Available at math.AT/0610239
+
+\bibitem{bergner3} Bergner, J.E. {\it Rigidification of algebras over multi-sorted theories.}
+Algebraic and Geometric Topoogy 7, 2007.
+
+\bibitem{bergner4} Bergner, J.E. {\it Three models for the homotopy theory of homotopy theories,} Topology 46 (2007), 397-436.
+
+\bibitem{LKM} Bosch, Guntzer, U., and R. Remmert, R. {\it Non-Archimedean Analysis: a Systematic Approach to Rigid Analytic Geometry.} Springer-Verlag, Berlin and Heidelberg, 1984.
+
+\bibitem{bousfieldkan} Bousfield, A.K. and D.M. Kan. {\it Homotopy
+limits, completions, and localizations.} Lecture Notes in
+Mathematics 304, Springer-Verlag, 1972.
+
+\bibitem{cismoer} Cisinski, D-C and I. Moerdijk. {\it Dendroidal sets as models for homotopy operads.} Available for download as arXiv:0902.1954v1.
+
+\bibitem{combmodel} Dugger, D. {\it Combinatorial model categories have presentations.} Advances in Mathematics 164, 2001, 177-201.
+
+\bibitem{eilenbergsteenrod} Eilenberg, S. and N.E. Steenrod. {\it Axiomatic approach to homology theory.} Proc. Nat. Acad. Sci. U.S.A. 31, 1945, 117-120.
+
+\bibitem{eisenbud} Eisenbud, D. {\it Commutative algebra.} Springer-Verlag, New York, 1995. 
+
+\bibitem{EKMM} Elmendorf, A.D., Kriz, I. , Mandell, M.A., and J.P.
+May. {\it Rings, modules and algebras in stable homotopy theory.}
+Mathematical Surveys and Monographs 47, American Mathematical
+Society, 1997.
+
+\bibitem{bezout} Fulton, W. {\it Algebraic curves.} W.A.
+Benjamin, Inc., New York, 1969.
+
+\bibitem{goerssjardine} Goerss, P. and J.F. Jardine. {\it Simplicial Homotopy Theory.} Progress in Mathematics, Birkhauser, Boston, 1999.
+
+\bibitem{goodwillieI} Goodwillie, T. {\it Calculus I: The first derivative of pseudoisotopy theory.} K-Theory 4 (1990), no. 1, 1--27. 
+
+\bibitem{goodwillieII} Goodwillie, T. {\it Calculus. II. Analytic functors.} K-Theory 5 (1991/92), no. 4, 295--332.
+
+\bibitem{goodwillie} Goodwillie, T. {\it Calculus III: Taylor Series.} Geometry and Topology, Volume 7 (2003) 645-711.
+
+\bibitem{stein} Grauert, H. and R. Remmert. {\it Theory of Stein Spaces.} Springer-Verlag, Berlin Heidelberg, 2004.
+
+\bibitem{gunning} Gunning, R. and H. Rossi. {\it Analytic functions of several complex variables.} Prentice-Hall, Englewood Cliffs, N.J, 1965.
+
+\bibitem{hatcher} Hatcher, A. {\it Algebraic Topology}. Cambridge University Press, 2002.
+
+\bibitem{bordism} Hook, E.C. {\it Equivariant cobordism and
+duality.} Transactions of the American Mathematical Society 178
+(1973) 241-258.
+
+\bibitem{stablemodel} Hovey, M. {\it Model Categories.}
+Mathematical Surveys and Monographs 63, AMS, Providence, RI, 1999.
+
+\bibitem{symmetricspectra} Hovey, M., Shipley, B. and J. Smith. {\it Symmetric spectra.} Journal of the American Mathematical Society 13, 2000, no. 1, 149-208.
+
+\bibitem{illusie} Illusie, L. {\it Complexe cotangent et d\'{e}formations
+I}. Lecture Notes in Mathematics 239, Springer-Verlag, 1971.
+
+\bibitem{illusie2} Illusie, L. {\it Complexe cotangent et d\'{e}formations
+II}. Lecture Notes in Mathematics 283, Springer-Verlag, 1972.
+
+\bibitem{mainjoyal} Joyal, A. {\it Notes on quasi-categories.}
+
+\bibitem{joyalsimp} Joyal, A. {\it Simplicial categories vs. quasi-categories.}
+
+\bibitem{joyalt} Joyal, A. and M. Tierney. {\it Quasi-categories vs. Segal Spaces.} Preprint available at 
+math.AT/0607820. 
+
+\bibitem{kerz} Kerz, M. {\it The complex of words and Nakaoka stability.} Homology, Homotopy and Applications, volume 7(1), 2005, pp. 77-85.
+
+\bibitem{klein} Klein, J. and J. Rognes. {\it A chain rule in the calculus of homotopy functors.} Geom. Topol. 6 (2002), 853--887.
+
+\bibitem{knutson} Knutson, D. {\it Algebraic spaces.} Lecture
+Notes in Mathematics 203, Springer-Verlag, 1971.
+
+\bibitem{categoricalring} Laplaza, M. {\it Coherence for
+distributivity.} Coherence in categories, 29-65. Lecture Notes in
+Mathematics 281, Springer-Verlag, 1972.
+
+\bibitem{stacks} Laumon, G. and L. Moret-Bailly. {\it Champs
+algebriques.} Springer-Verlag, 2000.
+
+\bibitem{lazard} Lazard, Daniel. {\it Sur les modules plats.} C.R.
+Acad. Sci. Paris 258, 1964, 6313-6316.
+
+\bibitem{topoi} Lurie, J. {\it Higher Topos Theory.} Available for download at http://www.math.harvard.edu/~lurie/ .
+
+\bibitem{DAGStable} Lurie, J. {\it Derived Algebraic Geometry I: Stable $\infty$-Categories.} Available for download.
+
+\bibitem{monoidal} Lurie, J. {\it Derived Algebraic Geometry II: Noncommutative Algebra.} Available for download.
+
+\bibitem{symmetric} Lurie, J. {\it Derived Algebraic Geometry III: Commutative Algebra.} Available for download.
+
+\bibitem{deformation} Lurie, J. {\it Derived Algebraic Geometry IV: Deformation Theory.} Available for download.
+
+\bibitem{structured} Lurie, J. {\it Derived Algebraic Geometry V: Structured Spaces.} Available for download.
+
+\bibitem{spectral} Lurie, J. {\it Derived Algebraic Geometry VI: Spectral Schemes.} In preparation.
+
+\bibitem{derivative} Lurie, J. {\it $(\infty,2)$-Categories and the Goodwillie Calculus I.} Available for download.
+
+\bibitem{calculus} Lurie, J. {\it $(\infty,2)$-categories and the Goodwillie Calculus II.} In preparation.
+
+\bibitem{elliptic1} Lurie, J. {\it Elliptic curves in spectral algebraic geometry.} In preparation.
+
+\bibitem{ellipticloop} Lurie, J. {\it Toric varieties, elliptic cohomology at infinity, and loop group representations.} In preparation.
+
+\bibitem{maclane} MacLane, S. {\it Categories for the Working Mathematician.} Second edition. Graduate Txts in Mathematics, 5. Springer-Verlag, New York, 1998.
+
+\bibitem{gabriel} Mitchell, B. {\it A quick proof of the
+Gabriel-Popesco theorem.} Journal of Pure and Applied Algebra 20
+(1981), 313-315.
+
+\bibitem{neeman} Neeman, A. {\it Triangulated categories.} Annals
+of Mathematics Studies, 148. Princeton University Press, 2001.
+
+\bibitem{homotopicalalgebra} Quillen, D. {\it Homotopical Algebra.} Lectures Notes in Mathematics 43, Springer-Verlag, Berlin, 1967. 
+
+\bibitem{completesegal} Rezk, C. {\it A model for the homotopy theory of homotopy theory.} Transactions of the American Mathematical Society 35 (2001), no. 3, 973-1007.
+
+\bibitem{homotopyvarieties} Rosicky, J. {\it On Homotopy Varieties.} Advances in Mathematics
+214, 2007 no. 2, 525-550.
+
+\bibitem{schwede} Schwede, S. {\it Spectra in model categories and applications to the algebraic
+cotangent complex.} Journal of Pure and Applied Algebra 120 (1997), pp.
+77-104.
+
+\bibitem{monmod} Schwede, S. and B. Shipley. {\it Algebras and Modules in Monoidal Model Categories.} Proceedings of the London Mathematical Society (80) 2000, 491-511.
+
+\bibitem{schwedeshipley} Schwede, S. and B. Shipley. {\it Stable model categories are categories of modules.} Topology 42, 2003, no. 1, 103-153.
+
+\bibitem{intersection} Serre, Jean-Pierre. {\it Local algebra.}
+Springer-Verlag, 2000.
+
+\bibitem{shipley} Shipley, B. {\it A Convenient Model Category for Commutative Ring Spectra.} Homotopy theory: relations with algebraic geometry, group cohomology, and algebraic $K$-theory. Contemp. Math. volume 346 pp. 473-483, American Mathematical Society, Providence, RI, 2004. 
+
+\bibitem{spivak} Spivak, D. {\it Quasi-smooth Derived Manifolds.} PhD dissertation.
+
+\bibitem{srinivas} Srinivas, V. {\it Algebraic K-Theory.} Birkhauser, Boston, 1993.
+
+\bibitem{toen} To\"{e}n, B. {\it Champs affines.} Available for
+download: math.AG/0012219.
+
+\bibitem{toenchar} To\"{e}n, B. {\it Vers une axiomatisation de la th\'{e}orie des cat\'{e}gories sup\'{e}riures.} K-theory 34 (2005), no. 3, 233-263.
+
+\bibitem{toen2} To\"{e}n, B. and G. Vezzosi. {\it From HAG to DAG:
+derived moduli stacks.} Available for download: math.AG/0210407.
+
+\bibitem{toen3} To\"{e}n, B. and G. Vezzosi. {\it Algebraic
+geometry over model categories.} Available for download:
+math.AG/0110109.
+
+\bibitem{toen4} To\"{e}n, B. and G. Vezzosi. {\it ``Brave New''
+Algebraic Geometry and global derived moduli spaces of ring
+spectra.} Available for download: math.AT/0309145.
+
+\bibitem{toen5} To\"{e}n, B. and G. Vezzosi. {\it Segal topoi and
+stacks over Segal categories.} Available for download:
+math.AG/0212330.
+
+\bibitem{toenK} To\"{e}n, B. and G. Vezzosi. {\it A remark on K-theory and S-categories.} Topology 43, No. 4 (2004), 765-791
+
+
+\bibitem{verity} Verity, D. {\it Weak complicial sets, a simplicial weak omega-category
+theory. Part I: basic homotopy theory.} 
+
+\bibitem{verity2} Verity, D. {\it Weak complicial sets, a simplicial weak omega-category
+theory. Part II: nerves of complicial Gray-categories.}
+
+\bibitem{weibel} Weibel, C. {\it An Introduction to Homological Algebra.} Cambridge University Press, 1995.
+
+\end{thebibliography}
+
+\end{document}

@@ -16,6 +16,9 @@
 *.run.xml
 *.synctex.*
 *.tmp
+*.idx
+*.ilg
+*.ind
 
 # Build products: PDFs are built by CI, not stored in git. A paper that
 # uses a PDF as a figure input re-tracks it with a negation in its own
