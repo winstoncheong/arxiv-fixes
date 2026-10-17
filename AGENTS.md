@@ -122,6 +122,9 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
   --site-url "$SITE_URL"` merges fresh artifacts with previously deployed
   PDFs (unchanged papers keep old files), publishes `public/` (index pages +
   PDFs + readmes) to Pages. Never the whole repo, so intermediates never ship.
+  Fresh-PDF lookup accepts the nested (`_fresh/pdf-<dir>/<pdf>`), flat
+  (single matching artifact extracts with no per-artifact directory), and
+  recursively-nested layouts.
 
 ## Adding a new paper (workflow)
 

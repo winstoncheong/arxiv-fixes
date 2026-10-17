@@ -8,6 +8,11 @@ readme files. Nothing built ever flows back into git.
 
 Fresh-artifact layout (from actions/download-artifact with pattern 'pdf-*'):
     <fresh>/pdf-<dirname>/<file>.pdf
+when several artifacts match. A single matching artifact is extracted
+flat (<fresh>/<file>.pdf) instead, so all three shapes are accepted:
+    <fresh>/pdf-<dirname>/<file>.pdf
+    <fresh>/<file>.pdf
+    <fresh>/pdf-<dirname>/.../<file>.pdf (deeper nesting, searched recursively)
 
 Usage:
     python3 scripts/assemble_site.py --fresh _fresh --out public \
@@ -25,6 +30,31 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def paper_dirs():
     return sorted(p.parent for p in ROOT.glob("*/paper.json"))
+
+
+def find_fresh(fresh, dirname, pdf):
+    """Locate a freshly built PDF under the artifact download dir.
+
+    download-artifact nests one directory per artifact only when the
+    pattern matches several artifacts; a single match lands flat.
+    Accept nested, flat, and recursively-nested shapes in that order.
+    """
+    exact = fresh / f"pdf-{dirname}" / pdf
+    if exact.is_file():
+        return exact
+    flat = fresh / pdf
+    if flat.is_file():
+        return flat
+    scope = fresh / f"pdf-{dirname}"
+    if scope.is_dir():
+        hits = sorted(p for p in scope.rglob(pdf) if p.is_file())
+        if hits:
+            return hits[0]
+    if fresh.is_dir():
+        hits = sorted(p for p in fresh.rglob(pdf) if p.is_file())
+        if hits:
+            return hits[0]
+    return None
 
 
 def main(argv=None):
@@ -52,9 +82,9 @@ def main(argv=None):
         dest_dir.mkdir(parents=True, exist_ok=True)
         for e in meta["entries"]:
             pdf = e["pdf"]
-            candidate = fresh / f"pdf-{d.name}" / pdf
+            candidate = find_fresh(fresh, d.name, pdf)
             dest = dest_dir / pdf
-            if candidate.exists():
+            if candidate is not None:
                 dest.write_bytes(candidate.read_bytes())
                 print(f"fresh: {d.name}/{pdf}")
             else:
