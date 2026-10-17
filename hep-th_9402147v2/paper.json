@@ -1,2 +1,17 @@
-{"abstract": "The paper is devoted to the mathematical aspects of topological quantum field theory and its applications to enumerative problems of algebraic geometry. In particular, it contains an axiomatic treatment of Gromov-Witten classes, and a discussion of their properties for Fano varieties. Cohomological Field Theories are defined, and it is proved that tree level theories are determined by their correlation functions. Applications to counting rational curves on del Pezzo surfaces and projective spaces are given.", "arxiv": "hep-th/9402147v2",
-  "title": "Gromov-Witten classes, quantum cohomology, and enumerative geometry", "authors": "M. Kontsevich, Yu. Manin", "changes": [], "entries": [{"pdf": "hep-th_9402147v2.pdf", "tex": "hep-th_9402147v2.tex"}], "status": "builds locally; first CI candidate", "warnings": []}
+{
+  "abstract": "The paper is devoted to the mathematical aspects of topological quantum field theory and its applications to enumerative problems of algebraic geometry. In particular, it contains an axiomatic treatment of Gromov-Witten classes, and a discussion of their properties for Fano varieties. Cohomological Field Theories are defined, and it is proved that tree level theories are determined by their correlation functions. Applications to counting rational curves on del Pezzo surfaces and projective spaces are given.",
+  "arxiv": "hep-th/9402147v2",
+  "title": "Gromov-Witten classes, quantum cohomology, and enumerative geometry",
+  "authors": "M. Kontsevich, Yu. Manin",
+  "changes": [
+    "Pinned title date to the v2 arXiv date (`\\date{April 13, 1994}`) instead of `\\today`."
+  ],
+  "entries": [
+    {
+      "pdf": "hep-th_9402147v2.pdf",
+      "tex": "hep-th_9402147v2.tex"
+    }
+  ],
+  "status": "builds locally; first CI candidate",
+  "warnings": []
+}

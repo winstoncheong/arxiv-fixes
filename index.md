@@ -42,6 +42,7 @@ Changes:
 
 * Changed fake sections into real ones.
 * Hyperlinks, bookmarks, pagebackref
+* Pinned title date to the v2 arXiv date (`\date{December 1, 2009}`) instead of `\today`.
 
 ## 1110.0466v3 - Wall-crossing, Rogers dilogarithm, and the QK/HK correspondence
 
@@ -60,6 +61,7 @@ Changes:
 * Removed special characters (`<CA>`) that prevented compilation.
 * Fixed a messed up href in the bibliography.
 * Extended `\preprint{}` to support multiple identifiers.
+* Added the v3 arXiv date (March 27, 2015) to the `\preprint` block (jheppub prints no `\date`).
 
 ## alg-geom/9507012v2 - Heisenberg Algebra and Hilbert Schemes on Projective Surfaces
 
@@ -72,6 +74,10 @@ arXiv: [alg-geom/9507012v2](https://arxiv.org/abs/alg-geom/9507012v2)
 Status: done
 
 **Abstract:** Original file was in AMS-LaTeX.
+
+Changes:
+
+* Pinned title date to the v2 arXiv date (`\date{September 29, 1995}`) instead of `\today`.
 
 ## alg-geom/9601011v1 - Gromov-Witten invariants in algebraic geometry
 
@@ -92,6 +98,7 @@ Changes:
 * convert some diagrams to use tikzcd
 * some eqnarray* -> align*
 * pf env -> proof
+* Corrected title date to the v1 arXiv date (`\date{January 15, 1996}`; was January 13).
 
 Warning: In the original paper, the sections were unnumbered. This is also the case with the published version.
 
@@ -106,6 +113,10 @@ arXiv: [hep-th/9402147v2](https://arxiv.org/abs/hep-th/9402147v2)
 Status: builds locally; first CI candidate
 
 **Abstract:** The paper is devoted to the mathematical aspects of topological quantum field theory and its applications to enumerative problems of algebraic geometry. In particular, it contains an axiomatic treatment of Gromov-Witten classes, and a discussion of their properties for Fano varieties. Cohomological Field Theories are defined, and it is proved that tree level theories are determined by their correlation functions. Applications to counting rational curves on del Pezzo surfaces and projective spaces are given.
+
+Changes:
+
+* Pinned title date to the v2 arXiv date (`\date{April 13, 1994}`) instead of `\today`.
 
 ## hep-th/9405035v2 - Enumeration of rational curves via torus actions
 
@@ -123,6 +134,7 @@ Changes:
 
 * documentstyle -> documentclass
 * resectioning
+* Pinned title date to the v2 arXiv date (`\date{June 27, 1995}`) instead of `\today`.
 
 ## hep-th/9408074v2 - A strong coupling test of S-duality
 
@@ -139,6 +151,7 @@ Status: in conversion; two entry points plus convert.py/body.tex/converted.tex p
 Changes:
 
 * Converted plain-TeX/harvmac source to LaTeX (see readme.md for conversion notes).
+* Updated the printed title-page date in both entry points from August to September 1994 (the v2 arXiv date).
 
 Warning: Conversion is lossy in places; see readme.md for known remaining defects.
 
@@ -163,6 +176,7 @@ Changes:
 * Fix spelling, typos, picture env overlap with header
 * Fix poor spacing before table on page 73
 * Fix obscured equation label 4.18
+* Pinned title date to the v2 arXiv date (`\date{October 23, 2009}`) instead of `\today`.
 
 ## math/0701269v2 - The number of smooth 4-manifolds with a fixed complexity
 
@@ -198,3 +212,4 @@ Status: done
 Changes:
 
 * Added `hyperref` so that the pdf has bookmarks. Color links also.
+* Pinned title date to the v1 arXiv date (`\date{December 20, 1999}`) instead of `\today`.

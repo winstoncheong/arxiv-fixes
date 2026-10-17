@@ -1,2 +1,24 @@
-{"abstract": "Gromov-Witten invariants for arbitrary projective varieties and arbitrary genus are constructed using the techniques from K. Behrend, B. Fantechi: The intrinsic normal cone.", "arxiv": "alg-geom/9601011v1",
-  "title": "Gromov-Witten invariants in algebraic geometry", "authors": "K. Behrend", "changes": ["documentstyle -> documentclass", "resection for bookmarks and toc to work", "convert some diagrams to use tikzcd", "some eqnarray* -> align*", "pf env -> proof"], "entries": [{"pdf": "alg-geom_9601011v1.pdf", "tex": "alg-geom_9601011v1.tex"}], "status": "builds locally; first CI candidate", "warnings": ["In the original paper, the sections were unnumbered. This is also the case with the published version."]}
+{
+  "abstract": "Gromov-Witten invariants for arbitrary projective varieties and arbitrary genus are constructed using the techniques from K. Behrend, B. Fantechi: The intrinsic normal cone.",
+  "arxiv": "alg-geom/9601011v1",
+  "title": "Gromov-Witten invariants in algebraic geometry",
+  "authors": "K. Behrend",
+  "changes": [
+    "documentstyle -> documentclass",
+    "resection for bookmarks and toc to work",
+    "convert some diagrams to use tikzcd",
+    "some eqnarray* -> align*",
+    "pf env -> proof",
+    "Corrected title date to the v1 arXiv date (`\\date{January 15, 1996}`; was January 13)."
+  ],
+  "entries": [
+    {
+      "pdf": "alg-geom_9601011v1.pdf",
+      "tex": "alg-geom_9601011v1.tex"
+    }
+  ],
+  "status": "builds locally; first CI candidate",
+  "warnings": [
+    "In the original paper, the sections were unnumbered. This is also the case with the published version."
+  ]
+}

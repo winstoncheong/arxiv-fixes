@@ -7,7 +7,8 @@
     "Converted `\\email{}` to `\\emailAdd{}` and `\\affiliation[]{}`.",
     "Removed special characters (`<CA>`) that prevented compilation.",
     "Fixed a messed up href in the bibliography.",
-    "Extended `\\preprint{}` to support multiple identifiers."
+    "Extended `\\preprint{}` to support multiple identifiers.",
+    "Added the v3 arXiv date (March 27, 2015) to the `\\preprint` block (jheppub prints no `\\date`)."
   ],
   "common": [
     "jheppub.sty"

@@ -62,6 +62,12 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
 6. Missing bibliography reconstructed and committed as `.bbl`.
 7. Math in section titles wrapped in `\texorpdfstring{...}{ascii}` so PDF
    bookmarks are clean.
+8. Pin the title date to the arXiv date of the pinned version (e.g.
+   `\date{May 8, 2009}` for `0905.0462v2`), never `\today` — a build date
+   makes every CI rebuild produce a different PDF. Mechanism depends on the
+   class: `\date{...}` for article/amsart, a date row in `\preprint` for
+   jheppub (its `\maketitle` prints no `\date`), `\Date{...}` for harvmac
+   plain-TeX.
 
 ## What git tracks (plan.html §4, `.gitignore`)
 
