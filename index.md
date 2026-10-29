@@ -197,6 +197,29 @@ Changes:
 * Make some equations more readable (better indentation, `\left\{ ... \middle| ... \right}`),
 * fix spacing, prevent some bad line-breaks (`\nobreakdash-`, `~`)
 
+## math/9807049v3 - Descente pour les n-champs (Descent for n-stacks)
+
+Authors: André Hirschowitz, Carlos Simpson
+
+[PDF](https://winstoncheong.github.io/arxiv-fixes/math_9807049v3/math_9807049v3.pdf)
+
+arXiv: [math/9807049v3](https://arxiv.org/abs/math/9807049v3)
+
+Status: done
+
+**Abstract:** We develop the theory of n-stacks (or more generally Segal n-stacks which are infinity-stacks such that the morphisms are invertible above degree n). This is done by systematically using the theory of closed model categories (cmc). Our main results are: a definition of n-stacks in terms of limits, which should be perfectly general for stacks of any type of objects; several other characterizations of n-stacks in terms of ``effectivity of descent data''; construction of the stack associated to an n-prestack; a strictification result saying that any ``weak'' n-stack is equivalent to a (strict) n-stack; and a descent result saying that the (n+1)-prestack of n-stacks (on a site) is an (n+1)-stack. As for other examples, we start from a ``left Quillen presheaf'' of cmc's and introduce the associated Segal 1-prestack. For this situation, we prove a general descent result, giving sufficient conditions for this prestack to be a stack. This applies to the case of complexes, saying how complexes of sheaves of O-modules can be glued together via quasi-isomorphisms. This was the problem that originally motivated us.
+
+Changes:
+
+* `documentstyle` -> `documentclass`; added `amsmath` and `amssymb`.
+* Converted the fake `\numero` and `\subnumero` headings into real `\section`/`\subsection*` structure so PDF bookmarks and the hand-written Sommaire's page references work; section and theorem numbering is unchanged.
+* Added `hyperref` with color links, bookmarks, and pagebackref.
+* Converted the one `eqnarray*` block to `align*`.
+* Wrapped math in section and subsection titles in `\texorpdfstring` so the PDF bookmarks are clean.
+* Redefined the author's `\boxtimes` (it clashed with `amssymb`).
+
+Warning: The printed section headings are now standard left-aligned LaTeX headings instead of the original centered `N. Title` layout; the hand-written Sommaire is kept as-is, so its page numbers follow the new pagination.
+
 ## math/9912158v1 - Quiver varieties and finite dimensional representations of quantum affine algebra
 
 Authors: Hiraku Nakajima
