@@ -220,6 +220,8 @@ Changes:
 
 Warning: The printed section headings are now standard left-aligned LaTeX headings instead of the original centered `N. Title` layout; the hand-written Sommaire is kept as-is, so its page numbers follow the new pagination.
 
+More info on conversion [here](./math_9807049v3/readme.md)
+
 ## math/9912158v1 - Quiver varieties and finite dimensional representations of quantum affine algebra
 
 Authors: Hiraku Nakajima

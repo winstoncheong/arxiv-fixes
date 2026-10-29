@@ -5,7 +5,9 @@ paper compiles under stock TeX Live with working bookmarks, colored
 hyperlinks, and readable diagrams. Fixes are cosmetic/structural only:
 never change the mathematics. Design authority is `plan.html`
 (§1 goal/non-goals, §2 layout, §3 "fixed" checklist, §4 git tracking,
-§5 CI design, §6 index contract, §7 cleanup queue).
+§5 CI design, §6 index contract, §7 cleanup queue). Durable cross-paper
+lessons live in `MEMORIES.md`, with detail in `docs/`; paper-specific logs
+live in `<paper>/readme.md`.
 
 ## Directory layout (plan.html §2)
 
@@ -18,7 +20,8 @@ never change the mathematics. Design authority is `plan.html`
 - Beside the entry point live only real inputs: `\include`d/`\input` `.tex`
   files, figures (`.eps`/etc.), a committed `.bbl` when upstream `.bib` is
   absent (e.g. `math_0701269v2/bibcmplx.bbl`), and `readme.md` for lasting
-  conversion notes (only `hep-th_9408074v2/readme.md` exists today).
+  conversion notes (e.g. `hep-th_9408074v2/readme.md`,
+  `math_9807049v3/readme.md`).
 - Conversion helpers and intermediates (`convert.py`, `body.tex`,
   `converted.tex`) are work logs, not deliverables: remove before marking
   an entry done.
@@ -61,7 +64,8 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
    overlaps/obscured labels. Working `xypic` diagrams stay as-is.
 6. Missing bibliography reconstructed and committed as `.bbl`.
 7. Math in section titles wrapped in `\texorpdfstring{...}{ascii}` so PDF
-   bookmarks are clean.
+   bookmarks are clean. Escape `_` as `\_` in the second argument; see
+   `docs/hyperref-and-bookmarks.md`.
 8. Pin the title date to the arXiv date of the pinned version (e.g.
    `\date{May 8, 2009}` for `0905.0462v2`), never `\today` — a build date
    makes every CI rebuild produce a different PDF. Mechanism depends on the
@@ -72,8 +76,8 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
 ## What git tracks (plan.html §4, `.gitignore`)
 
 - Tracked: `.tex`, `.bbl`, figures, `readme.md`, `paper.json`, per-dir
-  `.gitignore`, CI workflow, `plan.html`, `AGENTS.md`, generated
-  `index.md`/`index.html` (committed; see below).
+  `.gitignore`, CI workflow, `plan.html`, `AGENTS.md`, `MEMORIES.md`,
+  `docs/`, generated `index.md`/`index.html` (committed; see below).
 - Ignored (root `.gitignore`): `*.aux *.log *.out *.toc *.lof *.lot *.fls
   *.fdb_latexmk *.brf *.blg *.bcf *.run.xml *.synctex.* *.tmp
   *.idx *.ilg *.ind`, `*.pdf`, `__pycache__/`.
@@ -109,6 +113,21 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
 - PDF links use absolute `SITE_URL` (`https://winstoncheong.github.io/arxiv-fixes`);
   keep in sync with `SITE_URL` in `.github/workflows/papers.yml`.
 
+## Memory and notes (`MEMORIES.md`, `docs/`)
+
+- `MEMORIES.md` is the short, curated cross-paper memory: invariants,
+  recurring pitfalls, per-paper pointers, open questions. Keep it short; if
+  an entry grows into a procedure, move the procedure to `docs/`.
+- `docs/` holds long-form cross-cutting notes. Start at `docs/README.md`;
+  current topics are TeX modernization pitfalls, hyperref/bookmarks, and
+  plain TeX/harvmac conversion.
+- Paper-specific conversion logs stay in `<paper>/readme.md`. Do not
+  duplicate them in `docs/`; link to them.
+- When a fix generalizes: add or update a note in `docs/`, add one line to
+  `MEMORIES.md`, and update this file if the operating rules changed.
+- When a paper is added or finished: write or refresh `<paper>/readme.md`,
+  and add a per-paper pointer in `MEMORIES.md` if it has lasting lessons.
+
 ## CI (`.github/workflows/papers.yml`, plan.html §5)
 
 - `push` to `master`: diff against base commit → build only changed paper
@@ -136,8 +155,10 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
    (adjust `\include`/`\input` stems, not content). Pin the version in the name.
 3. Modernize per the checklist above; minimal diff, mathematics untouched.
 4. Write `paper.json` (abstract from the arXiv abs page; honest `status`;
-   every fix in `changes`, every known defect in `warnings`). Add per-dir
+   every fix in `changes`, every known defect in `warnings`) and
+   `<paper>/readme.md` if the conversion has lasting quirks. Add per-dir
    `.gitignore` negations only if the build needs otherwise-ignored inputs.
 5. `latexmk` build → zero errors/undefined refs → `generate_index.py` →
    `--check` → `git status` shows only intended files (PDF must not appear
-   as a new tracked file).
+   as a new tracked file). If a lesson generalizes, update `docs/` and
+   `MEMORIES.md`.
