@@ -72,6 +72,28 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
    class: `\date{...}` for article/amsart, a date row in `\preprint` for
    jheppub (its `\maketitle` prints no `\date`), `\Date{...}` for harvmac
    plain-TeX.
+9. Typos, errata, and obvious errors: follow the rules in the next section.
+   Every fix goes in `changes`; every unfixed issue goes in `warnings`.
+
+## Typos, errata, and obvious errors
+
+These rules are part of the fixing process, not a separate cleanup pass.
+Record every judgement call: fixes in `paper.json` `changes`, unfixed issues
+in `warnings`, and the reasoning in `<paper>/readme.md` when it is not
+obvious.
+
+1. **Textual typos, spelling, grammar** — fix them, and record the fix in
+   `changes`.
+2. **Mathematical errors** — do not silently fix. Preserve the source text;
+   record the issue in `warnings` (and explain it in `<paper>/readme.md` if
+   needed); keep the authors' own errata text in the source.
+3. **Obvious bibliographic errors** — missing or duplicate entries, wrong
+   years, broken `\bibitem`s — fix only when confident, and state the
+   inference in `changes` (e.g. "supplied what I think is the correct
+   reference").
+4. **Never "improve" notation, claims, or exposition** — out of scope even
+   if it looks wrong. If an issue affects correctness, treat it under
+   point 2 rather than rewriting the passage.
 
 ## What git tracks (plan.html §4, `.gitignore`)
 
