@@ -5,19 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>arxiv-fixes index</title>
 <style>
-:root { color-scheme: light dark; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  line-height: 1.6; max-width: 46rem; margin: 0 auto; padding: 1.5rem; }
-article { border: 1px solid #8883; border-radius: 8px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
-h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
-.meta { color: gray; font-size: 0.9rem; }
-.notice { border-left: 4px solid #0969da; padding: 0.5rem 1rem; background: #0969da11; }
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff; --fg: #1f2328; --muted: #59636e;
+  --rule: #d1d9e0; --link: #0969da; --surface: #f6f8fa;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1;
+          --rule: #3d444d; --link: #4493f8; --surface: #151b23; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6; }
+.layout { display: grid; grid-template-columns: 260px minmax(0, 52rem);
+  gap: 2rem; justify-content: center; max-width: 84rem; margin: 0 auto;
+  padding: 1.5rem; align-items: start; }
+.sidebar { position: sticky; top: 1rem; align-self: start;
+  max-height: calc(100vh - 2rem); overflow-y: auto;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 10px; padding: 1rem 0.9rem; font-size: 0.9rem; }
+.sidebar h2 { font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--muted); margin: 0 0 0.4rem; }
+.sidebar .count { color: var(--muted); font-size: 0.78rem; margin: 0 0 0.7rem; }
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar li { margin: 0; }
+.sidebar a { display: block; padding: 0.35rem 0.5rem;
+  border-left: 2px solid transparent; border-radius: 0 5px 5px 0;
+  color: var(--muted); text-decoration: none; }
+.sidebar a:hover { color: var(--link); background: var(--bg); }
+.sidebar a .sid { display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem; color: var(--fg); }
+.sidebar a .stitle { display: block; font-size: 0.8rem; color: var(--muted); }
+.sidebar a:hover .sid { color: var(--link); }
+.sidebar .top { margin-top: 0.8rem; padding-top: 0.6rem;
+  border-top: 1px solid var(--rule); font-size: 0.8rem; }
+.content { min-width: 0; }
+h1 { font-size: 1.6rem; margin-top: 0; }
+article { border: 1px solid var(--rule); border-radius: 8px;
+  padding: 1rem 1.2rem; margin: 1.2rem 0; scroll-margin-top: 1rem; }
+article:target { border-color: var(--link); }
+h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.notice { border-left: 4px solid var(--link); padding: 0.5rem 1rem;
+  background: var(--surface); }
+@media (max-width: 60rem) {
+  .layout { display: block; max-width: 52rem; }
+  .sidebar { position: static; max-height: 16rem; margin-bottom: 1.5rem; }
+}
 </style>
 </head>
 <body>
-<h1>arxiv-fixes index</h1>
+<div class="layout">
+<nav class="sidebar" aria-label="Articles">
+<h2>Articles</h2>
+<p class="count">12 papers</p>
+<ul>
+<li><a href="#paper-0905.0462v2" title="(Infinity,2)-Categories and the Goodwillie Calculus I"><span class="sid">0905.0462v2</span><span class="stitle">(Infinity,2)-Categories and the Goodwillie Calculus…</span></a></li>
+<li><a href="#paper-0910.4460v2" title="Lectures on canonical and crystal bases of Hall algebras"><span class="sid">0910.4460v2</span><span class="stitle">Lectures on canonical and crystal bases of Hall…</span></a></li>
+<li><a href="#paper-1110.0466v3" title="Wall-crossing, Rogers dilogarithm, and the QK/HK correspondence"><span class="sid">1110.0466v3</span><span class="stitle">Wall-crossing, Rogers dilogarithm, and the QK/HK…</span></a></li>
+<li><a href="#paper-alg-geom_9507012v2" title="Heisenberg Algebra and Hilbert Schemes on Projective Surfaces"><span class="sid">alg-geom/9507012v2</span><span class="stitle">Heisenberg Algebra and Hilbert Schemes on…</span></a></li>
+<li><a href="#paper-alg-geom_9601011v1" title="Gromov-Witten invariants in algebraic geometry"><span class="sid">alg-geom/9601011v1</span><span class="stitle">Gromov-Witten invariants in algebraic geometry</span></a></li>
+<li><a href="#paper-hep-th_9402147v2" title="Gromov-Witten classes, quantum cohomology, and enumerative geometry"><span class="sid">hep-th/9402147v2</span><span class="stitle">Gromov-Witten classes, quantum cohomology, and…</span></a></li>
+<li><a href="#paper-hep-th_9405035v2" title="Enumeration of rational curves via torus actions"><span class="sid">hep-th/9405035v2</span><span class="stitle">Enumeration of rational curves via torus actions</span></a></li>
+<li><a href="#paper-hep-th_9408074v2" title="A strong coupling test of S-duality"><span class="sid">hep-th/9408074v2</span><span class="stitle">A strong coupling test of S-duality</span></a></li>
+<li><a href="#paper-math_0611617v2" title="Lectures on Hall Algebras"><span class="sid">math/0611617v2</span><span class="stitle">Lectures on Hall Algebras</span></a></li>
+<li><a href="#paper-math_0701269v2" title="The number of smooth 4-manifolds with a fixed complexity"><span class="sid">math/0701269v2</span><span class="stitle">The number of smooth 4-manifolds with a fixed…</span></a></li>
+<li><a href="#paper-math_9807049v3" title="Descente pour les n-champs (Descent for n-stacks)"><span class="sid">math/9807049v3</span><span class="stitle">Descente pour les n-champs (Descent for n-stacks)</span></a></li>
+<li><a href="#paper-math_9912158v1" title="Quiver varieties and finite dimensional representations of quantum affine algebra"><span class="sid">math/9912158v1</span><span class="stitle">Quiver varieties and finite dimensional…</span></a></li>
+</ul>
+<a class="top" href="#top">Back to top</a>
+</nav>
+<main class="content">
+<h1 id="top">arxiv-fixes index</h1>
 <p class="notice">Generated by <code>scripts/generate_index.py</code> from <code>*/paper.json</code>. Do not hand-edit.</p>
-<article>
+<article id="paper-0905.0462v2">
 <h2>0905.0462v2 &ndash; (Infinity,2)-Categories and the Goodwillie Calculus I</h2>
 <p class="meta">Jacob Lurie</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/0905.0462v2/0905.0462v2.pdf">PDF</a></p>
@@ -35,7 +98,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 </ul>
 <p><strong>Warning:</strong> External cross-references (\toposref and friends) resolve against committed `.aux` snapshots of the companion volumes, which may be stale relative to their final versions.</p>
 </article>
-<article>
+<article id="paper-0910.4460v2">
 <h2>0910.4460v2 &ndash; Lectures on canonical and crystal bases of Hall algebras</h2>
 <p class="meta">Olivier Schiffmann</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/0910.4460v2/0910.4460v2.pdf">PDF</a></p>
@@ -48,7 +111,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Pinned title date to the v2 arXiv date (`\date{December 1, 2009}`) instead of `\today`.</li>
 </ul>
 </article>
-<article>
+<article id="paper-1110.0466v3">
 <h2>1110.0466v3 &ndash; Wall-crossing, Rogers dilogarithm, and the QK/HK correspondence</h2>
 <p class="meta">Sergei Alexandrov, Daniel Persson, Boris Pioline</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/1110.0466v3/dilognotes.pdf">PDF</a></p>
@@ -63,7 +126,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Added the v3 arXiv date (March 27, 2015) to the `\preprint` block (jheppub prints no `\date`).</li>
 </ul>
 </article>
-<article>
+<article id="paper-alg-geom_9507012v2">
 <h2>alg-geom/9507012v2 &ndash; Heisenberg Algebra and Hilbert Schemes on Projective Surfaces</h2>
 <p class="meta">Hiraku Nakajima</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/alg-geom_9507012v2/alg-geom_9507012v2.pdf">PDF</a></p>
@@ -74,7 +137,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Pinned title date to the v2 arXiv date (`\date{September 29, 1995}`) instead of `\today`.</li>
 </ul>
 </article>
-<article>
+<article id="paper-alg-geom_9601011v1">
 <h2>alg-geom/9601011v1 &ndash; Gromov-Witten invariants in algebraic geometry</h2>
 <p class="meta">K. Behrend</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/alg-geom_9601011v1/alg-geom_9601011v1.pdf">PDF</a></p>
@@ -91,7 +154,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 </ul>
 <p><strong>Warning:</strong> In the original paper, the sections were unnumbered. This is also the case with the published version.</p>
 </article>
-<article>
+<article id="paper-hep-th_9402147v2">
 <h2>hep-th/9402147v2 &ndash; Gromov-Witten classes, quantum cohomology, and enumerative geometry</h2>
 <p class="meta">M. Kontsevich, Yu. Manin</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/hep-th_9402147v2/hep-th_9402147v2.pdf">PDF</a></p>
@@ -102,7 +165,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Pinned title date to the v2 arXiv date (`\date{April 13, 1994}`) instead of `\today`.</li>
 </ul>
 </article>
-<article>
+<article id="paper-hep-th_9405035v2">
 <h2>hep-th/9405035v2 &ndash; Enumeration of rational curves via torus actions</h2>
 <p class="meta">M. Kontsevich</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/hep-th_9405035v2/hep-th_9405035v2.pdf">PDF</a></p>
@@ -115,7 +178,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Pinned title date to the v2 arXiv date (`\date{June 27, 1995}`) instead of `\today`.</li>
 </ul>
 </article>
-<article>
+<article id="paper-hep-th_9408074v2">
 <h2>hep-th/9408074v2 &ndash; A strong coupling test of S-duality</h2>
 <p class="meta">Cumrun Vafa and Edward Witten</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/main.pdf">PDF</a></p>
@@ -130,7 +193,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <p><strong>Warning:</strong> Conversion is lossy in places; see readme.md for known remaining defects.</p>
 <p><a href="./hep-th_9408074v2/readme.md">Conversion notes</a></p>
 </article>
-<article>
+<article id="paper-math_0611617v2">
 <h2>math/0611617v2 &ndash; Lectures on Hall Algebras</h2>
 <p class="meta">Olivier Schiffmann</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/math_0611617v2/math_0611617v2.pdf">PDF</a></p>
@@ -146,7 +209,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Pinned title date to the v2 arXiv date (`\date{October 23, 2009}`) instead of `\today`.</li>
 </ul>
 </article>
-<article>
+<article id="paper-math_0701269v2">
 <h2>math/0701269v2 &ndash; The number of smooth 4-manifolds with a fixed complexity</h2>
 <p class="meta">Dave Auckly</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/math_0701269v2/6-1-07cmplx4.pdf">PDF</a></p>
@@ -160,7 +223,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>fix spacing, prevent some bad line-breaks (`\nobreakdash-`, `~`)</li>
 </ul>
 </article>
-<article>
+<article id="paper-math_9807049v3">
 <h2>math/9807049v3 &ndash; Descente pour les n-champs (Descent for n-stacks)</h2>
 <p class="meta">André Hirschowitz, Carlos Simpson</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/math_9807049v3/math_9807049v3.pdf">PDF</a></p>
@@ -183,7 +246,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <p><strong>Warning:</strong> The source&#x27;s v3 errata header (an error in Lemma 6.2/Proposition 6.1, with consequences for 10.11, 12.1, 14.4, 15.8, 19.4 and 21.1) is preserved in the `.tex`; the mathematical content was not independently checked.</p>
 <p><a href="./math_9807049v3/readme.md">Conversion notes</a></p>
 </article>
-<article>
+<article id="paper-math_9912158v1">
 <h2>math/9912158v1 &ndash; Quiver varieties and finite dimensional representations of quantum affine algebra</h2>
 <p class="meta">Hiraku Nakajima</p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/math_9912158v1/math_9912158v1.pdf">PDF</a></p>
@@ -195,5 +258,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Pinned title date to the v1 arXiv date (`\date{December 20, 1999}`) instead of `\today`.</li>
 </ul>
 </article>
+</main>
+</div>
 </body>
 </html>
