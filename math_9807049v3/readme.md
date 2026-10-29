@@ -37,6 +37,9 @@ Structure: 21 `\numero` sections, 71 `\subnumero` subheads, one
   `l'ensemble vide`, `$\Xx/X$` → `X/X`, `$M_f$` → `M\_f`).
 - `\boxtimes` changed from `\newcommand` to `\renewcommand`; `amssymb`
   already defines it.
+- Added `T1` encoding and `lmodern` (the approved default), so text
+  extraction is clean (`é`, not `´e`) and fonts are scalable Type 1. This
+  changes the metrics and pagination.
 
 The hand-written `Sommaire` is kept as-is. Its `\pageref` labels sit right
 after the new `\section`s, so the page numbers track the new pagination.
@@ -86,14 +89,15 @@ latexmk -pdf -interaction=nonstopmode math_9807049v3.tex
 grep -c '^!' math_9807049v3.log                  # 0
 grep -c 'Token not allowed' math_9807049v3.log   # 0
 grep -ci undefined math_9807049v3.log            # 0
-pdfinfo math_9807049v3.pdf | grep Pages          # 253
+pdfinfo math_9807049v3.pdf | grep Pages          # 250
 ```
 
-The official arXiv PDF has 251 pages. The two extra pages come from the
-standard article heading layout and the longer bibliography produced by
-`pagebackref`; content and theorem numbering were spot-checked against the
-official PDF (title page, Sommaire, Introduction, a theorem-heavy page, and
-the bibliography).
+The official arXiv PDF has 251 pages; the current build has 250. The
+one-page difference comes from the standard article heading layout, the
+longer bibliography produced by `pagebackref`, and the T1/lmodern metrics.
+Content and theorem numbering were spot-checked against the official PDF
+(title page, Sommaire, Introduction, a theorem-heavy page, and the
+bibliography).
 
 PDF outline: 92 entries (21 sections + 71 subheads). Spot-check with
 `fitz`:
@@ -111,8 +115,9 @@ print(len(d.get_toc()))
   Section and theorem numbering are unchanged.
 - The hand-written Sommaire still says `1. Introduction` while the heading
   says `1 Introduction`; this is cosmetic.
-- Text extraction is OT1: `é` extracts as `´e`. A future T1 + `lmodern`
-  pass would fix it but would change metrics and pagination.
+- The PDF uses Latin Modern (T1) instead of the original Computer Modern;
+  text extraction is clean, but metrics and pagination differ slightly from
+  the published version.
 - The source's v3 errata header records an error in Lemma 6.2/Proposition
   6.1 and the resulting changes to 10.11, 12.1, 14.4, 15.8, 19.4 and 21.1.
   That header is preserved; the mathematical content was not independently

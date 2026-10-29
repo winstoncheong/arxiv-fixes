@@ -65,8 +65,10 @@ Keep this file short. If an entry grows into a procedure, move the detail to
   against the official arXiv PDF and expect a few pages of drift.
 - **Old arXiv e-prints may be a single gzipped `.tex`**, not a tarball. Run
   `file` on the download before extracting.
-- **OT1 fonts extract badly** (`é` comes out as `´e`). Not fixed yet; T1 +
-  `lmodern` is the candidate. See open questions.
+- **T1 + `lmodern` are the default** (approved 2026-10-29): add
+  `\usepackage[T1]{fontenc}` and `\usepackage{lmodern}` before `hyperref`.
+  Text extraction becomes correct (`é`, not `´e`) and fonts are scalable;
+  metrics and pagination change, so re-check the page count.
 - **Old sources carry accent and delimiter typos** that compile fine:
   `\'a` for `` \`a ``, `cot\'e` for `c\^ot\'e`, spaces after apostrophes,
   unmatched parentheses. Run a comment-stripped proofreading scan; see
@@ -98,9 +100,8 @@ Keep this file short. If an entry grows into a procedure, move the detail to
 
 ## Open questions
 
-- Should all entries switch to `\usepackage[T1]{fontenc}` +
-  `\usepackage{lmodern}` for text extraction and scalable fonts? It changes
-  metrics and pagination, so it needs a deliberate pass.
+- Retrofit T1 + `lmodern` to the older entries when they are next touched;
+  the default applies to new and touched entries.
 - Bookmark policy: sections only, or sections + unnumbered subheads? Current
   practice is both where the paper has a deep structure.
 - How much of a hand-written table of contents should be preserved when a

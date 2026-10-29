@@ -179,10 +179,11 @@ UTF-8 handling is not an issue. If you add non-ASCII text (e.g. in
 `\texorpdfstring`), the file is UTF-8 and modern pdfLaTeX reads it by
 default.
 
-Known limitation: with the default OT1 encoding, text extraction renders
-`é` as `´e` and `théorème` as `th´eor `me`. Switching to T1 + `lmodern`
-fixes extraction and gives scalable fonts, but changes metrics and
-pagination; treat it as a separate, deliberate pass.
+This repo uses `\usepackage[T1]{fontenc}` and `\usepackage{lmodern}` by
+default (approved 2026-10-29), loaded before `hyperref`. T1 gives correct
+text extraction (`é`, not `´e`); `lmodern` gives scalable Type 1 fonts.
+Expect metrics and pagination to change from an OT1 build, so re-check the
+page count and spot-check a few pages.
 
 ## Proofreading scans
 

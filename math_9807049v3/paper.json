@@ -12,6 +12,7 @@
   "status": "done",
   "changes": [
     "`documentstyle` -> `documentclass`; added `amsmath` and `amssymb`.",
+    "Added `T1` encoding and `lmodern` (the approved default), fixing text extraction (`é`, not `´e`) and changing pagination from the OT1 build.",
     "Converted the fake `\\numero` and `\\subnumero` headings into real `\\section`/`\\subsection*` structure so PDF bookmarks and the hand-written Sommaire's page references work; section and theorem numbering is unchanged.",
     "Added `hyperref` with color links, bookmarks, and pagebackref.",
     "Converted the one `eqnarray*` block to `align*`.",

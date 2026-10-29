@@ -169,6 +169,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <p>Changes:</p>
 <ul>
 <li>`documentstyle` -&gt; `documentclass`; added `amsmath` and `amssymb`.</li>
+<li>Added `T1` encoding and `lmodern` (the approved default), fixing text extraction (`é`, not `´e`) and changing pagination from the OT1 build.</li>
 <li>Converted the fake `\numero` and `\subnumero` headings into real `\section`/`\subsection*` structure so PDF bookmarks and the hand-written Sommaire&#x27;s page references work; section and theorem numbering is unchanged.</li>
 <li>Added `hyperref` with color links, bookmarks, and pagebackref.</li>
 <li>Converted the one `eqnarray*` block to `align*`.</li>

@@ -72,8 +72,11 @@ remaining defect in `paper.json` (`changes`/`warnings`, surfaced in the index):
    class: `\date{...}` for article/amsart, a date row in `\preprint` for
    jheppub (its `\maketitle` prints no `\date`), `\Date{...}` for harvmac
    plain-TeX.
-9. Typos, errata, and obvious errors: follow the rules in the next section.
-   Every fix goes in `changes`; every unfixed issue goes in `warnings`.
+9. Use `\usepackage[T1]{fontenc}` and `\usepackage{lmodern}` (load before
+   `hyperref`) so text extraction is correct (`é`, not `´e`) and fonts are
+   scalable Type 1. Approved 2026-10-29; apply to new and touched entries.
+10. Typos, errata, and obvious errors: follow the rules in the next section.
+    Every fix goes in `changes`; every unfixed issue goes in `warnings`.
 
 ## Typos, errata, and obvious errors
 
