@@ -184,6 +184,28 @@ Known limitation: with the default OT1 encoding, text extraction renders
 fixes extraction and gives scalable fonts, but changes metrics and
 pagination; treat it as a separate, deliberate pass.
 
+## Proofreading scans
+
+Old sources carry accent and delimiter slips that a successful build will not
+catch. A second pass is cheap; run it on the comment-stripped source.
+
+- **Accent macros.** `\'a` (á) is almost always a typo for `` \`a `` (à) in
+  French; `cot\'e` is usually `c\^ot\'e`; `l'epoque` → `l'\'epoque`;
+  `necessaire` → `n\'ecessaire`; `clot\^ure` → `cl\^oture`.
+- **Apostrophes.** `qu' on`, `d' un`, `l' \'el\'ement` are spacing typos;
+  French has no space after the apostrophe.
+- **Repeated words.** Strip comments and `\cite`/`\ref` arguments first, or
+  citation keys look like repeated words.
+- **Delimiters.** Count `(`/`)` per math segment. Half-open intervals such as
+  `[0,\infty)` legitimately close with `)`, so filter those out; an extra
+  `)` in `A(Y_j,g_j))` or a missing one in `deg(y_{i+1}` is real.
+- **Punctuation.** `,,`, `..`, `;;`, and `etc` without a period.
+- **Bibliography.** Duplicate keys/titles, and missing accents in French
+  titles.
+
+Do not “fix” notation or claims. A consistent oddity (for example
+`Cpx^{[0,a\}}`) is a notation question, not a typo; record it and leave it.
+
 ## Title blocks and dates
 
 - Keep a manual title block if the paper has one; do not invent a

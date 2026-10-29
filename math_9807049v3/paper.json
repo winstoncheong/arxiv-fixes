@@ -16,9 +16,13 @@
     "Added `hyperref` with color links, bookmarks, and pagebackref.",
     "Converted the one `eqnarray*` block to `align*`.",
     "Wrapped math in section and subsection titles in `\\texorpdfstring` so the PDF bookmarks are clean.",
-    "Redefined the author's `\\boxtimes` (it clashed with `amssymb`)."
+    "Redefined the author's `\\boxtimes` (it clashed with `amssymb`).",
+    "Proofreading pass: fixed textual typos and accent slips in the French prose (e.g. côtés, l'époque, nécessaire, références principales, très, clôture, préchamp, groupoïde, léger, appliquée), the au-dessus hyphenation, eight acute-accented `a` that should be grave-accented `a`, and eight stray spaces after apostrophes.",
+    "Proofreading pass: repaired unbalanced parentheses/brackets and a doubled comma in formulas, without changing the mathematics.",
+    "Proofreading pass: corrected the accents in the Tamsamani bibliography title and groupoïdes/groupoids in two other titles."
   ],
   "warnings": [
-    "The printed section headings are now standard left-aligned LaTeX headings instead of the original centered `N. Title` layout; the hand-written Sommaire is kept as-is, so its page numbers follow the new pagination."
+    "The printed section headings are now standard left-aligned LaTeX headings instead of the original centered `N. Title` layout; the hand-written Sommaire is kept as-is, so its page numbers follow the new pagination.",
+    "The source's v3 errata header (an error in Lemma 6.2/Proposition 6.1, with consequences for 10.11, 12.1, 14.4, 15.8, 19.4 and 21.1) is preserved in the `.tex`; the mathematical content was not independently checked."
   ]
 }

@@ -67,6 +67,10 @@ Keep this file short. If an entry grows into a procedure, move the detail to
   `file` on the download before extracting.
 - **OT1 fonts extract badly** (`é` comes out as `´e`). Not fixed yet; T1 +
   `lmodern` is the candidate. See open questions.
+- **Old sources carry accent and delimiter typos** that compile fine:
+  `\'a` for `` \`a ``, `cot\'e` for `c\^ot\'e`, spaces after apostrophes,
+  unmatched parentheses. Run a comment-stripped proofreading scan; see
+  [`docs/tex-modernization-pitfalls.md`](./docs/tex-modernization-pitfalls.md).
 
 ## Per-paper notes
 
