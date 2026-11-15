@@ -215,3 +215,33 @@ Do not “fix” notation or claims. A consistent oddity (for example
   arXiv date of the pinned version (see `AGENTS.md`).
 - Set PDF metadata even when the visible title block is manual:
   `\hypersetup{pdftitle=...,pdfauthor=...}`.
+
+## EPS figures (`epsf`)
+
+Old sources include figures with
+
+```tex
+\input epsf
+...
+\begin{center}
+\epsffile{fig.eps}
+\end{center}
+```
+
+`epsf.tex`'s `\special` only works under `dvips`; under `pdflatex` the figure
+silently does not embed. Fix: drop `\input epsf`, load `graphicx`, and swap
+the inclusion:
+
+```tex
+\usepackage{graphicx}
+...
+\begin{center}
+\includegraphics{fig.eps}
+\end{center}
+```
+
+`latexmk -pdf` converts each EPS automatically (`epstopdf`, restricted shell
+escape — no extra setup, and CI handles it the same way). Keep the author's
+surrounding layout (`center`, spacing) as-is. Verify every figure: the build
+log should list one `-eps-converted-to.pdf` per figure, and the page count
+should be re-checked (see `math_0103059v4/readme.md`).

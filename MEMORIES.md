@@ -74,6 +74,8 @@ Keep this file short. If an entry grows into a procedure, move the detail to
   unmatched parentheses. Run a comment-stripped proofreading scan; see
   [`docs/tex-modernization-pitfalls.md`](./docs/tex-modernization-pitfalls.md).
 
+- **\epsffile (epsf.tex) does not embed under pdflatex.** Replace \input epsf with \usepackage{graphicx} and \epsffile{f.eps} with \includegraphics{f.eps}; epstopdf converts automatically under latexmk. Detail: [`docs/tex-modernization-pitfalls.md`](./docs/tex-modernization-pitfalls.md).
+
 ## Per-paper notes
 
 - `math/9807049v3` — Hirschowitz–Simpson, *Descente pour les n-champs*.
@@ -82,6 +84,7 @@ Keep this file short. If an entry grows into a procedure, move the detail to
 - `hep-th/9408074v2` — Vafa–Witten, plain TeX/harvmac. Script-assisted
   conversion; lossy in places. Log:
   [`hep-th_9408074v2/readme.md`](./hep-th_9408074v2/readme.md).
+- `math/0103059v4` — Goncharov, *Multiple polylogarithms and mixed Tate motives*. Plain-TeX \matrix/\cr to `matrix` envs, `epsf` to `graphicx`, 66 ad-hoc proofs kept, 4 duplicate labels preserved. Log: [`math_0103059v4/readme.md`](./math_0103059v4/readme.md).
 - `0905.0462v2` — Lurie, `(∞,2)`-categories I. `xr-hyper` plus committed
   companion `.aux` snapshots; draft material after `\end{document}` kept.
   See `paper.json` and `AGENTS.md`.
