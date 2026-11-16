@@ -1,4 +1,4 @@
-# MEMORIES
+# MEMORY
 
 Durable, curated memory for this repo: the lessons that are worth not
 rediscovering. This is not a diary and not a duplicate of `plan.html` or
@@ -8,7 +8,7 @@ behind them.
 
 Where things go:
 
-- **`MEMORIES.md`** (this file) — short, cross-paper lessons and decisions.
+- **`MEMORY.md`** (this file) — short, cross-paper lessons and decisions.
   One line per lesson, with a pointer to the detail.
 - **`docs/`** — long-form, cross-cutting notes (techniques, pitfalls,
   tooling). See [`docs/README.md`](./docs/README.md).

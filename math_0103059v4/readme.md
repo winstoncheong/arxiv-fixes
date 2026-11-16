@@ -115,6 +115,6 @@ last bibliography page. All 13 EPS figures convert and embed
 - Accented French/German in the bibliography now renders with proper glyphs
   (e.g. Über, Résolution, réguliers); text extraction is clean T1.
 
-See [`../MEMORIES.md`](../MEMORIES.md) and
+See [`../MEMORY.md`](../MEMORY.md) and
 [`../docs/tex-modernization-pitfalls.md`](../docs/tex-modernization-pitfalls.md)
 for the general lessons from this conversion.
