@@ -1,7 +1,7 @@
 # math/0103059v4 — conversion notes
 
 A. B. Goncharov, *Multiple polylogarithms and mixed Tate motives*,
-arXiv:math/0103059v4 (15 May 2001).
+ar\iv:math/0103059v4 (15 May 2001).
 
 ## Source
 
@@ -29,6 +29,7 @@ to reconstruct). Proofs are ad-hoc `{\bf Proof}.` paragraphs. Figures are
   5201) to `\begin{matrix}` environments with `\` separators. Required:
   `amsmath` rejects the old form. `\cr` occurred only inside these three
   blocks (11 uses), so the conversion is contained.
+- Converted plain-TeX `\choose` (16 uses) to `\binom` (identical output; removes the `amsmath` compat warning; 2 uses in comments left alone).
 - Converted all 13 `\epsffile{...}` inclusions to `\includegraphics{...}`
   (`epsf` specials do not embed under `pdflatex`; `epstopdf` converts
   automatically under `latexmk -pdf`).
@@ -41,7 +42,7 @@ to reconstruct). Proofs are ad-hoc `{\bf Proof}.` paragraphs. Figures are
   `\section*{REFERENCES}\phantomsection\addcontentsline{toc}{section}{REFERENCES}`,
   so the bibliography gets a bookmark and a TOC entry without changing
   numbering.
-- Pinned the title date to the v4 arXiv date (`\date{May 15, 2001}`) instead
+- Pinned the title date to the v4 ar\iv date (`\date{May 15, 2001}`) instead
   of the empty `\date{}`.
 
 ## Proofreading pass
@@ -74,9 +75,6 @@ Deliberately left as-is (documented here rather than changed):
   proof ends cannot be determined without editorial judgement. Converting to
   `amsthm` `proof` environments would reformat 66 passages by guesswork
   (`amsthm` is therefore not loaded).
-- Plain-TeX `\choose` (17 active uses plus 2 in comments): identical output
-  under `amsmath`, one compat warning (`Foreign command \atopwithdelims`).
-  Restructuring 17 instances into `\binom` buys nothing rendered.
 - `\Bbb` (obsolete, kept): renders correctly with one `amsfonts` warning per
   build; replacing it throughout would touch every blackboard-bold symbol for
   no visible change.
@@ -106,9 +104,9 @@ pdfinfo math_0103059v4.pdf | grep Pages          # 82
 ```
 
 The log's only content warnings are the 4 multiply-defined labels above (plus
-the benign `amsfonts` `\Bbb` and `amsmath` `\choose` compat notes).
+The log has no content warnings remaining (all four multiply-defined labels are fixed; the `amsfonts` and `amsmath` compat notes are gone).
 
-The official arXiv PDF has 82 pages and no bookmarks; this build has 82 pages
+The official ar\iv PDF has 82 pages and no bookmarks; this build has 82 pages
 with an 8-entry outline (7 sections + REFERENCES). Spot-checked against the
 official PDF: title page (title, author, pinned date, dedication, Contents),
 a theorem-heavy page in section 2, the Hopf-algebra formula pages, and the

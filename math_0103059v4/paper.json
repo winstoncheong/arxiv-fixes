@@ -19,7 +19,7 @@
     "Promoted the manual REFERENCES head to \\section*{REFERENCES} with a bookmark and TOC entry (numbering unchanged).",
     "Pinned title date to the v4 arXiv date (\\date{May 15, 2001}) instead of the empty \\date{}.",
     "Fixed two text typos (filed to field) and bibliographic typos: Deligne title group to groupe, moine to moins; Kummer Uber to \\\"Uber and Transcendeten to Transcendenten; Lappo-Danilevsky accents; Kreimer Renotmalisation to Renormalisation; Drinfeld clousely to closely; Woitkowiyak to Wojtkowiak (2x); Matsumoto M-double-dot to M-single-dot; Shiho A-double-dot to A-single-dot.",
-    "Deliberately left as-is: the 66 ad-hoc bold-Proof paragraphs (no QED markers in source) and plain-TeX \\choose (17 uses; identical output under amsmath)."
+    "Converted plain-TeX \\choose (16 uses) to \\binom (identical output; removes the amsmath compat warning; 2 uses in comments left alone). Deliberately left as-is for now: the ad-hoc bold-Proof paragraphs (proof-environment conversion under review)."
   ],
   "warnings": [
     "Four labels are defined twice in the source (1.1.01.1, 12.1.00.2, 2**, 4.22.01.1); refs resolve to the last definition, so three references display the wrong number. Preserved per the no-math-changes rule; see readme.md.",
