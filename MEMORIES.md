@@ -84,7 +84,7 @@ Keep this file short. If an entry grows into a procedure, move the detail to
 - `hep-th/9408074v2` — Vafa–Witten, plain TeX/harvmac. Script-assisted
   conversion; lossy in places. Log:
   [`hep-th_9408074v2/readme.md`](./hep-th_9408074v2/readme.md).
-- `math/0103059v4` — Goncharov, *Multiple polylogarithms and mixed Tate motives*. Plain-TeX \matrix/\cr to `matrix` envs, `epsf` to `graphicx`, 66 ad-hoc proofs kept, 4 duplicate labels preserved. Log: [`math_0103059v4/readme.md`](./math_0103059v4/readme.md).
+- `math/0103059v4` — Goncharov, *Multiple polylogarithms and mixed Tate motives*. Plain-TeX \matrix/\cr to `matrix` envs, `epsf` to `graphicx`, `\choose` to `\binom`, `\Bbb` to `\mathbb`, 75 proofs to `amsthm`, 4 duplicate labels fixed with owner approval. Log: [`math_0103059v4/readme.md`](./math_0103059v4/readme.md).
 - `0905.0462v2` — Lurie, `(∞,2)`-categories I. `xr-hyper` plus committed
   companion `.aux` snapshots; draft material after `\end{document}` kept.
   See `paper.json` and `AGENTS.md`.

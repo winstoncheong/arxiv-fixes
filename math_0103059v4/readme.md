@@ -1,7 +1,7 @@
 # math/0103059v4 — conversion notes
 
 A. B. Goncharov, *Multiple polylogarithms and mixed Tate motives*,
-ar\iv:math/0103059v4 (15 May 2001).
+arXiv:math/0103059v4 (15 May 2001).
 
 ## Source
 
@@ -22,7 +22,7 @@ to reconstruct). Proofs are ad-hoc `{\bf Proof}.` paragraphs. Figures are
 ## Changes
 
 - `\documentstyle[10pt]{article}` → `\documentclass[10pt]{article}`;
-  `\input amssymb.sty` → `\usepackage{amsmath,amssymb,graphicx}`; dropped
+  `\input amssymb.sty` → `\usepackage{amsmath,amssymb,amsthm,graphicx}`; dropped
   `\input epsf` (covered by `graphicx`). Kept the manual page geometry
   (`\textheight` etc.) and the `titlepage`-env title block as-is.
 - Converted the three plain-TeX `\matrix{...\cr}` blocks (lines 3221, 4196,
@@ -42,8 +42,11 @@ to reconstruct). Proofs are ad-hoc `{\bf Proof}.` paragraphs. Figures are
   `\section*{REFERENCES}\phantomsection\addcontentsline{toc}{section}{REFERENCES}`,
   so the bibliography gets a bookmark and a TOC entry without changing
   numbering.
-- Pinned the title date to the v4 ar\iv date (`\date{May 15, 2001}`) instead
+- Pinned the title date to the v4 arXiv date (`\date{May 15, 2001}`) instead
   of the empty `\date{}`.
+- Converted all 75 ad-hoc proof heads to `amsthm` `proof` environments, closing each at the next section, theorem-like environment, or bold head. The six `First/Second/Third proof` variants and three `Proof of ...` heads use the optional argument (qualifier in parentheses). The one proof whose run contains its supporting lemma (the second proof of the theorem) keeps the lemma inside the proof environment. Two proofs end exactly at section boundaries; none spans a section (verified by segmenting all runs).
+- Replaced obsolete `\Bbb` with `\mathbb` (57 active uses; 3 uses inside `%` comments left alone).
+- Fixed the four duplicate labels by renaming the less-referenced side (`1.1.01.1-eq`, `12.1.00.2lem`, `2**reg`, `4.22.01.1lem`) and repointing the one affected `\ref`; every other ref already meant the kept definition, so all three previously-wrong reference numbers now print correctly.
 
 ## Proofreading pass
 
@@ -69,28 +72,18 @@ unfixed issues in `warnings` here and there):
 - Scans run over comment-stripped prose: repeated words, doubled punctuation,
   apostrophe spacing, and a common-typo list — all clean otherwise.
 
-Deliberately left as-is (documented here rather than changed):
-
-- The 66 ad-hoc `{\bf Proof}.` paragraphs: the source has no QED markers, so
-  proof ends cannot be determined without editorial judgement. Converting to
-  `amsthm` `proof` environments would reformat 66 passages by guesswork
-  (`amsthm` is therefore not loaded).
-- `\Bbb` (obsolete, kept): renders correctly with one `amsfonts` warning per
-  build; replacing it throughout would touch every blackboard-bold symbol for
-  no visible change.
-
-## Duplicate labels (preserved, not fixed)
+## Duplicate labels (fixed, with owner approval)
 
 Four labels are defined twice in the source. `\ref` resolves to the last
-definition, so three references print the wrong number. Per the errata rules
-these stay as the author wrote them:
+definition, so three references printed the wrong number. With the owner's approval these are now fixed by renaming the less-referenced side:
 
-| label | first use | second use | affected ref | intended target |
-| --- | --- | --- | --- | --- |
-| `1.1.01.1` | equation `h_F` (l. 3316) | proposition (l. 5533) | lemma l. 3321 ("the Hopf algebra map ... is injective") shows the *proposition* number | the equation just above it |
-| `12.1.00.2` | proposition (l. 1231) | lemma (l. 1248) | none (no `\ref` to it; log warning only) | — |
-| `2**` | `I(a_0;...)` definition (l. 798) | regularized integral (l. 1602) | lemma 2.9 (l. 2148) shows the l. 1602 number | the l. 798 definition |
-| `4.22.01.1` | differential equation (l. 4483) | lemma (l. 4680) | proof l. 4694 ("satisfies the differential equation ...") shows the *lemma* number | the equation |
+
+| label | collision | resolution |
+| --- | --- | --- |
+| `1.1.01.1` | equation `h_F` (l. 3319) vs proposition (l. 5536); lemma l. 3324 printed the proposition's number | equation renamed `1.1.01.1-eq` and its ref repointed; now prints the equation number |
+| `12.1.00.2` | proposition (l. 1234) vs lemma (l. 1251); no refs | lemma renamed `12.1.00.2lem` |
+| `2**` | `I(a_0;...)` definition (l. 801) vs regularized integral (l. 1605); lemma 2.9 (l. 2151) printed the wrong number | integral renamed `2**reg`; now prints the definition's number |
+| `4.22.01.1` | differential equation (l. 4486) vs lemma (l. 4683); proof l. 4697 printed the lemma's number | lemma renamed `4.22.01.1lem`; now prints the equation's number |
 
 ## Verification
 
@@ -100,13 +93,13 @@ latexmk -pdf -interaction=nonstopmode math_0103059v4.tex
 grep -c '^!' math_0103059v4.log                  # 0
 grep -ci undefined math_0103059v4.log            # 0
 grep -c 'Token not allowed' math_0103059v4.log   # 0
-pdfinfo math_0103059v4.pdf | grep Pages          # 82
+pdfinfo math_0103059v4.pdf | grep Pages          # 85
 ```
 
 The log's only content warnings are the 4 multiply-defined labels above (plus
-The log has no content warnings remaining (all four multiply-defined labels are fixed; the `amsfonts` and `amsmath` compat notes are gone).
+The log is fully clean: zero errors, zero undefined refs, zero `Token not allowed` warnings, zero multiply-defined labels, and none of the old `amsfonts`/`amsmath` compat notes.
 
-The official ar\iv PDF has 82 pages and no bookmarks; this build has 82 pages
+The official arXiv PDF has 82 pages and no bookmarks; this build has 85 pages
 with an 8-entry outline (7 sections + REFERENCES). Spot-checked against the
 official PDF: title page (title, author, pinned date, dedication, Contents),
 a theorem-heavy page in section 2, the Hopf-algebra formula pages, and the
@@ -117,7 +110,7 @@ last bibliography page. All 13 EPS figures convert and embed
 
 - The title page now prints `May 15, 2001` (source had an empty date).
 - Section TOC/outline page numbers run +1/+2 ahead of the official PDF (date
-  line plus T1/lmodern metrics); the total is 82 pages either way.
+  line, T1/lmodern metrics, plus `amsthm` proof spacing and QED boxes); the total is 85 pages vs 82 official.
 - `REFERENCES` appears in the TOC and bookmarks (new entry, no number).
 - Accented French/German in the bibliography now renders with proper glyphs
   (e.g. Über, Résolution, réguliers); text extraction is clean T1.

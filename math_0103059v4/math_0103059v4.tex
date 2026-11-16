@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\usepackage{amsmath,amssymb,graphicx}
+\usepackage{amsmath,amssymb,amsthm,graphicx}
 %\input amssym.def
 %\input amssym
 %\topmargin 
@@ -117,7 +117,6 @@ The analytic incarnation of (\ref{1.20.01.2}) is provided by the
 formula ${\rm Li}_1(\zeta_N) = - \log (1-\zeta_N)$. 
 
 
-
 The Hopf algebra ${\cal Z}^{\cal H}_{\bullet}(\mu_N)$ describes the 
 structure of 
 the Hodge realization ${\cal P}^{{\cal H}}({\mathbb G}_m - G; v_0, v_1)$ of the torsor of path.
@@ -167,8 +166,6 @@ point of view in the fundamental paper by P. Deligne [D]. Notice that in
 that paper the motives were 
  understood via their realizations, so the formulas for the Ext-groups 
 were unaccessible. 
-
-
 
 
 We formulate conjectures describing the structure of the motivic Galois group of 
@@ -240,7 +237,6 @@ is an iterated integral of length $n$. For example
 $$
 \zeta(3) = \int_{0 \leq t_1 \leq t_2 \leq t_3 \leq 1}\frac{dt_1}{1-t_1}\wedge \frac{dt_2}{t_2}\wedge \frac{dt_3}{t_3}
 $$
-
 
 
 {\bf 2. Multiple polylogarithms}. They were defined in [G0-1] by the power series (\ref{zhe5}) 
@@ -402,8 +398,6 @@ ${\cal H}_{\bullet}:= \oplus_{n \geq 0}{\cal H}_{n}$ has a commutative
 graded Hopf algebra structure. 
 
 
-
-
 Now we can explain the precise relationship between the multiple zeta values and 
 the Hodge realization 
 \begin{equation} \label{3.6.01.7}
@@ -429,7 +423,6 @@ $$
 form a basis in the dual to (\ref{3.6.01.11}). We denote by 
 $\gamma(\varepsilon_1, ...,\varepsilon_m)$ the corresponding dual basis in 
 (\ref{3.6.01.11}). 
-
 
 
 \begin{definition} \label{3.6.01.2} We define 
@@ -508,10 +501,8 @@ the  treatment of the transcendental aspects of multiple zetas is impossible wit
   investigation of the corresponding Hodge/motivic objects. 
 
 
-
 To explain where the right hand side  in the conjectures above is coming from 
 we need  mixed motives over ${\rm Spec}(\Z)$. 
-
 
 
    {\bf 5. Mixed Tate motives of the ring of $S$-integers in a number field}. 
@@ -567,7 +558,6 @@ the category of
 graded ${\cal F}(3,5, ... )_{\bullet}$-modules. 
 
 
-
 {\bf Example 2}. Let $p(N)$  be the number of prime factors of $N$. One has ([Bo])
 \begin{equation} \label{kgt}
 {\rm dim} K_{2n-1}(S_N)\otimes \Q = 
@@ -582,9 +572,6 @@ graded ${\cal F}(3,5, ... )_{\bullet}$-modules.
 
 The category ${\cal M}_{T}({\cal O}_{F, S})$ is equipped with an array of 
 realization functors including the Hodge and \'etale realizations. 
-
-
-
 
 
 There is a  notion of a 
@@ -655,7 +642,6 @@ $$
 \end{theorem}
 
 
-
 The space of indecomposables
 $$%\begin{equation} \label{ur8-11/2q1} 
  {\cal C}^{{\cal H}}_{\bullet}(\mu_N):= \quad 
@@ -683,8 +669,6 @@ For a  more refined version see conjecture 17a) in [G1] and conjecture \ref{1.10
 The motivation comes from the following result, see theorem \ref{th2.7}: 
 
 {\it Any function on a rational algebraic variety $Y$ given by an iterated integral of rational one-forms on $Y$ can be expressed by multiple polylogarithms}.
-
-
 
 
 {\bf 8. The structure of the paper.} In chapter 2 we derive basic analytic properties 
@@ -723,8 +707,6 @@ and complete the proofs of
 the theorems from the introduction. 
 
 
-
-
 {\bf Acknowledgements}. A considerable part of this work was done during my stay in 
 Max-Planck-Institute (Bonn) in 1992 and MSRI(Berkeley) in 1992-1993. It
 was supported by   
@@ -743,7 +725,6 @@ many very helpful discussions.
 \hspace{4.0cm}
 \includegraphics{leitmp.eps}
 \end{center}
-
 
 
 \section{Analytic properties}
@@ -815,7 +796,7 @@ d\log(a_{i+1} - a_i) - d\log(a_{i-1} - a_i) \Bigr)
 \end{equation}
 \end{theorem}
 
-{\bf Proof}. It is easy to check that one can assume, without loss of generality, that $a_0 =0, a_{m+1} =1$. 
+\begin{proof} It is easy to check that one can assume, without loss of generality, that $a_0 =0, a_{m+1} =1$. 
 Differentiating integral (\ref{2})  by $a_i$ we get
 $$
 \int_{0 \leq t_1 \leq  ... \leq  t_m \leq 1} 
@@ -854,6 +835,8 @@ For example if all $n_i >1$ then
 d{\rm I}_{n_1,...,n_m}(a_{1},...,a_{m}) \quad = \quad \sum_{i=1}^m {\rm I}_{n_1,...,n_i-1,...,n_m}(a_{1},...,a_m)\cdot d\log(\frac{a_{i+1}}{a_i}).
 \end{equation}
 
+
+\end{proof}
 
 {\bf 3. Power series expansion}.  
 Recall that multiple polylogarithms has been defined by power series expansion 
@@ -898,7 +881,7 @@ Formula (\ref{5*}) just means that
 
 
 \vskip 3mm \noindent
-{\bf Proof of Theorem  \ref{2.3}}. Suppose for simplicity that $m = 2$. Then integral (\ref{5*}) is equal to
+\begin{proof}[Proof of Theorem  \ref{2.3}] Suppose for simplicity that $m = 2$. Then integral (\ref{5*}) is equal to
 $$
 (-1)^2\cdot\int \int_{0 \leq t_1 \leq ... \leq t_{n_1 + n_2} \leq 1}\sum_{k_1 = 1}^{\infty} (x_1x_2t_1)^{k_1}\frac{dt_1}{t_1}  ...   \frac{dt_{n_1}}{t_{n_1}}\cdot
 \sum_{k_2 = 1}^{\infty} (x_1t_{n_1+1})^{k_2}\frac{dt_{n_1 +1}}{t_{n_1 +1}}  ...   \frac{dt_{n_1 +n_2}}{t_{n_1 + n_2}} \quad =
@@ -949,6 +932,10 @@ The general case is completely similar.
 $$
 {\rm Li} (x_{1},...,x_{m}|t_1,...,t_m ) := \sum_{n_i \geq 1}{\rm Li}_{n_{1},...,n_{m}}(x_{1},...,x_{m} )t_1^{n_1-1}... t_m^{n_m-1}
 $$
+
+
+\end{proof}
+
  \begin{lemma}  \label{2.new}  
 One has the following identity of formal power series
 \begin{equation} \label{5.new}
@@ -959,11 +946,13 @@ One has the following identity of formal power series
 \end{equation}
 \end{lemma}
 
-{\bf Proof}. Follows immediately from the identity
+\begin{proof} Follows immediately from the identity
 $$
 \frac{1}{k -t} = \frac{1}{k(1 -t/k)} = \sum_{n=1}^{\infty}\frac{t^{n-1}}{k^n}
 $$
 
+
+\end{proof}
 
 {\bf 4. Monodromy of multiple logarithms}. We will deduce it from the following 
 general statement. Let $X$ be a complex variety, $f_1, ..., f_m$ 
@@ -1014,7 +1003,7 @@ $$
 are convergent provided that $v_{\delta}(f_k) \not = 0$: indeed, then neither $f_{k-1}$ nor $f_{k+1}$  can have $D$ as a component of their divisor.  
 Therefore the right hand side of the formula makes sense. 
 
-{\bf Proof}. 
+\begin{proof} 
 The key tool is  the formula
 \begin{equation} \label{BT}
 \int_{\alpha\beta  }\omega_1 \circ ... \circ \omega_k  = \sum_{i=0}^k 
@@ -1024,6 +1013,9 @@ The key tool is  the formula
 
 Let $\delta(\varepsilon)$ be a loop around the divisor $D$ which shrinks to  $p \in D$ as $\varepsilon \lra 0$. 
 
+
+\end{proof}
+
 \begin{lemma} \label{hov3} Assume that at least one of the functions $g_1, ..., g_k$ is regular at the generic point of the divisor $D$. Then 
 $$
 \lim_{\varepsilon \to 0}\int_{\delta(\varepsilon)} 
@@ -1031,7 +1023,7 @@ d\log g_{1}  \circ   ...\circ   d\log g_k  = 0
 $$
 \end{lemma}
 
-{\bf Proof}. Taking a one dimensional slice transversal to $D$ at the point $p$  we reduce the problem to the case when $X$ is isomorphic to a neighborhood of zero in $\C$ and $\delta(\varepsilon)$ is radius $\varepsilon$ a loop around zero  starting at the point $\varepsilon$. Then
+\begin{proof} Taking a one dimensional slice transversal to $D$ at the point $p$  we reduce the problem to the case when $X$ is isomorphic to a neighborhood of zero in $\C$ and $\delta(\varepsilon)$ is radius $\varepsilon$ a loop around zero  starting at the point $\varepsilon$. Then
 $$
 \int_{\delta(\varepsilon)} 
 d\log g_{1}  \circ   ...\circ   d\log g_k = 
@@ -1053,6 +1045,7 @@ Since $g_j(t) = \widetilde g_j(t)$ for some $1 \leq j \leq k$, we are done. The 
 formula (\ref{BT}).
 
 
+\end{proof}
 
 \begin{corollary} \label{MCH}
 Let $\gamma'$ be a deformation of the path $\gamma$ with fixed endpoints 
@@ -1077,14 +1070,15 @@ $$
 \end{corollary}
 
 
-
-{\bf Proof}. Follows immediately from the proposition \ref{hov2}. 
+\begin{proof} Follows immediately from the proposition \ref{hov2}. 
 
 Since $\pi_1(\C - \{\infty, a_1, ..., a_m\})$ is generated by loops around the points 
 $a_1, ..., a_m$ 
 this corollary establishes the monodromy properties of multiple logarithms. The monodromy of 
 multiple polylogarithms will be studied  in chapter 5. 
 
+
+\end{proof}
 
 {\bf 5.  The first shuffle relations: the product relations for power series (\ref{5})}. 
 The product of two multiple polylogarithms is equal to a sum of multiple polylogarithms. 
@@ -1245,8 +1239,11 @@ t_{m} -t_{j})
 \end{equation}
 \end{proposition}
 
-{\bf Proof}. 
+\begin{proof} 
 We need the following lemma
+
+
+\end{proof}
 
 \begin{lemma} \label{12.1.00.2lem} Let $k_{i,j}:= k_i - k_j$, $t_{i,j}:= t_i - t_j$. 
 Then 
@@ -1258,7 +1255,7 @@ Then
 \end{lemma}
 
 
-{\bf Proof}. 
+\begin{proof} 
 We use the induction on $m$ to prove this identity simultaneously with the one
 \begin{equation} \label{12.1.00.3}
 \sum_{j=1}^m \frac{1}{\prod_{i \not = j}(k_{i,j}-t_{i,j}) } = 0
@@ -1301,6 +1298,8 @@ to evaluate the sum related to the  $j$-th term of this formula.
 The proposition is proved. 
 
 
+\end{proof}
+
 {\bf 7. The second shuffle relations}. Let us set
 \begin{equation} \label{shuffle2}
 I^![a_1,...,a_m|t_1,...,t_m]:= I[a_1,...,a_m|t_1, t_1+t_2,t_1+t_2+t_3,...,t_1+...+t_m]
@@ -1341,7 +1340,7 @@ $$
 \sum_{k_i \geq 0} t_1^{k_1}(t_1+t_2)^{k_2-1}...(t_1+ ... + t_L)^{k_L-1} 
 $$
 
-{\bf Proof}. The bijective correspondence between the monomials 
+\begin{proof} The bijective correspondence between the monomials 
 $t_1^{n_1-1} ... t_L^{n_L-1}$ appearing in the sum and admissible
 strings is clear from the following pattern. It is convenient to treat for a
 moment $t_i$ as non commuting variables. Then the monomial
@@ -1358,7 +1357,10 @@ So the variables $a_i$ separate the parts of a monomial in $t$'s corresponding t
 $(t_1+...+t_i)^{k_i-1}$; to produce a string corresponding to a monomial in $t$'s we assume that 
 in the letter $y_j^{(i)}$ the lower index $j$ shows how many times $t_i$ already appeared in the monomial. 
 
-{\bf First proof of the theorem}: {\it via iterated integrals}. 
+
+\end{proof}
+
+\begin{proof}[First proof of the theorem (via iterated integrals)] 
 Recall the  well known  shuffle product formula for the product of iterated
 integrals  
 \begin{equation} \label{schprfo}
@@ -1380,10 +1382,10 @@ $$
 we need to apply the combinatorial lemma twice: for the shuffles of the differentials where $dt/(t-a_1)$ goes before $dt/(t-a_2)$, and for the shuffles where it goes after. 
 
 
+\end{proof}
 
-{\bf Second proof of the theorem}:  {\it via the iterated
-  integral presentation  
-for the generating function}.
+\begin{proof}[Second proof of the theorem (via the iterated integral presentation for the generating function)]
+
 
 \begin{lemma} \label{iterfpse}
 \begin{equation} \label{43212}
@@ -1399,9 +1401,12 @@ $$
 The theorem follows immediately  from lemma \ref{iterfpse} and
 the product formula for the iterated integrals.
 
+
+\end{proof}
+
 {\bf Remark}. Compare formulas (\ref{43212}) and (\ref{5.new}). 
 
-{\bf First proof of the lemma: {\it via iterated integrals}}. We need the following identity:
+\begin{proof}[First proof of the lemma (via iterated integrals)] We need the following identity:
 \begin{equation} \label{ur8-4}
 \int_a^b \underbrace{\frac{dt}{t} \circ \frac{dt}{t}\circ  ... \circ \frac{dt}{t}}_{\mbox{$n$ times}} \quad = \quad \log^n\frac{b}{a} 
 \end{equation}
@@ -1428,10 +1433,9 @@ $$
 and using the combinatorial lemma we get the needed formula.
 
 
+\end{proof}
 
-
-{\bf Second proof of the lemma: {\it  via power series
-  expansions}}. According to theorem \ref{2.3} 
+\begin{proof}[Second proof of the lemma (via power series expansions)] According to theorem \ref{2.3} 
 formula (\ref{43212}) is equivalent to  the following formula
 $$
 {\rm Li}^![x_1,...,x_m|t_1,...,t_m] = \int_0^1\frac{(x_1
@@ -1478,6 +1482,10 @@ I^!(a_0; a_1, ..., a_m; a_{m+1}| t_1; ...; t_m) := {\rm I}(a_0; a_1, ..., a_m; a
 t_1 + t_2;  ...; t_1+...+t_m)
 $$
 Then we have the following result similar to the lemma above.
+
+
+\end{proof}
+
 \begin{lemma} \label{iterfpse*}
 \begin{equation} \label{ur4-8,2}
 I^!(a_0; a_1, ..., a_m; a_{m+1}| t_1; ...; t_m) = a_{m+1}^{t_1+ ... + t_m}\cdot 
@@ -1486,9 +1494,12 @@ I^!(a_0; a_1, ..., a_m; a_{m+1}| t_1; ...; t_m) = a_{m+1}^{t_1+ ... + t_m}\cdot
 \end{equation}
 \end{lemma}
 
-{\bf Proof}.  One can proceed similarly to the first proof of lemma \ref{iterfpse}. 
+\begin{proof}  One can proceed similarly to the first proof of lemma \ref{iterfpse}. 
 
-{\bf   Third proof of the theorem}:  {\it via power series expansions}.  We 
+
+\end{proof}
+
+\begin{proof}[Third proof of the theorem (via power series expansions)]  We 
 will use generating functions given in lemma \ref{2.new}.  In the simplest case $ k=l=1$  we need to prove that
 $$
 {\rm Li}(x_1|t_1) \cdot {\rm Li}(x_2|t_2) = {\rm Li}(\frac{x_1}{x_2},x_2|t_1,t_1+t_2) + {\rm Li}(\frac{x_2}{x_1},x_2|t_2,t_1+t_2) 
@@ -1507,6 +1518,9 @@ $$
 $$
 In general the proof follows similarly from the following identity:
 
+
+\end{proof}
+
 \begin{lemma}
 \begin{equation} \label{A3}
 \frac{1}{p_1( p_1 + p_2) ... ( p_1 + ... + p_k)} \cdot \frac{1}{p_{k+1}( p_{k+1}  + p_{k+2}) ... ( p_{k+1}   + ... + p_{k+l})} = 
@@ -1516,7 +1530,7 @@ $$
 $$
 \end{lemma}
 
-{\bf Proof}. We will use induction. The shuffles $\Sigma_{k,l}$ are divided on two parts 
+\begin{proof} We will use induction. The shuffles $\Sigma_{k,l}$ are divided on two parts 
 $\Sigma^I_{k,l}$ and $\Sigma^{II}_{k,l}$ as follows. A shuffle is in the first (resp. second) 
 part if it is ended by $p_k$ (resp. $p_{k+l}$). By induction
 $$
@@ -1540,7 +1554,6 @@ $$
 we see that the sum of (\ref{A1}) and (\ref{A2}) equals  to  (\ref{A3}). The lemma is proved. 
   
 
-
 %For example  in the next case  $k=2,l=1$ we have
 %$$
 %{\rm Li}(\frac{x_1}{x_2},x_2|t_1,t_1+t_2) \cdot {\rm Li}(x_3|t_3) = {\rm Li}(\frac{x_1}{x_2},\fr%ac{x_2}{x_3}, x_3 |t_1,t_1+t_2,t_1+t_2+t_3) +
@@ -1549,6 +1562,10 @@ we see that the sum of (\ref{A1}) and (\ref{A2}) equals  to  (\ref{A3}). The lem
 % {\rm Li}(\frac{x_1}{x_3},\frac{x_3}{x_2}, x_2 |t_1,t_3+t_1,t_1+t_2+t_3) + 
 % {\rm Li}(\frac{x_3}{x_1},\frac{x_1}{x_2}, x_2 |t_3,t_3+t_1,t_1+t_2+t_3) 
 %$$
+
+
+\end{proof}
+
 {\bf Remark}.  Let us rewrite the product relation (\ref{shuffle1}) in terms of the generating series for 
 the iterated integrals. Set
 $$
@@ -1579,7 +1596,7 @@ If $x_i <1$ one can rewrite these identities using the generating series:
 \end{proposition}
 
 
-{\bf Proof}. The conditions $w\geq 2$ or $w=1$ and $x_1^l \not = 1$ are the necessary and sufficient 
+\begin{proof} The conditions $w\geq 2$ or $w=1$ and $x_1^l \not = 1$ are the necessary and sufficient 
 conditions for convergence of the series on the left hand side of (\ref{5n}). 
 Notice that $w=1$ implies that $m=1$. 
 Let $\zeta$ be a primitive $l$-th root of unity:
@@ -1599,6 +1616,8 @@ l^{w-m} \cdot l^m \sum_{k_1 < ... < k_m}\frac{x_{1}^{lk_{1}}
 {\rm Li}_{n_{1},...,n_{m}}(x_{1}^l,...,x_{m}^l) 
 $$
 
+
+\end{proof}
 
 {\bf 9. Canonical regularization}. (Compare with the end of s. 5.3 below). 
 Consider the integral 
@@ -1625,9 +1644,6 @@ Notice that  $\varepsilon$
 is the canonical coordinate on ${{\mathbb P}}^1\backslash \{0,1,\infty\}$. 
 
 
-
-
- 
 \begin{proposition} \label{p2.5} a) Integral (\ref{2*12321}) equals to 
 $$
 (-1)^{q}\int_{0}^{1} \frac{\log^p(t/\varepsilon)}{p!} \frac{dt}{t-a_1} \circ...\circ  \frac{dt}{t-a_m}  \frac{\log^q((1-t)/\varepsilon)}{q!}
@@ -1664,7 +1680,7 @@ $$
 $$
 
 
-{\bf Proof}. Integrating (\ref{2*12321}) $p$ times we get
+\begin{proof} Integrating (\ref{2*12321}) $p$ times we get
 $$
  \int_{\varepsilon}^{1-\varepsilon}
 \frac{\log^p(t/\varepsilon)}{p!}\frac{dt}{t-a_1} \circ ... \circ \frac{dt}{t-a_m} \circ \frac{dt}{t-1}\circ ... \circ \frac{dt}{t-1}
@@ -1683,9 +1699,6 @@ of (\ref{r1}) is
 \end{equation}
 This coincides with (\ref{r2}). Notice that we are picking up the sign $(-1)^p$ when go from the integral 
 in (\ref{r21}) to the integral in  (\ref{r2}). The proposition is proved. 
-
-
-
 
 
 Let us choose once forever a coordinate $t$ in $\C P^1 \backslash \{\infty\}$ which 
@@ -1746,6 +1759,9 @@ $$
 t_0^{n_0} t_1^{n_1-1} ... t_m^{n_m-1}  
 $$
 
+
+\end{proof}
+
 {\bf Remark}. It would be more natural to use a notation 
 $I_{n_0, n_1-1, ..., n_m-1}(...)$ for the iterated integral 
 (\ref{GE1}), so the indices correspond to the numbers of $dt/t$ differentials 
@@ -1765,7 +1781,7 @@ e^{t_0 \cdot \log a_{m+1}  } \cdot {\rm I}(a_1: ...: a_m: a_{m+1}| t_1 - t_0, ..
 \end{equation}
 \end{proposition}
 
-{\bf Proof}. Let $\omega_i = f_i(x)dx$. Suppose that $f_{1}(x)$ 
+\begin{proof} Let $\omega_i = f_i(x)dx$. Suppose that $f_{1}(x)$ 
 does not have a pole at $x=0$, and $f_{k}(x)$ 
 does not have a pole at $x=a_{m+1}$. Then similar to proposition \ref{p2.5} the regularized value of 
 $$
@@ -1787,7 +1803,10 @@ $$
 $$
 in order to write integral (\ref{GE3}) in the form similar to (\ref{r2}) we prove the proposition. 
 
-{\bf Second proof}. Formula (\ref{3.10.01.1}) 
+
+\end{proof}
+
+\begin{proof}[Second proof] Formula (\ref{3.10.01.1}) 
 follows formally from the shuffle product formula for the regularized iterated 
 integrals. To prove this we use the identity
 $$
@@ -1814,6 +1833,8 @@ and proceed by induction on $k$. We will use the second proof
 in the Hodge version of the story. 
 
 
+\end{proof}
+
 \begin{corollary} \label{incor}
 The regularized value of a divergent multiple polylogarithm at $N$-th roots of unity is a linear combination with rational coefficients of convergent multiple polylogarithms at $N$-th roots of unity.
 \end{corollary}
@@ -1823,8 +1844,11 @@ The regularized value of a divergent multiple polylogarithm at $N$-th roots of u
 The second shuffle relations hold for the canonical regularization of multiple polylogarithms. 
 \end{lemma}
 
-{\bf Proof}. The proof of the second shuffle relations works without any changes if we replace $\int_0^1$ by $\int_{\varepsilon}^{1-\varepsilon}$.   So the second shuffle relations hold for the canonical 
+\begin{proof} The proof of the second shuffle relations works without any changes if we replace $\int_0^1$ by $\int_{\varepsilon}^{1-\varepsilon}$.   So the second shuffle relations hold for the canonical 
 asymptotic expansions in $\log \varepsilon$, and in particular for the constant terms. 
+
+
+\end{proof}
 
 {\bf Remark}. In chapter 5 we  use the tangent vector $\partial_t$ 
 instead of $-\partial_t$ at $a_{m+1}$.  
@@ -1877,8 +1901,7 @@ $  \log \varepsilon $ is $2$.
 \end{lemma}
 
  
-
- {\bf Proof}.   We will prove it by  induction on $m-l$. Using   
+ \begin{proof}   We will prove it by  induction on $m-l$. Using   
 $$
 (- \log \varepsilon)^m  = \Bigl(\sum_{k>0}\frac{(1- \varepsilon)^k}{k}\Bigr)^m  
 $$  
@@ -1928,12 +1951,14 @@ ${\rm Li}_{n_1,...,n_l,1, ...,1}(x_1,...,x_l, 1 - \varepsilon, ... , 1- \varepsi
 ${\rm Li}_{n_1,...,n_l,1, ...,1}(x_1,...,x_l, 1, ... , 1)$. 
 
 
+\end{proof}
+
 \begin{proposition} \label{olmnq}
 The power series asymptotic expansions of multiple polylogarithms satisfy the first shuffle relations. 
 In particular the power series regularization also satisfy the first shuffle relations.
 \end{proposition}
 
-{\bf Proof}. 
+\begin{proof} 
 Say that in ${\rm Li}_{n_1,...,n_m}(x_1,...,x_m)$ the variable $x_i$ enters with the 
 multiplicity  $n_i$. 
 In ${\rm Li}_{n_1,...,n_l,1, ...,1}(x_1,...,x_l, 1- \varepsilon, ... , 1- \varepsilon)$ 
@@ -1964,11 +1989,7 @@ $$
 $$
 
 
-
-
-
-
-
+\end{proof}
 
 \begin{proposition} \label{olmn3}
  The difference
@@ -1979,7 +2000,7 @@ $$
 is an explicitly computable  $\Q$-linear combination of lower depth multiple polylogarithms. In particular if $x_i^N=1$ it is a $\Q$-linear combination of lower depth multiple polylogarithms at $N$-th roots of unity. 
 \end{proposition}
 
-{\bf Proof}. 
+\begin{proof} 
 According to formula (\ref{2.3}) one has 
 \begin{equation} \label{ol2}
 {\rm Li}_{n_1,...,n_l, 1 , ... , 1}(\frac{a_2}{a_1}, ... , \frac{1}{a_{l}},1, ... , 1,1- \varepsilon) = 
@@ -2011,16 +2032,15 @@ is a $\Q$-linear combination of lower depth multiple $\zeta$'s. Multiplying
 we get the proposition. 
    
 
+\end{proof}
+
 \begin{lemma} \label{DRc}
 The distribution relations holds for the regularized multiple polylogarithms
 \end{lemma}
 
-{\bf Proof}. For $l>0$ this is clear since the distribution relations obviously hold for the power series asymptotic expansions. It is easy to see that they also hold for $l= -1$.  
+\begin{proof} For $l>0$ this is clear since the distribution relations obviously hold for the power series asymptotic expansions. It is easy to see that they also hold for $l= -1$.  
  
   
-
-
-
 As we see the regularization of multiple
   polylogarithms does not lead us to new functions. However 
 adding the regularized double shuffle relations we get new relations between 
@@ -2032,8 +2052,6 @@ provides all the relations between the multiple zeta values.
 Here are some examples.
 
 
-
-
 %We get the following relations between the multiple $\zeta$-values:
 
 %i) $\widetilde \zeta(n_1,...,n_m) - \zeta(n_1,...,n_m) $ is an explicitly computable 
@@ -2042,9 +2060,7 @@ Here are some examples.
 %ii) The regularized double shuffle relations. 
 
 
-
-
-
+\end{proof}
 
 {\bf Examples}. 1. {\it The weight 3, depth 2 multiple $\zeta$-values}. 
 Recall that the canonical regularization gives $\zeta(1) =0$. 
@@ -2099,11 +2115,6 @@ $$
 $$
  
 
-
- 
-
- 
-
 {\bf 11. Universality of multiple polylogarithms: analytic version}. Suppose that $\omega_{1}, ... , \omega_{n}$
    are such 1-forms that $\int_{\gamma(0)}^{\gamma(1)}\omega_{1}
 \circ ... \circ \omega_{n}$ does not depend of a deformation of path $\gamma$ preserving the ends. Then this integral is a multivalued function of variable $y = \gamma(1)$ on $Y$.
@@ -2121,10 +2132,12 @@ $$
   where $C$ is a constant 
 \end{theorem}
 
- {\bf Proof}. One can suppose that $Y$ is a (Zariski) open subset in $\C^{N}$. Choose a point $y$ and for any other point $x$ consider line through $y$ and 
+ \begin{proof} One can suppose that $Y$ is a (Zariski) open subset in $\C^{N}$. Choose a point $y$ and for any other point $x$ consider line through $y$ and 
 $x$. Let us prove that the restriction of our function to this line can be expressed by multiple polylogarithms.
 
  
+\end{proof}
+
 \begin{proposition} \label{p2.8}
   Suppose $f_{i}(t), g_{i}(t)$  are rational functions. Then 
 $$
@@ -2136,7 +2149,7 @@ is a sum of multiple polylogarithms.
 \end{proposition}
 
  
-{\bf Proof}. Using factorization  and decomposition into 
+\begin{proof} Using factorization  and decomposition into 
 partial fractions one can reduce the proposition to study of the the following integral
 $$
 \int_{x_1 \leq 
@@ -2148,12 +2161,16 @@ $$
 \int_{t_{i-1}}^{t_{i+1}}(t-a_{i})^{k_i} dt = 
 \frac{(t_{i+1}-a_{i})^{k_i+1}}{k_i+1} - \frac{(t_{i-1}-a_{i})^{k_i+1}}{k_i+1}
 $$ 
+
+
+\end{proof}
+
  \begin{lemma}  \label{2.9}  The function ${\rm I}(x_1; a_1, ..., a_n; x_2)$ (see (\ref{2**})) 
 is a sum of multiple polylogarithms. 
 \end{lemma}
 
 \vskip 3mm \noindent
-{\bf Proof}. 
+\begin{proof} 
 Presenting a path from $x_1$ to $x_2$ as a composition of paths from $x_1$ to $0$ and from $0$ to $x_2$ and using the product formula (\ref{BT}) we get 
 \begin{equation} \label{2$}
 {\rm I}(x_1;a_{1},...,a_n;x_2) \quad= \quad  \sum_{k=0}^{n} {\rm I}(x_1; a_{1},...,a_k;0)   
@@ -2167,7 +2184,6 @@ prove the lemma.
 Theorem (\ref{th2.7}) is proved.
 
  
-
 { \bf 12. Multiple $\zeta$ and $L$ functions and their analytic properties. }
 We define the multiple zeta functions by 
 $$%\begin{equation} \label{1.23.01.1}
@@ -2248,7 +2264,6 @@ L_{\chi_1}(s_1 )L_{\chi_2}( s_2 ) = L_{\chi_1,\chi_2}( s_1, s_2) + L_{\chi_2,\ch
 $$
 
 
-
 {\it Analytic continuation of  multiple $\zeta$-functions}. The results below were 
 obtained by the author and by M.Kontsevich (unpublished) in 1995. 
     For the  Riemann $\zeta$-function it follows  from the integral formula  
@@ -2269,6 +2284,9 @@ $x_+^{s-2}$ on the smooth test function $x/e^{x}-1$ we immediately get analytic 
 
 For the multiple $\zeta$-functions  we  proceed in a similar way.
 
+
+\end{proof}
+
 \begin{theorem} \label{ancont}
 $\zeta(s_1,...,s_m)$ extends to a meromorphic function in   $\C^m$ with the following singularities:
 
@@ -2281,12 +2299,14 @@ s_1 + ... +s_m= m-k_1, \quad s_2 + ... +s_m = m-1-k_2, \quad ..., \quad s_{m-1} 
 $$
 \end{theorem}
 
-{\bf Proof}. The series defining $\zeta(s_1,...,s_m)$  are absolutely convergent
+\begin{proof} The series defining $\zeta(s_1,...,s_m)$  are absolutely convergent
  if Re $s_m$ $>1$ and Re $(s_1 + ... + s_m) >m$.% Indeed, 
 %$$
 %|\sum_{0 < k_1 < ... < k_{m-1}}\frac{1}{k_1^{s_1}...k_{m-1}^{s_{m-1}}n_m^{s_m}}| < \frac{1}{(n-l)^{s_1 + ... + s_m}}
 %$$
   
+
+\end{proof}
 
 \begin{lemma} \label{l1mzf1}
 \begin{equation} \label{mzf1 }
@@ -2294,7 +2314,7 @@ $$
 \end{equation}
 \end{lemma}
 
-{\bf Proof}. Notice that
+\begin{proof} Notice that
 $$
 \prod_{k=1}^{m}\frac{1}{e^{t_k+...+t_m}-1} \quad = \quad \sum_{k_1  >0}e^{-k_1(t_1+t_2+...+t_m)}\cdot \sum_{k_2>0}e^{-k_2(t_2 +...+t_m)} \cdot ... \cdot  
 \sum_{k_m>0}e^{-k_mt_m} = 
@@ -2364,6 +2384,9 @@ The distributions appearing as the factors in this product
 are holomorphic functions in the $s$-variables. Their wave fronts are transversal.  
 So their product makes sense and it is  an entire function in $s$. The theorem is proved.
 
+
+\end{proof}
+
 {\bf  Example}. One has 
  %\begin{equation} \label{dz}
  % \frac{  (s_2 -1)}{\Gamma(s_1 + s_2 -2) }\cdot\zeta(s_1, s_2)    = 
@@ -2380,9 +2403,6 @@ $$
 \quad \mbox{on} \quad 
 \varphi(x_1,x_2) = \frac{x_1^2x_2}{(e^{x_1} -1)(e^{x_1x_2} -1)}
 $$
-
-
-
 
 
 {\it Residues}. 
@@ -2456,8 +2476,7 @@ $$
 $$
 
  
-
-{\bf Proof}.  It  consists of two steps. 
+\begin{proof}  It  consists of two steps. 
 First we derive a formal expression 
 $$
 \zeta(s_1,  ... , s_m) "=" \sum_{p_l,...,p_m \geq 0} \beta_{p_l} \cdot ... \cdot 
@@ -2480,6 +2499,9 @@ however (\ref{formaldec})  seems to be a quite  useful  expression itself: for i
 positive integers, thus giving a formula for the values of multiple zetas at 
 non positive points, see theorem \ref{decf} below. 
 
+
+\end{proof}
+
 {\bf Examples of formula (\ref{formaldec})}.  1. 
 $$
 \zeta(s_1,  s_2) =  \sum_{p \geq 0} \beta_p \binom{  s_2+p-2 }{ p-1} \zeta(s_1+s_2+p-1)
@@ -2498,7 +2520,7 @@ $$
 \sum_{ p_2, p_3 \geq 0}   \beta_{ p_2}  \beta_{ p_3} \binom{s_2+s_3 + p_2 +  p_3 -3 }{  p_2-1} \binom{  s_3 + p_3   - 2 }{  p_3-1} \zeta(s_1+s_2+ s_3 +  p_2 +  p_3   - 2) 
 \end{equation}
 
-{\bf Proof}. Let us spell  the details  of the 
+\begin{proof} Let us spell  the details  of the 
  proof of formula (\ref{adr11}). Recall that
 $$ 
  \Gamma(s_1)\Gamma(s_2)\Gamma(s_3) \cdot \zeta(s_1,s_2,s_3) 
@@ -2576,6 +2598,10 @@ which is the first factor in the product defining the rational function \linebre
 
 {\it Special values  when some of $s_i$ are   not positive
   integers}. 
+
+
+\end{proof}
+
 \begin{theorem} \label{decf}
 If $s_l,...,s_m$ are  non positive   integers then the right hand side of formula (\ref{formaldec})    gives an expression of  $\zeta(s_1,  ... , s_m)$   as a finite linear combination of  multiple zeta functions of depth $l-1$.
  \end{theorem}
@@ -2597,7 +2623,7 @@ $$
 \zeta( s_1,s_2 + s_3 + s_4 + p_3 + p_4-2)\binom{s_3+s_4 + p_3 +  p_4 -3 }{  p_3-1}\binom{ s_4+  p_4  - 2 }{  p_4-1}
 $$
 
-{\bf Proof}. Suppose that $s_l,...,s_m$ are  non positive   integers.
+\begin{proof} Suppose that $s_l,...,s_m$ are  non positive   integers.
 We claim that the terms of (\ref{formaldec}) could be non zero only if the following conditions are satisfied:
 \begin{equation} \label{kkk} 
  \sum_{i=l}^m (s_i + p_i -1) \leq 0 \quad \mbox{for $l \leq m$} 
@@ -2627,6 +2653,9 @@ $$
 \varphi_{\chi_1 ,\chi_2}(x_1,x_2) = \sum_{0< m_i \leq  N_i }  \frac{e^{-m_1x_1  - m_2x_1x_2}\cdot\chi_1(m_1 ) \chi_2(m_1 +m_2)x^2_1 x_2}{(1-e^{-N_1x_1})(1-e^{-N_2x_1 x_2})}
 $$
 
+
+\end{proof}
+
 \begin{theorem} \label{anconti}Let $\chi_1,..., \chi_m$ are  
 periodic functions with periods $N_1,..., N_m$. Then
 
@@ -2649,7 +2678,7 @@ $$
 $$  
 \end{theorem} 
  
-{\bf Proof}. Part b) follows immediately from the part a). We  spell the details of the proof of part a) in the case $m=2$. The general case is   similar. By definition
+\begin{proof} Part b) follows immediately from the part a). We  spell the details of the proof of part a) in the case $m=2$. The general case is   similar. By definition
 $$
 \Gamma(s_1)\Gamma(s_2)\cdot L_{ \chi_1, \chi_2}(s_1,s_2) = \Gamma(s_1)\Gamma(s_2)\cdot \sum_{n_i >0}\frac{\chi_1(n_1)\chi_2(n_1 + n_2)}{n_1  ^{s_1}(n_1 + n_2)^{s_2}} = 
 $$
@@ -2679,10 +2708,10 @@ $$
 we get the integral representation from the part a).
 
 
+\end{proof}
 
 \section{ The mixed Tate motives over a ring of 
 \texorpdfstring{$S$}{S}-integers in a number field}
-
 
 
 The triangulated category of mixed motives over an arbitrary 
@@ -2716,13 +2745,10 @@ including the formula expressing the Ext groups with $K$-theory
 of the ring ${\cal O}_{F, S}$.
 
  
-
 We start  by  recalling
  the Tannakian formalism for mixed Tate categories addressed on the language 
 of framed objects (see [BMS], [BGSV]).  
 For the  proofs (in a more  general setting) see chapter 3 of [G9]. 
-
-
 
 
 {\bf 1. A review of the Tannakian formalism for mixed Tate categories}. Let $K$ be a characteristic zero field. 
@@ -2808,7 +2834,6 @@ zero at $e$. Then the coproduct induces on $\Q[G]_0/\Q[G]_0 \cdot \Q[G]_0$ the
 structure of a Lie coalgebra  dual to ${\rm Lie}(G)$.
 
 
-
 In this paper we employ the duality $V \lms V^{\vee}$ between the Ind- and pro-objects 
 in the category of finite dimensional $K$-vector spaces. The graded dual Hopf algebra ${\cal U}_{\bullet}({\cal M})^{\vee}:= 
 \oplus_{k \geq 0} {\cal U}_{-k}({\cal M})^{\vee}$ can be identified with the Hopf algebra  
@@ -2858,7 +2883,6 @@ are homomorphisms of algebras.
 \end{equation}
 
 
-
 A bilagebra is a $k$-vector space equipped with the structures $1-4$ satsfying the axioms
 $1-3$. 
 
@@ -2869,7 +2893,7 @@ $A_0 =k$. Then there exists unique
 antipode map $S$ on $A_{\bullet}$. 
 \end{lemma}
  
-{\bf Proof}. Indeed, the condition (\ref{4.16.01.1}) determines uniquely the restriction of the map 
+\begin{proof} Indeed, the condition (\ref{4.16.01.1}) determines uniquely the restriction of the map 
 $S$ to $A_n$ by induction. One has $S|A_0 = {\rm id}$. For example 
 $S|A_1 = -{\rm id}$ and  $S|A_2 = -{\rm id} + \mu \Delta_{1,1}$ 
 where $\Delta_{1,1}$ is the 
@@ -2942,6 +2966,8 @@ In particular $\Delta_{0,n} = id \otimes 1$ and $\Delta_{n,0} = 1 \otimes id$.
 Set ${\cal A}_{\bullet}({\cal M}):=\oplus {\cal A}_n({\cal M})$.
 
 
+\end{proof}
+
 \begin{theorem} \label{8-23.3/99}
 a) ${\cal  A}_{\bullet}({\cal M})$ has a structure of a 
 graded Hopf algebra over $K$ with the commutative multiplication
@@ -2952,7 +2978,7 @@ $\mu$ and the comultiplication $\Delta$.
 canonically isomorphic to the Hopf algebra  ${\cal U}_{\bullet}({\cal M})^{\vee}$.
 \end{theorem}
 
-{\bf Proof}. a) Let us show that the coproduct is well defined on equivalence 
+\begin{proof} a) Let us show that the coproduct is well defined on equivalence 
 classes of framed objects. It is sufficient to prove this for equivalences given by 
 injective and surjective morphisms in ${\cal M}$. Indeed, if 
 $\varphi: M \lra M'$ respects the frames in $M$ and $M'$ then the projection 
@@ -2981,9 +3007,6 @@ It is straitforward to show
 that $\Delta$ and $\mu$ satisfy the Hopf axiom, i.e. the condition 2 above. 
 It is also straitforward to check that $\Delta$ is coassociative. 
 The part a) of the theorem is proved. 
-
-
-
 
 
 b)  We follow the proof of theorem 3.3 in [G9] making some necessary 
@@ -3061,8 +3084,6 @@ framed by $x_{m}, y_{n}$}
  We call the right hand side the {\it matrix coefficient} of $M$ corresponding to $x_{m}, y_{n}$. 
 
 
-
-
 The restricted coproduct
 $\Delta'$  provides the quotient 
 $
@@ -3072,7 +3093,7 @@ with the structure of a graded Lie coalgebra  with cobracket
 $\delta$. It is canonically isomorphic to ${\cal L}_{\bullet}({\cal M})$. 
  
 
-
+\end{proof}
 
 \begin{lemma} \label{2.3.01.2}
 Each equivalence class of $n$-framed objects contains a unique 
@@ -3080,13 +3101,14 @@ minimal representative, which appears as a subquotient in any
 $n$-framed object from the given equivalence class. 
 \end{lemma}
 
-{\bf Proof}. Suppose we have morphisms $M_1 \stackrel{f}{\longleftarrow} N 
+\begin{proof} Suppose we have morphisms $M_1 \stackrel{f}{\longleftarrow} N 
 \stackrel{g}{\longrightarrow} M_2$ between the $n$-framed objects respecting the frames. For any $n$-framed object $X$ we can assume that ${\rm gr}^W_{2m}X =0$ unless $ -n \leq m \leq 0$ and 
 ${\rm gr}^W_{-2n}X = \Q(n)$; ${\rm gr}^W_{0}X = \Q(0)$. Taking the subquotient ${\rm Im}(f)$ 
 of $M_1$ we may suppose that $f$ is surjective. Then ${\rm gr}^W_{0}{\rm Ker}(f) = 
 {\rm gr}^W_{-2n}{\rm Ker}(f) = 0$. Therefore $g({\rm Ker}(f))$ has the same property, and hence $M_2$ is equivalent to $N_2':= M_2/{\rm Ker}(f)$. The lemma follows from these remarks. 
 
 
+\end{proof}
 
 {\bf 3. The triangulated category of mixed Tate motives over $F$ (cf. [V])}. 
 Let ${\cal D}{\cal M}_F$ be  the triangulated category  of 
@@ -3288,14 +3310,12 @@ and by A. Huber [Hu] for the Voevodsky triangulated category.
 They include the Hodge and \'etale realizations. 
 
 
-
 It follows from this that for any embedding $\sigma: F \hookrightarrow \C$ 
 there exists the Hodge realization functor, given by 
 a pure functor between the mixed Tate categories 
 $$
 {\rm Hod}_{\sigma}: {\cal M}_T(F) \longrightarrow {\cal H}_T
 $$
-
 
 
  Let $\Sigma$ be the set of all complex 
@@ -3324,7 +3344,7 @@ h_F: {\cal A}_{\bullet}(F) \lra {\cal F}_{\Sigma} {\cal H}_{\bullet }
 the Hopf algebra map (\ref{1.1.01.1-eq}) is injective. 
 \end{lemma}
 
-{\bf Proof}. 
+\begin{proof} 
 By the Borel theorem [Bo] 
 the regulator map on $K_{2n-1}(F)\otimes \Q$ is injective. Thus 
 $\oplus_{\sigma \in \Sigma} {\rm Hod}_{\sigma}$ induces an injective map 
@@ -3364,8 +3384,6 @@ of map (\ref{BB32}).
 %$$
 
 
-
-
 3. {\it The mixed Tate category of lisse $\Q_l$-sheaves on a scheme $X$}. 
 It was considered by Beilinson and Deligne in [BD2],  see an exposition of their approach 
 in  s. 3.7 of [G4]. 
@@ -3382,7 +3400,6 @@ Since $\mu_{l^{\infty}} \not \subset {\cal O}^*(X)$ the Tate sheaves $\Q_l(m)_X$
 apply the general 
 construction above and get the mixed Tate category ${\cal T}{\cal F}_{\Q_l}(X)$ 
 of lisse $\Q_l$-sheaves on  $X$. 
-
 
 
 Now let $F$ be a number field, $S$ a finite set of prime ideals in the ring of integers 
@@ -3431,7 +3448,6 @@ generators of
  Lie algebras differ only in the degree $-1$. 
 
 
-
  The underlying vector space of a Galois 
 representation provides a fiber functor $\widetilde \Psi$
   on the category ${\cal T}^{(l)}(X_{F,S})$. 
@@ -3449,6 +3465,9 @@ ${\rm Gal}(\overline F/ F(\zeta_{l^{\infty}}))$ in ${\rm Aut}V$.
 Then ${\cal G}_V$ 
 is isomorphic to the image of $L^{(l)}_{\bullet}({\cal O}_{F,S})$ 
  in ${\rm Der}\Psi(V)$. 
+
+
+\end{proof}
 
 {\bf Example}.  Let ${\cal P}^{(l)}({\rm G}_m - \mu_N; v_0, v_1)$ be the $l$-adic torsor of path between the tangential base points $v_0, v_1$  at $0$ and $1$ corresponding to the canonical (up to a sign) differential  on
 ${\rm G}_m$, ([D]). Since ${\rm G}_m - \mu_N$ has a good reduction outside of $N$, this torsor  
@@ -3516,7 +3535,7 @@ be defined inductively:
 \end{equation}
 \end{lemma}
 
-{\bf Proof}. Follows immediately from the definitions. 
+\begin{proof} Follows immediately from the definitions. 
 
 Recall the following construction. Let $A_{\bullet}$ 
 be a positively graded coassociative coalgebra with counit and 
@@ -3544,6 +3563,9 @@ $\Delta_{i,k-i} \otimes {\rm Id}$ or ${\rm Id} \otimes \Delta_{j, n-k-j}$, and s
 $A_{i_1} \otimes ... \otimes  A_{i_k}$, and we can apply any of the operators of the shape ${\rm Id} \otimes ... \otimes \Delta_{j,i_p-j}\otimes ... \otimes {\rm Id}  $ to it.  Thanks to the coassociativity 
 they give the same result.  
 
+
+\end{proof}
+
 \begin{lemma} \label{8-24.1/99}
 \begin{equation} \label{8-24.10/99}
 {\cal A}_{n}({\cal O}_{F, S}) = \{x \in {\cal A}_{n}(F)\quad | \quad
@@ -3551,7 +3573,7 @@ they give the same result.
 \end{equation}
 \end{lemma}
 
-{\bf Proof}. Suppose that $x$ belongs to the right hand side of 
+\begin{proof} Suppose that $x$ belongs to the right hand side of 
 (\ref{8-24.10/99}). Let us show by induction that 
 $$
 \Delta_{k,n-k}(x) \in 
@@ -3572,6 +3594,10 @@ $$
 Applying the induction assumption again  we get the lemma. 
 
 Denote by $H_{(n)}$ the degree $n$ part of $H$. 
+
+
+\end{proof}
+
 \begin{lemma} \label{8-24.3/99} 
 Let $n>1$. Then the morphism 
 \begin{equation} \label{8-24.4/99}
@@ -3581,7 +3607,7 @@ H_{(n)}^i\Bigl({\cal A}_{\bullet}(F)\Bigr)
 induced by the  natural inclusion of the Hopf algebras is an isomorphism. 
 \end{lemma}
 
-{\bf Proof}. The cohomology of a positively graded coalgebra $A_{\bullet}$ 
+\begin{proof} The cohomology of a positively graded coalgebra $A_{\bullet}$ 
 can be computed via the reduced cobar complex
 $$
 A_{\bullet} \stackrel{\Delta'}{\lra} A_{>0}\otimes A_{>0} 
@@ -3599,6 +3625,9 @@ Then $y \in {\cal A}_{\bullet}({\cal O}_{F, S})$ by definition.
  Since  $H^2$ is zero the higher cohomology vanish: one can prove this using a similar fact for the negatively graded Lie algebras since our Hopf algebra is dual to the universal enveloping of such a Lie algebra. 
 The lemma follows.
 
+
+\end{proof}
+
 \begin{corollary} \label{8-24.6/99} 
 \begin{equation} \label{8-24.7/99}
 {\rm Ext}^i_{{\cal M}_T({\cal O}_{F, S})}\Bigl(\Q(0), \Q(n)\Bigr)  = 
@@ -3608,7 +3637,7 @@ gr^{\gamma}_nK_{2n-i}({\cal O}_{F, S})\otimes \Q
 
 The right hand side of (\ref{8-24.7/99}) is known to be zero for $i>1$. 
 
-{\bf Proof}. It follows from the previous lemma since 
+\begin{proof} It follows from the previous lemma since 
 $$
 K_{n}({\cal O}_{F, S})\otimes \Q \quad =  \quad K_{n}(F)\otimes \Q \quad \mbox{for $n>1$}
 $$ 
@@ -3624,6 +3653,9 @@ Let $M$ be a mixed Tate motives over $F$, i.e. it is
 an object of the category ${\cal M}_{T}(F)$. We say that $M$ is defined over 
 ${\cal O}_{F, S}$ if it belongs to the subcategory ${\cal M}_{T}({\cal O}_{F, S})$. 
 
+
+\end{proof}
+
 \begin{definition}
 Let $(M, v_0, f_n)$ be an $n$-framing on a mixed Tate motive $M$ over $F$. We say that 
 the equivalence class of the $n$-framed mixed Tate motive $(M, v_0, f_n)$ 
@@ -3638,7 +3670,6 @@ defined over
 ${\cal O}_{F, S}$. 
 
 
-
 \begin{lemma} \label{8-25/99}
 Let $(M, v_0, f_n)$ be an $n$-framed motive over 
  ${\cal O}_{F, S}$. Then its minimal representative $\overline M$ is defined over ${\cal O}_{F, S}$.
@@ -3647,7 +3678,7 @@ Let $(M, v_0, f_n)$ be an $n$-framed motive over
 Of course $M$ itself is not necessarily defined over 
  ${\cal O}_{F, S}$. 
 
-{\bf Proof}. Let us assume the opposite. Then a certain matrix 
+\begin{proof} Let us assume the opposite. Then a certain matrix 
 element of $\overline M$ does not belong to ${\cal A}_{\bullet}({\cal O}_{F, S})$. 
 Since the minimal representative is a subquotient of every 
 mixed Tate within the  equivalence class of $M$, {\it every} 
@@ -3670,6 +3701,7 @@ an element of ${\cal A}_{n}({\cal O}_{F, S})$: then we take an $n$-framed mixed 
 minimal representative. 
 
 
+\end{proof}
 
 \begin{theorem} \label{8-25.1/99} Suppose that $S$ contains all primes of ${\cal O}_{F, S}$ above a 
 given 
@@ -3689,7 +3721,7 @@ Thus one has $L_{\bullet}^{(l)}({\cal O}_{F,S}) =
 L_{\bullet}({\cal O}_{F,S})\otimes \Q_l$. 
 \end{theorem}
 
-{\bf Proof}. The inertia group for a prime ideal ${\cal P}$ over a a prime $p$ 
+\begin{proof} The inertia group for a prime ideal ${\cal P}$ over a a prime $p$ 
 has  a pro-$p$ subgroup of wild ramification, 
 and the quotient is isomorphic to $\widehat \Z(1)$. So it acts on $l$-adic representations via 
 its $\Z_l(1)$ quotient, which shifts the weight filtration down by $2$.  
@@ -3697,6 +3729,8 @@ So the statement boils down to the isomorphism $L_{-1}^{(l)}({\cal O}_{F,S}) =
 L_{-1}({\cal O}_{F,S})\otimes \Q_l$, which is clear.
 The theorem follows. 
 
+
+\end{proof}
 
 \section{ The motivic torsor of path}
 
@@ -3740,8 +3774,6 @@ the category ${\cal D}_T(F)$ we define
 ${\cal P}_{{\cal M}}(X; x,y):= H_n^t(P(X; x,y)_{\bullet}$.
 
 
-
-
 {\bf 1. Preliminaries}. 
 Let $Y_0, ..., Y_n$ be subspaces of a   a topological space $Y$. 
 For an ordered subset $I = \{i_1 < ... < i_k\}$ 
@@ -3774,7 +3806,6 @@ $\cup Y_i$ with    contractable fibers.
 The complex $S_*(Y_{(\bullet)})$ is isomorphic to the normalization   of 
 the simplicial abelian group obtained by  applying the singular complex functor $S_*$ 
 to this simplicial space. 
-
 
 
 {\bf 2. A geometric construction of the pronilpotent completion of the torsor of path 
@@ -3861,8 +3892,7 @@ H_i(P^n(X; x,y)_{\bullet}; \Z) = \left\{ \begin{array}{ll}
 \end{theorem}
 
 
-
-{\bf Proof}. We will prove the theorem by induction on $n$. 
+\begin{proof} We will prove the theorem by induction on $n$. 
 The exact sequence $$
 0 \lra H_1(X;\Z) \lra H_1(X, \{x, y\};\Z) \lra \Z \lra 0
 $$
@@ -3917,12 +3947,15 @@ H_{i}(P^{n-1}(X; x,y)_{\bullet}; \Z) = \left\{ \begin{array}{ll}
 0 & i< n-1 \end{array}\right.
 \end{equation}
 
+
+\end{proof}
+
 \begin{lemma} \label{2.2.01.3}
 $H_{i}(X^n,  \widehat T_y^n; \Z) =0$ for $i<n$. One has 
 $H_{n}(X^n,  \widehat T_y^n; \Z)/{\rm Im}(f) = {\cal I}_{y}^n/{\cal I}_{y}^{n+1}$. 
 \end{lemma}
 
-{\bf Proof}. Consider the projection $p:X^n \lra X$ onto the first factor. 
+\begin{proof} Consider the projection $p:X^n \lra X$ onto the first factor. 
 
 \begin{center}
 \hspace{4.0cm}
@@ -4034,6 +4067,9 @@ Similarly to the classical case there are the finite dimensional
 quotients ${\cal P}^n_{(l)}(X; x,y)$. Set $\overline X:= X\otimes_F \overline F$. 
  The \'etale homology are dual to the \'etale cohomology. 
 
+
+\end{proof}
+
 \begin{theorem} \label{2.4.01.1} Let $X$ be a regular variety over $F$. Then 
 there is an isomorphism of ${\rm Gal}(\overline F/F)$-modules
 $$
@@ -4042,7 +4078,7 @@ H_n^{et}(P^n_{\cal M}(\overline X; x,y)_{\bullet}; \Q_l)
 $$
 \end{theorem}
 
-{\bf Proof}. There is the $l$-adic version of the exact sequence (\ref{2.13.01.11}), 
+\begin{proof} There is the $l$-adic version of the exact sequence (\ref{2.13.01.11}), 
 and computing the $l$-adic homology $H_i^{et}(P^n(\overline X; x,y)_{\bullet}; \Q_l)$ 
 just the same way we did for the Betty homology during the 
 proof of theorem \ref{2.2.01.1} 
@@ -4060,6 +4096,9 @@ H_n^{et}(P^n(\overline X; x,y)_{\bullet}; \Q_l)$.
 The theorem follows. 
 
 {\it The De Rham realization}. Repeating the arguments above in the  De Rham setting we get
+
+
+\end{proof}
 
 \begin{theorem} \label{2.13.01.15} Let $X$ be a regular variety over a field $F$ of 
 characteristic zero. Then 
@@ -4109,7 +4148,6 @@ of ${\cal P}_{\cal M}(X; x,y)_{\bullet}$ coincide with the corresponding
 realizations of ${\cal P}^{\rm nil}(X; x,y)$ considered in [D]. 
 
 
-
 {\bf 4. The torsors of path on punctured $P^1$ as mixed Tate motives}. 
  Now suppose that $F$ is a number field, $z_i \in F$ and 
 $z_i \not = z_0, z_{n+1}$ for $1 \leq i \leq n$. 
@@ -4150,7 +4188,7 @@ One has
 \end{equation}
 \end{lemma}
 
-{\bf Proof}. We can show this using the Hodge realization functor ${\rm Hod}$, 
+\begin{proof} We can show this using the Hodge realization functor ${\rm Hod}$, 
 since the corresponding statement for the Hodge realization is well known (and obvious). 
 Notice that ${\rm Hod}$ is an exact pure functor between 
 the corresponding Tate categories.  
@@ -4171,6 +4209,9 @@ $z_1, ..., z_{n}$
 \Q(0)
 \end{equation}
 
+
+\end{proof}
+
 \begin{definition} \label{16.2.01.1} Let $F$ be a number field, $z_i \in F$, and 
 $z_i \not = z_0, z_{n+1}$ for $1 \leq i \leq n$. 
 The framed mixed Tate motive ${\rm I}^{\cal M}(z_0; z_{i_1}, ... , z_{i_m}; z_{n+1})$ 
@@ -4181,9 +4222,6 @@ $$
  with the framing provided  by 
 the form (\ref{4021}) and the isomorphism (\ref{40221}). 
 \end{definition}
-
-
-
 
 
 \section {The  multiple polylogarithm variations of Hodge-Tate  structures } 
@@ -4330,7 +4368,6 @@ $\varphi^{DR}$
 preserves the grading. 
 
 
-
 Let $X$ be a simplicial complex algebraic variety. Then according to Deligne [D4]
 there is a mixed Hodge structure in $H_n(X, \Q)$ with   
 $$
@@ -4425,7 +4462,6 @@ and $W_{\bullet}$ of $V$ such that the Hodge and weight bundles are
 $F^p \times \overline X$ and $W_p \times \overline X$, respectively, 
 under the bundle isomorphism.
 \end{theorem}
-
 
 
 {\bf 3.  The Hodge-Tate structure on the torsor of path in $\C - \{z_1, ..., z_n\}$}.
@@ -4579,7 +4615,6 @@ $$
 where $\widetilde \sigma_{i_k}$ is a simple loop around $z_{i_k}$ based at $z_{n+1}$. 
 
 
-
 \begin{lemma} \label{4.13.01.11}
 \begin{equation} \label{3.12.01.4}
 \int_{\gamma(z_0; {\cal C}; z_{n+1})}\omega_{z_{j_1}} \circ ... \circ 
@@ -4588,7 +4623,7 @@ where $\widetilde \sigma_{i_k}$ is a simple loop around $z_{i_k}$ based at $z_{n
 unless ${\cal C}$ is an ordered subset of $\{z_{j_1}, ..., z_{j_r}\}$.  
 \end{lemma}
 
-{\bf Proof}. 
+\begin{proof} 
 Shrinking the loop $\sigma_i$ into a point we see that 
 \begin{equation} \label{12.29.00.10}
 \mbox{if} \quad i \not \in {\cal J}:= \{j_p, ..., j_q\}  \quad \mbox{ then} \quad 
@@ -4615,6 +4650,9 @@ respect this structure.
 The vector space $\widehat T(V_Z)$ is a projective limit of  the
 quotients $T^{(m)}(V_Z)$.  
 
+
+\end{proof}
+
 \begin{proposition} \label{2.22.01.1} a) The projection of the  map $P$ onto $T^{(m)}(V_Z) \otimes \C$ 
 factorizes through a map 
 \begin{equation} \label{2.22.01.3}
@@ -4627,7 +4665,7 @@ c) The maps $P^m$ are compatible with the natural projections.
 %${\cal P}^m \to {\cal P}^{m-1}$ and $T^{(m)} \to T^{(m-1)}$.
 \end{proposition} 
 
-{\bf Proof}. The part a) follows from (\ref{12.29.00.2}).
+\begin{proof} The part a) follows from (\ref{12.29.00.2}).
 The part b) is the special case of Chen's theorem ([Ch]) for $X_Z$. 
 In fact in our case it 
 follows trivially from lemma \ref{4.13.01.11}. Indeed, both vector spaces 
@@ -4642,7 +4680,6 @@ Observe that this also gives another proof of the fact that elements (\ref{12.28
 Finally, c) is straitforward. The proposition is proved. 
 
 
-
 It follows from this that we get a Hodge-Tate structure 
 on ${\cal P}^m(X_Z; z_0, z_{n+1})$ by taking 
 $$
@@ -4654,8 +4691,6 @@ ${\cal P}^m(X_Z; z_0, z_{n+1})$ is given by the powers of the augmentation ideal
 %By the very definitions this  Hodge-Tate structure is isomorphic 
 %to  $H_s$ of the  Hodge realization of the motive 
 %${\cal P}^m_{\cal M}(X_Z; z_0, z_{n+1})_{\bullet}$.
-
-
 
 
 {\it The  Hodge-Tate structure on the torsor of path between the tangential base points}.
@@ -4676,9 +4711,11 @@ the integral
 \end{equation} 
 
 
-
 Let $X_{0}:= X_{z_0}; X_{n+1}:= X_{z_{n+1}}$  and $\lambda_{0}:= \lambda_{z_0}; 
 \lambda_{n+1}:= \lambda_{z_{n+1}}$.  
+
+
+\end{proof}
 
 \begin{lemma} \label{4.22.01.1lem}
 The regularized ordered exponent is given by the formula 
@@ -4693,7 +4730,7 @@ $$
 In particular the limit on  the right exists.  
 \end{lemma}
 
-{\bf Proof}.  $f(x,y):= P\int_{x}^{y} \Omega$ as a function on $y$ satisfies 
+\begin{proof}  $f(x,y):= P\int_{x}^{y} \Omega$ as a function on $y$ satisfies 
 the differential equation (\ref{4.22.01.1}). So it 
 has an asymptotics $(y-z_{n+1})^{X_{n+1}}$ 
 near the pont $z_{n+1} \in Z$. Thus $\Bigl(P\int_{x}^{z_{n+1} 
@@ -4716,6 +4753,7 @@ $$
 and lemma \ref{4.13.01.11} holds. 
 
 
+\end{proof}
 
 {\bf 4. The canonical framed Hodge-Tate  structures related to 
 multiple polylogarithms}. Recall the coordinate $t$ 
@@ -4811,8 +4849,6 @@ $$
 \end{equation}
 
 
-
-
 \begin{proposition} \label{1.1.00.3} 
 a) The complexification of the period map $P_{\cal S}$ is an isomorphism. 
 
@@ -4832,7 +4868,7 @@ denoted
 with a natural framing provided by $(h_{\emptyset}, (2\pi i)^{|{\cal S}|}h_{\cal S})$.
 \end{proposition}
 
-{\bf Proof}. a) Consider a partial order $<$ on the set ${\cal O}\{{\cal S}\}$ such that 
+\begin{proof} a) Consider a partial order $<$ on the set ${\cal O}\{{\cal S}\}$ such that 
 ${\cal A} < {\cal B}$ if and only if there are ordered subsets ${\cal A}' \subset 
 {\cal B}'\subset  {\cal S}$ such that ${\cal A}$ is the isomorphic to ${\cal A}'$ 
 and ${\cal B}$  to ${\cal B}'$. We claim that the period matrix (\ref{1.1.00.2}) 
@@ -4845,7 +4881,6 @@ The  first equality follows from (\ref{12.29.00.2}), and the second from lemma
 This implies a).
  
  
-
 b) When we deform  the path $\gamma$ by moving it across one of the points $a_i$ 
 the difference between the paths before and after the deformation is an element of  shape 
 (\ref{1.1.00.1}) corresponding to an ordered subset $\widetilde {\cal A}$ containing 
@@ -4857,6 +4892,9 @@ f_{{\cal B}}> = 0$.
 If $\widetilde {\cal A}  < {\cal B}$  we changed the vector 
 $P_{\cal S}e_{{\cal A}}$ by adding the lower weight vector $P_{\cal S}e_{\widetilde {\cal A}}$ to it. Then c) is clear. 
 The proposition is proved. 
+
+
+\end{proof}
 
 {\bf 5. The framed Hodge-Tate structures (\ref{3.5.01.3}) and (\ref{4.13.01.111}) 
 are equivalent}. 
@@ -4879,7 +4917,6 @@ $$
  0 & \mbox{otherwise} \end{array}\right.
 $$
 It is a surjective map by its very definition, and it  obviously respects the grading. 
-
 
 
 Recall the  elements 
@@ -4918,7 +4955,7 @@ Hodge-Tate structures
 $(h_{\emptyset}, (2\pi i)^{|{\cal S}|}h_{{\cal S}})$ on (\ref{3.5.01.3})
 \end{theorem} 
 
-{\bf Proof}. We need to show that the following diagram is commutative. 
+\begin{proof} We need to show that the following diagram is commutative. 
 $$
 \begin{array}{ccc}
 T^{(m)}(V_Z)\otimes \C & \stackrel{\varphi_{{\cal S}}^{DR}\otimes \C}{\lra}& V_{\cal S}^{DR}\otimes \C\\
@@ -4932,16 +4969,12 @@ Formula (\ref{3.12.01.4}) immediately implies this. The theorem
 is proved. 
 
 
- 
-
 {\it The unipotent variation of Hodge-Tate structures}. 
 Let us say that a configuration of points $(a_0; a_1, ..., a_m; a_{m+1})$ and 
 $(a'_0; a'_1, ..., a'_m; a'_{m+1})$ have the same combinatorial type if $a_i = a_j$ if and only if $a'_i = a'_j$. Denote by $M_{\cal S}$ the moduli space of configurations 
  of the same combinatorial type as the configuration 
 $(a_0; {\cal S}; a_{m+1})$. 
 
-
- 
 
 Consider the trivialized complex holomorphic bundle ${\cal V}^{DR}_{\cal S}$ over 
 $M_{\cal S}$ with 
@@ -4964,6 +4997,7 @@ Proposition  \ref{1.1.00.3} insures that
 we get  a well defined $\Q$-local system filtered by the weight filtration. 
 
 
+\end{proof}
 
 \begin{theorem} \label{3.5.01.1} The canonical Hodge-Tate structures 
 $\widetilde {\rm I}_{\{v_a\}}(a_0; a_1,  ..., a_m; a_{m+1})$ form  a unipotent 
@@ -4975,10 +5009,12 @@ $\widetilde {\rm I}_{n_1, ..., n_m}(a_1:  ... : a_{m+1})$ form a unipotent
 variation over the configuration space of distinct points $M_{0,m}$. 
 \end{theorem}
 
-{\bf Proof}. It follows immediately from theorem \ref{2.22.01.111} that 
+\begin{proof} It follows immediately from theorem \ref{2.22.01.111} that 
 the map $\varphi^{DR}_{{\cal S}}$ gives rise  to a quotient of the canonical 
  unipotent variation of Hodge-Tate structures $ {\cal P}^m(X_Z; v_{a_0}, v_{a_{m+1}})$. 
  
+
+\end{proof}
 
 {\bf Warning}. These  Hodge-Tate structures  
  {\it do not} 
@@ -5006,7 +5042,7 @@ canonically isomorphic to the Hodge-Tate structure
 $\widetilde I_{v_a}(a_0, a_1, ..., a_m; a_{m+1})$.
 \end{lemma}
 
-{\bf Proof}. The definition of the specialization of a 
+\begin{proof} The definition of the specialization of a 
 unipotent variation of 
 Hodge-Tate structures convinient  for our purposes is spelled  
 by R. Hain in ch. 7 of [H]. We assume the reader is familiar with it. 
@@ -5038,6 +5074,9 @@ $\widetilde s_i(\varepsilon)$ are the regularized values
 of the iterated integrals. 
 The lemma is proved.  
 
+
+\end{proof}
+
 {\bf Remark}. In this and the next chapters we use 
 the tangential base points $\partial_t$ at every point $a \in \C$. 
 On the other hand for the canonical regularization discussed in chapter 2 we used 
@@ -5045,8 +5084,6 @@ the tangential base point $\partial_t$ at $a_0$ and $-\partial_t$ at $a_{m+1}$.
 However the element of the Hopf algebra ${\cal H}_n$ obtained 
 using the latter tangential base points coincides modulo $2$-torsion 
 with the one $\widetilde I_{\{v_a\}}(a_0;{\cal S} ;a_{m+1})$. 
-
-
 
 
 {\bf 6. An explicit computation of the multiple polylogarithm  Hodge-Tate structures}. 
@@ -5075,7 +5112,7 @@ The Hodge-Tate structures defined by the
 period maps  $P_{\cal S}'$ and $P$ are canonically isomorphic.   
 \end{proposition}
 
-{\bf Proof}. To calculate integral (\ref{1.1.00.2}) we deform the element $\gamma(a_0; {\cal A}; a_{m+1})$ by shrinking the 
+\begin{proof} To calculate integral (\ref{1.1.00.2}) we deform the element $\gamma(a_0; {\cal A}; a_{m+1})$ by shrinking the 
 loops $\sigma_{i_k}$ around the points $a_{i_k}$, and moving the segments 
 $\gamma(x_{i_k}, x_{i_{k+1}})$ towards  paths $\overline \gamma(a_{i_k}, a_{i_{k+1}})$ 
 between the tangential base points 
@@ -5125,6 +5162,9 @@ In general the contribution to the integral coming only from
 the linear terms in $e^{2\pi i X_{i_k}} - 1$ matches the terms in (\ref{1.5.00.1}). 
 The contribution of the higher degree terms amounts to adding the lower weight columns 
 to the one $P'_{\cal S}e_{\cal A}$. The proposition follows. 
+
+
+\end{proof}
 
 {\bf 7.  An example:  variations of framed Hodge-Tate structures related to  the 
 multiple logarithms}. 
@@ -5193,8 +5233,10 @@ The paths for different $I$'s may be unrelated.
  a variation of Hodge-Tate structures over the configuration space $M_{0,m}$.  
 \end{corollary}
 
-{\bf Proof}. These is a special case of theorem \ref{3.5.01.1}. 
+\begin{proof} These is a special case of theorem \ref{3.5.01.1}. 
 
+
+\end{proof}
 
 {\bf Example}. {\it The variation of Hodge-Tate structures for the double logarithm}. The matrix of the operator $P'_{{\cal S}_2} (a_0; a_1, a_2; a_3)$ is 
 $$ 
@@ -5238,7 +5280,6 @@ $$
  which is valid thanks to (\ref{300}). 
 
 
-
 Let us  show that the Griffiths transversality condition for $P'_{{\cal S}_m}$  
 is equivalent to the differential 
 equations for multiple logarithm function.  
@@ -5276,8 +5317,6 @@ column $P'_{{\cal S}_m}e_{\cal I}$ is similar: the restriction of the connection
 subspace with the coordinates $a_i$, $i \in 
 {\cal J}{\{p \to p+1\}}$ is computed just  as 
  above.  
-
-
 
 
 \section{The multiple polylogarithm Hopf algebra}
@@ -5325,7 +5364,6 @@ they are equivalent to the ones given below.  The formulas for the coproduct
 case see in theorem 3.6 in [G5]. 
 
 
-
 {\bf 1. The coproduct in the case of multiple logarithms.} 
 Recall the framed 
 Hodge-Tate structure
@@ -5345,7 +5383,7 @@ a_{i_k}; a_{m+1}) \otimes \prod_{p =0 }^k
 $$
 \end{theorem}
 
-{\bf Proof}. It follows immediately from the definitions and 
+\begin{proof} It follows immediately from the definitions and 
 description of the Hodge-Tate 
 structure corresponding to ${\rm I}(a_0; a_1, a_2, ..., a_m; a_{m+1})$ given in s. 5.7. 
 Let me spell the details. 
@@ -5455,6 +5493,8 @@ $$
  The theorem is proved. 
  
 
+\end{proof}
+
 {\bf Examples}. 1. {\it The double logarithm} (compare with s. 2.2 in [G2]). 
 The coproduct of the framed Hodge-Tate structure 
 ${\widetilde {\rm I}}(a_0; a_1, a_2; a_3)$ 
@@ -5487,7 +5527,6 @@ $$
 {\widetilde {\rm I}}(a_0; a_2, a_3; a_4) \otimes {\widetilde {\rm I}}(a_0; a_1; a_2) +
 {\widetilde {\rm I}}(a_0; a_1, a_2, a_3; a_4) \otimes 1 
 $$
-
 
 
 {\bf 2. The coproduct in the general case}. Below we introduce another framed Hodge-Tate 
@@ -5527,11 +5566,14 @@ $
 \end{proposition}
  
 
-{\bf Proof}. One needs to check  that 
+\begin{proof} One needs to check  that 
 a different choice of the collection of 
 path $\{\gamma\}$ between the tangential base points does not change 
 the weight filtration on the Betti space $V_{{\cal S}_m}^B$. This is done the same 
 way as the proof of proposition \ref{1.1.00.3}. The proposition is proved. 
+
+
+\end{proof}
 
 \begin{proposition} \label{1.1.01.1} 
 The framed Hodge-Tate structures 
@@ -5542,7 +5584,7 @@ $$
 are equivalent. 
 \end{proposition} 
 
-{\bf Proof}. Thanks to proposition \ref{3.1.01.1} we can work with the Hodge-Tate structure 
+\begin{proof} Thanks to proposition \ref{3.1.01.1} we can work with the Hodge-Tate structure 
 ${\widetilde {\rm I}}'_{\{v_a\}}(a_0; {\cal S}; a_{m+1})$ 
 defined by the map $P'_{{\cal S}}$. The map of sets 
 $$
@@ -5569,6 +5611,8 @@ equivalence of the corresponding framed
 Hodge-Tate structures. The proposition is proved. 
 
 
+\end{proof}
+
 \begin{theorem} \label{CP11} Let $(a_0; a_1, a_2, ..., a_m; a_{m+1})$ be an 
 arbitrary configuration of points in $\C$. Then the coproduct  
 of the canonical framed Hodge-Tate structure 
@@ -5587,13 +5631,14 @@ In other words
 we can drop the assumption 
 $a_i \not = a_j$ in theorem \ref{CP1}. 
   
-{\bf Proof}.  Thanks to proposition \ref{1.1.01.1} we can do the calculation 
+\begin{proof}  Thanks to proposition \ref{1.1.01.1} we can do the calculation 
  with the Hodge-Tate structure $\widehat {\rm I}_{\{v_a\}}(a_0; a_1, ..., a_m; a_{m+1})$.
 The shape of the matrix defining this Hodge-Tate structure 
 does not change when we restrict to degenerate configurations of points, 
 so the proof is identical with the one of theorem \ref{CP1}. 
 
 
+\end{proof}
 
 {\bf 3. Calculation of the coproduct for the multiple polylogarithms}. Set
 \begin{equation}  \label{12.18.00.2}
@@ -5666,8 +5711,6 @@ such that there is just one marked segment between any two
 neighboring marked points. 
 
 
-
-
 \begin{center}
 \hspace{4.0cm}
 \includegraphics{mpc2.eps}
@@ -5684,11 +5727,6 @@ The marks provide a new colored segment:
 (a_0|t_{j_0} |a_{i_0} | t_{j_1} |
 a_{i_1} |\quad ... \quad | a_{i_k} |t_{j_k}|a_{m+1})
 \end{equation}
-
-
-
-
-
 
 
 \begin{theorem} \label{ur8-4,3} Let us suppose that $a_i \not = 0$ for $i=1, ..., n$. Then 
@@ -5709,7 +5747,7 @@ satisfying inequality (\ref{ur10}).
 \end{theorem}
 
 
-{\bf Proof}. One immediately sees that 
+\begin{proof} One immediately sees that 
 \begin{equation} \label{12.18.00.1}
 \widetilde {\rm I}(0; a_1, ..., a_m; 0) =0
 \end{equation}
@@ -5724,7 +5762,6 @@ We apply the coproduct formula from theorem \ref{CP1} to the framed mixed Hodge-
 and then keep track of the non zero terms taking into account (\ref{12.18.00.1}). 
  
  
-
 The left hand side factors of the non zero terms in the formula for the coproduct 
 correspond to certain  subsets
 $$
@@ -5756,7 +5793,6 @@ In other words the factors in the coproduct are parametrized by
 {\it a connected string of $0$'s in each of the crossed arcs}. 
 
 The connected string of $0$'s in some  of the crossed arcs might be empty. 
-
 
 
  An admissible subset $A$ provides  the following framed Hodge-Tate structure, which is the left hand side of the corresponding term in the coproduct: 
@@ -5797,7 +5833,6 @@ $\widetilde {\rm I}(0;0) \cdot ... \cdot \widetilde {\rm I}(0;0)$ is equal to $1
 Translating this into the language of the generating series we get the promised 
 formula for the coproduct.  
  The theorem is proved. 
-
 
 
 {\it A geometric interpretation of formula 
@@ -5852,6 +5887,10 @@ $$
 
 To check that formula for the coproduct of the multiple logarithms fits 
 into this description we use formula (\ref{ur102}) from the following 
+
+
+\end{proof}
+
 \begin{lemma} \label{9.24.00.1} One has the shuffle product formula 
 on the level of the framed Hodge-Tate structures
 \begin{equation}  \label{ur102q} 
@@ -5882,7 +5921,7 @@ colored segment shown on the picture:
 \includegraphics{mpc4.eps}
 \end{center}
 
-{\bf Proof of lemma \ref{9.24.00.1}}. Let us prove the shuffle product formula. 
+\begin{proof}[Proof of lemma \ref{9.24.00.1}] Let us prove the shuffle product formula. 
 We will assume that $a_i \not = x, a_i \not = y$. The general case follows 
 from this by using the specialization. Indeed,  by lemma \ref{5.6} the regularized 
 Hodge-Tate structures  $\widetilde {\rm I}(x_0; a_{1}, a_{2},  ...  , a_{p}; y_0)$
@@ -5972,6 +6011,8 @@ structures $H \lra \oplus H_i$ which proves the identity.
 The lemma is proved. 
 
 
+\end{proof}
+
 \begin{lemma} \label{9.30.00.2} One has 
 $
 \widetilde {\rm I}(a; 0|t) = a^{-t}$, $ \widetilde {\rm I}(0; a|t) = a^{t}
@@ -5993,7 +6034,7 @@ $$
 \end{equation}
 \end{lemma}
 
-{\bf Proof}. The formula (\ref{3.7.01.19}) is a Hodge version of proposition \ref{GENP}. 
+\begin{proof} The formula (\ref{3.7.01.19}) is a Hodge version of proposition \ref{GENP}. 
 Its proof uses 
 the shuffle product formula and specialization and copies 
  the second proof of proposition \ref{GENP}.  
@@ -6035,7 +6076,6 @@ $$
 $$
 
 
-
 A marked colored segment is {\it special} if the first cross is marking 
 the segment $t_0$. 
 A colored segment with such a  data is called a {\it special marked colored segment}. 
@@ -6046,6 +6086,8 @@ i_{\alpha } \leq j_{\alpha } < i_{\alpha +1} \quad \mbox{ for any
 $0\leq \alpha \leq k$}, \qquad j_0 = i_0 = 0
 \end{equation}
 
+
+\end{proof}
 
 \begin{proposition} \label{12.11.00.11} One has
 $$
@@ -6068,7 +6110,7 @@ sequences $\{i_{\alpha}\}$ and $\{j_{\alpha}\}$
 satisfying inequality (\ref{ur10*}). 
 \end{proposition}
 
-{\bf Proof}. Follows immediately from theorem \ref{ur8-4,3} and   lemma \ref{9.30.00.2}.
+\begin{proof} Follows immediately from theorem \ref{ur8-4,3} and   lemma \ref{9.30.00.2}.
 
 Let us define several other generating series 
 for framed Hodge-Tate structures related to  multiple polylogarithms. 
@@ -6109,6 +6151,10 @@ $$
 =: (-1)^m 
 \widetilde {\rm I}( a_1: a_2: ... : a_{m+1}| t_0 : ... : t_m)  \quad =: \widetilde {\rm I}( a_1 : a_2 : ... : a_{m+1}| u_1,  ... u_{m+1})
 $$
+
+
+\end{proof}
+
 {\bf Remark}. The $(,)$-notation is used for the variables which sum to zero 
 (under the appropriate group structure), and the $(:)$-notation is used those 
 sets of variables which are essentially homogeneous with respect to 
@@ -6147,7 +6193,6 @@ satisfying (\ref{ur10*}).
 \end{proposition}
 
 
-
 The $p$-th factor in the product on the right is encoded by the data 
 on the $p$-th segment:
 
@@ -6163,9 +6208,11 @@ left. The factor (\ref{12-15.00.2})  is encoded by
 the segment  between $t_{j_p}$ and 
 $t_{i_{p+1}}$ which we read from the  left to the right.
 
-{\bf Proof}. Follows from lemma \ref{9.30.00.2}, 
+\begin{proof} Follows from lemma \ref{9.30.00.2}, 
 proposition \ref{12.11.00.11} and (\ref{11.16.00.1}). 
 
+
+\end{proof}
 
 {\bf 4. An example: the coproduct in the classical polylogarithm case}. 
 Recall that ${\cal H}_{\bullet}$ is the commutative 
@@ -6192,14 +6239,14 @@ homomorphism of algebras and $\Delta'$ is not.
 \end{equation}
 \end{proposition}
 
-{\bf Proof}. 
+\begin{proof} 
 This formula just means that 
 $$
 \Delta' {\widetilde {\rm Li}}_n(x) = {\widetilde {\rm Li}}_{n-1}(x) \otimes \widetilde \log x + {\widetilde {\rm Li}}_{n-2}(x) \otimes \frac{\widetilde \log^2 x}{2} + ... + {\widetilde {\rm Li}}_{1}(x) \otimes \frac{\widetilde \log^{n-1} x}{(n-1)!}
 $$
 
 
-
+\end{proof}
 
 {\bf 5. An example: the coproduct for the depth two
  multiple polylogarithms}. 
@@ -6210,8 +6257,6 @@ $$
 \widetilde {\rm I}(0; a_1, a_2; 1|t_1;t_2)
 $$ 
 Set $\widetilde \zeta(t_1, ..., t_m) := \widetilde {\rm I}(1: ... : 1 | t_1, ..., t_m)$.
-
-
 
 
  \begin{proposition} \label{ur107} a) One has 
@@ -6248,7 +6293,7 @@ $$
 $$
 \end{proposition} 
 
-{\bf Proof}. a) Since in our case $a_0=0$ and  $t_0=0$ the nonzero contribution can be obtained only from those marked colored segments where $t_0$-arc is not marked. Let us call the pictures where $a_0=0$, $a_{m+1} =1$,  $t_0=0$ and 
+\begin{proof} a) Since in our case $a_0=0$ and  $t_0=0$ the nonzero contribution can be obtained only from those marked colored segments where $t_0$-arc is not marked. Let us call the pictures where $a_0=0$, $a_{m+1} =1$,  $t_0=0$ and 
 the $t_0$-arc is not marked by {\it special} marked colored segments. 
 
 The five  terms in the formula above  correspond to the five special 
@@ -6257,8 +6302,6 @@ marked colored segments presented on the picture.
 \hspace{4.0cm}
 \includegraphics{mpc5.eps}
 \end{center}
-
-
 
 
 Using the formulas from lemma \ref{9.30.00.2}
@@ -6277,7 +6320,6 @@ $$
 \widetilde {\rm I}(a_1:1|t_1) \otimes \widetilde {\rm I}(a_1;0|t_1) \cdot  \widetilde {\rm I}(0; a_2; 1|t_1;t_2) \quad = \quad 
 \widetilde {\rm I}(a_1:1|t_1)\otimes a_1^{-t_1} \cdot \widetilde {\rm I}(a_2:1|t_2-t_1)
 $$
-
 
 
 $$
@@ -6299,12 +6341,13 @@ The part b) follows from a) if we notice that $a^N =1$
 provides $a^t =1$ modulo the $N$-torsion. 
 The proposition is proved. 
 
+
+\end{proof}
+
 {\bf Remark}. In theorem 4.5 of [G2] the reader can find a different way to write the 
 formulas for the coproduct in the depth $2$ case. It is easy to see that the formulas 
 given there are equivalent to the formulas above. 
  
-
-
 
 %\begin{equation} \label{d2f}
 %\Delta:    \widetilde L(x_1,x_2 |t_1,t_2 ) \quad \longmapsto \quad 1 \otimes \widetilde L(x_1,%x_2 |t_1,t_2 )\quad +
@@ -6319,7 +6362,6 @@ given there are equivalent to the formulas above.
 %(x_1x_2)^{t_1} \cdot \widetilde L(x_2  |t_2 -t_1 )\quad   
 %-\quad \widetilde L( x_1x_2  |t_2  ) 
 % \otimes  (x_1x_2)^{t_2 } \cdot \widetilde L^*(x_1|t_1 - t_2  )$$
-
 
 
 {\bf Example}.  Below we give explicit formulas for  the coproduct in the Hopf algebra for double polylogarithms   up to the  weight three. 
@@ -6342,12 +6384,6 @@ $$
 $$
 - {\widetilde {\rm Li}}_{2}(x y) \otimes {\widetilde {\rm Li}}_{1}(x) - {\widetilde {\rm Li}}_{1}(x y) \otimes  {\widetilde {\rm Li}}_{1}(x)\cdot xy - {\widetilde {\rm Li}}_{1}(x y) \otimes  {\widetilde {\rm Li}}_{2}(x)   
 $$
-
- 
-
-
-
-
 
  
 {\bf Example}. {\it The Lie coalgebra structure in the depth two (see [G0], p. 13)}. 
@@ -6405,10 +6441,6 @@ $$
 $$
 
 
-
-
-
-
 {\bf 6. The Hopf algebra of framed Hodge-Tate structures related to multiple polylogarithms}. 
 Let $G$ be a subgroup of $\C^*$. 
 Denote by ${\cal Z}^{\cal H}_{w}(G) \subset {\cal H}_{w}$ the $\Q$-vector subspace 
@@ -6436,11 +6468,14 @@ Hopf subalgebra of ${\cal H}_{\bullet}$.
 The depth provides a filtration on this Hopf algebra.
 \end{theorem}
 
-{\bf Proof}. 
+\begin{proof} 
 The graded vector space ${\cal Z}^{\cal H}_{\bullet}(G)$ is closed under the coproduct by  
 proposition \ref{12.11.00.11}. The statement about the depth filtration is evident from the formula for coproduct given in proposition \ref{ur8-4,3**}. 
 It is a graded algebra  by the shuffle product formula from lemma \ref{9.24.00.1}. 
 The theorem  is proved. 
+
+
+\end{proof}
 
 {\bf Remark}. The depth filtration is not defined by a grading of the algebra
 ${\cal Z}^{\cal H}_{\bullet}(G)$ because of the  
@@ -6472,7 +6507,7 @@ ${\cal C}^{{\cal H}}_{1}(\mu_N) \quad = \quad {\cal Z}^{{\cal H}}_{1}(\mu_N) \qu
 \Bigl(\mbox{the group of cyclotomic units in $\Z[\zeta_N][1/N]\Bigr) \otimes \Q$}$.
 \end{corollary} 
 
-{\bf Proof}. a). Clear. 
+\begin{proof} a). Clear. 
 
 b) 
 Since $$
@@ -6492,11 +6527,13 @@ universal enveloping algebra  of the cyclotomic Lie algebra is
 isomorphic to ${\cal Z}^{{\cal H}}_{\bullet}(\mu_N)$. 
 
 
-
 Let ${\cal C}_{m}^{\Delta}(\mu_N)$ be the $\Q$- subspace of  
 ${\cal C}_{m}(\mu_N)$ generated by 
 $
 \widetilde {\rm I}(0; a_1, ..., a_m; 1)$ where $ a_i^N =1$. 
+
+
+\end{proof}
 
 \begin{corollary} \label{ur8-11/1} ${\cal C}_{\bullet}^{\Delta}(\mu_N):= \oplus_{m\geq 1}{\cal C}_{m}^{\Delta}(\mu_N)$ 
 is a graded Lie coalgebra. 
@@ -6506,7 +6543,10 @@ is a graded Lie coalgebra.
 We call it the  
  {\it diagonal cyclotomic Lie coalgebra}. 
 
-{\bf Proof}. Clear from the  proposition \ref{12.11.00.11}. 
+\begin{proof} Clear from the  proposition \ref{12.11.00.11}. 
+
+
+\end{proof}
 
 {\bf 8. Expressing the multiple polylogarithm Hodge-Tate structures  of weight
   $3$ via the  classical polylogarithms}. Lemma \ref{9.24.00.1} allows to express 
@@ -6579,7 +6619,6 @@ Similar considerations in the weight two give the classical
  5-term functional equation for the dilogarithm written in symmetric form.
 
 
-
 \section{Some applications and conjectures}
  
 
@@ -6588,7 +6627,6 @@ Assuming the motivic formalism we formulate in s. 7.3
  conjectures relating multiple polylogarithm motives to the structure of
  the motivic Lie algebras of an 
 arbitrary field $F$. 
-
 
 
 {\bf 1. The framed mixed Tate  motives  related  to multiple polylogarithms}. Let $F$ be  a number field,   $a_i \in F$ 
@@ -6604,9 +6642,12 @@ $\widetilde I(\sigma(a_0); \sigma(a_1), ..., \sigma(a_m); \sigma(a_{m+1})$.
 \end{theorem}
 
 
-{\bf Proof}. Follows from the very definitions and the results of chapter 3. 
+\begin{proof} Follows from the very definitions and the results of chapter 3. 
 
 This together with  lemma \ref{1.1.01.2} immediately imply the following useful fact:
+
+
+\end{proof}
 
 \begin{corollary} \label{3.12.01.1}
 Assume the conditions of theorem \ref{14.1.01.1}. Then the coproduct of the 
@@ -6619,12 +6660,14 @@ Then
 $I^{\cal M}(0; a_1, ..., a_m; 1)$ is a mixed Tate motive over the scheme $S_N$. 
 \end{corollary}
 
-{\bf Proof}. Follows from corollary \ref{3.12.01.1} 
+\begin{proof} Follows from corollary \ref{3.12.01.1} 
 and the definitions of chapter 3. 
 
 %{\bf Remark}. If we assume that the specialization functor can be defined  motivically,
 %then we immediately get the analogs of all the results above. 
 
+
+\end{proof}
 
 {\bf 2. The theorems from the introduction.} Theorems \ref{3.6.01.3} and \ref{3.6.01.1} 
 are special 
@@ -6636,7 +6679,7 @@ The proof of the first part of theorem \ref{3.6.01.33} follows from propositions
 \ref{12.30.00.2},  \ref{1.1.01.1}
 following  the lines  of proof of theorem \ref{CP1}. 
 
-{\bf Proof of theorem \ref{th1.221}}. The homomorphism 
+\begin{proof}[Proof of theorem \ref{th1.221}] The homomorphism 
 ${\cal Z}_{\bullet}^{\cal H}(\mu_N) \lra {\rm Gr}^W_{\bullet}\widetilde {\cal Z}(\mu_N)$ 
  is given by setting
 $$
@@ -6675,6 +6718,9 @@ is the period $H$ as well of  $H'$ with respect to the framings.
 So these periods coincide. 
 This means that
  the map above is well defined on equivalence classes.  The theorem follows. 
+
+
+\end{proof}
 
 {\bf 3. The depth filtration on the motivic Lie algebra of a field $F$ 
 and multiple polylogarithms}. {\it The set up}. 
@@ -6749,15 +6795,13 @@ Then for any two points $y_1,y_2 \in Y$ the difference $V_{y_1} - V_{y_2}$
 is a sum of multiple polylogarithms motives.
 \end{theorem}
 
-{\bf Proof}. One can suppose without the loss of generality that there is a rational curve $X$ passing through $y_1$ and $y_2$. Let ${\cal P}^{{\cal M}}(X; y_1,y_2)$ be the torsor of motivic paths from $y_1$ to $y_2$ on $X$. The crucial fact is that any its subquotient is equivalent as framed mixed Tate motive to a hyperlogarithmic one. There is a morphism of mixed Tate motives $p_{y_1,y_2}^X :V_{y_1}\otimes
+\begin{proof} One can suppose without the loss of generality that there is a rational curve $X$ passing through $y_1$ and $y_2$. Let ${\cal P}^{{\cal M}}(X; y_1,y_2)$ be the torsor of motivic paths from $y_1$ to $y_2$ on $X$. The crucial fact is that any its subquotient is equivalent as framed mixed Tate motive to a hyperlogarithmic one. There is a morphism of mixed Tate motives $p_{y_1,y_2}^X :V_{y_1}\otimes
  {\cal P}^{{\cal M}}(X;y_1,y_2)
 \rightarrow V_{y_2}$ (parallel transport along paths from $y_1$ to $y_2$
 on $X$). Let ${\cal A}$ be the kernel of the action of ${L}(F)_{\bullet}$
 on   ${\cal P}^{{\cal M}}(P^1; v_0, v_1)$. Then ${\cal P}^{{\cal M}}(X; y_1,y_2)$
   is a trivial  ${\cal A}$ - module. Therefore any $p \in  {\cal P}^{{\cal M}}(X; y_1,y_2)$ defines an isomorphism of ${\cal A}$ - modules $V_{y_1}\otimes p 
 \rightarrow V_{y_2}$. This is a reformulation of the statement of the theorem.
-
-
 
 
 {\it The main conjecture}. 
@@ -6784,6 +6828,9 @@ filtration (\ref{1.10.01.1}) and the
 filtration  by the depth of multiple polylogarithms which is induced  by (\ref{1.10.01.2}). 
 We conjecture that they coincide:
  
+
+\end{proof}
+
 \begin{conjecture} \label{13.1.01.1}
 The dual to the depth filtration (\ref{1.10.01.1}) coincides with the 
 filtration induced by (\ref{1.10.01.2}). 
@@ -6825,13 +6872,6 @@ Lie algebra.
 \end{conjecture}
 
 Conjecture \ref{13.1.01.1} obviously implies the part a) of conjecture \ref{7.3}. 
-
-
-
-
-
-
-
 
 
 \section*{REFERENCES}
@@ -6961,10 +7001,6 @@ Kluwer Acad. Publ.,
 Dordrecht, 1993. 
 
 \end{itemize}
-
-
-
-
 
 
 \end{document}
