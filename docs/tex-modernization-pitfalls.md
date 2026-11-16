@@ -139,6 +139,9 @@ The relation spacing changes slightly; that is the point. Watch for
   commit the resulting `.bbl` (see `math_0701269v2`).
 - `pagebackref` adds a page list to every entry and therefore makes the
   bibliography longer. Page-count drift is expected.
+- `pagebackref` scans each `\bibitem` up to the next `\par`, so entries need
+  a blank line between them; consecutive entries with no blank line fatal
+  with `File ended while scanning \BR@@lbibitem`. Whitespace-only fix.
 
 ## Hand-written tables of contents
 

@@ -1,0 +1,28 @@
+{
+  "arxiv": "alg-geom/9506012v1",
+  "title": "Semiorthogonal decomposition for algebraic varieties",
+  "authors": "A. Bondal and D. Orlov",
+  "abstract": "A criterion for a functor between derived categories of coherent sheaves to be full and faithful is given. A semiorthogonal decomposition for the derived category of coherent sheaves on the intersection of two even dimensional quadrics is obtained. The behaviour of derived categories with respect to birational transformations is investigated. A theorem about reconstruction of a variety from the derived category of coherent sheaves is proved.",
+  "entries": [
+    {
+      "tex": "alg-geom_9506012v1.tex",
+      "pdf": "alg-geom_9506012v1.pdf"
+    }
+  ],
+  "status": "done",
+  "changes": [
+    "\\documentstyle[12pt]{article} to \\documentclass[12pt]{article}; added \\usepackage{amsmath,amssymb,amsthm,graphicx}; dropped \\input epsf.",
+    "Converted all 10 \\epsffile inclusions (9 direct plus 1 inside the \\b/\\diagk operator macro) to \\includegraphics (EPS auto-converted by epstopdf under pdflatex); kept the surrounding layout.",
+    "Renamed the \\b macro to \\diagk: \\b redefined the LaTeX accent \\b to a 7x7pt figure (k.eps) used as a boxtimes-like binary operator (13 uses, e.g. {\\cal O}(-1)\\diagk {\\cal O}(-1)); the accent form \\b{...} is never used, so the rename is behavior-preserving.",
+    "Converted the 34 custom \\th{Type}...\\eth theorem heads to amsthm environments (theorem, lemma, proposition, definition sharing one counter via [theorem], matching the single THNO counter; numbering verified identical to the official PDF, e.g. Theorem 1.1, Theorem 2.6, Theorem 4.5).",
+    "Converted all 23 ad-hoc \\pr proof heads to amsthm proof environments, each closed before the trailing body text that introduces the next result (proofs at original lines 242, 647, 730, 898, 1015, 1050, 1317, 1427, 1640, 1863, 1967, 1997, 2032, 2090 all have body text after the proof; the proof at 1088 runs through the unlabeled lemma to the end of the Theorem qdq argument).",
+    "Converted 3 eqnarray environments (fib, res, R) to align; one \\nonumber became \\notag.",
+    "Added T1 fontenc and lmodern (the approved default), plus hyperref with color links, bookmarks, and pagebackref loaded last, with PDF title and author metadata.",
+    "Pinned the visible title date to the v1 arXiv date June 19, 1995 (was March 6, 1995).",
+    "Fixed 5 textual typos: horisontal to horizontal, rises to arises, convinient to convenient, detals to details, Repeting to Repeating.",
+    "Fixed the duplicate \\label{inv} (Lemma inv and Definition inv): renamed the definition's label to invdef; the single \\ref{inv} means the lemma, so no ref changed target.",
+    "Separated consecutive \\bibitem entries with blank lines (pagebackref scans each entry up to the next \\par; without them the build fatals in \\BR@@lbibitem).",
+    "Normalized {\\section {X}} to \\section{X} (3 occurrences); kept section-title punctuation and the manual title block as-is."
+  ],
+  "warnings": []
+}
