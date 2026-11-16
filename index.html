@@ -236,16 +236,20 @@ h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <article id="paper-hep-th_9408074v2">
 <h2>hep-th/9408074v2 &ndash; A strong coupling test of S-duality</h2>
 <p class="meta">Cumrun Vafa and Edward Witten</p>
-<p><a href="https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/main.pdf">PDF</a></p>
 <p><a href="https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/hep-th_9408074v2.pdf">PDF</a></p>
-<p class="meta">arXiv: <a href="https://arxiv.org/abs/hep-th/9408074v2">hep-th/9408074v2</a> &middot; Status: in conversion; two entry points plus convert.py/body.tex/converted.tex pending consolidation</p>
-<p><strong>Abstract:</strong> Original file uses TeX and harvmac. Wrote a script to aid conversion from TeX to LaTeX.</p>
+<p class="meta">arXiv: <a href="https://arxiv.org/abs/hep-th/9408074v2">hep-th/9408074v2</a> &middot; Status: done</p>
+<p><strong>Abstract:</strong> By studying the partition function of N = 4 topologically twisted supersymmetric Yang-Mills on four-manifolds, we make an exact strong coupling test of the Montonen-Olive strong-weak duality conjecture. Unexpected and exciting links are found with two-dimensional rational conformal field theory.</p>
 <p>Changes:</p>
 <ul>
-<li>Converted plain-TeX/harvmac source to LaTeX (see readme.md for conversion notes).</li>
-<li>Updated the printed title-page date in both entry points from August to September 1994 (the v2 arXiv date).</li>
+<li>Consolidated the two entry points plus convert.py/body.tex/converted.tex into the single canonical hep-th_9408074v2.tex (plain latexmk -pdf build).</li>
+<li>Converted plain-TeX/harvmac source to LaTeX: sections, equation environments, thebibliography with cite, amsmath constructs (pmatrix/eqalign/over/cr).</li>
+<li>Trimmed the preamble to used packages (amsmath, amssymb, cite, geometry, setspace); added T1 fontenc, lmodern, and hyperref with color links, bookmarks, pagebackref, and PDF metadata. Kept the manual title block and September 1994 date.</li>
+<li>Promoted the fake Generalization heading to subsection-star with bookmark/TOC entry; wrapped math in section titles with texorpdfstring.</li>
+<li>Split the duplicated switten bib key into switten (official [35] text) and switten58 (official [58] text); repointed the 14 later cites; verified against the official PDF.</li>
+<li>Proofreading pass: no textual typos found.</li>
 </ul>
-<p><strong>Warning:</strong> Conversion is lossy in places; see readme.md for known remaining defects.</p>
+<p><strong>Warning:</strong> 78 vs 100 pages: the article layout is denser than harvmac&#x27;s; extracted word counts match (35,723 vs 35,869).</p>
+<p><strong>Warning:</strong> One benign pdfTeX ext4 warning: the titlepage environment ships out two logical page 1s (duplicate ignored).</p>
 <p><a href="./hep-th_9408074v2/readme.md">Conversion notes</a></p>
 </article>
 <article id="paper-math_0103059v4">

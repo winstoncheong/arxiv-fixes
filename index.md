@@ -205,20 +205,25 @@ Changes:
 
 Authors: Cumrun Vafa and Edward Witten
 
-[PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/main.pdf) [PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/hep-th_9408074v2.pdf)
+[PDF](https://winstoncheong.github.io/arxiv-fixes/hep-th_9408074v2/hep-th_9408074v2.pdf)
 
 arXiv: [hep-th/9408074v2](https://arxiv.org/abs/hep-th/9408074v2)
 
-Status: in conversion; two entry points plus convert.py/body.tex/converted.tex pending consolidation
+Status: done
 
-**Abstract:** Original file uses TeX and harvmac. Wrote a script to aid conversion from TeX to LaTeX.
+**Abstract:** By studying the partition function of N = 4 topologically twisted supersymmetric Yang-Mills on four-manifolds, we make an exact strong coupling test of the Montonen-Olive strong-weak duality conjecture. Unexpected and exciting links are found with two-dimensional rational conformal field theory.
 
 Changes:
 
-* Converted plain-TeX/harvmac source to LaTeX (see readme.md for conversion notes).
-* Updated the printed title-page date in both entry points from August to September 1994 (the v2 arXiv date).
+* Consolidated the two entry points plus convert.py/body.tex/converted.tex into the single canonical hep-th_9408074v2.tex (plain latexmk -pdf build).
+* Converted plain-TeX/harvmac source to LaTeX: sections, equation environments, thebibliography with cite, amsmath constructs (pmatrix/eqalign/over/cr).
+* Trimmed the preamble to used packages (amsmath, amssymb, cite, geometry, setspace); added T1 fontenc, lmodern, and hyperref with color links, bookmarks, pagebackref, and PDF metadata. Kept the manual title block and September 1994 date.
+* Promoted the fake Generalization heading to subsection-star with bookmark/TOC entry; wrapped math in section titles with texorpdfstring.
+* Split the duplicated switten bib key into switten (official [35] text) and switten58 (official [58] text); repointed the 14 later cites; verified against the official PDF.
+* Proofreading pass: no textual typos found.
 
-Warning: Conversion is lossy in places; see readme.md for known remaining defects.
+Warning: 78 vs 100 pages: the article layout is denser than harvmac's; extracted word counts match (35,723 vs 35,869).
+Warning: One benign pdfTeX ext4 warning: the titlepage environment ships out two logical page 1s (duplicate ignored).
 
 More info on conversion [here](./hep-th_9408074v2/readme.md)
 

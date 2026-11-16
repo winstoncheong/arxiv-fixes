@@ -14,9 +14,8 @@ live in `<paper>/readme.md`.
 - One directory per paper: arXiv id with `/` → `_`, version appended.
   E.g. `0910.4460v2/`, `alg-geom_9507012v2/`, `hep-th_9402147v2/`.
 - Canonical entry point: `<dirname>.tex` at the directory root.
-  Grandfathered exceptions (don't replicate): `1110.0466v3/dilognotes.tex`,
-  `math_0701269v2/6-1-07cmplx4.tex`, and `hep-th_9408074v2/` (two entry
-  points plus `convert.py`/`body.tex`/`converted.tex` pending consolidation).
+  Grandfathered exceptions (don't replicate): `1110.0466v3/dilognotes.tex`
+  and `math_0701269v2/6-1-07cmplx4.tex`.
 - Beside the entry point live only real inputs: `\include`d/`\input` `.tex`
   files, figures (`.eps`/etc.), a committed `.bbl` when upstream `.bib` is
   absent (e.g. `math_0701269v2/bibcmplx.bbl`), and `readme.md` for lasting

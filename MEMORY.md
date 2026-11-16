@@ -85,7 +85,7 @@ Keep this file short. If an entry grows into a procedure, move the detail to
 - `math/9807049v3` — Hirschowitz–Simpson, *Descente pour les n-champs*.
   Fake `\numero`/`\subnumero` headings, one `eqnarray*`, `\boxtimes` clash.
   Conversion log: [`math_9807049v3/readme.md`](./math_9807049v3/readme.md).
-- `hep-th/9408074v2` — Vafa–Witten, plain TeX/harvmac. Script-assisted
+- `hep-th/9408074v2` — Vafa–Witten, plain TeX/harvmac consolidated to a single LaTeX entry; switten key split per official [35]/[58]. Log: [`hep-th_9408074v2/readme.md`](./hep-th_9408074v2/readme.md).
   conversion; lossy in places. Log:
   [`hep-th_9408074v2/readme.md`](./hep-th_9408074v2/readme.md).
 - `math/0103059v4` — Goncharov, *Multiple polylogarithms and mixed Tate motives*. Plain-TeX \matrix/\cr to `matrix` envs, `epsf` to `graphicx`, `\choose` to `\binom`, `\Bbb` to `\mathbb`, 75 proofs to `amsthm`, 4 duplicate labels fixed with owner approval; manual bracket citations converted to cite with backrefs (thebibliography). Log: [`math_0103059v4/readme.md`](./math_0103059v4/readme.md).
