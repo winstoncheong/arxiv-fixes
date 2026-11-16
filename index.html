@@ -214,8 +214,8 @@ h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Converted all 75 ad-hoc proof heads to amsthm proof environments (plain `Proof` plus `First/Second/Third proof` and `Proof of ...` variants via the optional argument); each closes at the next section, theorem-like environment, or bold head. Two proofs end at section boundaries; none spans a section.</li>
 <li>Replaced obsolete \Bbb with \mathbb (57 active uses; 3 uses inside `%` comments left alone).</li>
 <li>Fixed four duplicate labels (renamed `1.1.01.1-eq`, `12.1.00.2lem`, `2**reg`, `4.22.01.1lem`; repointed the one ref that meant the renamed definition). All refs now resolve to the intended target; each fix was checked against the surrounding prose.</li>
+<li>Converted the manual `itemize` bibliography to `thebibliography` and all bracket citations to \cite (113 singles; ranges `[G0-5]`, `[G0-1]` (x2), `[G3-4]`, `[G6-7]`, `[D2-3]` expanded to key lists; `[Eu]` fixed to `[E]`); `pagebackref` now yields cited-on page lists. Three dangling keys (`[BK]`, `[Ih3]`, `[So]`) have no bib entry and stay literal.</li>
 </ul>
-<p><strong>Warning:</strong> The source has no \cite or thebibliography (manual bracket citations plus an itemize list), so pagebackref has nothing to attach to; the bibliography renders as-is.</p>
 <p><a href="./math_0103059v4/readme.md">Conversion notes</a></p>
 </article>
 <article id="paper-math_0611617v2">

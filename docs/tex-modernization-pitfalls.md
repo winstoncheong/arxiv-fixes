@@ -139,6 +139,7 @@ The relation spacing changes slightly; that is the point. Watch for
   commit the resulting `.bbl` (see `math_0701269v2`).
 - `pagebackref` adds a page list to every entry and therefore makes the
   bibliography longer. Page-count drift is expected.
+- If citations are manual bracket keys (`[G0]`) over a manual `itemize` list, convert both: `itemize` to `thebibliography`, each `item[{[KEY]}]` to `bibitem[KEY]{KEY}`, each prose `[KEY]` to `cite{KEY}`. Expand ranges (`[G0-5]`) to key lists and fix obvious key typos; leave keys with no entry as literal text and record them. Entries need blank lines between them or backref scanning fails (`File ended while scanning \BR@@lbibitem`). Detail: [`math/0103059v4` conversion](../math_0103059v4/readme.md).
 
 ## Hand-written tables of contents
 
