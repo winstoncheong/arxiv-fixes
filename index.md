@@ -63,6 +63,35 @@ Changes:
 * Extended `\preprint{}` to support multiple identifiers.
 * Added the v3 arXiv date (March 27, 2015) to the `\preprint` block (jheppub prints no `\date`).
 
+## alg-geom/9506012v1 - Semiorthogonal decomposition for algebraic varieties
+
+Authors: A. Bondal and D. Orlov
+
+[PDF](https://winstoncheong.github.io/arxiv-fixes/alg-geom_9506012v1/alg-geom_9506012v1.pdf)
+
+arXiv: [alg-geom/9506012v1](https://arxiv.org/abs/alg-geom/9506012v1)
+
+Status: done
+
+**Abstract:** A criterion for a functor between derived categories of coherent sheaves to be full and faithful is given. A semiorthogonal decomposition for the derived category of coherent sheaves on the intersection of two even dimensional quadrics is obtained. The behaviour of derived categories with respect to birational transformations is investigated. A theorem about reconstruction of a variety from the derived category of coherent sheaves is proved.
+
+Changes:
+
+* \documentstyle[12pt]{article} to \documentclass[12pt]{article}; added \usepackage{amsmath,amssymb,amsthm,graphicx}; dropped \input epsf.
+* Converted all 10 \epsffile inclusions (9 direct plus 1 inside the \b/\diagk operator macro) to \includegraphics (EPS auto-converted by epstopdf under pdflatex); kept the surrounding layout.
+* Renamed the \b macro to \diagk: \b redefined the LaTeX accent \b to a 7x7pt figure (k.eps) used as a boxtimes-like binary operator (13 uses, e.g. {\cal O}(-1)\diagk {\cal O}(-1)); the accent form \b{...} is never used, so the rename is behavior-preserving.
+* Converted the 34 custom \th{Type}...\eth theorem heads to amsthm environments (theorem, lemma, proposition, definition sharing one counter via [theorem], matching the single THNO counter; numbering verified identical to the official PDF, e.g. Theorem 1.1, Theorem 2.6, Theorem 4.5).
+* Converted all 23 ad-hoc \pr proof heads to amsthm proof environments, each closed before the trailing body text that introduces the next result (proofs at original lines 242, 647, 730, 898, 1015, 1050, 1317, 1427, 1640, 1863, 1967, 1997, 2032, 2090 all have body text after the proof; the proof at 1088 runs through the unlabeled lemma to the end of the Theorem qdq argument).
+* Converted 3 eqnarray environments (fib, res, R) to align; one \nonumber became \notag.
+* Added T1 fontenc and lmodern (the approved default), plus hyperref with color links, bookmarks, and pagebackref loaded last, with PDF title and author metadata.
+* Pinned the visible title date to the v1 arXiv date June 19, 1995 (was March 6, 1995).
+* Fixed 5 textual typos: horisontal to horizontal, rises to arises, convinient to convenient, detals to details, Repeting to Repeating.
+* Fixed the duplicate \label{inv} (Lemma inv and Definition inv): renamed the definition's label to invdef; the single \ref{inv} means the lemma, so no ref changed target.
+* Separated consecutive \bibitem entries with blank lines (pagebackref scans each entry up to the next \par; without them the build fatals in \BR@@lbibitem).
+* Normalized {\section {X}} to \section{X} (3 occurrences); kept section-title punctuation and the manual title block as-is.
+
+More info on conversion [here](./alg-geom_9506012v1/readme.md)
+
 ## alg-geom/9507012v2 - Heisenberg Algebra and Hilbert Schemes on Projective Surfaces
 
 Authors: Hiraku Nakajima
@@ -101,6 +130,42 @@ Changes:
 * Corrected title date to the v1 arXiv date (`\date{January 15, 1996}`; was January 13).
 
 Warning: In the original paper, the sections were unnumbered. This is also the case with the published version.
+
+## alg-geom/9606016v1 - Recent developments in toric geometry
+
+Authors: David A. Cox
+
+[PDF](https://winstoncheong.github.io/arxiv-fixes/alg-geom_9606016v1/alg-geom_9606016v1.pdf)
+
+arXiv: [alg-geom/9606016v1](https://arxiv.org/abs/alg-geom/9606016v1)
+
+Status: done
+
+**Abstract:** This paper will appear in the Proceedings of the 1995 Santa Cruz Summer Institute. The paper is a survey of recent developments in the theory of toric varieties, including new constructions of toric varieties and relations to symplectic geometry, combinatorics and mirror symmetry.
+
+Changes:
+
+* Converted AMSTeX (\input amstex + \documentstyle{amsppt}) to \documentclass{amsart} LaTeX: preamble, topmatter (\title/\author/\address/\email/\subjclass/abstract/\thanks), and structure.
+* Mapped \head X\endhead to \section{X} (stripping manual \S1.--\S11. numbers so LaTeX numbering matches), \subhead X\endsubhead to \subsection{X}; unnumbered Introduction and Conclusion kept as \section* (amsart lists them in the TOC automatically).
+* Added \tableofcontents (original had no TOC).
+* Mapped \proclaim{Theorem/Proposition/Lemma/Conjecture N} to numbered theorem/proposition/lemma/conjecture environments sharing one [section] counter (original numbering 2.1--9.3 reproduced exactly) and \demo{Proof}/{Example(s)}/{Remarks...} to proof/example/remark environments.
+* Mapped \roster items to itemize.
+* Converted \Refs/\ref\key entries to thebibliography with alpha-style \bibitem[KEY]{KEY} labels; \bysame rendered as an em dash; Hu entry's \moreref carried as an Erratum note.
+* Split citation ranges into individual keys (\cite{BB1--3} to \cite{BB1,BB2,BB3}, likewise BB2-3, Mor1--3, Mor2-3, HLY1-2) and moved {\rm, ...} note text outside the citation (e.g. \cite{Oda1}, Sect.~2.4).
+* Mapped \cite{GKZ} (book-chapter references) to the GKZ book entry GKZ1.
+* Fixed obvious key typos: \cite{KMMS} to \cite{KKMS} (letters match the Kempf-Knudsen-Mumford-Saint-Donat toroidal-embeddings entry).
+* Added missing bibliography entry GMS: B. Greene, D. Morrison and A. Strominger, Black hole condensation and the unification of string vacua, Nucl. Phys. B451 (1995), 109--120, for the conifold-transition discussion that cited an absent key.
+* Renamed citation key W\l o to ASCII Wlo (LaTeX \bibcite cannot contain the \l control sequence); the printed label keeps the original [W\l o] form.
+* Converted $$...$$ displays to \[...\], equation (manual \tag preserved verbatim with added \label{eq:...}), align*/aligned/cases environments; \thetag{X} to \eqref{eq:X}.
+* Replaced AMSTeX font switches {\Bbb X}, {\frak g}, \Cal{...}, \bold{...}, \roman{...} with \mathbb/\mathfrak/\mathcal/\mathbf/\mathrm; {\hbox{\smc lt}} with \text{\textsc{lt}}.
+* Wrapped math in the four $\mathcal{A}$- subsection titles with \texorpdfstring.
+* Added hyperref with color links and pagebackref plus PDF title/author metadata; pinned \date{June 25, 1996} to the v1 arXiv date and used \subjclass[1991]{Primary 14M25}.
+* Fixed clear textual typos from the source: 'simplical' to 'simplicial', 'the the Picard number' to 'the Picard number', 'homogenous' to 'homogeneous' (Alt2), 'integerals' to 'integrals' (GKZ2), 'Torodial' to 'Toroidal' (KKMS).
+
+Warning: Entry SI (Lefschetz fixed point theorem and lattice points in convex polytopes) has no author in the arXiv source; the bibliography entry is authorless rather than guessed.
+Warning: Tagged-equation PDF destinations collide (hyperref reports duplicate 'equation.1' anchors with manual \tag); the \eqref links themselves resolve to distinct targets, verified in the .aux.
+
+More info on conversion [here](./alg-geom_9606016v1/readme.md)
 
 ## hep-th/9402147v2 - Gromov-Witten classes, quantum cohomology, and enumerative geometry
 

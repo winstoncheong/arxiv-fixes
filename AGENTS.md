@@ -170,6 +170,17 @@ obvious.
   (single matching artifact extracts with no per-artifact directory), and
   recursively-nested layouts.
 
+## Parallel paper work (worktrees)
+
+- One worktree per paper conversion, branched from `master`
+  (e.g. `agent/alg-geom-9506012`), so parallel subagents never share a
+  working tree, build, or index run.
+- Each worktree owns only its own `<paper>/` directory. Index
+  regeneration (`generate_index.py`) and the merge happen in the main
+  checkout after all worktrees land, not inside the worktrees.
+- This repo has no git submodules, so no submodule init is needed in new
+  worktrees.
+
 ## Adding a new paper (workflow)
 
 1. `curl -sL https://arxiv.org/src/<id> -o <id>.tar.gz`, extract, inspect.

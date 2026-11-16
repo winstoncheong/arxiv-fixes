@@ -63,6 +63,10 @@ Keep this file short. If an entry grows into a procedure, move the detail to
 - **`pagebackref` lengthens the bibliography** (each entry gains a page
   list), so total page count can grow even when the body shrinks. Compare
   against the official arXiv PDF and expect a few pages of drift.
+- **`pagebackref` needs blank lines between `\bibitem`s** (it scans each
+  entry to the next `\par`); missing ones fatal with `File ended while
+  scanning`. Detail:
+  [`docs/tex-modernization-pitfalls.md`](./docs/tex-modernization-pitfalls.md).
 - **Old arXiv e-prints may be a single gzipped `.tex`**, not a tarball. Run
   `file` on the download before extracting.
 - **T1 + `lmodern` are the default** (approved 2026-10-29): add
@@ -90,6 +94,14 @@ Keep this file short. If an entry grows into a procedure, move the detail to
   See `paper.json` and `AGENTS.md`.
 - `1110.0466v3` — outdated `JHEP3` class replaced by `jheppub`; shared style
   file declared in `common/`. See `paper.json`.
+- `alg-geom/9506012v1` — Bondal–Orlov. LaTeX 2.09 + `epsf`, custom
+  `\th`/`\eth` theorem macro over a single counter, 23 ad-hoc proofs,
+  `\b`-accent macro redefined as a figure operator. Log:
+  [`alg-geom_9506012v1/readme.md`](./alg-geom_9506012v1/readme.md).
+- `alg-geom/9606016v1` — Cox toric survey. AMSTeX `amsppt` → `amsart`
+  conversion (precedent: `hep-th/9402147`, `hep-th/9405035`); missing `GMS`
+  bibliography entry reconstructed, transposed `KMMS` key fixed. Log:
+  [`alg-geom_9606016v1/readme.md`](./alg-geom_9606016v1/readme.md).
 
 ## Tooling
 
