@@ -123,6 +123,6 @@ print(len(d.get_toc()))
   That header is preserved; the mathematical content was not independently
   checked.
 
-See [`../MEMORIES.md`](../MEMORIES.md) and
+See [`../MEMORY.md`](../MEMORY.md) and
 [`../docs/tex-modernization-pitfalls.md`](../docs/tex-modernization-pitfalls.md)
 for the general lessons from this conversion.
