@@ -51,12 +51,11 @@ history. Conversion ran in two stages:
 - Kept `\numberwithin{equation}{section}`: matches the official
   PDF's `(1.1)` numbering.
 - Bibliography: the two `\switten` definitions shared one key, so
-  the script merged them and dropped the second text. Split back
-  into two entries — `switten` (line-451 text = official [35]) and
-  `switten58` (line-3814 text = official [58]) — and repointed the
-  14 later `\cite{switten}` uses to `switten58`; the defining use
-  (Donaldson-theory sentence) keeps `[35]`. Verified against the
-  official PDF's citation contexts.
+  the script merged them and dropped the second text. Treated as a typo for a single work:
+  one entry keeps the correct title (`Supersymmetric Yang-Mills Theory On A
+  Four-Manifold`, IASSNS-HEP-94/5 = arXiv:hep-th/9403195); the official [58] variant
+  (`Supersymmetry ...`) is the same preprint misspelled. All 15 cites point at the one
+  entry, so numbering downstream differs from the official PDF by one.
 - Proofreading pass over comment-stripped prose: no textual typos,
   doubled punctuation, or spacing slips found.
 

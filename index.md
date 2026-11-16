@@ -219,11 +219,12 @@ Changes:
 * Converted plain-TeX/harvmac source to LaTeX: sections, equation environments, thebibliography with cite, amsmath constructs (pmatrix/eqalign/over/cr).
 * Trimmed the preamble to used packages (amsmath, amssymb, cite, geometry, setspace); added T1 fontenc, lmodern, and hyperref with color links, bookmarks, pagebackref, and PDF metadata. Kept the manual title block and September 1994 date.
 * Promoted the fake Generalization heading to subsection-star with bookmark/TOC entry; wrapped math in section titles with texorpdfstring.
-* Split the duplicated switten bib key into switten (official [35] text) and switten58 (official [58] text); repointed the 14 later cites; verified against the official PDF.
+* Collapsed the duplicated switten bib key to a single entry with the correct title (`Supersymmetric Yang-Mills Theory On A Four-Manifold`, arXiv:hep-th/9403195): official [58] (`Supersymmetry ...`) is a typo for the same preprint. Numbering downstream differs from the official PDF.
 * Proofreading pass: no textual typos found.
 
 Warning: 78 vs 100 pages: the article layout is denser than harvmac's; extracted word counts match (35,723 vs 35,869).
 Warning: One benign pdfTeX ext4 warning: the titlepage environment ships out two logical page 1s (duplicate ignored).
+Warning: Bibliography numbering differs from the official PDF around the former [35]/[58] duplicate: collapsed to one entry (see Changes).
 
 More info on conversion [here](./hep-th_9408074v2/readme.md)
 
