@@ -60,7 +60,7 @@ h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <div class="layout">
 <nav class="sidebar" aria-label="Articles">
 <h2>Articles</h2>
-<p class="count">12 papers</p>
+<p class="count">13 papers</p>
 <ul>
 <li><a href="#paper-0905.0462v2" title="(Infinity,2)-Categories and the Goodwillie Calculus I"><span class="sid">0905.0462v2</span><span class="stitle">(Infinity,2)-Categories and the Goodwillie Calculus…</span></a></li>
 <li><a href="#paper-0910.4460v2" title="Lectures on canonical and crystal bases of Hall algebras"><span class="sid">0910.4460v2</span><span class="stitle">Lectures on canonical and crystal bases of Hall…</span></a></li>
@@ -70,6 +70,7 @@ h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li><a href="#paper-hep-th_9402147v2" title="Gromov-Witten classes, quantum cohomology, and enumerative geometry"><span class="sid">hep-th/9402147v2</span><span class="stitle">Gromov-Witten classes, quantum cohomology, and…</span></a></li>
 <li><a href="#paper-hep-th_9405035v2" title="Enumeration of rational curves via torus actions"><span class="sid">hep-th/9405035v2</span><span class="stitle">Enumeration of rational curves via torus actions</span></a></li>
 <li><a href="#paper-hep-th_9408074v2" title="A strong coupling test of S-duality"><span class="sid">hep-th/9408074v2</span><span class="stitle">A strong coupling test of S-duality</span></a></li>
+<li><a href="#paper-math_0103059v4" title="Multiple polylogarithms and mixed Tate motives"><span class="sid">math/0103059v4</span><span class="stitle">Multiple polylogarithms and mixed Tate motives</span></a></li>
 <li><a href="#paper-math_0611617v2" title="Lectures on Hall Algebras"><span class="sid">math/0611617v2</span><span class="stitle">Lectures on Hall Algebras</span></a></li>
 <li><a href="#paper-math_0701269v2" title="The number of smooth 4-manifolds with a fixed complexity"><span class="sid">math/0701269v2</span><span class="stitle">The number of smooth 4-manifolds with a fixed…</span></a></li>
 <li><a href="#paper-math_9807049v3" title="Descente pour les n-champs (Descent for n-stacks)"><span class="sid">math/9807049v3</span><span class="stitle">Descente pour les n-champs (Descent for n-stacks)</span></a></li>
@@ -192,6 +193,30 @@ h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 </ul>
 <p><strong>Warning:</strong> Conversion is lossy in places; see readme.md for known remaining defects.</p>
 <p><a href="./hep-th_9408074v2/readme.md">Conversion notes</a></p>
+</article>
+<article id="paper-math_0103059v4">
+<h2>math/0103059v4 &ndash; Multiple polylogarithms and mixed Tate motives</h2>
+<p class="meta">A. B. Goncharov</p>
+<p><a href="https://winstoncheong.github.io/arxiv-fixes/math_0103059v4/math_0103059v4.pdf">PDF</a></p>
+<p class="meta">arXiv: <a href="https://arxiv.org/abs/math/0103059v4">math/0103059v4</a> &middot; Status: builds locally; first CI candidate</p>
+<p><strong>Abstract:</strong> We develop the theory of multiple polylogarithms from analytic, Hodge and motivic point of view. Define the category of mixed Tate motives over a ring of integers in a number field. Describe explicitly the multiple polylogarithm Hopf algebra.</p>
+<p>Changes:</p>
+<ul>
+<li>\documentstyle to \documentclass; \input amssymb.sty to \usepackage{amsmath,amssymb,amsthm,graphicx}; dropped \input epsf.</li>
+<li>Converted three plain-TeX \matrix blocks to \begin{matrix} environments (amsmath rejects the old form).</li>
+<li>Converted 13 \epsffile inclusions to \includegraphics (EPS auto-converted by epstopdf under pdflatex).</li>
+<li>Added T1 fontenc and lmodern (the approved default), plus hyperref with color links, bookmarks, and pagebackref, with PDF title and author metadata.</li>
+<li>Wrapped the S in the section-3 title with \texorpdfstring so the PDF bookmarks are clean (zero Token warnings).</li>
+<li>Promoted the manual REFERENCES head to \section*{REFERENCES} with a bookmark and TOC entry (numbering unchanged).</li>
+<li>Pinned title date to the v4 arXiv date (\date{May 15, 2001}) instead of the empty \date{}.</li>
+<li>Fixed two text typos (filed to field) and bibliographic typos: Deligne title group to groupe, moine to moins; Kummer Uber to \&quot;Uber and Transcendeten to Transcendenten; Lappo-Danilevsky accents; Kreimer Renotmalisation to Renormalisation; Drinfeld clousely to closely; Woitkowiyak to Wojtkowiak (2x); Matsumoto M-double-dot to M-single-dot; Shiho A-double-dot to A-single-dot.</li>
+<li>Converted plain-TeX \choose (16 uses) to \binom (identical output; removes the amsmath compat warning; 2 uses in comments left alone).</li>
+<li>Converted all 75 ad-hoc proof heads to amsthm proof environments (plain `Proof` plus `First/Second/Third proof` and `Proof of ...` variants via the optional argument); each closes at the next section, theorem-like environment, or bold head. Two proofs end at section boundaries; none spans a section.</li>
+<li>Replaced obsolete \Bbb with \mathbb (57 active uses; 3 uses inside `%` comments left alone).</li>
+<li>Fixed four duplicate labels (renamed `1.1.01.1-eq`, `12.1.00.2lem`, `2**reg`, `4.22.01.1lem`; repointed the one ref that meant the renamed definition). All refs now resolve to the intended target; each fix was checked against the surrounding prose.</li>
+</ul>
+<p><strong>Warning:</strong> The source has no \cite or thebibliography (manual bracket citations plus an itemize list), so pagebackref has nothing to attach to; the bibliography renders as-is.</p>
+<p><a href="./math_0103059v4/readme.md">Conversion notes</a></p>
 </article>
 <article id="paper-math_0611617v2">
 <h2>math/0611617v2 &ndash; Lectures on Hall Algebras</h2>

@@ -157,6 +157,37 @@ Warning: Conversion is lossy in places; see readme.md for known remaining defect
 
 More info on conversion [here](./hep-th_9408074v2/readme.md)
 
+## math/0103059v4 - Multiple polylogarithms and mixed Tate motives
+
+Authors: A. B. Goncharov
+
+[PDF](https://winstoncheong.github.io/arxiv-fixes/math_0103059v4/math_0103059v4.pdf)
+
+arXiv: [math/0103059v4](https://arxiv.org/abs/math/0103059v4)
+
+Status: builds locally; first CI candidate
+
+**Abstract:** We develop the theory of multiple polylogarithms from analytic, Hodge and motivic point of view. Define the category of mixed Tate motives over a ring of integers in a number field. Describe explicitly the multiple polylogarithm Hopf algebra.
+
+Changes:
+
+* \documentstyle to \documentclass; \input amssymb.sty to \usepackage{amsmath,amssymb,amsthm,graphicx}; dropped \input epsf.
+* Converted three plain-TeX \matrix blocks to \begin{matrix} environments (amsmath rejects the old form).
+* Converted 13 \epsffile inclusions to \includegraphics (EPS auto-converted by epstopdf under pdflatex).
+* Added T1 fontenc and lmodern (the approved default), plus hyperref with color links, bookmarks, and pagebackref, with PDF title and author metadata.
+* Wrapped the S in the section-3 title with \texorpdfstring so the PDF bookmarks are clean (zero Token warnings).
+* Promoted the manual REFERENCES head to \section*{REFERENCES} with a bookmark and TOC entry (numbering unchanged).
+* Pinned title date to the v4 arXiv date (\date{May 15, 2001}) instead of the empty \date{}.
+* Fixed two text typos (filed to field) and bibliographic typos: Deligne title group to groupe, moine to moins; Kummer Uber to \"Uber and Transcendeten to Transcendenten; Lappo-Danilevsky accents; Kreimer Renotmalisation to Renormalisation; Drinfeld clousely to closely; Woitkowiyak to Wojtkowiak (2x); Matsumoto M-double-dot to M-single-dot; Shiho A-double-dot to A-single-dot.
+* Converted plain-TeX \choose (16 uses) to \binom (identical output; removes the amsmath compat warning; 2 uses in comments left alone).
+* Converted all 75 ad-hoc proof heads to amsthm proof environments (plain `Proof` plus `First/Second/Third proof` and `Proof of ...` variants via the optional argument); each closes at the next section, theorem-like environment, or bold head. Two proofs end at section boundaries; none spans a section.
+* Replaced obsolete \Bbb with \mathbb (57 active uses; 3 uses inside `%` comments left alone).
+* Fixed four duplicate labels (renamed `1.1.01.1-eq`, `12.1.00.2lem`, `2**reg`, `4.22.01.1lem`; repointed the one ref that meant the renamed definition). All refs now resolve to the intended target; each fix was checked against the surrounding prose.
+
+Warning: The source has no \cite or thebibliography (manual bracket citations plus an itemize list), so pagebackref has nothing to attach to; the bibliography renders as-is.
+
+More info on conversion [here](./math_0103059v4/readme.md)
+
 ## math/0611617v2 - Lectures on Hall Algebras
 
 Authors: Olivier Schiffmann
