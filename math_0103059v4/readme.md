@@ -14,9 +14,10 @@ tar xzf src   # mp.tex + 13 .eps figures
 
 LaTeX 2.09: `\documentstyle[10pt]{article}` with `\input amssymb.sty` and
 `\input epsf`. Seven real `\section`s plus `\tableofcontents`; 198 `equation`
-environments; 284 `\label`s; no `\cite` (citations are manual bracket keys
-like [G0-5], bibliography is a 55-item `itemize` list, so there is no `.bbl`
-to reconstruct). Proofs are ad-hoc `{\bf Proof}.` paragraphs. Figures are
+environments; 284 `\label`s; citations were manual bracket keys
+like [G0-5] over a 55-item `itemize` bibliography (converted to
+`thebibliography` + `\cite`, see Changes). Proofs are now `amsthm`
+`proof` environments (converted from ad-hoc `{\bf Proof}.` paragraphs). Figures are
 13 EPS files included with `\epsffile`.
 
 ## Changes
@@ -30,6 +31,7 @@ to reconstruct). Proofs are ad-hoc `{\bf Proof}.` paragraphs. Figures are
   `amsmath` rejects the old form. `\cr` occurred only inside these three
   blocks (11 uses), so the conversion is contained.
 - Converted plain-TeX `\choose` (16 uses) to `\binom` (identical output; removes the `amsmath` compat warning; 2 uses in comments left alone).
+- Converted the manual `itemize` bibliography (55 entries) to a `thebibliography` environment (`\bibitem[KEY]{KEY}` per entry) and all bracket citations to `\cite` commands (113 singles; ranges `[G0-5]`, `[G0-1]` (x2), `[G3-4]`, `[G6-7]`, `[D2-3]` expanded to explicit key lists). `pagebackref` now produces cited-on page lists. Three dangling keys with no bib entry (`[BK]`, `[Ih3]`, `[So]`) stay literal; `[Eu]` (Euler correspondence) cites the Euler entry `[E]`.
 - Converted all 13 `\epsffile{...}` inclusions to `\includegraphics{...}`
   (`epsf` specials do not embed under `pdflatex`; `epstopdf` converts
   automatically under `latexmk -pdf`).
@@ -96,7 +98,6 @@ grep -c 'Token not allowed' math_0103059v4.log   # 0
 pdfinfo math_0103059v4.pdf | grep Pages          # 85
 ```
 
-The log's only content warnings are the 4 multiply-defined labels above (plus
 The log is fully clean: zero errors, zero undefined refs, zero `Token not allowed` warnings, zero multiply-defined labels, and none of the old `amsfonts`/`amsmath` compat notes.
 
 The official arXiv PDF has 82 pages and no bookmarks; this build has 85 pages
@@ -112,9 +113,10 @@ last bibliography page. All 13 EPS figures convert and embed
 - Section TOC/outline page numbers run +1/+2 ahead of the official PDF (date
   line, T1/lmodern metrics, plus `amsthm` proof spacing and QED boxes); the total is 85 pages vs 82 official.
 - `REFERENCES` appears in the TOC and bookmarks (new entry, no number).
+- Citations render as colored hyperlinks with cited-on page lists in the bibliography. The five source ranges (`[G0-5]`, `[G0-1]` x2, `[G3-4]`, `[G6-7]`, `[D2-3]`) print expanded (`[G0, G1, ...]`), and the `[Eu]` typo cites `[E]`. `[BK]`, `[Ih3]`, `[So]` have no bib entry and stay literal text.
 - Accented French/German in the bibliography now renders with proper glyphs
   (e.g. Über, Résolution, réguliers); text extraction is clean T1.
 
-See [`../MEMORIES.md`](../MEMORIES.md) and
+See [`../MEMORY.md`](../MEMORY.md) and
 [`../docs/tex-modernization-pitfalls.md`](../docs/tex-modernization-pitfalls.md)
 for the general lessons from this conversion.
