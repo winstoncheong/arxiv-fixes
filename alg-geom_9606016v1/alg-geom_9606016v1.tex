@@ -22,6 +22,7 @@
 % \NoBlackBoxes
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{tikz-cd}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[colorlinks,allcolors=blue,pagebackref]{hyperref}
@@ -324,9 +325,9 @@ where $A_{n-1}(X)$ is the Chow group of Weil divisors modulo rational
 equivalence.  To see how this group acts on $\mathbb{C}^{\Sigma(1)} -
 Z(\Sigma)$, recall the exact sequence
 \begin{equation}
-0 \longrightarrow M \overset\alpha\to\longrightarrow \bigoplus_{\rho
-\in \Sigma(1)}\mathbb{Z}\cdot D_\rho \overset\beta\to\longrightarrow
-A_{n-1}(X) \longrightarrow 0
+\begin{tikzcd}
+0 \arrow[r] & M \arrow[r, "\alpha"] & {\bigoplus_{\rho \in \Sigma(1)}\mathbb{Z}\cdot D_\rho} \arrow[r, "\beta"] & A_{n-1}(X) \arrow[r] & 0
+\end{tikzcd}
 \tag{2.2}\label{eq:2.2}
 \end{equation}
 where $\alpha$ sends $m \in M$ to $\mathrm{div}(\chi^m) = \sum_\rho
@@ -350,8 +351,9 @@ x_0,\ldots,x_n\rangle$, so that the exceptional set $Z(\Sigma)$
 consists of the origin.  Furthermore, the exact sequence \eqref{eq:2.2}
 becomes
 \[
-0 \longrightarrow \mathbb{Z}^n \longrightarrow \mathbb{Z}^{n+1}
-\overset\beta\to\longrightarrow \mathbb{Z} \longrightarrow 0,
+\begin{tikzcd}
+0 \arrow[r] & \mathbb{Z}^n \arrow[r] & \mathbb{Z}^{n+1} \arrow[r, "\beta"] & \mathbb{Z} \arrow[r] & 0,
+\end{tikzcd}
 \]
 where $\beta(a_0,\ldots,a_n) = \sum_{i=0}^n a_i$.  By
 \eqref{eq:2.3}, the action of $G$ on $\mathbb{C}^{\Sigma(1)}
@@ -656,8 +658,9 @@ a_0 + a_1 + a_3&> 0.
 \eqref{eq:3.1} in terms of the Chow group $A_2(X_1)\otimes\mathbb{R}$.
 However, for $X_1$, the exact sequence \eqref{eq:2.2} can be written
 \begin{equation}
-0 \longrightarrow \mathbb{Z}^3 \overset\alpha\to\longrightarrow \mathbb{Z}^5 \overset\beta\to\longrightarrow \mathbb{Z}^2 \longrightarrow
-0,
+\begin{tikzcd}
+0 \arrow[r] & \mathbb{Z}^3 \arrow[r, "\alpha"] & \mathbb{Z}^5 \arrow[r, "\beta"] & \mathbb{Z}^2 \arrow[r] & 0,
+\end{tikzcd}
 \tag{3.2}\label{eq:3.2}
 \end{equation}
 where $\beta$ maps $(a_0,a_1,a_2,a_3,a_4)$ to $(s,t) =
@@ -711,18 +714,20 @@ G_{\mathbb{R}} = \mathrm{Hom}_{\mathbb{Z}}(A_{n-1}(X),S^1).
 \end{equation}
 The inclusion $G \subset (\mathbb{C}^*)^r$ gives an action of $G_{\mathbb{R}}$ on $\mathbb{C}^r$.
 
-	Now consider the map (called the {\it moment map\/}) 
+	Now consider the map $\mu_\Sigma$ (called the {\it moment map\/})
 \begin{equation}
-\mu_\Sigma : \mathbb{C}^r \overset\mu\to\longrightarrow \mathbb{R}^r
-@> {\beta_{\mathbb{R}}} >> A_{n-1}(X)\otimes\mathbb{R},
+\begin{tikzcd}
+\mathbb{C}^r \arrow[r, "\mu"] \arrow[rr, "\mu_\Sigma"', bend right] & \mathbb{R}^r \arrow[r, "\beta_{\mathbb{R}}"] & A_{n-1}(X)\otimes\mathbb{R},
+\end{tikzcd}
 \tag{4.2}\label{eq:4.2}
 \end{equation}
 where $\mu$ defined by $\mu(z_1,\dots,z_r) = \frac{1}{2}
 (|z_1|^2,\dots,|z_r|^2)$ and $\beta_{\mathbb{R}}$ comes from
 the exact sequence
 \[
-0 \longrightarrow M_{\mathbb{R}} \longrightarrow \mathbb{R}^r @>
-{\beta_{\mathbb{R}}} >> A_{n-1}(X)\otimes\mathbb{R} \longrightarrow 0
+\begin{tikzcd}
+0 \arrow[r] & M_{\mathbb{R}} \arrow[r] & \mathbb{R}^r \arrow[r, "\beta_{\mathbb{R}}"] & A_{n-1}(X)\otimes\mathbb{R} \arrow[r] & 0
+\end{tikzcd}
 \]
 obtained by tensoring \eqref{eq:2.2} with $\mathbb{R}$.  Note that
 $\mu_\Sigma$ is constant on $G_{\mathbb{R}}$-orbits.
@@ -1528,10 +1533,9 @@ is a natural isomorphism
 \]
 when $p \ne n/2-1$, and for $p = n/2-1$, we have an exact sequence
 \[
-\qquad 0 \to H^{n-2}(X)
-\overset{\cup[Y]}\to\longrightarrow H^{n}(X) \to
-(S/J(F))_{(n/2+1)\beta-\beta_0}\to
-H^{n/2-1,n/2}_0(Y)\to 0.
+\begin{tikzcd}[column sep=small]
+0 \arrow[r] & H^{n-2}(X) \arrow[r, "{\cup[Y]}"] & H^{n}(X) \arrow[r] & (S/J(F))_{(n/2+1)\beta-\beta_0} \arrow[r] & H^{n/2-1,n/2}_0(Y) \arrow[r] & 0.
+\end{tikzcd}
 \]
 \end{theorem}
 
@@ -1542,10 +1546,9 @@ The basic idea is similar to Theorem~6.1: a homogeneous polynomial $G
 lies in $H_0^{n-1-p}(Y)$ (see \cite{BC} for a precise description).
 The complication in the case $p=n/2-1$ comes from the exact sequence
 \[
-0 \to H^{n-2}(X)
-\overset{\cup[Y]}\to\longrightarrow H^{n}(X) \to
-H^n(X-Y) \to
-H^{n-1}_0(Y)\to 0.
+\begin{tikzcd}[column sep=small]
+0 \arrow[r] & H^{n-2}(X) \arrow[r, "{\cup[Y]}"] & H^{n}(X) \arrow[r] & H^n(X-Y) \arrow[r] & H^{n-1}_0(Y) \arrow[r] & 0.
+\end{tikzcd}
 \]
 When $X$ is projective space (or even a weighted projective space),
 the sequence implies $H^n(X-Y) \simeq H^{n-1}_0(Y)$, but this can fail
@@ -1726,9 +1729,9 @@ $\mathcal{B}$.
 
 	Given $\mathcal{B}$, we define $A_{\mathcal{B}} \simeq \mathbb{R}^{|\mathcal{B}|-n}$ by the exact sequence
 \begin{equation}
-0 \longrightarrow M_\mathbb{R} \overset\alpha\to\longrightarrow
-{\textstyle{\bigoplus_{\rho \in \mathcal{B}}}}\mathbb{R}\cdot e_\rho
-\overset\beta\to\longrightarrow A_{\mathcal{B}} \longrightarrow 0,
+\begin{tikzcd}
+0 \arrow[r] & M_\mathbb{R} \arrow[r, "\alpha"] & {\textstyle{\bigoplus_{\rho \in \mathcal{B}}}}\mathbb{R}\cdot e_\rho \arrow[r, "\beta"] & A_{\mathcal{B}} \arrow[r] & 0,
+\end{tikzcd}
 \tag{7.1}\label{eq:7.1}
 \end{equation}
 where $\alpha(m) = \sum_{\rho\in\mathcal{B}} \langle m,\rho\rangle
@@ -1838,10 +1841,9 @@ of the Gale transform.  From $\mathcal{A}$, we get the set
 $\mathcal{A}\times\{1\} \subset N_\mathbb{R}\otimes\mathbb{R}$, and as in
 \eqref{eq:7.1}, we can construct an exact sequence
 \begin{equation}
-0 \longrightarrow M_\mathbb{R}\oplus\mathbb{R}
-\overset\alpha\to\longrightarrow {\bigoplus_{u \in
-\mathcal{A}}} \mathbb{R}\cdot e_u 
-\overset\beta\to\longrightarrow A_{\mathcal{A}} \longrightarrow 0,
+\begin{tikzcd}
+0 \arrow[r] & M_\mathbb{R}\oplus\mathbb{R} \arrow[r, "\alpha"] & {\bigoplus_{u \in \mathcal{A}}} \mathbb{R}\cdot e_u \arrow[r, "\beta"] & A_{\mathcal{A}} \arrow[r] & 0,
+\end{tikzcd}
 \tag{7.3}\label{eq:7.3}
 \end{equation}
 where $\alpha(m,\lambda) = \sum_{u\in \mathcal{A}} (\langle m,u\rangle +
@@ -2766,8 +2768,9 @@ x_3,\zeta^{a_4} x_4)$ for $\zeta = \exp(2\pi i/5)$.
 graded by the Chow group $A_3(X_{\Delta^\circ})$.  From \eqref{eq:2.2},
 we get
 \[
-0 \longrightarrow \mathbb{Z}^4 \overset\alpha\to\longrightarrow \mathbb{Z}^5 \overset\beta\to\longrightarrow \mathbb{Z}\oplus H \longrightarrow
-0,
+\begin{tikzcd}
+0 \arrow[r] & \mathbb{Z}^4 \arrow[r, "\alpha"] & \mathbb{Z}^5 \arrow[r, "\beta"] & \mathbb{Z}\oplus H \arrow[r] & 0,
+\end{tikzcd}
 \]
 where $\alpha$ is as usual and $\beta$ is given by
 \[

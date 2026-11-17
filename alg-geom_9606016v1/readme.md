@@ -37,6 +37,17 @@ with manual `\tag`s, 149-entry bibliography, 321 citations.
   `\mathbf`, `{\frak g}` → `\mathfrak`, `\roman` → `\mathrm`,
   `{\hbox{\smc lt}}` (also split across lines) → `\text{\textsc{lt}}`.
 - Four `$\mathcal{A}$-…` subsection titles wrapped in `\texorpdfstring`.
+- The two AMSTeX `\CD` remnants (`@> {\beta_{\mathbb{R}}} >>` in (4.2) and
+  the exact sequence below it, which rendered literally as `@>`) are now
+  `tikz-cd` diagrams (`\usepackage{tikz-cd}`); (4.2) shows
+  `\mathbb{C}^r \to \mathbb{R}^r \to A_{n-1}(X)\otimes\mathbb{R}` with a
+  bent `\mu_\Sigma` arrow for the composite. The introducing sentence now
+  names `$\mu_\Sigma$` explicitly.
+- The `\overset\alpha\to\longrightarrow` / `\overset\beta\to\longrightarrow`
+  double-arrow hacks in (7.1) and (7.3) are now `tikz-cd` labeled arrows.
+- All remaining `\overset` hacks likewise converted: (2.2), the unnumbered
+  P^n sequence, (3.2), the two `\cup[Y]` sequences in Theorem 6.3, and the
+  `\mathbb{Z}^4\to\mathbb{Z}^5\to\mathbb{Z}\oplus H` sequence in §10.
 
 ## Bibliography notes
 

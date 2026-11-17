@@ -18,7 +18,11 @@
     "Replaced AMSTeX font switches {\\Bbb X}, {\\frak g}, \\Cal{...}, \\bold{...}, \\roman{...} with \\mathbb/\\mathfrak/\\mathcal/\\mathbf/\\mathrm; {\\hbox{\\smc lt}} with \\text{\\textsc{lt}}.",
     "Wrapped math in the four $\\mathcal{A}$- subsection titles with \\texorpdfstring.",
     "Added hyperref with color links and pagebackref plus PDF title/author metadata; pinned \\date{June 25, 1996} to the v1 arXiv date and used \\subjclass[1991]{Primary 14M25}.",
-    "Fixed clear textual typos from the source: 'simplical' to 'simplicial', 'the the Picard number' to 'the Picard number', 'homogenous' to 'homogeneous' (Alt2), 'integerals' to 'integrals' (GKZ2), 'Torodial' to 'Toroidal' (KKMS)."
+    "Fixed clear textual typos from the source: 'simplical' to 'simplicial', 'the the Picard number' to 'the Picard number', 'homogenous' to 'homogeneous' (Alt2), 'integerals' to 'integrals' (GKZ2), 'Torodial' to 'Toroidal' (KKMS).",
+    "Converted the two remaining AMSTeX CD arrow chains (`@> {\\beta_{\\mathbb{R}}} >>` remnants) in (4.2) and its exact sequence to tikz-cd; added \\usepackage{tikz-cd}.",
+    "Converted the `\\overset\\alpha\\to\\longrightarrow` / `\\overset\\beta\\to\\longrightarrow` double-arrow hacks in (7.1) and (7.3) to tikz-cd labeled arrows.",
+    "Converted all remaining `\\overset` arrow hacks to tikz-cd: (2.2), the unnumbered P^n exact sequence, (3.2), the two $\\cup[Y]$ exact sequences in Theorem 6.3, and the $\\mathbb{Z}^4\\to\\mathbb{Z}^5\\to\\mathbb{Z}\\oplus H$ sequence in \\S10 (braced $\\cup[Y]$ labels for the tikz-cd quote parser).",
+    "Named $\\mu_\\Sigma$ explicitly in the sentence introducing (4.2)."
   ],
   "entries": [
     {

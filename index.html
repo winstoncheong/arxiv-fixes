@@ -204,6 +204,10 @@ h2 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 <li>Wrapped math in the four $\mathcal{A}$- subsection titles with \texorpdfstring.</li>
 <li>Added hyperref with color links and pagebackref plus PDF title/author metadata; pinned \date{June 25, 1996} to the v1 arXiv date and used \subjclass[1991]{Primary 14M25}.</li>
 <li>Fixed clear textual typos from the source: &#x27;simplical&#x27; to &#x27;simplicial&#x27;, &#x27;the the Picard number&#x27; to &#x27;the Picard number&#x27;, &#x27;homogenous&#x27; to &#x27;homogeneous&#x27; (Alt2), &#x27;integerals&#x27; to &#x27;integrals&#x27; (GKZ2), &#x27;Torodial&#x27; to &#x27;Toroidal&#x27; (KKMS).</li>
+<li>Converted the two remaining AMSTeX CD arrow chains (`@&gt; {\beta_{\mathbb{R}}} &gt;&gt;` remnants) in (4.2) and its exact sequence to tikz-cd; added \usepackage{tikz-cd}.</li>
+<li>Converted the `\overset\alpha\to\longrightarrow` / `\overset\beta\to\longrightarrow` double-arrow hacks in (7.1) and (7.3) to tikz-cd labeled arrows.</li>
+<li>Converted all remaining `\overset` arrow hacks to tikz-cd: (2.2), the unnumbered P^n exact sequence, (3.2), the two $\cup[Y]$ exact sequences in Theorem 6.3, and the $\mathbb{Z}^4\to\mathbb{Z}^5\to\mathbb{Z}\oplus H$ sequence in \S10 (braced $\cup[Y]$ labels for the tikz-cd quote parser).</li>
+<li>Named $\mu_\Sigma$ explicitly in the sentence introducing (4.2).</li>
 </ul>
 <p><strong>Warning:</strong> Entry SI (Lefschetz fixed point theorem and lattice points in convex polytopes) has no author in the arXiv source; the bibliography entry is authorless rather than guessed.</p>
 <p><strong>Warning:</strong> Tagged-equation PDF destinations collide (hyperref reports duplicate &#x27;equation.1&#x27; anchors with manual \tag); the \eqref links themselves resolve to distinct targets, verified in the .aux.</p>
